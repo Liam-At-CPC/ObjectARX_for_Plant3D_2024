@@ -1,0 +1,50 @@
+﻿Assembly: PnPCommonArxMgd, Version=15.0.6100.2, Culture=neutral, PublicKeyToken=null
+File: C:\Users\deve_\OneDrive\Documents 1\Visual Studio 2022\ObjectARX_for_Plant3D_2024\inc-x64\PnPCommonArxMgd.dll
+================================================================================
+
+Namespace: Autodesk.ProcessPower.Common
+----------------------------------------
+  +-- class RegUtils
+      |
+      |-- Fields:
+      |   +-- private static String _globalRegistryRootKey
+      |   +-- private static String _machineProductRegistryRootKey
+      |
+      |-- Properties:
+      |   +-- String HKEY_CURRENT_USER {get}
+      |   +-- String HKEY_LOCAL_MACHINE {get}
+      |   +-- String PlantCommon {get}
+      |   +-- String VerticalEnvPath {get}
+      |   +-- String UserAppDataFolderFormat {get}
+      |   +-- String RoamableRootFolder {get}
+      |   +-- String LangAbbrev {get}
+      |   +-- String HelpBaseURL {get}
+      |   +-- String HelpUrlFormat {get}
+      |   +-- String AppLangAbbrev {get}
+      |   +-- String ProductUILanguage {get}
+      |
+      +-- Methods:
+          +-- public static String GetGlobalProductRegRoot()
+          +-- public static String GetMachineProductRegRoot()
+          +-- public static String GetAcadRegKeyValueString(String hiveName, String keyName, String valueName)
+          +-- public static String GetHKLMAcadRegKeyValueString(String keyName, String valueName)
+          +-- public static String GetLocalMachineVerticalEnvPath()
+          +-- public static String GetAcadVerticalPath(String filename)
+          +-- public static String GetContentScriptsPath()
+          +-- public static String GetWBHUrl(String ContextId)
+          +-- private static String GetRegValueString(String appName, String valueName)
+          +-- public static String UserAppDataFolder(String appName)
+
+  +-- class RegUtilsException
+      : Exception
+      Implements: ISerializable, _Exception
+
+  +-- class RegUtilsProductRegRootEmptyOrNullException
+      : RegUtilsException
+      Implements: ISerializable, _Exception
+
+  +-- class RegUtilsProductRegRootTruncatedException
+      : RegUtilsException
+      Implements: ISerializable, _Exception
+
+

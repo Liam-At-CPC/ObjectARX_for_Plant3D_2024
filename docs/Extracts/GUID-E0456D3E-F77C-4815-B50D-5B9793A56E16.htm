@@ -1,0 +1,29 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso8859-1"><meta name="product" content="PLNT3D"><meta name="book" content="Developer"><meta name="created" content="2022-12-24"><meta name="topicid" content="GUID-E0456D3E-F77C-4815-B50D-5B9793A56E16"><meta name="indexterm" content="schematic lines: types of"><meta name="indexterm" content="PipeLineGroup"><meta name="indexterm" content="SignalLineGroup"><meta name="indexterm" content="acdbmgd.dll"><meta name="indexterm" content="acmgd.dll"><meta name="indexterm" content="PnIDmgd.dll"><meta name="indexterm" content="PnPDataLinks.dll"><meta name="indexterm" content="line group: sample"><meta name="topic-type" content="concept"><title>Line Groups</title><link type="text/css" rel="stylesheet" href="style/adsk.cpm.css"><script type="text/javascript" src="scripts/adsk.strings.js"></script><script type="text/javascript" src="scripts/adsk.common.js"></script><script type="text/javascript" src="scripts/adsk.dynamichelp.js"></script></head><body><div class="head"><div class="head-block"><div class="nav-group"><!--browse buttons--><div class="browse"><nobr><!--No Additional browse buttons are defined--><div class="headNavLinkPrev"><div id="prevTitle" style="display:none">Line Segments</div><a href="GUID-21730027-5C7E-4B0F-A575-D47B0562C306.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('prevTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-prev-xp.gif" border="0"></a></div><div class="headNavLinkUp"><div id="parentTitle" style="display:none">Schematic Lines</div><a href="GUID-1391385D-2463-499C-9A3B-13A6B97505F1.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('parentTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-up-xp.gif" border="0"></a></div><div class="headNavLinkNext"><div id="nextTitle" style="display:none">Line Style</div><a href="GUID-80E858C5-AA04-40BE-9B9B-9A4E0E060E61.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('nextTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-next-xp.gif" border="0"></a></div></nobr></div><!--end browse buttons--></div><div class="button-info"><span id="infoline">&nbsp;</span></div><div class="ancestry"><a href="topichead.htm">AutoCAD Plant 3D 2024 SDK: Developer`s Help</a>&nbsp;&gt;&nbsp;<a href="topichead.htm">Plant SDK Developer Help</a>&nbsp;&gt;&nbsp;<a href="GUID-640F100A-5350-4B42-A5CC-D110506968C3.htm">Drawing Entities and Objects</a>&nbsp;&gt;&nbsp;<a href="GUID-1391385D-2463-499C-9A3B-13A6B97505F1.htm">Schematic Lines</a>&nbsp;&gt;&nbsp;</div><div class="head-text"><a name="WS1A9193826455F5FF1DBC2985116285E2CB453DE"></a><h1>Line Groups</h1></div></div></div><div class="head-margin">&nbsp;</div><div style="line-height: 0pt">&nbsp;</div><div class="head-margin">&nbsp;</div><div class="body_content"><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57D5"></a>There are two types of schematic line groups: 
+  <span class="code">PipeLineGroup</span> and 
+  <span class="code">SignalLineGroup</span>. The value of AcPpLineGroup::groupType will be kPipeLineGroup or kSignalLineGroup, respectively. </p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57D4"></a>The following code displays LineGroup information for a selected 
+  <span class="code">SLINE</span>. </p><div class="codeBlock"><pre>//C#
+using Autodesk.ProcessPower.PnIDObjects;
+
+Database db = AcadApp.DocumentManager.MdiActiveDocument.Database;
+Editor ed = AcadApp.DocumentManager.MdiActiveDocument.Editor;
+ObjectId entId = ed.GetEntity("Pick an SLINE: ").ObjectId;
+if (entId.IsNull) return;
+
+Autodesk.AutoCAD.DatabaseServices.TransactionManager tm = db.TransactionManager;
+using (Transaction tr = tm.StartTransaction())
+{
+&nbsp;&nbsp;&nbsp;LineGroupManager mgr = new LineGroupManager();
+&nbsp;&nbsp;&nbsp;int lgId = mgr.GroupId(entId);
+&nbsp;&nbsp;&nbsp;string sMsg = "\nLineGroup: " + lgId.ToString() + " (" + mgr.Type(lgId).ToString() + ")";
+&nbsp;&nbsp;&nbsp;ObjectIdCollection lineIds = mgr.LineDbIds(lgId);
+&nbsp;&nbsp;&nbsp;sMsg += "\n   LineSegments: " + lineIds.Count;
+&nbsp;&nbsp;&nbsp;ed.WriteMessage(sMsg);
+&nbsp;&nbsp;&nbsp;foreach (ObjectId lsId in lineIds)
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LineSegment ls=(LineSegment)tm.GetObject(lsId, OpenMode.ForRead);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sMsg = "\n   LineSegment: " + ls.ClassName + ", " + ls.Vertices[0].ToString();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ed.WriteMessage(sMsg);
+&nbsp;&nbsp;&nbsp;}
+}</pre></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57D3"></a>  </p><div class="footer-block"><a href="javascript:doComments('');"><span class="comments-link">Please send us your comment about this page</span></a></div><br></div></body></html>

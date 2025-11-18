@@ -1,0 +1,114 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso8859-1"><meta name="product" content="PLNT3D"><meta name="book" content="Developer"><meta name="created" content="2022-12-24"><meta name="topicid" content="GUID-5CC931A7-A16D-459D-BEA6-C138331E7B57"><meta name="topic-type" content="concept"><title>Sample: Route and Connect Piping</title><link type="text/css" rel="stylesheet" href="style/adsk.cpm.css"><script type="text/javascript" src="scripts/adsk.strings.js"></script><script type="text/javascript" src="scripts/adsk.common.js"></script><script type="text/javascript" src="scripts/adsk.dynamichelp.js"></script></head><body><div class="head"><div class="head-block"><div class="nav-group"><!--browse buttons--><div class="browse"><nobr><!--No Additional browse buttons are defined--><div class="headNavLinkPrev"><div id="prevTitle" style="display:none">Sample: Create Equipment</div><a href="GUID-E20AF580-495E-4A3D-8174-5A7306CA2522.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('prevTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-prev-xp.gif" border="0"></a></div><div class="headNavLinkUp"><div id="parentTitle" style="display:none">Samples</div><a href="GUID-205FC0ED-65B8-459D-A62A-93ADBDCEB221.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('parentTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-up-xp.gif" border="0"></a></div><div class="headNavLinkNext"><div id="nextTitle" style="display:none">Sample: Piping Supports</div><a href="GUID-8A9BC626-413F-4324-8EFE-6FE50E7EBA07.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('nextTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-next-xp.gif" border="0"></a></div></nobr></div><!--end browse buttons--></div><div class="button-info"><span id="infoline">&nbsp;</span></div><div class="ancestry"><a href="topichead.htm">AutoCAD Plant 3D 2024 SDK: Developer`s Help</a>&nbsp;&gt;&nbsp;<a href="topichead.htm">Plant SDK Developer Help</a>&nbsp;&gt;&nbsp;<a href="GUID-205FC0ED-65B8-459D-A62A-93ADBDCEB221.htm">Samples</a>&nbsp;&gt;&nbsp;</div><div class="head-text"><a name="GUID-3ED28572-078F-448F-9D57-C0B01B06FB8F"></a><h1>Sample: Route and Connect Piping</h1></div></div></div><div class="head-margin">&nbsp;</div><div style="line-height: 0pt">&nbsp;</div><div class="head-margin">&nbsp;</div><div class="body_content"><p class="blurb">  </p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-572C"></a>The sample illustrates how to use high-level APIs to create, route, connect, and substitute piping components. You can also set parameters for parametric components. 
+	 </p><p><a name="GUID-3510A51D-35D6-4E21-8E78-CAB4CF539907"></a>The high-level APIs are implemented by the managed classes 
+		<em class="strong">AutoRoute</em>, 
+		<em class="strong">BentPipe</em>, 
+		<em class="strong">BranchWrapper</em>, 
+		<em class="strong">ConnectionMode</em>, 
+		<em class="strong">ConnectorWrapper</em>, 
+		<em class="strong">CutbackElbow</em>, 
+		<em class="strong">ElbowPart</em>, 
+		<em class="strong">ElbowWrapper</em>, 
+		<em class="strong">LockEntity</em>, 
+		<em class="strong">ParametricPart</em>, 
+		<em class="strong">PipePart</em>, 
+		<em class="strong">PipeWrapper</em>, 
+		<em class="strong">ReducerWrapper</em>, and 
+		<em class="strong">RoutingHelper</em> in Autodesk.ProcessPower.PnP3dPipeRouting. 
+	 </p><p><a name="GUID-FCC6DEAA-A259-4F66-84D1-94950A6B68E1"></a> <div class="codeBlock"><pre>NETLOAD PipeRouting
+PipeRoute 0,0,0 specification CS300 size 4" 72,0,0 72,36,0</pre></div>After compiling the sample you can run 
+		<em class="strong">PipeRouting</em> at the Command: prompt. The PipeRoute command above produces two piping tubes and an elbow using 4" piping from CS300. 
+	 </p><a name="FIG_70DF40F96C3841D6B6B932E1E40E739A"></a><div class="figure-anchor"><img src="GUID-AECB2228-A2DD-42E3-B392-0E4A88CBF8EA-low.png"></div><p><a name="GUID-43FDCDF9-0A0D-4EA1-8775-6196896403C3"></a>The FittingEdit sample command shows you how you specify dimensions for parametric parts. 
+	 </p><p><a name="GUID-983B60A0-64AE-4C90-818A-E507C3BF7D0C"></a>In the sample, the PipeRoute command runs the following code: 
+	 </p><div class="codeBlock"><pre>try
+{
+    using (AutoRoute ar = new AutoRoute (m_LastPair, m_SnapPair,
+                                    m_Spec, m_Size, m_CurrentPipe, m_ElbowParts,
+                                    m_bStubin, m_bCutbackElbow, m_bBentPipe))
+    {
+        if (ar.PathCount == 0)
+        {
+            return false;
+        }
+        else
+        if (ar.PathCount == 1)
+        {
+            // Single path. Just accept it
+            //
+            ar.CurrentPath = 0;
+        }
+        else
+        {
+            // Select path with preview
+            //
+            PromptKeywordOptions opts = new PromptKeywordOptions("");
+            opts.Keywords.Add("Accept");
+            opts.Keywords.Add("Next");
+            opts.Keywords.Add("Previous");
+            opts.Keywords.Add("Undo");
+            opts.Keywords.Default = "Accept";
+            int idx = 0;
+            while (true)
+            {
+                opts.Message = "\nConnect or preview next solution " + (idx+1).ToString() + " of " + ar.PathCount.ToString();
+                ar.CurrentPath = idx;
+                ar.Preview();
+
+                PromptResult pRes = ed.GetKeywords(opts);
+                if (pRes.Status != PromptStatus.OK || pRes.StringResult == "Undo")
+                {
+                    bCancelled = true;
+                    break;
+                }
+                else
+                if (pRes.StringResult == "Accept")
+                {
+                    break;
+                }
+                else
+                if (pRes.StringResult == "Next")
+                {
+                    idx++;
+                    if (idx == ar.PathCount)
+                    {
+                        idx = 0;
+                    }
+                    opts.Keywords.Default = "Next";
+                }
+                else
+                if (pRes.StringResult == "Previous")
+                {
+                    idx--;
+                    if (idx &lt; 0 )
+                    {
+                        idx = ar.PathCount-1;
+                    }
+                    opts.Keywords.Default = "Previous";
+                }
+            }
+
+            ar.EndPreview();
+        }
+
+        if (bCancelled)
+        {
+            return false;
+        }
+        else
+        {
+            // Append
+            //
+            if (m_GroupId &lt; 0)
+            {
+                m_GroupId = PnP3dTagFormat.findOrCreateNewLineGroup(m_LineNumber);
+            }
+            ar.Append(m_GroupId);
+            return true;
+        }
+    }
+}</pre></div><p><a name="GUID-E74D5403-DED5-4174-A2E3-36C9338FA9B5"></a>Developers can route piping similar to 
+		<em class="strong">plantpipeadd</em>, including the ability to choose from multiple routing solutions. 
+	 </p><p><a name="GUID-03CC99AE-0744-4C47-BD3F-34214BDE11CA"></a>See 
+		<em class="mild">readme.txt</em> in the project sample for details. 
+	 </p><div class="footer-block"><a href="javascript:doComments('');"><span class="comments-link">Please send us your comment about this page</span></a></div><br></div></body></html>

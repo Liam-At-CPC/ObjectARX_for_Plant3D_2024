@@ -1,0 +1,69 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso8859-1"><meta name="product" content="PLNT3D"><meta name="book" content="Developer"><meta name="created" content="2022-12-24"><meta name="topicid" content="GUID-DB81D15A-6D0D-4E27-B443-324F0652AFFF"><meta name="indexterm" content="code sample: PnPActiveProject"><meta name="indexterm" content="code sample: project properties"><meta name="topic-type" content="concept"><title>Project Manager</title><link type="text/css" rel="stylesheet" href="style/adsk.cpm.css"><script type="text/javascript" src="scripts/adsk.strings.js"></script><script type="text/javascript" src="scripts/adsk.common.js"></script><script type="text/javascript" src="scripts/adsk.dynamichelp.js"></script></head><body><div class="head"><div class="head-block"><div class="nav-group"><!--browse buttons--><div class="browse"><nobr><!--No Additional browse buttons are defined--><div class="headNavLinkPrev"><div id="prevTitle" style="display:none">Plant Project</div><a href="GUID-E6722C81-249B-489C-91B9-84B0B5D7D41B.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('prevTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-prev-xp.gif" border="0"></a></div><div class="headNavLinkUp"><div id="parentTitle" style="display:none">Plant Project</div><a href="GUID-E6722C81-249B-489C-91B9-84B0B5D7D41B.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('parentTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-up-xp.gif" border="0"></a></div><div class="headNavLinkNext"><div id="nextTitle" style="display:none">Project Settings and Configuration</div><a href="GUID-926681EE-9105-44B5-87FF-2CB6535EC2DF.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('nextTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-next-xp.gif" border="0"></a></div></nobr></div><!--end browse buttons--></div><div class="button-info"><span id="infoline">&nbsp;</span></div><div class="ancestry"><a href="topichead.htm">AutoCAD Plant 3D 2024 SDK: Developer`s Help</a>&nbsp;&gt;&nbsp;<a href="topichead.htm">Plant SDK Developer Help</a>&nbsp;&gt;&nbsp;<a href="GUID-E6722C81-249B-489C-91B9-84B0B5D7D41B.htm">Plant Project</a>&nbsp;&gt;&nbsp;</div><div class="head-text"><a name="WS1A9193826455F5FF19B622D10EA1BF4D91-7729"></a><h1>Project Manager</h1></div></div></div><div class="head-margin">&nbsp;</div><div style="line-height: 0pt">&nbsp;</div><div class="head-margin">&nbsp;</div><div class="body_content"><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5786"></a>Project details are configured with the 
+  <em class="strong">Project</em> class in the 
+  <em class="strong">Autodesk.PrcessPower.ProjectManager</em> namespace.
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5785"></a>AutoCAD P&amp;ID can have one project loaded at a time. To obtain a 
+  <em class="strong">Project</em> object, use 
+  <em class="strong">PlantApplication.CurrentProject</em>. PlantApplication is a singleton.
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5784"></a>Below is sample code that obtains the current P&amp;ID 
+  <span class="code">Project</span> from 
+  <span class="code">PlantProject</span>, then lists all of the drawings that are contained in the 
+  <span class="code">Project</span>.
+</p><div class="codeBlock"><pre>//C# Code
+using AcadApp = Autodesk.AutoCAD.ApplicationServices.Application;
+using Autodesk.ProcessPower.ProjectManager;
+using Autodesk.ProcessPower.PlantInstance;
+[CommandMethod("LISTDWGS", CommandFlags.Modal)]
+public static void ListProjectDrawings()
+{
+&nbsp;&nbsp;&nbsp;Editor oEditor = &nbsp;&nbsp;&nbsp;AcadApp.DocumentManager.MdiActiveDocument.Editor;
+&nbsp;&nbsp;&nbsp;ProjectPartCollection oPP = &nbsp;&nbsp;&nbsp;PlantApplication.CurrentProject.ProjectParts;
+&nbsp;&nbsp;&nbsp;foreach (Project oPrj in oPP)
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string strMsg = "\n" + oPrj.ProjectDirectory;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oEditor.WriteMessage(strMsg);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;PnPProjectDrawing&gt; oDwgList = oPrj.GetPnPDrawingFiles();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach (PnPProjectDrawing oDwg in oDwgList)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strMsg = "\n    " + oDwg.AbsoluteFileName;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oEditor.WriteMessage(strMsg);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;}
+}</pre></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5783"></a>When running a built-in command from AutoCAD P&amp;ID such as 
+  <span class="code">sline</span>, if the current drawing is not in the current project, the command stops and displays the message 
+  <span class="code">Operation canceled: disallowed in current project</span>. P&amp;ID built-in commands give users the option to either add the current drawing to the active project, or to 
+  <span class="code">Enter name of project to open</span>. 
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5782"></a>The code sample below obtains the current project, if the active drawing is part of the project. </p><div class="codeBlock"><pre>//C#
+public static Project PnPActiveProject()
+{
+&nbsp;&nbsp;&nbsp;Database oDatabase = AcadApp.DocumentManager.MdiActiveDocument.Database;
+&nbsp;&nbsp;&nbsp;PnIdProject oPnIdProject = (PnIdProject)PlantApplication.CurrentProject.ProjectParts["PnId"];
+&nbsp;&nbsp;&nbsp;if (oPrj == null) return null; //No P&amp;ID Project loaded
+&nbsp;&nbsp;&nbsp;List&lt;PnPProjectDrawing&gt; oDwgList = oPrj.GetPnPDrawingFiles();
+&nbsp;&nbsp;&nbsp;foreach (PnPProjectDrawing oDwg in oDwgList)
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;if (String.Equals(oDatabase.Filename, oDwg.ResolvedFilePath, StringComparison.InvariantCultureIgnoreCase))
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return oPrj;
+&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;return null; //ActiveDocument is not in the CurrentProject
+}</pre></div><div><a name="WS73099CC142F48755-63C0748611A1FA08F71-67DA"></a><div class="note-note"><span class="label label-target-language">NOTE:</span>When working with both drawing information and the Project Manager, a common task for developers is to ensure that the active drawing belongs to the current project. The 
+  <em class="strong">PnPActiveProject 
+  </em>function above may be useful as command prologue code in that situation.
+</div></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5781"></a>Sample code in this guide uses 
+  <span class="code">PnPActiveProject</span> to verify that the Active drawing is in the Current Project, and to obtain the current 
+  <span class="code">Project</span> object. 
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5780"></a>The sample code below attempts to load the project with an assumed project name if the active drawing is not part of the current project.
+</p><div class="codeBlock"><pre>//C#
+{
+&nbsp;&nbsp;&nbsp;Project oPnPDwgProject = PnPActiveProject();
+&nbsp;&nbsp;&nbsp;if (oPnPDwgProject != null) return;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;//Try to get the project from he drawing directory.
+&nbsp;&nbsp;&nbsp;//  This assumes that the Project and the Drawing file are in the same folder.
+&nbsp;&nbsp;&nbsp;Database oDwg = AcadApp.DocumentManager.MdiActiveDocument.Database;
+&nbsp;&nbsp;&nbsp;string sFolder = oDwg.OriginalFileName;
+&nbsp;&nbsp;&nbsp;string sProject = Path.Combine(Path.GetDirectoryName(sFolder), "Project.xml");
+&nbsp;&nbsp;&nbsp;oPnPDwgProject = PlantProject.LoadProject(sProject);
+}</pre></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-577F"></a>  </p><div class="footer-block"><a href="javascript:doComments('');"><span class="comments-link">Please send us your comment about this page</span></a></div><br></div></body></html>

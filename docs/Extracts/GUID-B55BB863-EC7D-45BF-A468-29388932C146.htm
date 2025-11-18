@@ -1,0 +1,66 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso8859-1"><meta name="product" content="PLNT3D"><meta name="book" content="Developer"><meta name="created" content="2022-12-24"><meta name="topicid" content="GUID-B55BB863-EC7D-45BF-A468-29388932C146"><meta name="indexterm" content="code sample: C#"><meta name="indexterm" content="code sample: data objects"><meta name="indexterm" content="code sample: external data"><meta name="indexterm" content="code sample: Access"><meta name="topic-type" content="concept"><title> Data Objects Extensions </title><link type="text/css" rel="stylesheet" href="style/adsk.cpm.css"><script type="text/javascript" src="scripts/adsk.strings.js"></script><script type="text/javascript" src="scripts/adsk.common.js"></script><script type="text/javascript" src="scripts/adsk.dynamichelp.js"></script></head><body><div class="head"><div class="head-block"><div class="nav-group"><!--browse buttons--><div class="browse"><nobr><!--No Additional browse buttons are defined--><div class="headNavLinkPrev"><div id="prevTitle" style="display:none">Data Objects</div><a href="GUID-7A762A24-BA49-4EAC-80FB-ADCF2F0EE113.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('prevTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-prev-xp.gif" border="0"></a></div><div class="headNavLinkUp"><div id="parentTitle" style="display:none">Data Objects</div><a href="GUID-7A762A24-BA49-4EAC-80FB-ADCF2F0EE113.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('parentTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-up-xp.gif" border="0"></a></div><div class="headNavLinkNext"><div id="nextTitle" style="display:none">Granular Piping and Publishing (P&amp;ID)</div><a href="GUID-F3EAA991-8BBA-4BEC-9DAA-93A5D78CBE93.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('nextTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-next-xp.gif" border="0"></a></div></nobr></div><!--end browse buttons--></div><div class="button-info"><span id="infoline">&nbsp;</span></div><div class="ancestry"><a href="topichead.htm">AutoCAD Plant 3D 2024 SDK: Developer`s Help</a>&nbsp;&gt;&nbsp;<a href="topichead.htm">Plant SDK Developer Help</a>&nbsp;&gt;&nbsp;<a href="GUID-48F184C7-A298-49F0-B75E-5F32034A6C05.htm">Data Manager</a>&nbsp;&gt;&nbsp;<a href="GUID-7A762A24-BA49-4EAC-80FB-ADCF2F0EE113.htm">Data Objects</a>&nbsp;&gt;&nbsp;</div><div class="head-text"><a name="WS1A9193826455F5FF-29C43AA61173633F416-7C18"></a><h1> Data Objects Extensions </h1></div></div></div><div class="head-margin">&nbsp;</div><div style="line-height: 0pt">&nbsp;</div><div class="head-margin">&nbsp;</div><div class="body_content"><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-574E"></a>Using 
+  <em class="strong">ProcessPower.DataObjects</em>, developers may extend non-graphical properties into the P&amp;ID Data Manager. 
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5752"></a>The PnPSDK may be used to adjust or extend the data model. For example, the PnPXDb Data Objects can be used to add additional columns to the Data Manager. 
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-574D"></a>The sample below illustrates a database extension by linking 
+  <em class="strong">Model Number</em> to an external table. 
+</p><a name="WS1A9193826455F5FF-29C43AA61173633F416-7C16"></a><div class="figure-anchor"><img src="GUID-98EDA67F-4F8D-4254-9272-AD840ADDB0F6-low.png"><p class="figure-title"> Access table</p></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-574C"></a>The table contains fictitious ModelNumbers and was created in Microsoft Access. 
+</p><div class="codeBlock"><pre>//C#
+try {
+&nbsp;&nbsp;&nbsp;StringCollection names = DataLinksManager.GetLinkManagerNames();
+&nbsp;&nbsp;&nbsp;DataLinksManager dlm = DataLinksManager.GetManager(names[0]);
+&nbsp;&nbsp;&nbsp;PnPDatabase db = dlm.GetPnPDatabase();
+&nbsp;&nbsp;&nbsp; PnPXDbReferenceManager mgr = db.XDbReferenceManager;
+&nbsp;&nbsp;&nbsp;PnPXDbDatasource ds = new PnPXDbDatasource("catalog_datasource");
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;//Connection
+&nbsp;&nbsp;&nbsp;PnPXDbDatasource ds = new PnPXDbDatasource("catalog_datasource");
+&nbsp;&nbsp;&nbsp;string strCS = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=";
+&nbsp;&nbsp;&nbsp;Module thisModule = Assembly.GetExecutingAssembly().GetModules(false)[0];
+&nbsp;&nbsp;&nbsp;string sFolder=Path.GetDirectoryName(thisModule.FullyQualifiedName);
+&nbsp;&nbsp;&nbsp;Console.WriteLine("myModule.FullyQualifiedName = {0}", thisModule.FullyQualifiedName);
+&nbsp;&nbsp;&nbsp;strCS += sFolder+Path.DirectorySeparatorChar;
+&nbsp;&nbsp;&nbsp;strCS += "PnPExternalData.mdb";
+&nbsp;&nbsp;&nbsp;ds.ConnectionString = strCS;
+&nbsp;&nbsp;&nbsp;ds.Connect(string.Empty, string.Empty);
+&nbsp;&nbsp;&nbsp;//Add the new PnPXDbDatasource to the XDb manager.
+&nbsp;&nbsp;&nbsp;mgr.Datasources.Add(ds);
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;//Setup a PnPXDbReference to identify Table, Key and Columns.
+&nbsp;&nbsp;&nbsp;PnPXDbReference dbref_ext = new PnPXDbReference("CatalogRef");
+&nbsp;&nbsp;&nbsp;dbref_ext.IsExtension = true;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;dbref_ext.Referencing.TableName = "EngineeringItems";
+&nbsp;&nbsp;&nbsp;dbref_ext.Referencing.ForeignKey.Add("ModelNumber");
+&nbsp;&nbsp;&nbsp;dbref_ext.Referenced.DatasourceName = "catalog_datasource";
+&nbsp;&nbsp;&nbsp;dbref_ext.Referenced.TableName = "AcmeTanks";
+&nbsp;&nbsp;&nbsp;dbref_ext.Referenced.PrimaryKey.Add("ModelNumber");
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;PnPXDbColumnMapCollection cm = dbref_ext.ColumnMap;
+&nbsp;&nbsp;&nbsp;cm.Add(new PnPXDbColumnMapEntry("ModelDescription", "ModelDescription"));
+&nbsp;&nbsp;&nbsp;cm.Add(new PnPXDbColumnMapEntry("ModelCapacity", "ModelCapacity"));
+&nbsp;&nbsp;&nbsp;cm.Add(new PnPXDbColumnMapEntry("ModelPrice", "ModelPrice"));
+&nbsp;&nbsp;&nbsp;cm.Add(new PnPXDbColumnMapEntry("ModelInStock", "ModelInStock"));
+&nbsp;&nbsp;&nbsp;//Add the new PnPXDbReference to the XDb manager.
+&nbsp;&nbsp;&nbsp;mgr.References.Add(dbref_ext);
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;//Extend the EngineeringItems table.
+&nbsp;&nbsp;&nbsp;PnPTable tbl = db.Tables["EngineeringItems"];
+&nbsp;&nbsp;&nbsp;tbl.AddRuntimeExtension("CatalogRef");
+}
+catch (System.Exception e) {
+&nbsp;&nbsp;&nbsp;Editor ed = AcadApp.DocumentManager.MdiActiveDocument.Editor;
+&nbsp;&nbsp;&nbsp;ed.WriteMessage(e.Message.ToString());
+}</pre></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-574B"></a>After executing the sample code, 
+  <em class="mild">Engineering Items</em> will have four additional fields. In this example, if the user enters 
+  <em class="strong">T5H</em> into the Model Number field of the Data Manager, linked columns will be populated from the external table. 
+</p><a name="WS1A9193826455F5FF-29C43AA61173633F416-7C15"></a><div class="figure-anchor"><img src="GUID-BB60E7E2-E078-4353-8B92-4EA8DB4A1145-low.png"><p class="figure-title">external database connected</p></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-574A"></a>The sample code first acquires the active 
+  <span class="code">DataLinksManager</span>, and then configures 
+  <span class="code">PnPXDbReferenceManager</span> to connect to external data. A new 
+  <span class="code">PnPXDbReference</span> is then created and configured to identify the key, and creates multiple 
+  <span class="code">PnPXDbColumnMapEntry</span> items to identify and name linked columns. 
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5749"></a>The following connection string would be used to connect to an SQL Express database 
+  <em class="mild">PIDCATALOGS</em>. 
+</p><div class="codeBlock"><pre>string strCS=ds.ConnectionString="Provider=SQLNCLI.1;Integrated Security=SSPI;"
+&nbsp;&nbsp;&nbsp;"Initial Catalog=PIDCATALOGS;Data Source=localhost\\SQLEXPRESS";</pre></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5748"></a>     </p><div class="footer-block"><a href="javascript:doComments('');"><span class="comments-link">Please send us your comment about this page</span></a></div><br></div></body></html>

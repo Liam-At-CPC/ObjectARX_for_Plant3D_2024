@@ -1,0 +1,2485 @@
+﻿Assembly: Autodesk.AutoCAD.Interop, Version=24.3.0.0, Culture=neutral, PublicKeyToken=null
+File: C:\Users\deve_\OneDrive\Documents 1\Visual Studio 2022\ObjectARX_for_Plant3D_2024\inc-x64\Autodesk.AutoCAD.Interop.dll
+================================================================================
+
+Namespace: Autodesk.AutoCAD.Interop
+----------------------------------------
+  +-- interface _DAcadApplicationEvents
+      |
+      +-- Methods:
+          +-- public Void SysVarChanged(String SysvarName, Object newVal)
+          +-- public Void NewDrawing()
+          +-- public Void AppActivate()
+          +-- public Void AppDeactivate()
+          +-- public Void WindowMovedOrResized(Int32 HWNDFrame, Boolean bMoved)
+          +-- public Void BeginModal()
+          +-- public Void EndModal()
+          +-- public Void BeginQuit(Boolean& Cancel)
+          +-- public Void BeginFileDrop(String FileName, Boolean& Cancel)
+          +-- public Void ARXLoaded(String AppName)
+          +-- public Void ARXUnloaded(String AppName)
+          +-- public Void BeginPlot(String DrawingName)
+          +-- public Void EndPlot(String DrawingName)
+          +-- public Void BeginSave(String FileName)
+          +-- public Void EndSave(String FileName)
+          +-- public Void BeginOpen(String& FileName)
+          +-- public Void EndOpen(String FileName)
+          +-- public Void BeginCommand(String CommandName)
+          +-- public Void EndCommand(String CommandName)
+          +-- public Void BeginLisp(String FirstLine)
+          +-- public Void EndLisp()
+          +-- public Void LispCancelled()
+          +-- public Void WindowChanged(AcWindowState WindowState)
+
+  +-- class _DAcadApplicationEvents_AppActivateEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke()
+
+  +-- class _DAcadApplicationEvents_AppDeactivateEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke()
+
+  +-- class _DAcadApplicationEvents_ARXLoadedEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String AppName)
+
+  +-- class _DAcadApplicationEvents_ARXUnloadedEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String AppName)
+
+  +-- class _DAcadApplicationEvents_BeginCommandEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String CommandName)
+
+  +-- class _DAcadApplicationEvents_BeginFileDropEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String FileName, Boolean& Cancel)
+
+  +-- class _DAcadApplicationEvents_BeginLispEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String FirstLine)
+
+  +-- class _DAcadApplicationEvents_BeginModalEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke()
+
+  +-- class _DAcadApplicationEvents_BeginOpenEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String& FileName)
+
+  +-- class _DAcadApplicationEvents_BeginPlotEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String DrawingName)
+
+  +-- class _DAcadApplicationEvents_BeginQuitEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Boolean& Cancel)
+
+  +-- class _DAcadApplicationEvents_BeginSaveEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String FileName)
+
+  +-- class _DAcadApplicationEvents_EndCommandEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String CommandName)
+
+  +-- class _DAcadApplicationEvents_EndLispEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke()
+
+  +-- class _DAcadApplicationEvents_EndModalEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke()
+
+  +-- class _DAcadApplicationEvents_EndOpenEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String FileName)
+
+  +-- class _DAcadApplicationEvents_EndPlotEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String DrawingName)
+
+  +-- class _DAcadApplicationEvents_EndSaveEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String FileName)
+
+  +-- interface _DAcadApplicationEvents_Event
+      |
+      +-- Methods:
+          +-- public Void add_SysVarChanged(_DAcadApplicationEvents_SysVarChangedEventHandler A_1)
+          +-- public Void remove_SysVarChanged(_DAcadApplicationEvents_SysVarChangedEventHandler A_1)
+          +-- public Void add_NewDrawing(_DAcadApplicationEvents_NewDrawingEventHandler A_1)
+          +-- public Void remove_NewDrawing(_DAcadApplicationEvents_NewDrawingEventHandler A_1)
+          +-- public Void add_AppActivate(_DAcadApplicationEvents_AppActivateEventHandler A_1)
+          +-- public Void remove_AppActivate(_DAcadApplicationEvents_AppActivateEventHandler A_1)
+          +-- public Void add_AppDeactivate(_DAcadApplicationEvents_AppDeactivateEventHandler A_1)
+          +-- public Void remove_AppDeactivate(_DAcadApplicationEvents_AppDeactivateEventHandler A_1)
+          +-- public Void add_WindowMovedOrResized(_DAcadApplicationEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void remove_WindowMovedOrResized(_DAcadApplicationEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void add_BeginModal(_DAcadApplicationEvents_BeginModalEventHandler A_1)
+          +-- public Void remove_BeginModal(_DAcadApplicationEvents_BeginModalEventHandler A_1)
+          +-- public Void add_EndModal(_DAcadApplicationEvents_EndModalEventHandler A_1)
+          +-- public Void remove_EndModal(_DAcadApplicationEvents_EndModalEventHandler A_1)
+          +-- public Void add_BeginQuit(_DAcadApplicationEvents_BeginQuitEventHandler A_1)
+          +-- public Void remove_BeginQuit(_DAcadApplicationEvents_BeginQuitEventHandler A_1)
+          +-- public Void add_BeginFileDrop(_DAcadApplicationEvents_BeginFileDropEventHandler A_1)
+          +-- public Void remove_BeginFileDrop(_DAcadApplicationEvents_BeginFileDropEventHandler A_1)
+          +-- public Void add_ARXLoaded(_DAcadApplicationEvents_ARXLoadedEventHandler A_1)
+          +-- public Void remove_ARXLoaded(_DAcadApplicationEvents_ARXLoadedEventHandler A_1)
+          +-- public Void add_ARXUnloaded(_DAcadApplicationEvents_ARXUnloadedEventHandler A_1)
+          +-- public Void remove_ARXUnloaded(_DAcadApplicationEvents_ARXUnloadedEventHandler A_1)
+          +-- public Void add_BeginPlot(_DAcadApplicationEvents_BeginPlotEventHandler A_1)
+          +-- public Void remove_BeginPlot(_DAcadApplicationEvents_BeginPlotEventHandler A_1)
+          +-- public Void add_EndPlot(_DAcadApplicationEvents_EndPlotEventHandler A_1)
+          +-- public Void remove_EndPlot(_DAcadApplicationEvents_EndPlotEventHandler A_1)
+          +-- public Void add_BeginSave(_DAcadApplicationEvents_BeginSaveEventHandler A_1)
+          +-- public Void remove_BeginSave(_DAcadApplicationEvents_BeginSaveEventHandler A_1)
+          +-- public Void add_EndSave(_DAcadApplicationEvents_EndSaveEventHandler A_1)
+          +-- public Void remove_EndSave(_DAcadApplicationEvents_EndSaveEventHandler A_1)
+          +-- public Void add_BeginOpen(_DAcadApplicationEvents_BeginOpenEventHandler A_1)
+          +-- public Void remove_BeginOpen(_DAcadApplicationEvents_BeginOpenEventHandler A_1)
+          +-- public Void add_EndOpen(_DAcadApplicationEvents_EndOpenEventHandler A_1)
+          +-- public Void remove_EndOpen(_DAcadApplicationEvents_EndOpenEventHandler A_1)
+          +-- public Void add_BeginCommand(_DAcadApplicationEvents_BeginCommandEventHandler A_1)
+          +-- public Void remove_BeginCommand(_DAcadApplicationEvents_BeginCommandEventHandler A_1)
+          +-- public Void add_EndCommand(_DAcadApplicationEvents_EndCommandEventHandler A_1)
+          +-- public Void remove_EndCommand(_DAcadApplicationEvents_EndCommandEventHandler A_1)
+          +-- public Void add_BeginLisp(_DAcadApplicationEvents_BeginLispEventHandler A_1)
+          +-- public Void remove_BeginLisp(_DAcadApplicationEvents_BeginLispEventHandler A_1)
+          +-- public Void add_EndLisp(_DAcadApplicationEvents_EndLispEventHandler A_1)
+          +-- public Void remove_EndLisp(_DAcadApplicationEvents_EndLispEventHandler A_1)
+          +-- public Void add_LispCancelled(_DAcadApplicationEvents_LispCancelledEventHandler A_1)
+          +-- public Void remove_LispCancelled(_DAcadApplicationEvents_LispCancelledEventHandler A_1)
+          +-- public Void add_WindowChanged(_DAcadApplicationEvents_WindowChangedEventHandler A_1)
+          +-- public Void remove_WindowChanged(_DAcadApplicationEvents_WindowChangedEventHandler A_1)
+
+  +-- class _DAcadApplicationEvents_EventProvider
+      Implements: _DAcadApplicationEvents_Event, IDisposable
+      |
+      |-- Fields:
+      |   +-- private WeakReference m_wkConnectionPointContainer
+      |   +-- private ArrayList m_aEventSinkHelpers
+      |   +-- private IConnectionPoint m_ConnectionPoint
+      |
+      +-- Methods:
+          +-- private Void Init()
+          +-- public Void add_SysVarChanged(_DAcadApplicationEvents_SysVarChangedEventHandler A_1)
+          +-- public Void remove_SysVarChanged(_DAcadApplicationEvents_SysVarChangedEventHandler A_1)
+          +-- public Void add_NewDrawing(_DAcadApplicationEvents_NewDrawingEventHandler A_1)
+          +-- public Void remove_NewDrawing(_DAcadApplicationEvents_NewDrawingEventHandler A_1)
+          +-- public Void add_AppActivate(_DAcadApplicationEvents_AppActivateEventHandler A_1)
+          +-- public Void remove_AppActivate(_DAcadApplicationEvents_AppActivateEventHandler A_1)
+          +-- public Void add_AppDeactivate(_DAcadApplicationEvents_AppDeactivateEventHandler A_1)
+          +-- public Void remove_AppDeactivate(_DAcadApplicationEvents_AppDeactivateEventHandler A_1)
+          +-- public Void add_WindowMovedOrResized(_DAcadApplicationEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void remove_WindowMovedOrResized(_DAcadApplicationEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void add_BeginModal(_DAcadApplicationEvents_BeginModalEventHandler A_1)
+          +-- public Void remove_BeginModal(_DAcadApplicationEvents_BeginModalEventHandler A_1)
+          +-- public Void add_EndModal(_DAcadApplicationEvents_EndModalEventHandler A_1)
+          +-- public Void remove_EndModal(_DAcadApplicationEvents_EndModalEventHandler A_1)
+          +-- public Void add_BeginQuit(_DAcadApplicationEvents_BeginQuitEventHandler A_1)
+          +-- public Void remove_BeginQuit(_DAcadApplicationEvents_BeginQuitEventHandler A_1)
+          +-- public Void add_BeginFileDrop(_DAcadApplicationEvents_BeginFileDropEventHandler A_1)
+          +-- public Void remove_BeginFileDrop(_DAcadApplicationEvents_BeginFileDropEventHandler A_1)
+          +-- public Void add_ARXLoaded(_DAcadApplicationEvents_ARXLoadedEventHandler A_1)
+          +-- public Void remove_ARXLoaded(_DAcadApplicationEvents_ARXLoadedEventHandler A_1)
+          +-- public Void add_ARXUnloaded(_DAcadApplicationEvents_ARXUnloadedEventHandler A_1)
+          +-- public Void remove_ARXUnloaded(_DAcadApplicationEvents_ARXUnloadedEventHandler A_1)
+          +-- public Void add_BeginPlot(_DAcadApplicationEvents_BeginPlotEventHandler A_1)
+          +-- public Void remove_BeginPlot(_DAcadApplicationEvents_BeginPlotEventHandler A_1)
+          +-- public Void add_EndPlot(_DAcadApplicationEvents_EndPlotEventHandler A_1)
+          +-- public Void remove_EndPlot(_DAcadApplicationEvents_EndPlotEventHandler A_1)
+          +-- public Void add_BeginSave(_DAcadApplicationEvents_BeginSaveEventHandler A_1)
+          +-- public Void remove_BeginSave(_DAcadApplicationEvents_BeginSaveEventHandler A_1)
+          +-- public Void add_EndSave(_DAcadApplicationEvents_EndSaveEventHandler A_1)
+          +-- public Void remove_EndSave(_DAcadApplicationEvents_EndSaveEventHandler A_1)
+          +-- public Void add_BeginOpen(_DAcadApplicationEvents_BeginOpenEventHandler A_1)
+          +-- public Void remove_BeginOpen(_DAcadApplicationEvents_BeginOpenEventHandler A_1)
+          +-- public Void add_EndOpen(_DAcadApplicationEvents_EndOpenEventHandler A_1)
+          +-- public Void remove_EndOpen(_DAcadApplicationEvents_EndOpenEventHandler A_1)
+          +-- public Void add_BeginCommand(_DAcadApplicationEvents_BeginCommandEventHandler A_1)
+          +-- public Void remove_BeginCommand(_DAcadApplicationEvents_BeginCommandEventHandler A_1)
+          +-- public Void add_EndCommand(_DAcadApplicationEvents_EndCommandEventHandler A_1)
+          +-- public Void remove_EndCommand(_DAcadApplicationEvents_EndCommandEventHandler A_1)
+          +-- public Void add_BeginLisp(_DAcadApplicationEvents_BeginLispEventHandler A_1)
+          +-- public Void remove_BeginLisp(_DAcadApplicationEvents_BeginLispEventHandler A_1)
+          +-- public Void add_EndLisp(_DAcadApplicationEvents_EndLispEventHandler A_1)
+          +-- public Void remove_EndLisp(_DAcadApplicationEvents_EndLispEventHandler A_1)
+          +-- public Void add_LispCancelled(_DAcadApplicationEvents_LispCancelledEventHandler A_1)
+          +-- public Void remove_LispCancelled(_DAcadApplicationEvents_LispCancelledEventHandler A_1)
+          +-- public Void add_WindowChanged(_DAcadApplicationEvents_WindowChangedEventHandler A_1)
+          +-- public Void remove_WindowChanged(_DAcadApplicationEvents_WindowChangedEventHandler A_1)
+          +-- public Void Finalize()
+          +-- public Void Dispose()
+
+  +-- class _DAcadApplicationEvents_LispCancelledEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke()
+
+  +-- class _DAcadApplicationEvents_NewDrawingEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke()
+
+  +-- class _DAcadApplicationEvents_SinkHelper
+      Implements: _DAcadApplicationEvents
+      |
+      |-- Fields:
+      |   +-- public _DAcadApplicationEvents_SysVarChangedEventHandler m_SysVarChangedDelegate
+      |   +-- public _DAcadApplicationEvents_NewDrawingEventHandler m_NewDrawingDelegate
+      |   +-- public _DAcadApplicationEvents_AppActivateEventHandler m_AppActivateDelegate
+      |   +-- public _DAcadApplicationEvents_AppDeactivateEventHandler m_AppDeactivateDelegate
+      |   +-- public _DAcadApplicationEvents_WindowMovedOrResizedEventHandler m_WindowMovedOrResizedDelegate
+      |   +-- public _DAcadApplicationEvents_BeginModalEventHandler m_BeginModalDelegate
+      |   +-- public _DAcadApplicationEvents_EndModalEventHandler m_EndModalDelegate
+      |   +-- public _DAcadApplicationEvents_BeginQuitEventHandler m_BeginQuitDelegate
+      |   +-- public _DAcadApplicationEvents_BeginFileDropEventHandler m_BeginFileDropDelegate
+      |   +-- public _DAcadApplicationEvents_ARXLoadedEventHandler m_ARXLoadedDelegate
+      |   +-- public _DAcadApplicationEvents_ARXUnloadedEventHandler m_ARXUnloadedDelegate
+      |   +-- public _DAcadApplicationEvents_BeginPlotEventHandler m_BeginPlotDelegate
+      |   +-- public _DAcadApplicationEvents_EndPlotEventHandler m_EndPlotDelegate
+      |   +-- public _DAcadApplicationEvents_BeginSaveEventHandler m_BeginSaveDelegate
+      |   +-- public _DAcadApplicationEvents_EndSaveEventHandler m_EndSaveDelegate
+      |   +-- public _DAcadApplicationEvents_BeginOpenEventHandler m_BeginOpenDelegate
+      |   +-- public _DAcadApplicationEvents_EndOpenEventHandler m_EndOpenDelegate
+      |   +-- public _DAcadApplicationEvents_BeginCommandEventHandler m_BeginCommandDelegate
+      |   +-- public _DAcadApplicationEvents_EndCommandEventHandler m_EndCommandDelegate
+      |   +-- public _DAcadApplicationEvents_BeginLispEventHandler m_BeginLispDelegate
+      |   +-- public _DAcadApplicationEvents_EndLispEventHandler m_EndLispDelegate
+      |   +-- public _DAcadApplicationEvents_LispCancelledEventHandler m_LispCancelledDelegate
+      |   +-- public _DAcadApplicationEvents_WindowChangedEventHandler m_WindowChangedDelegate
+      |   +-- public Int32 m_dwCookie
+      |
+      +-- Methods:
+          +-- public Void SysVarChanged(String A_1, Object A_2)
+          +-- public Void NewDrawing()
+          +-- public Void AppActivate()
+          +-- public Void AppDeactivate()
+          +-- public Void WindowMovedOrResized(Int32 A_1, Boolean A_2)
+          +-- public Void BeginModal()
+          +-- public Void EndModal()
+          +-- public Void BeginQuit(Boolean& A_1)
+          +-- public Void BeginFileDrop(String A_1, Boolean& A_2)
+          +-- public Void ARXLoaded(String A_1)
+          +-- public Void ARXUnloaded(String A_1)
+          +-- public Void BeginPlot(String A_1)
+          +-- public Void EndPlot(String A_1)
+          +-- public Void BeginSave(String A_1)
+          +-- public Void EndSave(String A_1)
+          +-- public Void BeginOpen(String& A_1)
+          +-- public Void EndOpen(String A_1)
+          +-- public Void BeginCommand(String A_1)
+          +-- public Void EndCommand(String A_1)
+          +-- public Void BeginLisp(String A_1)
+          +-- public Void EndLisp()
+          +-- public Void LispCancelled()
+          +-- public Void WindowChanged(AcWindowState A_1)
+
+  +-- class _DAcadApplicationEvents_SysVarChangedEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String SysvarName, Object newVal)
+
+  +-- class _DAcadApplicationEvents_WindowChangedEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(AcWindowState WindowState)
+
+  +-- class _DAcadApplicationEvents_WindowMovedOrResizedEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Int32 HWNDFrame, Boolean bMoved)
+
+  +-- interface _DAcadDocumentEvents
+      |
+      +-- Methods:
+          +-- public Void BeginSave(String FileName)
+          +-- public Void EndSave(String FileName)
+          +-- public Void BeginCommand(String CommandName)
+          +-- public Void EndCommand(String CommandName)
+          +-- public Void BeginLisp(String FirstLine)
+          +-- public Void EndLisp()
+          +-- public Void LispCancelled()
+          +-- public Void SelectionChanged()
+          +-- public Void Activate()
+          +-- public Void Deactivate()
+          +-- public Void BeginRightClick(Object PickPoint)
+          +-- public Void BeginShortcutMenuDefault(AcadPopupMenu& ShortcutMenu)
+          +-- public Void BeginShortcutMenuEdit(AcadPopupMenu& ShortcutMenu, AcadSelectionSet& SelectionSet)
+          +-- public Void BeginShortcutMenuCommand(AcadPopupMenu& ShortcutMenu, String Command)
+          +-- public Void BeginShortcutMenuGrip(AcadPopupMenu& ShortcutMenu)
+          +-- public Void BeginShortcutMenuOsnap(AcadPopupMenu& ShortcutMenu)
+          +-- public Void EndShortcutMenu(AcadPopupMenu& ShortcutMenu)
+          +-- public Void BeginDoubleClick(Object PickPoint)
+          +-- public Void ObjectAdded(Object Object)
+          +-- public Void ObjectErased(Int64 ObjectId)
+          +-- public Void ObjectModified(Object Object)
+          +-- public Void BeginPlot(String DrawingName)
+          +-- public Void EndPlot(String DrawingName)
+          +-- public Void WindowMovedOrResized(Int64 HWNDFrame, Boolean bMoved)
+          +-- public Void LayoutSwitched(String LayoutName)
+          +-- public Void WindowChanged(AcWindowState WindowState)
+          +-- public Void BeginClose()
+          +-- public Void BeginDocClose(Boolean& Cancel)
+
+  +-- class _DAcadDocumentEvents_ActivateEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke()
+
+  +-- class _DAcadDocumentEvents_BeginCloseEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke()
+
+  +-- class _DAcadDocumentEvents_BeginCommandEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String CommandName)
+
+  +-- class _DAcadDocumentEvents_BeginDocCloseEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Boolean& Cancel)
+
+  +-- class _DAcadDocumentEvents_BeginDoubleClickEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Object PickPoint)
+
+  +-- class _DAcadDocumentEvents_BeginLispEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String FirstLine)
+
+  +-- class _DAcadDocumentEvents_BeginPlotEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String DrawingName)
+
+  +-- class _DAcadDocumentEvents_BeginRightClickEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Object PickPoint)
+
+  +-- class _DAcadDocumentEvents_BeginSaveEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String FileName)
+
+  +-- class _DAcadDocumentEvents_BeginShortcutMenuCommandEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(AcadPopupMenu& ShortcutMenu, String Command)
+
+  +-- class _DAcadDocumentEvents_BeginShortcutMenuDefaultEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(AcadPopupMenu& ShortcutMenu)
+
+  +-- class _DAcadDocumentEvents_BeginShortcutMenuEditEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(AcadPopupMenu& ShortcutMenu, AcadSelectionSet& SelectionSet)
+
+  +-- class _DAcadDocumentEvents_BeginShortcutMenuGripEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(AcadPopupMenu& ShortcutMenu)
+
+  +-- class _DAcadDocumentEvents_BeginShortcutMenuOsnapEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(AcadPopupMenu& ShortcutMenu)
+
+  +-- class _DAcadDocumentEvents_DeactivateEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke()
+
+  +-- class _DAcadDocumentEvents_EndCommandEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String CommandName)
+
+  +-- class _DAcadDocumentEvents_EndLispEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke()
+
+  +-- class _DAcadDocumentEvents_EndPlotEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String DrawingName)
+
+  +-- class _DAcadDocumentEvents_EndSaveEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String FileName)
+
+  +-- class _DAcadDocumentEvents_EndShortcutMenuEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(AcadPopupMenu& ShortcutMenu)
+
+  +-- interface _DAcadDocumentEvents_Event
+      |
+      +-- Methods:
+          +-- public Void add_BeginSave(_DAcadDocumentEvents_BeginSaveEventHandler A_1)
+          +-- public Void remove_BeginSave(_DAcadDocumentEvents_BeginSaveEventHandler A_1)
+          +-- public Void add_EndSave(_DAcadDocumentEvents_EndSaveEventHandler A_1)
+          +-- public Void remove_EndSave(_DAcadDocumentEvents_EndSaveEventHandler A_1)
+          +-- public Void add_BeginCommand(_DAcadDocumentEvents_BeginCommandEventHandler A_1)
+          +-- public Void remove_BeginCommand(_DAcadDocumentEvents_BeginCommandEventHandler A_1)
+          +-- public Void add_EndCommand(_DAcadDocumentEvents_EndCommandEventHandler A_1)
+          +-- public Void remove_EndCommand(_DAcadDocumentEvents_EndCommandEventHandler A_1)
+          +-- public Void add_BeginLisp(_DAcadDocumentEvents_BeginLispEventHandler A_1)
+          +-- public Void remove_BeginLisp(_DAcadDocumentEvents_BeginLispEventHandler A_1)
+          +-- public Void add_EndLisp(_DAcadDocumentEvents_EndLispEventHandler A_1)
+          +-- public Void remove_EndLisp(_DAcadDocumentEvents_EndLispEventHandler A_1)
+          +-- public Void add_LispCancelled(_DAcadDocumentEvents_LispCancelledEventHandler A_1)
+          +-- public Void remove_LispCancelled(_DAcadDocumentEvents_LispCancelledEventHandler A_1)
+          +-- public Void add_SelectionChanged(_DAcadDocumentEvents_SelectionChangedEventHandler A_1)
+          +-- public Void remove_SelectionChanged(_DAcadDocumentEvents_SelectionChangedEventHandler A_1)
+          +-- public Void add_Activate(_DAcadDocumentEvents_ActivateEventHandler A_1)
+          +-- public Void remove_Activate(_DAcadDocumentEvents_ActivateEventHandler A_1)
+          +-- public Void add_Deactivate(_DAcadDocumentEvents_DeactivateEventHandler A_1)
+          +-- public Void remove_Deactivate(_DAcadDocumentEvents_DeactivateEventHandler A_1)
+          +-- public Void add_BeginRightClick(_DAcadDocumentEvents_BeginRightClickEventHandler A_1)
+          +-- public Void remove_BeginRightClick(_DAcadDocumentEvents_BeginRightClickEventHandler A_1)
+          +-- public Void add_BeginShortcutMenuDefault(_DAcadDocumentEvents_BeginShortcutMenuDefaultEventHandler A_1)
+          +-- public Void remove_BeginShortcutMenuDefault(_DAcadDocumentEvents_BeginShortcutMenuDefaultEventHandler A_1)
+          +-- public Void add_BeginShortcutMenuEdit(_DAcadDocumentEvents_BeginShortcutMenuEditEventHandler A_1)
+          +-- public Void remove_BeginShortcutMenuEdit(_DAcadDocumentEvents_BeginShortcutMenuEditEventHandler A_1)
+          +-- public Void add_BeginShortcutMenuCommand(_DAcadDocumentEvents_BeginShortcutMenuCommandEventHandler A_1)
+          +-- public Void remove_BeginShortcutMenuCommand(_DAcadDocumentEvents_BeginShortcutMenuCommandEventHandler A_1)
+          +-- public Void add_BeginShortcutMenuGrip(_DAcadDocumentEvents_BeginShortcutMenuGripEventHandler A_1)
+          +-- public Void remove_BeginShortcutMenuGrip(_DAcadDocumentEvents_BeginShortcutMenuGripEventHandler A_1)
+          +-- public Void add_BeginShortcutMenuOsnap(_DAcadDocumentEvents_BeginShortcutMenuOsnapEventHandler A_1)
+          +-- public Void remove_BeginShortcutMenuOsnap(_DAcadDocumentEvents_BeginShortcutMenuOsnapEventHandler A_1)
+          +-- public Void add_EndShortcutMenu(_DAcadDocumentEvents_EndShortcutMenuEventHandler A_1)
+          +-- public Void remove_EndShortcutMenu(_DAcadDocumentEvents_EndShortcutMenuEventHandler A_1)
+          +-- public Void add_BeginDoubleClick(_DAcadDocumentEvents_BeginDoubleClickEventHandler A_1)
+          +-- public Void remove_BeginDoubleClick(_DAcadDocumentEvents_BeginDoubleClickEventHandler A_1)
+          +-- public Void add_ObjectAdded(_DAcadDocumentEvents_ObjectAddedEventHandler A_1)
+          +-- public Void remove_ObjectAdded(_DAcadDocumentEvents_ObjectAddedEventHandler A_1)
+          +-- public Void add_ObjectErased(_DAcadDocumentEvents_ObjectErasedEventHandler A_1)
+          +-- public Void remove_ObjectErased(_DAcadDocumentEvents_ObjectErasedEventHandler A_1)
+          +-- public Void add_ObjectModified(_DAcadDocumentEvents_ObjectModifiedEventHandler A_1)
+          +-- public Void remove_ObjectModified(_DAcadDocumentEvents_ObjectModifiedEventHandler A_1)
+          +-- public Void add_BeginPlot(_DAcadDocumentEvents_BeginPlotEventHandler A_1)
+          +-- public Void remove_BeginPlot(_DAcadDocumentEvents_BeginPlotEventHandler A_1)
+          +-- public Void add_EndPlot(_DAcadDocumentEvents_EndPlotEventHandler A_1)
+          +-- public Void remove_EndPlot(_DAcadDocumentEvents_EndPlotEventHandler A_1)
+          +-- public Void add_WindowMovedOrResized(_DAcadDocumentEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void remove_WindowMovedOrResized(_DAcadDocumentEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void add_LayoutSwitched(_DAcadDocumentEvents_LayoutSwitchedEventHandler A_1)
+          +-- public Void remove_LayoutSwitched(_DAcadDocumentEvents_LayoutSwitchedEventHandler A_1)
+          +-- public Void add_WindowChanged(_DAcadDocumentEvents_WindowChangedEventHandler A_1)
+          +-- public Void remove_WindowChanged(_DAcadDocumentEvents_WindowChangedEventHandler A_1)
+          +-- public Void add_BeginClose(_DAcadDocumentEvents_BeginCloseEventHandler A_1)
+          +-- public Void remove_BeginClose(_DAcadDocumentEvents_BeginCloseEventHandler A_1)
+          +-- public Void add_BeginDocClose(_DAcadDocumentEvents_BeginDocCloseEventHandler A_1)
+          +-- public Void remove_BeginDocClose(_DAcadDocumentEvents_BeginDocCloseEventHandler A_1)
+
+  +-- class _DAcadDocumentEvents_EventProvider
+      Implements: _DAcadDocumentEvents_Event, IDisposable
+      |
+      |-- Fields:
+      |   +-- private WeakReference m_wkConnectionPointContainer
+      |   +-- private ArrayList m_aEventSinkHelpers
+      |   +-- private IConnectionPoint m_ConnectionPoint
+      |
+      +-- Methods:
+          +-- private Void Init()
+          +-- public Void add_BeginSave(_DAcadDocumentEvents_BeginSaveEventHandler A_1)
+          +-- public Void remove_BeginSave(_DAcadDocumentEvents_BeginSaveEventHandler A_1)
+          +-- public Void add_EndSave(_DAcadDocumentEvents_EndSaveEventHandler A_1)
+          +-- public Void remove_EndSave(_DAcadDocumentEvents_EndSaveEventHandler A_1)
+          +-- public Void add_BeginCommand(_DAcadDocumentEvents_BeginCommandEventHandler A_1)
+          +-- public Void remove_BeginCommand(_DAcadDocumentEvents_BeginCommandEventHandler A_1)
+          +-- public Void add_EndCommand(_DAcadDocumentEvents_EndCommandEventHandler A_1)
+          +-- public Void remove_EndCommand(_DAcadDocumentEvents_EndCommandEventHandler A_1)
+          +-- public Void add_BeginLisp(_DAcadDocumentEvents_BeginLispEventHandler A_1)
+          +-- public Void remove_BeginLisp(_DAcadDocumentEvents_BeginLispEventHandler A_1)
+          +-- public Void add_EndLisp(_DAcadDocumentEvents_EndLispEventHandler A_1)
+          +-- public Void remove_EndLisp(_DAcadDocumentEvents_EndLispEventHandler A_1)
+          +-- public Void add_LispCancelled(_DAcadDocumentEvents_LispCancelledEventHandler A_1)
+          +-- public Void remove_LispCancelled(_DAcadDocumentEvents_LispCancelledEventHandler A_1)
+          +-- public Void add_SelectionChanged(_DAcadDocumentEvents_SelectionChangedEventHandler A_1)
+          +-- public Void remove_SelectionChanged(_DAcadDocumentEvents_SelectionChangedEventHandler A_1)
+          +-- public Void add_Activate(_DAcadDocumentEvents_ActivateEventHandler A_1)
+          +-- public Void remove_Activate(_DAcadDocumentEvents_ActivateEventHandler A_1)
+          +-- public Void add_Deactivate(_DAcadDocumentEvents_DeactivateEventHandler A_1)
+          +-- public Void remove_Deactivate(_DAcadDocumentEvents_DeactivateEventHandler A_1)
+          +-- public Void add_BeginRightClick(_DAcadDocumentEvents_BeginRightClickEventHandler A_1)
+          +-- public Void remove_BeginRightClick(_DAcadDocumentEvents_BeginRightClickEventHandler A_1)
+          +-- public Void add_BeginShortcutMenuDefault(_DAcadDocumentEvents_BeginShortcutMenuDefaultEventHandler A_1)
+          +-- public Void remove_BeginShortcutMenuDefault(_DAcadDocumentEvents_BeginShortcutMenuDefaultEventHandler A_1)
+          +-- public Void add_BeginShortcutMenuEdit(_DAcadDocumentEvents_BeginShortcutMenuEditEventHandler A_1)
+          +-- public Void remove_BeginShortcutMenuEdit(_DAcadDocumentEvents_BeginShortcutMenuEditEventHandler A_1)
+          +-- public Void add_BeginShortcutMenuCommand(_DAcadDocumentEvents_BeginShortcutMenuCommandEventHandler A_1)
+          +-- public Void remove_BeginShortcutMenuCommand(_DAcadDocumentEvents_BeginShortcutMenuCommandEventHandler A_1)
+          +-- public Void add_BeginShortcutMenuGrip(_DAcadDocumentEvents_BeginShortcutMenuGripEventHandler A_1)
+          +-- public Void remove_BeginShortcutMenuGrip(_DAcadDocumentEvents_BeginShortcutMenuGripEventHandler A_1)
+          +-- public Void add_BeginShortcutMenuOsnap(_DAcadDocumentEvents_BeginShortcutMenuOsnapEventHandler A_1)
+          +-- public Void remove_BeginShortcutMenuOsnap(_DAcadDocumentEvents_BeginShortcutMenuOsnapEventHandler A_1)
+          +-- public Void add_EndShortcutMenu(_DAcadDocumentEvents_EndShortcutMenuEventHandler A_1)
+          +-- public Void remove_EndShortcutMenu(_DAcadDocumentEvents_EndShortcutMenuEventHandler A_1)
+          +-- public Void add_BeginDoubleClick(_DAcadDocumentEvents_BeginDoubleClickEventHandler A_1)
+          +-- public Void remove_BeginDoubleClick(_DAcadDocumentEvents_BeginDoubleClickEventHandler A_1)
+          +-- public Void add_ObjectAdded(_DAcadDocumentEvents_ObjectAddedEventHandler A_1)
+          +-- public Void remove_ObjectAdded(_DAcadDocumentEvents_ObjectAddedEventHandler A_1)
+          +-- public Void add_ObjectErased(_DAcadDocumentEvents_ObjectErasedEventHandler A_1)
+          +-- public Void remove_ObjectErased(_DAcadDocumentEvents_ObjectErasedEventHandler A_1)
+          +-- public Void add_ObjectModified(_DAcadDocumentEvents_ObjectModifiedEventHandler A_1)
+          +-- public Void remove_ObjectModified(_DAcadDocumentEvents_ObjectModifiedEventHandler A_1)
+          +-- public Void add_BeginPlot(_DAcadDocumentEvents_BeginPlotEventHandler A_1)
+          +-- public Void remove_BeginPlot(_DAcadDocumentEvents_BeginPlotEventHandler A_1)
+          +-- public Void add_EndPlot(_DAcadDocumentEvents_EndPlotEventHandler A_1)
+          +-- public Void remove_EndPlot(_DAcadDocumentEvents_EndPlotEventHandler A_1)
+          +-- public Void add_WindowMovedOrResized(_DAcadDocumentEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void remove_WindowMovedOrResized(_DAcadDocumentEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void add_LayoutSwitched(_DAcadDocumentEvents_LayoutSwitchedEventHandler A_1)
+          +-- public Void remove_LayoutSwitched(_DAcadDocumentEvents_LayoutSwitchedEventHandler A_1)
+          +-- public Void add_WindowChanged(_DAcadDocumentEvents_WindowChangedEventHandler A_1)
+          +-- public Void remove_WindowChanged(_DAcadDocumentEvents_WindowChangedEventHandler A_1)
+          +-- public Void add_BeginClose(_DAcadDocumentEvents_BeginCloseEventHandler A_1)
+          +-- public Void remove_BeginClose(_DAcadDocumentEvents_BeginCloseEventHandler A_1)
+          +-- public Void add_BeginDocClose(_DAcadDocumentEvents_BeginDocCloseEventHandler A_1)
+          +-- public Void remove_BeginDocClose(_DAcadDocumentEvents_BeginDocCloseEventHandler A_1)
+          +-- public Void Finalize()
+          +-- public Void Dispose()
+
+  +-- class _DAcadDocumentEvents_LayoutSwitchedEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(String LayoutName)
+
+  +-- class _DAcadDocumentEvents_LispCancelledEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke()
+
+  +-- class _DAcadDocumentEvents_ObjectAddedEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Object Object)
+
+  +-- class _DAcadDocumentEvents_ObjectErasedEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Int64 ObjectId)
+
+  +-- class _DAcadDocumentEvents_ObjectModifiedEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Object Object)
+
+  +-- class _DAcadDocumentEvents_SelectionChangedEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke()
+
+  +-- class _DAcadDocumentEvents_SinkHelper
+      Implements: _DAcadDocumentEvents
+      |
+      |-- Fields:
+      |   +-- public _DAcadDocumentEvents_BeginSaveEventHandler m_BeginSaveDelegate
+      |   +-- public _DAcadDocumentEvents_EndSaveEventHandler m_EndSaveDelegate
+      |   +-- public _DAcadDocumentEvents_BeginCommandEventHandler m_BeginCommandDelegate
+      |   +-- public _DAcadDocumentEvents_EndCommandEventHandler m_EndCommandDelegate
+      |   +-- public _DAcadDocumentEvents_BeginLispEventHandler m_BeginLispDelegate
+      |   +-- public _DAcadDocumentEvents_EndLispEventHandler m_EndLispDelegate
+      |   +-- public _DAcadDocumentEvents_LispCancelledEventHandler m_LispCancelledDelegate
+      |   +-- public _DAcadDocumentEvents_SelectionChangedEventHandler m_SelectionChangedDelegate
+      |   +-- public _DAcadDocumentEvents_ActivateEventHandler m_ActivateDelegate
+      |   +-- public _DAcadDocumentEvents_DeactivateEventHandler m_DeactivateDelegate
+      |   +-- public _DAcadDocumentEvents_BeginRightClickEventHandler m_BeginRightClickDelegate
+      |   +-- public _DAcadDocumentEvents_BeginShortcutMenuDefaultEventHandler m_BeginShortcutMenuDefaultDelegate
+      |   +-- public _DAcadDocumentEvents_BeginShortcutMenuEditEventHandler m_BeginShortcutMenuEditDelegate
+      |   +-- public _DAcadDocumentEvents_BeginShortcutMenuCommandEventHandler m_BeginShortcutMenuCommandDelegate
+      |   +-- public _DAcadDocumentEvents_BeginShortcutMenuGripEventHandler m_BeginShortcutMenuGripDelegate
+      |   +-- public _DAcadDocumentEvents_BeginShortcutMenuOsnapEventHandler m_BeginShortcutMenuOsnapDelegate
+      |   +-- public _DAcadDocumentEvents_EndShortcutMenuEventHandler m_EndShortcutMenuDelegate
+      |   +-- public _DAcadDocumentEvents_BeginDoubleClickEventHandler m_BeginDoubleClickDelegate
+      |   +-- public _DAcadDocumentEvents_ObjectAddedEventHandler m_ObjectAddedDelegate
+      |   +-- public _DAcadDocumentEvents_ObjectErasedEventHandler m_ObjectErasedDelegate
+      |   +-- public _DAcadDocumentEvents_ObjectModifiedEventHandler m_ObjectModifiedDelegate
+      |   +-- public _DAcadDocumentEvents_BeginPlotEventHandler m_BeginPlotDelegate
+      |   +-- public _DAcadDocumentEvents_EndPlotEventHandler m_EndPlotDelegate
+      |   +-- public _DAcadDocumentEvents_WindowMovedOrResizedEventHandler m_WindowMovedOrResizedDelegate
+      |   +-- public _DAcadDocumentEvents_LayoutSwitchedEventHandler m_LayoutSwitchedDelegate
+      |   +-- public _DAcadDocumentEvents_WindowChangedEventHandler m_WindowChangedDelegate
+      |   +-- public _DAcadDocumentEvents_BeginCloseEventHandler m_BeginCloseDelegate
+      |   +-- public _DAcadDocumentEvents_BeginDocCloseEventHandler m_BeginDocCloseDelegate
+      |   +-- public Int32 m_dwCookie
+      |
+      +-- Methods:
+          +-- public Void BeginSave(String A_1)
+          +-- public Void EndSave(String A_1)
+          +-- public Void BeginCommand(String A_1)
+          +-- public Void EndCommand(String A_1)
+          +-- public Void BeginLisp(String A_1)
+          +-- public Void EndLisp()
+          +-- public Void LispCancelled()
+          +-- public Void SelectionChanged()
+          +-- public Void Activate()
+          +-- public Void Deactivate()
+          +-- public Void BeginRightClick(Object A_1)
+          +-- public Void BeginShortcutMenuDefault(AcadPopupMenu& A_1)
+          +-- public Void BeginShortcutMenuEdit(AcadPopupMenu& A_1, AcadSelectionSet& A_2)
+          +-- public Void BeginShortcutMenuCommand(AcadPopupMenu& A_1, String A_2)
+          +-- public Void BeginShortcutMenuGrip(AcadPopupMenu& A_1)
+          +-- public Void BeginShortcutMenuOsnap(AcadPopupMenu& A_1)
+          +-- public Void EndShortcutMenu(AcadPopupMenu& A_1)
+          +-- public Void BeginDoubleClick(Object A_1)
+          +-- public Void ObjectAdded(Object A_1)
+          +-- public Void ObjectErased(Int64 A_1)
+          +-- public Void ObjectModified(Object A_1)
+          +-- public Void BeginPlot(String A_1)
+          +-- public Void EndPlot(String A_1)
+          +-- public Void WindowMovedOrResized(Int64 A_1, Boolean A_2)
+          +-- public Void LayoutSwitched(String A_1)
+          +-- public Void WindowChanged(AcWindowState A_1)
+          +-- public Void BeginClose()
+          +-- public Void BeginDocClose(Boolean& A_1)
+
+  +-- class _DAcadDocumentEvents_WindowChangedEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(AcWindowState WindowState)
+
+  +-- class _DAcadDocumentEvents_WindowMovedOrResizedEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Int64 HWNDFrame, Boolean bMoved)
+
+  +-- interface AcadApplication
+      Implements: IAcadApplication, _DAcadApplicationEvents_Event
+
+  +-- class AcadApplicationClass
+      : __ComObject
+      Implements: IAcadApplication, AcadApplication, _DAcadApplicationEvents_Event
+      |
+      |-- Properties:
+      |   +-- Boolean Visible {get; set}
+      |   +-- String Name {get}
+      |   +-- String Caption {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadDocument ActiveDocument {get; set}
+      |   +-- String FullName {get}
+      |   +-- Int32 Height {get; set}
+      |   +-- Int32 WindowLeft {get; set}
+      |   +-- String Path {get}
+      |   +-- Int32 LocaleId {get}
+      |   +-- Int32 WindowTop {get; set}
+      |   +-- String Version {get}
+      |   +-- Int32 Width {get; set}
+      |   +-- AcadPreferences Preferences {get}
+      |   +-- Boolean StatusId {get}
+      |   +-- Object VBE {get}
+      |   +-- AcadMenuGroups MenuGroups {get}
+      |   +-- AcadMenuBar MenuBar {get}
+      |   +-- AcadDocuments Documents {get}
+      |   +-- AcWindowState WindowState {get; set}
+      |   +-- Int64 HWND {get}
+      |
+      +-- Methods:
+          +-- public Void add_BeginFileDrop(_DAcadApplicationEvents_BeginFileDropEventHandler A_1)
+          +-- public Void remove_BeginFileDrop(_DAcadApplicationEvents_BeginFileDropEventHandler A_1)
+          +-- public Void add_ARXLoaded(_DAcadApplicationEvents_ARXLoadedEventHandler A_1)
+          +-- public Void remove_ARXLoaded(_DAcadApplicationEvents_ARXLoadedEventHandler A_1)
+          +-- public Void add_ARXUnloaded(_DAcadApplicationEvents_ARXUnloadedEventHandler A_1)
+          +-- public Void remove_ARXUnloaded(_DAcadApplicationEvents_ARXUnloadedEventHandler A_1)
+          +-- public Void add_BeginPlot(_DAcadApplicationEvents_BeginPlotEventHandler A_1)
+          +-- public Void remove_BeginPlot(_DAcadApplicationEvents_BeginPlotEventHandler A_1)
+          +-- public Void add_EndPlot(_DAcadApplicationEvents_EndPlotEventHandler A_1)
+          +-- public Void remove_EndPlot(_DAcadApplicationEvents_EndPlotEventHandler A_1)
+          +-- public Void add_BeginSave(_DAcadApplicationEvents_BeginSaveEventHandler A_1)
+          +-- public Void remove_BeginSave(_DAcadApplicationEvents_BeginSaveEventHandler A_1)
+          +-- public Void add_EndSave(_DAcadApplicationEvents_EndSaveEventHandler A_1)
+          +-- public Void remove_EndSave(_DAcadApplicationEvents_EndSaveEventHandler A_1)
+          +-- public Void add_BeginOpen(_DAcadApplicationEvents_BeginOpenEventHandler A_1)
+          +-- public Void remove_BeginOpen(_DAcadApplicationEvents_BeginOpenEventHandler A_1)
+          +-- public Void add_EndOpen(_DAcadApplicationEvents_EndOpenEventHandler A_1)
+          +-- public Void remove_EndOpen(_DAcadApplicationEvents_EndOpenEventHandler A_1)
+          +-- public Void add_BeginCommand(_DAcadApplicationEvents_BeginCommandEventHandler A_1)
+          +-- public Void remove_BeginCommand(_DAcadApplicationEvents_BeginCommandEventHandler A_1)
+          +-- public Void add_EndCommand(_DAcadApplicationEvents_EndCommandEventHandler A_1)
+          +-- public Void remove_EndCommand(_DAcadApplicationEvents_EndCommandEventHandler A_1)
+          +-- public Void add_BeginLisp(_DAcadApplicationEvents_BeginLispEventHandler A_1)
+          +-- public Void remove_BeginLisp(_DAcadApplicationEvents_BeginLispEventHandler A_1)
+          +-- public Void add_EndLisp(_DAcadApplicationEvents_EndLispEventHandler A_1)
+          +-- public Void remove_EndLisp(_DAcadApplicationEvents_EndLispEventHandler A_1)
+          +-- public Void add_LispCancelled(_DAcadApplicationEvents_LispCancelledEventHandler A_1)
+          +-- public Void remove_LispCancelled(_DAcadApplicationEvents_LispCancelledEventHandler A_1)
+          +-- public Void add_WindowChanged(_DAcadApplicationEvents_WindowChangedEventHandler A_1)
+          +-- public Void remove_WindowChanged(_DAcadApplicationEvents_WindowChangedEventHandler A_1)
+          +-- public Object ListArx()
+          +-- public Void LoadArx(String Name)
+          +-- public Object GetInterfaceObject(String ProgID)
+          +-- public Void UnloadArx(String Name)
+          +-- public Void Update()
+          +-- public Void Quit()
+          +-- public Void Zoom(Int32 Type, Object& vParams)
+          +-- public Void LoadDVB(String Name)
+          +-- public Void UnloadDVB(String Name)
+          +-- public Void Eval(String Expression)
+          +-- public Void RunMacro(String MacroPath)
+          +-- public Void ZoomExtents()
+          +-- public Void ZoomAll()
+          +-- public Void ZoomCenter(Object Center, Double Magnify)
+          +-- public Void ZoomScaled(Double Scale, AcZoomScaleType ScaleType)
+          +-- public Void ZoomWindow(Object LowerLeft, Object UpperRight)
+          +-- public Void ZoomPickWindow()
+          +-- public AcadState GetAcadState()
+          +-- public Void ZoomPrevious()
+          +-- public Void add_SysVarChanged(_DAcadApplicationEvents_SysVarChangedEventHandler A_1)
+          +-- public Void remove_SysVarChanged(_DAcadApplicationEvents_SysVarChangedEventHandler A_1)
+          +-- public Void add_NewDrawing(_DAcadApplicationEvents_NewDrawingEventHandler A_1)
+          +-- public Void remove_NewDrawing(_DAcadApplicationEvents_NewDrawingEventHandler A_1)
+          +-- public Void add_AppActivate(_DAcadApplicationEvents_AppActivateEventHandler A_1)
+          +-- public Void remove_AppActivate(_DAcadApplicationEvents_AppActivateEventHandler A_1)
+          +-- public Void add_AppDeactivate(_DAcadApplicationEvents_AppDeactivateEventHandler A_1)
+          +-- public Void remove_AppDeactivate(_DAcadApplicationEvents_AppDeactivateEventHandler A_1)
+          +-- public Void add_WindowMovedOrResized(_DAcadApplicationEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void remove_WindowMovedOrResized(_DAcadApplicationEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void add_BeginModal(_DAcadApplicationEvents_BeginModalEventHandler A_1)
+          +-- public Void remove_BeginModal(_DAcadApplicationEvents_BeginModalEventHandler A_1)
+          +-- public Void add_EndModal(_DAcadApplicationEvents_EndModalEventHandler A_1)
+          +-- public Void remove_EndModal(_DAcadApplicationEvents_EndModalEventHandler A_1)
+          +-- public Void add_BeginQuit(_DAcadApplicationEvents_BeginQuitEventHandler A_1)
+          +-- public Void remove_BeginQuit(_DAcadApplicationEvents_BeginQuitEventHandler A_1)
+
+  +-- interface AcadApplicationMinorVersion1
+      Implements: IAcadApplication, _DAcadApplicationEvents_Event
+
+  +-- class AcadApplicationMinorVersion1Class
+      : __ComObject
+      Implements: IAcadApplication, AcadApplicationMinorVersion1, _DAcadApplicationEvents_Event
+      |
+      |-- Properties:
+      |   +-- Boolean Visible {get; set}
+      |   +-- String Name {get}
+      |   +-- String Caption {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadDocument ActiveDocument {get; set}
+      |   +-- String FullName {get}
+      |   +-- Int32 Height {get; set}
+      |   +-- Int32 WindowLeft {get; set}
+      |   +-- String Path {get}
+      |   +-- Int32 LocaleId {get}
+      |   +-- Int32 WindowTop {get; set}
+      |   +-- String Version {get}
+      |   +-- Int32 Width {get; set}
+      |   +-- AcadPreferences Preferences {get}
+      |   +-- Boolean StatusId {get}
+      |   +-- Object VBE {get}
+      |   +-- AcadMenuGroups MenuGroups {get}
+      |   +-- AcadMenuBar MenuBar {get}
+      |   +-- AcadDocuments Documents {get}
+      |   +-- AcWindowState WindowState {get; set}
+      |   +-- Int64 HWND {get}
+      |
+      +-- Methods:
+          +-- public Void add_BeginFileDrop(_DAcadApplicationEvents_BeginFileDropEventHandler A_1)
+          +-- public Void remove_BeginFileDrop(_DAcadApplicationEvents_BeginFileDropEventHandler A_1)
+          +-- public Void add_ARXLoaded(_DAcadApplicationEvents_ARXLoadedEventHandler A_1)
+          +-- public Void remove_ARXLoaded(_DAcadApplicationEvents_ARXLoadedEventHandler A_1)
+          +-- public Void add_ARXUnloaded(_DAcadApplicationEvents_ARXUnloadedEventHandler A_1)
+          +-- public Void remove_ARXUnloaded(_DAcadApplicationEvents_ARXUnloadedEventHandler A_1)
+          +-- public Void add_BeginPlot(_DAcadApplicationEvents_BeginPlotEventHandler A_1)
+          +-- public Void remove_BeginPlot(_DAcadApplicationEvents_BeginPlotEventHandler A_1)
+          +-- public Void add_EndPlot(_DAcadApplicationEvents_EndPlotEventHandler A_1)
+          +-- public Void remove_EndPlot(_DAcadApplicationEvents_EndPlotEventHandler A_1)
+          +-- public Void add_BeginSave(_DAcadApplicationEvents_BeginSaveEventHandler A_1)
+          +-- public Void remove_BeginSave(_DAcadApplicationEvents_BeginSaveEventHandler A_1)
+          +-- public Void add_EndSave(_DAcadApplicationEvents_EndSaveEventHandler A_1)
+          +-- public Void remove_EndSave(_DAcadApplicationEvents_EndSaveEventHandler A_1)
+          +-- public Void add_BeginOpen(_DAcadApplicationEvents_BeginOpenEventHandler A_1)
+          +-- public Void remove_BeginOpen(_DAcadApplicationEvents_BeginOpenEventHandler A_1)
+          +-- public Void add_EndOpen(_DAcadApplicationEvents_EndOpenEventHandler A_1)
+          +-- public Void remove_EndOpen(_DAcadApplicationEvents_EndOpenEventHandler A_1)
+          +-- public Void add_BeginCommand(_DAcadApplicationEvents_BeginCommandEventHandler A_1)
+          +-- public Void remove_BeginCommand(_DAcadApplicationEvents_BeginCommandEventHandler A_1)
+          +-- public Void add_EndCommand(_DAcadApplicationEvents_EndCommandEventHandler A_1)
+          +-- public Void remove_EndCommand(_DAcadApplicationEvents_EndCommandEventHandler A_1)
+          +-- public Void add_BeginLisp(_DAcadApplicationEvents_BeginLispEventHandler A_1)
+          +-- public Void remove_BeginLisp(_DAcadApplicationEvents_BeginLispEventHandler A_1)
+          +-- public Void add_EndLisp(_DAcadApplicationEvents_EndLispEventHandler A_1)
+          +-- public Void remove_EndLisp(_DAcadApplicationEvents_EndLispEventHandler A_1)
+          +-- public Void add_LispCancelled(_DAcadApplicationEvents_LispCancelledEventHandler A_1)
+          +-- public Void remove_LispCancelled(_DAcadApplicationEvents_LispCancelledEventHandler A_1)
+          +-- public Void add_WindowChanged(_DAcadApplicationEvents_WindowChangedEventHandler A_1)
+          +-- public Void remove_WindowChanged(_DAcadApplicationEvents_WindowChangedEventHandler A_1)
+          +-- public Object ListArx()
+          +-- public Void LoadArx(String Name)
+          +-- public Object GetInterfaceObject(String ProgID)
+          +-- public Void UnloadArx(String Name)
+          +-- public Void Update()
+          +-- public Void Quit()
+          +-- public Void Zoom(Int32 Type, Object& vParams)
+          +-- public Void LoadDVB(String Name)
+          +-- public Void UnloadDVB(String Name)
+          +-- public Void Eval(String Expression)
+          +-- public Void RunMacro(String MacroPath)
+          +-- public Void ZoomExtents()
+          +-- public Void ZoomAll()
+          +-- public Void ZoomCenter(Object Center, Double Magnify)
+          +-- public Void ZoomScaled(Double Scale, AcZoomScaleType ScaleType)
+          +-- public Void ZoomWindow(Object LowerLeft, Object UpperRight)
+          +-- public Void ZoomPickWindow()
+          +-- public AcadState GetAcadState()
+          +-- public Void ZoomPrevious()
+          +-- public Void add_SysVarChanged(_DAcadApplicationEvents_SysVarChangedEventHandler A_1)
+          +-- public Void remove_SysVarChanged(_DAcadApplicationEvents_SysVarChangedEventHandler A_1)
+          +-- public Void add_NewDrawing(_DAcadApplicationEvents_NewDrawingEventHandler A_1)
+          +-- public Void remove_NewDrawing(_DAcadApplicationEvents_NewDrawingEventHandler A_1)
+          +-- public Void add_AppActivate(_DAcadApplicationEvents_AppActivateEventHandler A_1)
+          +-- public Void remove_AppActivate(_DAcadApplicationEvents_AppActivateEventHandler A_1)
+          +-- public Void add_AppDeactivate(_DAcadApplicationEvents_AppDeactivateEventHandler A_1)
+          +-- public Void remove_AppDeactivate(_DAcadApplicationEvents_AppDeactivateEventHandler A_1)
+          +-- public Void add_WindowMovedOrResized(_DAcadApplicationEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void remove_WindowMovedOrResized(_DAcadApplicationEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void add_BeginModal(_DAcadApplicationEvents_BeginModalEventHandler A_1)
+          +-- public Void remove_BeginModal(_DAcadApplicationEvents_BeginModalEventHandler A_1)
+          +-- public Void add_EndModal(_DAcadApplicationEvents_EndModalEventHandler A_1)
+          +-- public Void remove_EndModal(_DAcadApplicationEvents_EndModalEventHandler A_1)
+          +-- public Void add_BeginQuit(_DAcadApplicationEvents_BeginQuitEventHandler A_1)
+          +-- public Void remove_BeginQuit(_DAcadApplicationEvents_BeginQuitEventHandler A_1)
+
+  +-- interface AcadApplicationMinorVersion2
+      Implements: IAcadApplication, _DAcadApplicationEvents_Event
+
+  +-- class AcadApplicationMinorVersion2Class
+      : __ComObject
+      Implements: IAcadApplication, AcadApplicationMinorVersion2, _DAcadApplicationEvents_Event
+      |
+      |-- Properties:
+      |   +-- Boolean Visible {get; set}
+      |   +-- String Name {get}
+      |   +-- String Caption {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadDocument ActiveDocument {get; set}
+      |   +-- String FullName {get}
+      |   +-- Int32 Height {get; set}
+      |   +-- Int32 WindowLeft {get; set}
+      |   +-- String Path {get}
+      |   +-- Int32 LocaleId {get}
+      |   +-- Int32 WindowTop {get; set}
+      |   +-- String Version {get}
+      |   +-- Int32 Width {get; set}
+      |   +-- AcadPreferences Preferences {get}
+      |   +-- Boolean StatusId {get}
+      |   +-- Object VBE {get}
+      |   +-- AcadMenuGroups MenuGroups {get}
+      |   +-- AcadMenuBar MenuBar {get}
+      |   +-- AcadDocuments Documents {get}
+      |   +-- AcWindowState WindowState {get; set}
+      |   +-- Int64 HWND {get}
+      |
+      +-- Methods:
+          +-- public Void add_BeginFileDrop(_DAcadApplicationEvents_BeginFileDropEventHandler A_1)
+          +-- public Void remove_BeginFileDrop(_DAcadApplicationEvents_BeginFileDropEventHandler A_1)
+          +-- public Void add_ARXLoaded(_DAcadApplicationEvents_ARXLoadedEventHandler A_1)
+          +-- public Void remove_ARXLoaded(_DAcadApplicationEvents_ARXLoadedEventHandler A_1)
+          +-- public Void add_ARXUnloaded(_DAcadApplicationEvents_ARXUnloadedEventHandler A_1)
+          +-- public Void remove_ARXUnloaded(_DAcadApplicationEvents_ARXUnloadedEventHandler A_1)
+          +-- public Void add_BeginPlot(_DAcadApplicationEvents_BeginPlotEventHandler A_1)
+          +-- public Void remove_BeginPlot(_DAcadApplicationEvents_BeginPlotEventHandler A_1)
+          +-- public Void add_EndPlot(_DAcadApplicationEvents_EndPlotEventHandler A_1)
+          +-- public Void remove_EndPlot(_DAcadApplicationEvents_EndPlotEventHandler A_1)
+          +-- public Void add_BeginSave(_DAcadApplicationEvents_BeginSaveEventHandler A_1)
+          +-- public Void remove_BeginSave(_DAcadApplicationEvents_BeginSaveEventHandler A_1)
+          +-- public Void add_EndSave(_DAcadApplicationEvents_EndSaveEventHandler A_1)
+          +-- public Void remove_EndSave(_DAcadApplicationEvents_EndSaveEventHandler A_1)
+          +-- public Void add_BeginOpen(_DAcadApplicationEvents_BeginOpenEventHandler A_1)
+          +-- public Void remove_BeginOpen(_DAcadApplicationEvents_BeginOpenEventHandler A_1)
+          +-- public Void add_EndOpen(_DAcadApplicationEvents_EndOpenEventHandler A_1)
+          +-- public Void remove_EndOpen(_DAcadApplicationEvents_EndOpenEventHandler A_1)
+          +-- public Void add_BeginCommand(_DAcadApplicationEvents_BeginCommandEventHandler A_1)
+          +-- public Void remove_BeginCommand(_DAcadApplicationEvents_BeginCommandEventHandler A_1)
+          +-- public Void add_EndCommand(_DAcadApplicationEvents_EndCommandEventHandler A_1)
+          +-- public Void remove_EndCommand(_DAcadApplicationEvents_EndCommandEventHandler A_1)
+          +-- public Void add_BeginLisp(_DAcadApplicationEvents_BeginLispEventHandler A_1)
+          +-- public Void remove_BeginLisp(_DAcadApplicationEvents_BeginLispEventHandler A_1)
+          +-- public Void add_EndLisp(_DAcadApplicationEvents_EndLispEventHandler A_1)
+          +-- public Void remove_EndLisp(_DAcadApplicationEvents_EndLispEventHandler A_1)
+          +-- public Void add_LispCancelled(_DAcadApplicationEvents_LispCancelledEventHandler A_1)
+          +-- public Void remove_LispCancelled(_DAcadApplicationEvents_LispCancelledEventHandler A_1)
+          +-- public Void add_WindowChanged(_DAcadApplicationEvents_WindowChangedEventHandler A_1)
+          +-- public Void remove_WindowChanged(_DAcadApplicationEvents_WindowChangedEventHandler A_1)
+          +-- public Object ListArx()
+          +-- public Void LoadArx(String Name)
+          +-- public Object GetInterfaceObject(String ProgID)
+          +-- public Void UnloadArx(String Name)
+          +-- public Void Update()
+          +-- public Void Quit()
+          +-- public Void Zoom(Int32 Type, Object& vParams)
+          +-- public Void LoadDVB(String Name)
+          +-- public Void UnloadDVB(String Name)
+          +-- public Void Eval(String Expression)
+          +-- public Void RunMacro(String MacroPath)
+          +-- public Void ZoomExtents()
+          +-- public Void ZoomAll()
+          +-- public Void ZoomCenter(Object Center, Double Magnify)
+          +-- public Void ZoomScaled(Double Scale, AcZoomScaleType ScaleType)
+          +-- public Void ZoomWindow(Object LowerLeft, Object UpperRight)
+          +-- public Void ZoomPickWindow()
+          +-- public AcadState GetAcadState()
+          +-- public Void ZoomPrevious()
+          +-- public Void add_SysVarChanged(_DAcadApplicationEvents_SysVarChangedEventHandler A_1)
+          +-- public Void remove_SysVarChanged(_DAcadApplicationEvents_SysVarChangedEventHandler A_1)
+          +-- public Void add_NewDrawing(_DAcadApplicationEvents_NewDrawingEventHandler A_1)
+          +-- public Void remove_NewDrawing(_DAcadApplicationEvents_NewDrawingEventHandler A_1)
+          +-- public Void add_AppActivate(_DAcadApplicationEvents_AppActivateEventHandler A_1)
+          +-- public Void remove_AppActivate(_DAcadApplicationEvents_AppActivateEventHandler A_1)
+          +-- public Void add_AppDeactivate(_DAcadApplicationEvents_AppDeactivateEventHandler A_1)
+          +-- public Void remove_AppDeactivate(_DAcadApplicationEvents_AppDeactivateEventHandler A_1)
+          +-- public Void add_WindowMovedOrResized(_DAcadApplicationEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void remove_WindowMovedOrResized(_DAcadApplicationEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void add_BeginModal(_DAcadApplicationEvents_BeginModalEventHandler A_1)
+          +-- public Void remove_BeginModal(_DAcadApplicationEvents_BeginModalEventHandler A_1)
+          +-- public Void add_EndModal(_DAcadApplicationEvents_EndModalEventHandler A_1)
+          +-- public Void remove_EndModal(_DAcadApplicationEvents_EndModalEventHandler A_1)
+          +-- public Void add_BeginQuit(_DAcadApplicationEvents_BeginQuitEventHandler A_1)
+          +-- public Void remove_BeginQuit(_DAcadApplicationEvents_BeginQuitEventHandler A_1)
+
+  +-- interface AcadApplicationMinorVersion3
+      Implements: IAcadApplication, _DAcadApplicationEvents_Event
+
+  +-- class AcadApplicationMinorVersion3Class
+      : __ComObject
+      Implements: IAcadApplication, AcadApplicationMinorVersion3, _DAcadApplicationEvents_Event
+      |
+      |-- Properties:
+      |   +-- Boolean Visible {get; set}
+      |   +-- String Name {get}
+      |   +-- String Caption {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadDocument ActiveDocument {get; set}
+      |   +-- String FullName {get}
+      |   +-- Int32 Height {get; set}
+      |   +-- Int32 WindowLeft {get; set}
+      |   +-- String Path {get}
+      |   +-- Int32 LocaleId {get}
+      |   +-- Int32 WindowTop {get; set}
+      |   +-- String Version {get}
+      |   +-- Int32 Width {get; set}
+      |   +-- AcadPreferences Preferences {get}
+      |   +-- Boolean StatusId {get}
+      |   +-- Object VBE {get}
+      |   +-- AcadMenuGroups MenuGroups {get}
+      |   +-- AcadMenuBar MenuBar {get}
+      |   +-- AcadDocuments Documents {get}
+      |   +-- AcWindowState WindowState {get; set}
+      |   +-- Int64 HWND {get}
+      |
+      +-- Methods:
+          +-- public Void add_BeginFileDrop(_DAcadApplicationEvents_BeginFileDropEventHandler A_1)
+          +-- public Void remove_BeginFileDrop(_DAcadApplicationEvents_BeginFileDropEventHandler A_1)
+          +-- public Void add_ARXLoaded(_DAcadApplicationEvents_ARXLoadedEventHandler A_1)
+          +-- public Void remove_ARXLoaded(_DAcadApplicationEvents_ARXLoadedEventHandler A_1)
+          +-- public Void add_ARXUnloaded(_DAcadApplicationEvents_ARXUnloadedEventHandler A_1)
+          +-- public Void remove_ARXUnloaded(_DAcadApplicationEvents_ARXUnloadedEventHandler A_1)
+          +-- public Void add_BeginPlot(_DAcadApplicationEvents_BeginPlotEventHandler A_1)
+          +-- public Void remove_BeginPlot(_DAcadApplicationEvents_BeginPlotEventHandler A_1)
+          +-- public Void add_EndPlot(_DAcadApplicationEvents_EndPlotEventHandler A_1)
+          +-- public Void remove_EndPlot(_DAcadApplicationEvents_EndPlotEventHandler A_1)
+          +-- public Void add_BeginSave(_DAcadApplicationEvents_BeginSaveEventHandler A_1)
+          +-- public Void remove_BeginSave(_DAcadApplicationEvents_BeginSaveEventHandler A_1)
+          +-- public Void add_EndSave(_DAcadApplicationEvents_EndSaveEventHandler A_1)
+          +-- public Void remove_EndSave(_DAcadApplicationEvents_EndSaveEventHandler A_1)
+          +-- public Void add_BeginOpen(_DAcadApplicationEvents_BeginOpenEventHandler A_1)
+          +-- public Void remove_BeginOpen(_DAcadApplicationEvents_BeginOpenEventHandler A_1)
+          +-- public Void add_EndOpen(_DAcadApplicationEvents_EndOpenEventHandler A_1)
+          +-- public Void remove_EndOpen(_DAcadApplicationEvents_EndOpenEventHandler A_1)
+          +-- public Void add_BeginCommand(_DAcadApplicationEvents_BeginCommandEventHandler A_1)
+          +-- public Void remove_BeginCommand(_DAcadApplicationEvents_BeginCommandEventHandler A_1)
+          +-- public Void add_EndCommand(_DAcadApplicationEvents_EndCommandEventHandler A_1)
+          +-- public Void remove_EndCommand(_DAcadApplicationEvents_EndCommandEventHandler A_1)
+          +-- public Void add_BeginLisp(_DAcadApplicationEvents_BeginLispEventHandler A_1)
+          +-- public Void remove_BeginLisp(_DAcadApplicationEvents_BeginLispEventHandler A_1)
+          +-- public Void add_EndLisp(_DAcadApplicationEvents_EndLispEventHandler A_1)
+          +-- public Void remove_EndLisp(_DAcadApplicationEvents_EndLispEventHandler A_1)
+          +-- public Void add_LispCancelled(_DAcadApplicationEvents_LispCancelledEventHandler A_1)
+          +-- public Void remove_LispCancelled(_DAcadApplicationEvents_LispCancelledEventHandler A_1)
+          +-- public Void add_WindowChanged(_DAcadApplicationEvents_WindowChangedEventHandler A_1)
+          +-- public Void remove_WindowChanged(_DAcadApplicationEvents_WindowChangedEventHandler A_1)
+          +-- public Object ListArx()
+          +-- public Void LoadArx(String Name)
+          +-- public Object GetInterfaceObject(String ProgID)
+          +-- public Void UnloadArx(String Name)
+          +-- public Void Update()
+          +-- public Void Quit()
+          +-- public Void Zoom(Int32 Type, Object& vParams)
+          +-- public Void LoadDVB(String Name)
+          +-- public Void UnloadDVB(String Name)
+          +-- public Void Eval(String Expression)
+          +-- public Void RunMacro(String MacroPath)
+          +-- public Void ZoomExtents()
+          +-- public Void ZoomAll()
+          +-- public Void ZoomCenter(Object Center, Double Magnify)
+          +-- public Void ZoomScaled(Double Scale, AcZoomScaleType ScaleType)
+          +-- public Void ZoomWindow(Object LowerLeft, Object UpperRight)
+          +-- public Void ZoomPickWindow()
+          +-- public AcadState GetAcadState()
+          +-- public Void ZoomPrevious()
+          +-- public Void add_SysVarChanged(_DAcadApplicationEvents_SysVarChangedEventHandler A_1)
+          +-- public Void remove_SysVarChanged(_DAcadApplicationEvents_SysVarChangedEventHandler A_1)
+          +-- public Void add_NewDrawing(_DAcadApplicationEvents_NewDrawingEventHandler A_1)
+          +-- public Void remove_NewDrawing(_DAcadApplicationEvents_NewDrawingEventHandler A_1)
+          +-- public Void add_AppActivate(_DAcadApplicationEvents_AppActivateEventHandler A_1)
+          +-- public Void remove_AppActivate(_DAcadApplicationEvents_AppActivateEventHandler A_1)
+          +-- public Void add_AppDeactivate(_DAcadApplicationEvents_AppDeactivateEventHandler A_1)
+          +-- public Void remove_AppDeactivate(_DAcadApplicationEvents_AppDeactivateEventHandler A_1)
+          +-- public Void add_WindowMovedOrResized(_DAcadApplicationEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void remove_WindowMovedOrResized(_DAcadApplicationEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void add_BeginModal(_DAcadApplicationEvents_BeginModalEventHandler A_1)
+          +-- public Void remove_BeginModal(_DAcadApplicationEvents_BeginModalEventHandler A_1)
+          +-- public Void add_EndModal(_DAcadApplicationEvents_EndModalEventHandler A_1)
+          +-- public Void remove_EndModal(_DAcadApplicationEvents_EndModalEventHandler A_1)
+          +-- public Void add_BeginQuit(_DAcadApplicationEvents_BeginQuitEventHandler A_1)
+          +-- public Void remove_BeginQuit(_DAcadApplicationEvents_BeginQuitEventHandler A_1)
+
+  +-- interface AcadDocument
+      Implements: IAcadDocument, IAcadDatabase, _DAcadDocumentEvents_Event
+
+  +-- class AcadDocumentClass
+      : __ComObject
+      Implements: IAcadDocument, IAcadDatabase, AcadDocument, _DAcadDocumentEvents_Event
+      |
+      |-- Properties:
+      |   +-- AcadModelSpace ModelSpace {get}
+      |   +-- AcadPaperSpace PaperSpace {get}
+      |   +-- AcadBlocks Blocks {get}
+      |   +-- AcadGroups Groups {get}
+      |   +-- AcadDimStyles DimStyles {get}
+      |   +-- AcadLayers Layers {get}
+      |   +-- AcadLineTypes Linetypes {get}
+      |   +-- AcadDictionaries Dictionaries {get}
+      |   +-- AcadRegisteredApplications RegisteredApplications {get}
+      |   +-- AcadTextStyles TextStyles {get}
+      |   +-- AcadUCSs UserCoordinateSystems {get}
+      |   +-- AcadViews Views {get}
+      |   +-- AcadViewports Viewports {get}
+      |   +-- Double ElevationModelSpace {get; set}
+      |   +-- Double ElevationPaperSpace {get; set}
+      |   +-- Object Limits {get; set}
+      |   +-- AcadLayouts Layouts {get}
+      |   +-- AcadPlotConfigurations PlotConfigurations {get}
+      |   +-- AcadDatabasePreferences Preferences {get}
+      |   +-- AcadSummaryInfo SummaryInfo {get}
+      |   +-- AcadSectionManager SectionManager {get}
+      |   +-- AcadMaterials Materials {get}
+      |   +-- AcadPlot Plot {get}
+      |   +-- AcadLayer ActiveLayer {get; set}
+      |   +-- AcadLineType ActiveLinetype {get; set}
+      |   +-- AcadDimStyle ActiveDimStyle {get; set}
+      |   +-- AcadTextStyle ActiveTextStyle {get; set}
+      |   +-- AcadUCS ActiveUCS {get; set}
+      |   +-- AcadViewport ActiveViewport {get; set}
+      |   +-- AcadPViewport ActivePViewport {get; set}
+      |   +-- AcActiveSpace ActiveSpace {get; set}
+      |   +-- AcadSelectionSets SelectionSets {get}
+      |   +-- AcadSelectionSet ActiveSelectionSet {get}
+      |   +-- String FullName {get}
+      |   +-- String Name {get}
+      |   +-- String Path {get}
+      |   +-- Boolean ObjectSnapMode {get; set}
+      |   +-- Boolean ReadOnly {get}
+      |   +-- Boolean Saved {get}
+      |   +-- Boolean MSpace {get; set}
+      |   +-- AcadUtility Utility {get}
+      |   +-- AcadSelectionSet PickfirstSelectionSet {get}
+      |   +-- Boolean Active {get}
+      |   +-- AcWindowState WindowState {get; set}
+      |   +-- Int32 Width {get; set}
+      |   +-- Int32 Height {get; set}
+      |   +-- AcadLayout ActiveLayout {get; set}
+      |   +-- Int64 HWND {get}
+      |   +-- String WindowTitle {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadDatabase Database {get}
+      |   +-- AcadMaterial ActiveMaterial {get; set}
+      |
+      +-- Methods:
+          +-- public Void remove_BeginDoubleClick(_DAcadDocumentEvents_BeginDoubleClickEventHandler A_1)
+          +-- public Void add_ObjectAdded(_DAcadDocumentEvents_ObjectAddedEventHandler A_1)
+          +-- public Void remove_ObjectAdded(_DAcadDocumentEvents_ObjectAddedEventHandler A_1)
+          +-- public Void add_ObjectErased(_DAcadDocumentEvents_ObjectErasedEventHandler A_1)
+          +-- public Void remove_ObjectErased(_DAcadDocumentEvents_ObjectErasedEventHandler A_1)
+          +-- public Void add_ObjectModified(_DAcadDocumentEvents_ObjectModifiedEventHandler A_1)
+          +-- public Void remove_ObjectModified(_DAcadDocumentEvents_ObjectModifiedEventHandler A_1)
+          +-- public Void add_BeginPlot(_DAcadDocumentEvents_BeginPlotEventHandler A_1)
+          +-- public Void remove_BeginPlot(_DAcadDocumentEvents_BeginPlotEventHandler A_1)
+          +-- public Void add_EndPlot(_DAcadDocumentEvents_EndPlotEventHandler A_1)
+          +-- public Void remove_EndPlot(_DAcadDocumentEvents_EndPlotEventHandler A_1)
+          +-- public Void add_WindowMovedOrResized(_DAcadDocumentEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void remove_WindowMovedOrResized(_DAcadDocumentEvents_WindowMovedOrResizedEventHandler A_1)
+          +-- public Void add_LayoutSwitched(_DAcadDocumentEvents_LayoutSwitchedEventHandler A_1)
+          +-- public Void remove_LayoutSwitched(_DAcadDocumentEvents_LayoutSwitchedEventHandler A_1)
+          +-- public Void add_WindowChanged(_DAcadDocumentEvents_WindowChangedEventHandler A_1)
+          +-- public Void remove_WindowChanged(_DAcadDocumentEvents_WindowChangedEventHandler A_1)
+          +-- public Void add_BeginClose(_DAcadDocumentEvents_BeginCloseEventHandler A_1)
+          +-- public Void remove_BeginClose(_DAcadDocumentEvents_BeginCloseEventHandler A_1)
+          +-- public Void add_BeginDocClose(_DAcadDocumentEvents_BeginDocCloseEventHandler A_1)
+          +-- public Void remove_BeginDocClose(_DAcadDocumentEvents_BeginDocCloseEventHandler A_1)
+          +-- public Void SaveAs(String FullFileName, Object SaveAsType, Object vSecurityParams)
+          +-- public Void Wblock(String FileName, AcadSelectionSet SelectionSet)
+          +-- public Void PurgeAll()
+          +-- public Object GetVariable(String Name)
+          +-- public Void SetVariable(String Name, Object Value)
+          +-- public Void LoadShapeFile(String FullName)
+          +-- public Void Regen(AcRegenType WhichViewports)
+          +-- public Void Activate()
+          +-- public Void Close(Object SaveChanges, Object FileName)
+          +-- public Void SendCommand(String Command)
+          +-- public Void StartUndoMark()
+          +-- public Void EndUndoMark()
+          +-- public Void PostCommand(String Command)
+          +-- public Void add_BeginSave(_DAcadDocumentEvents_BeginSaveEventHandler A_1)
+          +-- public Void remove_BeginSave(_DAcadDocumentEvents_BeginSaveEventHandler A_1)
+          +-- public Void add_EndSave(_DAcadDocumentEvents_EndSaveEventHandler A_1)
+          +-- public Void remove_EndSave(_DAcadDocumentEvents_EndSaveEventHandler A_1)
+          +-- public Void add_BeginCommand(_DAcadDocumentEvents_BeginCommandEventHandler A_1)
+          +-- public Void remove_BeginCommand(_DAcadDocumentEvents_BeginCommandEventHandler A_1)
+          +-- public Void add_EndCommand(_DAcadDocumentEvents_EndCommandEventHandler A_1)
+          +-- public Void remove_EndCommand(_DAcadDocumentEvents_EndCommandEventHandler A_1)
+          +-- public Void add_BeginLisp(_DAcadDocumentEvents_BeginLispEventHandler A_1)
+          +-- public Void remove_BeginLisp(_DAcadDocumentEvents_BeginLispEventHandler A_1)
+          +-- public Void add_EndLisp(_DAcadDocumentEvents_EndLispEventHandler A_1)
+          +-- public Void remove_EndLisp(_DAcadDocumentEvents_EndLispEventHandler A_1)
+          +-- public Void add_LispCancelled(_DAcadDocumentEvents_LispCancelledEventHandler A_1)
+          +-- public Void remove_LispCancelled(_DAcadDocumentEvents_LispCancelledEventHandler A_1)
+          +-- public Void add_SelectionChanged(_DAcadDocumentEvents_SelectionChangedEventHandler A_1)
+          +-- public Void remove_SelectionChanged(_DAcadDocumentEvents_SelectionChangedEventHandler A_1)
+          +-- public Void add_Activate(_DAcadDocumentEvents_ActivateEventHandler A_1)
+          +-- public Void remove_Activate(_DAcadDocumentEvents_ActivateEventHandler A_1)
+          +-- public Void add_Deactivate(_DAcadDocumentEvents_DeactivateEventHandler A_1)
+          +-- public Void remove_Deactivate(_DAcadDocumentEvents_DeactivateEventHandler A_1)
+          +-- public Void add_BeginRightClick(_DAcadDocumentEvents_BeginRightClickEventHandler A_1)
+          +-- public Void remove_BeginRightClick(_DAcadDocumentEvents_BeginRightClickEventHandler A_1)
+          +-- public Void add_BeginShortcutMenuDefault(_DAcadDocumentEvents_BeginShortcutMenuDefaultEventHandler A_1)
+          +-- public Void remove_BeginShortcutMenuDefault(_DAcadDocumentEvents_BeginShortcutMenuDefaultEventHandler A_1)
+          +-- public Void add_BeginShortcutMenuEdit(_DAcadDocumentEvents_BeginShortcutMenuEditEventHandler A_1)
+          +-- public Void remove_BeginShortcutMenuEdit(_DAcadDocumentEvents_BeginShortcutMenuEditEventHandler A_1)
+          +-- public Void add_BeginShortcutMenuCommand(_DAcadDocumentEvents_BeginShortcutMenuCommandEventHandler A_1)
+          +-- public Void remove_BeginShortcutMenuCommand(_DAcadDocumentEvents_BeginShortcutMenuCommandEventHandler A_1)
+          +-- public Void add_BeginShortcutMenuGrip(_DAcadDocumentEvents_BeginShortcutMenuGripEventHandler A_1)
+          +-- public Void remove_BeginShortcutMenuGrip(_DAcadDocumentEvents_BeginShortcutMenuGripEventHandler A_1)
+          +-- public Void add_BeginShortcutMenuOsnap(_DAcadDocumentEvents_BeginShortcutMenuOsnapEventHandler A_1)
+          +-- public Void remove_BeginShortcutMenuOsnap(_DAcadDocumentEvents_BeginShortcutMenuOsnapEventHandler A_1)
+          +-- public Void add_EndShortcutMenu(_DAcadDocumentEvents_EndShortcutMenuEventHandler A_1)
+          +-- public Void remove_EndShortcutMenu(_DAcadDocumentEvents_EndShortcutMenuEventHandler A_1)
+          +-- public Void add_BeginDoubleClick(_DAcadDocumentEvents_BeginDoubleClickEventHandler A_1)
+          +-- public Object CopyObjects(Object Objects, Object Owner, Object& IdPairs)
+          +-- public Object HandleToObject(String Handle)
+          +-- public Object ObjectIdToObject(Int64 ObjectID)
+          +-- public AcadDocument Open(String FullName, Object Password)
+          +-- public Void AuditInfo(Boolean FixErr)
+          +-- public Object Import(String FileName, Object InsertionPoint, Double ScaleFactor)
+          +-- public Void Export(String FileName, String Extension, AcadSelectionSet SelectionSet)
+          +-- public AcadDocument New(String TemplateFileName)
+          +-- public Void Save()
+
+  +-- interface AcadDocuments
+      Implements: IAcadDocuments, IEnumerable
+
+  +-- class AcadDocumentsClass
+      : __ComObject
+      Implements: IAcadDocuments, IEnumerable, AcadDocuments
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- IAcadApplication Application {get}
+      |
+      +-- Methods:
+          +-- public AcadDocument Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+          +-- public AcadDocument Add(Object TemplateName)
+          +-- public AcadDocument Open(String Name, Object ReadOnly, Object Password)
+          +-- public Void Close()
+
+  +-- interface AcadMenuBar
+      Implements: IAcadMenuBar, IEnumerable
+
+  +-- class AcadMenuBarClass
+      : __ComObject
+      Implements: IAcadMenuBar, IEnumerable, AcadMenuBar
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- IAcadApplication Parent {get}
+      |
+      +-- Methods:
+          +-- public AcadPopupMenu Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+
+  +-- interface AcadMenuGroup
+      Implements: IAcadMenuGroup
+
+  +-- class AcadMenuGroupClass
+      : __ComObject
+      Implements: IAcadMenuGroup, AcadMenuGroup
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadMenuGroups Parent {get}
+      |   +-- String Name {get}
+      |   +-- AcMenuGroupType Type {get}
+      |   +-- String MenuFileName {get}
+      |   +-- AcadPopupMenus Menus {get}
+      |   +-- AcadToolbars Toolbars {get}
+      |
+      +-- Methods:
+          +-- public Void Unload()
+          +-- public Void Save(AcMenuFileType MenuFileType)
+          +-- public Void SaveAs(String MenuFileName, AcMenuFileType MenuFileType)
+
+  +-- interface AcadMenuGroups
+      Implements: IAcadMenuGroups, IEnumerable
+
+  +-- class AcadMenuGroupsClass
+      : __ComObject
+      Implements: IAcadMenuGroups, IEnumerable, AcadMenuGroups
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- IAcadApplication Parent {get}
+      |
+      +-- Methods:
+          +-- public AcadMenuGroup Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+          +-- public AcadMenuGroup Load(String MenuFileName, Object BaseMenu)
+
+  +-- interface AcadPlot
+      Implements: IAcadPlot
+
+  +-- class AcadPlotClass
+      : __ComObject
+      Implements: IAcadPlot, AcadPlot
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- Boolean QuietErrorMode {get; set}
+      |   +-- Int32 NumberOfCopies {get; set}
+      |   +-- Boolean BatchPlotProgress {get; set}
+      |
+      +-- Methods:
+          +-- public Void DisplayPlotPreview(AcPreviewMode Preview)
+          +-- public Boolean PlotToFile(String plotFile, Object plotConfig)
+          +-- public Boolean PlotToDevice(Object plotConfig)
+          +-- public Void SetLayoutsToPlot(Object layoutList)
+          +-- public Void StartBatchMode(Int32 entryCount)
+
+  +-- interface AcadPopupMenu
+      Implements: IAcadPopupMenu, IEnumerable
+
+  +-- class AcadPopupMenuClass
+      : __ComObject
+      Implements: IAcadPopupMenu, IEnumerable, AcadPopupMenu
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- Object Parent {get}
+      |   +-- String Name {get; set}
+      |   +-- String NameNoMnemonic {get}
+      |   +-- Boolean ShortcutMenu {get}
+      |   +-- Boolean OnMenuBar {get}
+      |   +-- String TagString {get}
+      |
+      +-- Methods:
+          +-- public AcadPopupMenuItem Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+          +-- public AcadPopupMenuItem AddMenuItem(Object Index, String Label, String Macro)
+          +-- public AcadPopupMenu AddSubMenu(Object Index, String Label)
+          +-- public AcadPopupMenuItem AddSeparator(Object Index)
+          +-- public Void InsertInMenuBar(Object Index)
+          +-- public Void RemoveFromMenuBar()
+
+  +-- interface AcadPopupMenuItem
+      Implements: IAcadPopupMenuItem
+
+  +-- class AcadPopupMenuItemClass
+      : __ComObject
+      Implements: IAcadPopupMenuItem, AcadPopupMenuItem
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadPopupMenu Parent {get}
+      |   +-- String Label {get; set}
+      |   +-- String TagString {get; set}
+      |   +-- Boolean Enable {get; set}
+      |   +-- Boolean Check {get; set}
+      |   +-- AcMenuItemType Type {get}
+      |   +-- AcadPopupMenu SubMenu {get}
+      |   +-- String Macro {get; set}
+      |   +-- Int32 Index {get}
+      |   +-- String Caption {get}
+      |   +-- String HelpString {get; set}
+      |   +-- Int32 EndSubMenuLevel {get; set}
+      |
+      +-- Methods:
+          +-- public Void Delete()
+
+  +-- interface AcadPopupMenus
+      Implements: IAcadPopupMenus, IEnumerable
+
+  +-- class AcadPopupMenusClass
+      : __ComObject
+      Implements: IAcadPopupMenus, IEnumerable, AcadPopupMenus
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadMenuGroup Parent {get}
+      |
+      +-- Methods:
+          +-- public AcadPopupMenu Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+          +-- public AcadPopupMenu Add(String MenuName)
+          +-- public Void InsertMenuInMenuBar(String MenuName, Object Index)
+          +-- public Void RemoveMenuFromMenuBar(Object Index)
+
+  +-- interface AcadPreferences
+      Implements: IAcadPreferences
+
+  +-- class AcadPreferencesClass
+      : __ComObject
+      Implements: IAcadPreferences, AcadPreferences
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadPreferencesFiles Files {get}
+      |   +-- AcadPreferencesDisplay Display {get}
+      |   +-- AcadPreferencesOpenSave OpenSave {get}
+      |   +-- AcadPreferencesOutput Output {get}
+      |   +-- AcadPreferencesSystem System {get}
+      |   +-- AcadPreferencesUser User {get}
+      |   +-- AcadPreferencesDrafting Drafting {get}
+      |   +-- AcadPreferencesSelection Selection {get}
+      |   +-- AcadPreferencesProfiles Profiles {get}
+
+  +-- interface AcadPreferencesDisplay
+      Implements: IAcadPreferencesDisplay
+
+  +-- class AcadPreferencesDisplayClass
+      : __ComObject
+      Implements: IAcadPreferencesDisplay, AcadPreferencesDisplay
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- Boolean LayoutDisplayMargins {get; set}
+      |   +-- Boolean LayoutDisplayPaper {get; set}
+      |   +-- Boolean LayoutDisplayPaperShadow {get; set}
+      |   +-- Boolean LayoutShowPlotSetup {get; set}
+      |   +-- Boolean LayoutCreateViewport {get; set}
+      |   +-- Boolean DisplayScrollBars {get; set}
+      |   +-- Boolean DisplayScreenMenu {get; set}
+      |   +-- Int32 CursorSize {get; set}
+      |   +-- Int32 DockedVisibleLines {get; set}
+      |   +-- Boolean ShowRasterImage {get; set}
+      |   +-- UInt32 GraphicsWinModelBackgrndColor {get; set}
+      |   +-- UInt32 ModelCrosshairColor {get; set}
+      |   +-- UInt32 GraphicsWinLayoutBackgrndColor {get; set}
+      |   +-- UInt32 TextWinBackgrndColor {get; set}
+      |   +-- UInt32 TextWinTextColor {get; set}
+      |   +-- UInt32 LayoutCrosshairColor {get; set}
+      |   +-- UInt32 AutoTrackingVecColor {get; set}
+      |   +-- String TextFont {get; set}
+      |   +-- AcTextFontStyle TextFontStyle {get; set}
+      |   +-- Int32 TextFontSize {get; set}
+      |   +-- Int32 HistoryLines {get; set}
+      |   +-- Boolean MaxAutoCADWindow {get; set}
+      |   +-- Boolean DisplayLayoutTabs {get; set}
+      |   +-- Boolean ImageFrameHighlight {get; set}
+      |   +-- Boolean TrueColorImages {get; set}
+      |   +-- Int32 XRefFadeIntensity {get; set}
+
+  +-- interface AcadPreferencesDrafting
+      Implements: IAcadPreferencesDrafting
+
+  +-- class AcadPreferencesDraftingClass
+      : __ComObject
+      Implements: IAcadPreferencesDrafting, AcadPreferencesDrafting
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- Boolean AutoSnapMarker {get; set}
+      |   +-- Boolean AutoSnapMagnet {get; set}
+      |   +-- Boolean AutoSnapTooltip {get; set}
+      |   +-- Boolean AutoSnapAperture {get; set}
+      |   +-- Int32 AutoSnapApertureSize {get; set}
+      |   +-- AcColor AutoSnapMarkerColor {get; set}
+      |   +-- Int32 AutoSnapMarkerSize {get; set}
+      |   +-- Boolean PolarTrackingVector {get; set}
+      |   +-- Boolean FullScreenTrackingVector {get; set}
+      |   +-- Boolean AutoTrackTooltip {get; set}
+      |   +-- AcAlignmentPointAcquisition AlignmentPointAcquisition {get; set}
+
+  +-- interface AcadPreferencesFiles
+      Implements: IAcadPreferencesFiles
+
+  +-- class AcadPreferencesFilesClass
+      : __ComObject
+      Implements: IAcadPreferencesFiles, AcadPreferencesFiles
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- String SupportPath {get; set}
+      |   +-- String DriversPath {get; set}
+      |   +-- String MenuFile {get; set}
+      |   +-- String EnterpriseMenuFile {get; set}
+      |   +-- String CustomIconPath {get; set}
+      |   +-- String HelpFilePath {get; set}
+      |   +-- String DefaultInternetURL {get; set}
+      |   +-- String ConfigFile {get}
+      |   +-- String LicenseServer {get}
+      |   +-- String TextEditor {get; set}
+      |   +-- String MainDictionary {get; set}
+      |   +-- String CustomDictionary {get; set}
+      |   +-- String AltFontFile {get; set}
+      |   +-- String FontFileMap {get; set}
+      |   +-- String PrintFile {get; set}
+      |   +-- String PrintSpoolExecutable {get; set}
+      |   +-- String PostScriptPrologFile {get; set}
+      |   +-- String PrintSpoolerPath {get; set}
+      |   +-- String AutoSavePath {get; set}
+      |   +-- String TemplateDwgPath {get; set}
+      |   +-- String LogFilePath {get; set}
+      |   +-- String TempFilePath {get; set}
+      |   +-- String TempXrefPath {get; set}
+      |   +-- String TextureMapPath {get; set}
+      |   +-- String AltTabletMenuFile {get; set}
+      |   +-- String PrinterConfigPath {get; set}
+      |   +-- String PrinterDescPath {get; set}
+      |   +-- String PrinterStyleSheetPath {get; set}
+      |   +-- String WorkspacePath {get; set}
+      |   +-- String ObjectARXPath {get; set}
+      |   +-- String ColorBookPath {get; set}
+      |   +-- String ToolPalettePath {get; set}
+      |   +-- String QNewTemplateFile {get; set}
+      |   +-- String PlotLogFilePath {get; set}
+      |   +-- String PageSetupOverridesTemplateFile {get; set}
+      |   +-- String ActiveInvProject {get; set}
+      |
+      +-- Methods:
+          +-- public Void SetProjectFilePath(String ProjectName, String ProjectFilePath)
+          +-- public String GetProjectFilePath(String ProjectName)
+
+  +-- interface AcadPreferencesOpenSave
+      Implements: IAcadPreferencesOpenSave
+
+  +-- class AcadPreferencesOpenSaveClass
+      : __ComObject
+      Implements: IAcadPreferencesOpenSave, AcadPreferencesOpenSave
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- Boolean SavePreviewThumbnail {get; set}
+      |   +-- Int32 IncrementalSavePercent {get; set}
+      |   +-- Int32 AutoSaveInterval {get; set}
+      |   +-- Boolean CreateBackup {get; set}
+      |   +-- Boolean FullCRCValidation {get; set}
+      |   +-- Boolean LogFileOn {get; set}
+      |   +-- String TempFileExtension {get; set}
+      |   +-- AcXRefDemandLoad XrefDemandLoad {get; set}
+      |   +-- AcARXDemandLoad DemandLoadARXApp {get; set}
+      |   +-- AcProxyImage ProxyImage {get; set}
+      |   +-- Boolean ShowProxyDialogBox {get; set}
+      |   +-- Boolean AutoAudit {get; set}
+      |   +-- AcSaveAsType SaveAsType {get; set}
+      |   +-- Int32 MRUNumber {get}
+
+  +-- interface AcadPreferencesOutput
+      Implements: IAcadPreferencesOutput
+
+  +-- class AcadPreferencesOutputClass
+      : __ComObject
+      Implements: IAcadPreferencesOutput, AcadPreferencesOutput
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- String DefaultOutputDevice {get; set}
+      |   +-- AcPrinterSpoolAlert PrinterSpoolAlert {get; set}
+      |   +-- Boolean PrinterPaperSizeAlert {get; set}
+      |   +-- Boolean PlotLegacy {get; set}
+      |   +-- AcOleQuality OLEQuality {get; set}
+      |   +-- Boolean UseLastPlotSettings {get; set}
+      |   +-- AcPlotPolicy PlotPolicy {get; set}
+      |   +-- String DefaultPlotStyleTable {get; set}
+      |   +-- String DefaultPlotStyleForObjects {get; set}
+      |   +-- String DefaultPlotStyleForLayer {get; set}
+      |   +-- Boolean ContinuousPlotLog {get; set}
+      |   +-- Boolean AutomaticPlotLog {get; set}
+      |   +-- String DefaultPlotToFilePath {get; set}
+
+  +-- interface AcadPreferencesProfiles
+      Implements: IAcadPreferencesProfiles
+
+  +-- class AcadPreferencesProfilesClass
+      : __ComObject
+      Implements: IAcadPreferencesProfiles, AcadPreferencesProfiles
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- String ActiveProfile {get; set}
+      |
+      +-- Methods:
+          +-- public Void ImportProfile(String ProfileName, String RegFile, Boolean IncludePathInfo)
+          +-- public Void ExportProfile(String ProfileName, String RegFile)
+          +-- public Void DeleteProfile(String ProfileName)
+          +-- public Void ResetProfile(String Profile)
+          +-- public Void RenameProfile(String origProfileName, String newProfileName)
+          +-- public Void CopyProfile(String oldProfileName, String newProfileName)
+          +-- public Void GetAllProfileNames(Object& pNames)
+
+  +-- interface AcadPreferencesSelection
+      Implements: IAcadPreferencesSelection
+
+  +-- class AcadPreferencesSelectionClass
+      : __ComObject
+      Implements: IAcadPreferencesSelection, AcadPreferencesSelection
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- Boolean PickFirst {get; set}
+      |   +-- Boolean PickAdd {get; set}
+      |   +-- Boolean PickDrag {get; set}
+      |   +-- Boolean PickAuto {get; set}
+      |   +-- Int32 PickBoxSize {get; set}
+      |   +-- Boolean DisplayGrips {get; set}
+      |   +-- Boolean DisplayGripsWithinBlocks {get; set}
+      |   +-- AcColor GripColorSelected {get; set}
+      |   +-- AcColor GripColorUnselected {get; set}
+      |   +-- Int32 GripSize {get; set}
+      |   +-- Boolean PickGroup {get; set}
+
+  +-- interface AcadPreferencesSystem
+      Implements: IAcadPreferencesSystem
+
+  +-- class AcadPreferencesSystemClass
+      : __ComObject
+      Implements: IAcadPreferencesSystem, AcadPreferencesSystem
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- Boolean SingleDocumentMode {get; set}
+      |   +-- Boolean DisplayOLEScale {get; set}
+      |   +-- Boolean StoreSQLIndex {get; set}
+      |   +-- Boolean TablesReadOnly {get; set}
+      |   +-- Boolean EnableStartupDialog {get; set}
+      |   +-- Boolean BeepOnError {get; set}
+      |   +-- Boolean ShowWarningMessages {get; set}
+      |   +-- Boolean LoadAcadLspInAllDocuments {get; set}
+
+  +-- interface AcadPreferencesUser
+      Implements: IAcadPreferencesUser
+
+  +-- class AcadPreferencesUserClass
+      : __ComObject
+      Implements: IAcadPreferencesUser, AcadPreferencesUser
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcKeyboardAccelerator KeyboardAccelerator {get; set}
+      |   +-- AcKeyboardPriority KeyboardPriority {get; set}
+      |   +-- Boolean HyperlinkDisplayCursor {get; set}
+      |   +-- AcInsertUnits ADCInsertUnitsDefaultSource {get; set}
+      |   +-- AcInsertUnits ADCInsertUnitsDefaultTarget {get; set}
+      |   +-- Boolean ShortCutMenuDisplay {get; set}
+      |   +-- AcDrawingAreaSCMDefault SCMDefaultMode {get; set}
+      |   +-- AcDrawingAreaSCMEdit SCMEditMode {get; set}
+      |   +-- AcDrawingAreaSCMCommand SCMCommandMode {get; set}
+      |   +-- Boolean SCMTimeMode {get; set}
+      |   +-- Int32 SCMTimeValue {get; set}
+
+  +-- interface AcadSelectionSet
+      Implements: IAcadSelectionSet, IEnumerable
+
+  +-- class AcadSelectionSetClass
+      : __ComObject
+      Implements: IAcadSelectionSet, IEnumerable, AcadSelectionSet
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- String Name {get}
+      |   +-- IAcadApplication Application {get}
+      |
+      +-- Methods:
+          +-- public AcadEntity Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+          +-- public Void Highlight(Boolean bFlag)
+          +-- public Void Erase()
+          +-- public Void Update()
+          +-- public Void AddItems(Object pSelSet)
+          +-- public Void RemoveItems(Object Objects)
+          +-- public Void Clear()
+          +-- public Void Select(AcSelect Mode, Object Point1, Object Point2, Object FilterType, Object FilterData)
+          +-- public Void SelectAtPoint(Object Point, Object FilterType, Object FilterData)
+          +-- public Void SelectByPolygon(AcSelect Mode, Object PointsList, Object FilterType, Object FilterData)
+          +-- public Void SelectOnScreen(Object FilterType, Object FilterData)
+          +-- public Void Delete()
+
+  +-- interface AcadSelectionSets
+      Implements: IAcadSelectionSets, IEnumerable
+
+  +-- class AcadSelectionSetsClass
+      : __ComObject
+      Implements: IAcadSelectionSets, IEnumerable, AcadSelectionSets
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- IAcadApplication Application {get}
+      |
+      +-- Methods:
+          +-- public AcadSelectionSet Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+          +-- public AcadSelectionSet Add(String Name)
+
+  +-- interface AcadState
+      Implements: IAcadState
+
+  +-- class AcadStateClass
+      : __ComObject
+      Implements: IAcadState, AcadState
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- Boolean IsQuiescent {get}
+
+  +-- interface AcadToolbar
+      Implements: IAcadToolbar, IEnumerable
+
+  +-- class AcadToolbarClass
+      : __ComObject
+      Implements: IAcadToolbar, IEnumerable, AcadToolbar
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- Object Parent {get}
+      |   +-- String Name {get; set}
+      |   +-- Boolean Visible {get; set}
+      |   +-- AcToolbarDockStatus DockStatus {get}
+      |   +-- Boolean LargeButtons {get}
+      |   +-- Int32 left {get; set}
+      |   +-- Int32 top {get; set}
+      |   +-- Int32 Width {get}
+      |   +-- Int32 Height {get}
+      |   +-- Int32 FloatingRows {get; set}
+      |   +-- String HelpString {get; set}
+      |   +-- String TagString {get}
+      |
+      +-- Methods:
+          +-- public AcadToolbarItem Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+          +-- public AcadToolbarItem AddToolbarButton(Object Index, String Name, String HelpString, String Macro, Object FlyoutButton)
+          +-- public AcadToolbarItem AddSeparator(Object Index)
+          +-- public Void Dock(AcToolbarDockStatus Side)
+          +-- public Void Float(Int32 top, Int32 left, Int32 NumberFloatRows)
+          +-- public Void Delete()
+
+  +-- interface AcadToolbarItem
+      Implements: IAcadToolbarItem
+
+  +-- class AcadToolbarItemClass
+      : __ComObject
+      Implements: IAcadToolbarItem, AcadToolbarItem
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadToolbar Parent {get}
+      |   +-- String Name {get; set}
+      |   +-- String TagString {get; set}
+      |   +-- AcToolbarItemType Type {get}
+      |   +-- AcadToolbar Flyout {get}
+      |   +-- String Macro {get; set}
+      |   +-- Int32 Index {get}
+      |   +-- String HelpString {get; set}
+      |   +-- String CommandDisplayName {get; set}
+      |
+      +-- Methods:
+          +-- public Void GetBitmaps(String& SmallIconName, String& LargeIconName)
+          +-- public Void SetBitmaps(String SmallIconName, String LargeIconName)
+          +-- public Void AttachToolbarToFlyout(String MenuGroupName, String ToolbarName)
+          +-- public Void Delete()
+
+  +-- interface AcadToolbars
+      Implements: IAcadToolbars, IEnumerable
+
+  +-- class AcadToolbarsClass
+      : __ComObject
+      Implements: IAcadToolbars, IEnumerable, AcadToolbars
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadMenuGroup Parent {get}
+      |   +-- Boolean LargeButtons {get; set}
+      |
+      +-- Methods:
+          +-- public AcadToolbar Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+          +-- public AcadToolbar Add(String ToolbarName)
+
+  +-- interface AcadUtility
+      Implements: IAcadUtility
+
+  +-- class AcadUtilityClass
+      : __ComObject
+      Implements: IAcadUtility, AcadUtility
+      |
+      +-- Methods:
+          +-- public Double AngleToReal(String Angle, AcAngleUnits Unit)
+          +-- public String AngleToString(Double Angle, AcAngleUnits Unit, Int32 Precision)
+          +-- public Double DistanceToReal(String Distance, AcUnits Unit)
+          +-- public String RealToString(Double Value, AcUnits Unit, Int32 Precision)
+          +-- public Object TranslateCoordinates(Object Point, AcCoordinateSystem FromCoordSystem, AcCoordinateSystem ToCoordSystem, Int32 Displacement, Object OCSNormal)
+          +-- public Void InitializeUserInput(Int32 Bits, Object KeyWordList)
+          +-- public Int32 GetInteger(Object Prompt)
+          +-- public Double GetReal(Object Prompt)
+          +-- public String GetInput()
+          +-- public String GetKeyword(Object Prompt)
+          +-- public String GetString(Int32 HasSpaces, Object Prompt)
+          +-- public Double GetAngle(Object Point, Object Prompt)
+          +-- public Double AngleFromXAxis(Object StartPoint, Object EndPoint)
+          +-- public Object GetCorner(Object Point, Object Prompt)
+          +-- public Double GetDistance(Object Point, Object Prompt)
+          +-- public Double GetOrientation(Object Point, Object Prompt)
+          +-- public Object GetPoint(Object Point, Object Prompt)
+          +-- public Object PolarPoint(Object Point, Double Angle, Double Distance)
+          +-- public Void CreateTypedArray(Object& varArr, Int32 Type, Object[] inArgs)
+          +-- public Void GetEntity(Object& Object, Object& PickedPoint, Object Prompt)
+          +-- public Void Prompt(String Message)
+          +-- public Void GetSubEntity(Object& Object, Object& PickedPoint, Object& TransMatrix, Object& ContextData, Object Prompt)
+          +-- public Boolean IsURL(String URL)
+          +-- public Void GetRemoteFile(String URL, String& LocalFile, Boolean IgnoreCache)
+          +-- public Void PutRemoteFile(String URL, String LocalFile)
+          +-- public Boolean IsRemoteFile(String LocalFile, String& URL)
+          +-- public Boolean LaunchBrowserDialog(String& SelectedURL, String DialogTitle, String OpenButtonCaption, String StartPageURL, String RegistryRootKey, Boolean OpenButtonAlwaysEnabled)
+          +-- public Void SendModelessOperationStart(String Context)
+          +-- public Void SendModelessOperationEnded(String Context)
+          +-- public String GetObjectIdString(Object Object, Boolean bHex)
+
+  +-- interface IAcadApplication
+      |
+      |-- Properties:
+      |   +-- Boolean Visible {get; set}
+      |   +-- String Name {get}
+      |   +-- String Caption {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadDocument ActiveDocument {get; set}
+      |   +-- String FullName {get}
+      |   +-- Int32 Height {get; set}
+      |   +-- Int32 WindowLeft {get; set}
+      |   +-- String Path {get}
+      |   +-- Int32 LocaleId {get}
+      |   +-- Int32 WindowTop {get; set}
+      |   +-- String Version {get}
+      |   +-- Int32 Width {get; set}
+      |   +-- AcadPreferences Preferences {get}
+      |   +-- Boolean StatusId {get}
+      |   +-- Object VBE {get}
+      |   +-- AcadMenuGroups MenuGroups {get}
+      |   +-- AcadMenuBar MenuBar {get}
+      |   +-- AcadDocuments Documents {get}
+      |   +-- AcWindowState WindowState {get; set}
+      |   +-- Int64 HWND {get}
+      |
+      +-- Methods:
+          +-- public Object ListArx()
+          +-- public Void LoadArx(String Name)
+          +-- public Object GetInterfaceObject(String ProgID)
+          +-- public Void UnloadArx(String Name)
+          +-- public Void Update()
+          +-- public Void Quit()
+          +-- public Void Zoom(Int32 Type, Object& vParams)
+          +-- public Void LoadDVB(String Name)
+          +-- public Void UnloadDVB(String Name)
+          +-- public Void Eval(String Expression)
+          +-- public Void RunMacro(String MacroPath)
+          +-- public Void ZoomExtents()
+          +-- public Void ZoomAll()
+          +-- public Void ZoomCenter(Object Center, Double Magnify)
+          +-- public Void ZoomScaled(Double Scale, AcZoomScaleType ScaleType)
+          +-- public Void ZoomWindow(Object LowerLeft, Object UpperRight)
+          +-- public Void ZoomPickWindow()
+          +-- public AcadState GetAcadState()
+          +-- public Void ZoomPrevious()
+
+  +-- interface IAcadDocument
+      Implements: IAcadDatabase
+      |
+      |-- Properties:
+      |   +-- AcadModelSpace ModelSpace {get}
+      |   +-- AcadPaperSpace PaperSpace {get}
+      |   +-- AcadBlocks Blocks {get}
+      |   +-- AcadGroups Groups {get}
+      |   +-- AcadDimStyles DimStyles {get}
+      |   +-- AcadLayers Layers {get}
+      |   +-- AcadLineTypes Linetypes {get}
+      |   +-- AcadDictionaries Dictionaries {get}
+      |   +-- AcadRegisteredApplications RegisteredApplications {get}
+      |   +-- AcadTextStyles TextStyles {get}
+      |   +-- AcadUCSs UserCoordinateSystems {get}
+      |   +-- AcadViews Views {get}
+      |   +-- AcadViewports Viewports {get}
+      |   +-- Double ElevationModelSpace {get; set}
+      |   +-- Double ElevationPaperSpace {get; set}
+      |   +-- Object Limits {get; set}
+      |   +-- AcadLayouts Layouts {get}
+      |   +-- AcadPlotConfigurations PlotConfigurations {get}
+      |   +-- AcadDatabasePreferences Preferences {get}
+      |   +-- AcadSummaryInfo SummaryInfo {get}
+      |   +-- AcadSectionManager SectionManager {get}
+      |   +-- AcadMaterials Materials {get}
+      |   +-- AcadPlot Plot {get}
+      |   +-- AcadLayer ActiveLayer {get; set}
+      |   +-- AcadLineType ActiveLinetype {get; set}
+      |   +-- AcadDimStyle ActiveDimStyle {get; set}
+      |   +-- AcadTextStyle ActiveTextStyle {get; set}
+      |   +-- AcadUCS ActiveUCS {get; set}
+      |   +-- AcadViewport ActiveViewport {get; set}
+      |   +-- AcadPViewport ActivePViewport {get; set}
+      |   +-- AcActiveSpace ActiveSpace {get; set}
+      |   +-- AcadSelectionSets SelectionSets {get}
+      |   +-- AcadSelectionSet ActiveSelectionSet {get}
+      |   +-- String FullName {get}
+      |   +-- String Name {get}
+      |   +-- String Path {get}
+      |   +-- Boolean ObjectSnapMode {get; set}
+      |   +-- Boolean ReadOnly {get}
+      |   +-- Boolean Saved {get}
+      |   +-- Boolean MSpace {get; set}
+      |   +-- AcadUtility Utility {get}
+      |   +-- AcadSelectionSet PickfirstSelectionSet {get}
+      |   +-- Boolean Active {get}
+      |   +-- AcWindowState WindowState {get; set}
+      |   +-- Int32 Width {get; set}
+      |   +-- Int32 Height {get; set}
+      |   +-- AcadLayout ActiveLayout {get; set}
+      |   +-- Int64 HWND {get}
+      |   +-- String WindowTitle {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadDatabase Database {get}
+      |   +-- AcadMaterial ActiveMaterial {get; set}
+      |
+      +-- Methods:
+          +-- public Object CopyObjects(Object Objects, Object Owner, Object& IdPairs)
+          +-- public Object HandleToObject(String Handle)
+          +-- public Object ObjectIdToObject(Int64 ObjectID)
+          +-- public AcadDocument Open(String FullName, Object Password)
+          +-- public Void AuditInfo(Boolean FixErr)
+          +-- public Object Import(String FileName, Object InsertionPoint, Double ScaleFactor)
+          +-- public Void Export(String FileName, String Extension, AcadSelectionSet SelectionSet)
+          +-- public AcadDocument New(String TemplateFileName)
+          +-- public Void Save()
+          +-- public Void SaveAs(String FullFileName, Object SaveAsType, Object vSecurityParams)
+          +-- public Void Wblock(String FileName, AcadSelectionSet SelectionSet)
+          +-- public Void PurgeAll()
+          +-- public Object GetVariable(String Name)
+          +-- public Void SetVariable(String Name, Object Value)
+          +-- public Void LoadShapeFile(String FullName)
+          +-- public Void Regen(AcRegenType WhichViewports)
+          +-- public Void Activate()
+          +-- public Void Close(Object SaveChanges, Object FileName)
+          +-- public Void SendCommand(String Command)
+          +-- public Void StartUndoMark()
+          +-- public Void EndUndoMark()
+          +-- public Void PostCommand(String Command)
+
+  +-- interface IAcadDocuments
+      Implements: IEnumerable
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- IAcadApplication Application {get}
+      |
+      +-- Methods:
+          +-- public AcadDocument Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+          +-- public AcadDocument Add(Object TemplateName)
+          +-- public AcadDocument Open(String Name, Object ReadOnly, Object Password)
+          +-- public Void Close()
+
+  +-- interface IAcadMenuBar
+      Implements: IEnumerable
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- IAcadApplication Parent {get}
+      |
+      +-- Methods:
+          +-- public AcadPopupMenu Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+
+  +-- interface IAcadMenuGroup
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadMenuGroups Parent {get}
+      |   +-- String Name {get}
+      |   +-- AcMenuGroupType Type {get}
+      |   +-- String MenuFileName {get}
+      |   +-- AcadPopupMenus Menus {get}
+      |   +-- AcadToolbars Toolbars {get}
+      |
+      +-- Methods:
+          +-- public Void Unload()
+          +-- public Void Save(AcMenuFileType MenuFileType)
+          +-- public Void SaveAs(String MenuFileName, AcMenuFileType MenuFileType)
+
+  +-- interface IAcadMenuGroups
+      Implements: IEnumerable
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- IAcadApplication Parent {get}
+      |
+      +-- Methods:
+          +-- public AcadMenuGroup Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+          +-- public AcadMenuGroup Load(String MenuFileName, Object BaseMenu)
+
+  +-- interface IAcadPlot
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- Boolean QuietErrorMode {get; set}
+      |   +-- Int32 NumberOfCopies {get; set}
+      |   +-- Boolean BatchPlotProgress {get; set}
+      |
+      +-- Methods:
+          +-- public Void DisplayPlotPreview(AcPreviewMode Preview)
+          +-- public Boolean PlotToFile(String plotFile, Object plotConfig)
+          +-- public Boolean PlotToDevice(Object plotConfig)
+          +-- public Void SetLayoutsToPlot(Object layoutList)
+          +-- public Void StartBatchMode(Int32 entryCount)
+
+  +-- interface IAcadPopupMenu
+      Implements: IEnumerable
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- Object Parent {get}
+      |   +-- String Name {get; set}
+      |   +-- String NameNoMnemonic {get}
+      |   +-- Boolean ShortcutMenu {get}
+      |   +-- Boolean OnMenuBar {get}
+      |   +-- String TagString {get}
+      |
+      +-- Methods:
+          +-- public AcadPopupMenuItem Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+          +-- public AcadPopupMenuItem AddMenuItem(Object Index, String Label, String Macro)
+          +-- public AcadPopupMenu AddSubMenu(Object Index, String Label)
+          +-- public AcadPopupMenuItem AddSeparator(Object Index)
+          +-- public Void InsertInMenuBar(Object Index)
+          +-- public Void RemoveFromMenuBar()
+
+  +-- interface IAcadPopupMenuItem
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadPopupMenu Parent {get}
+      |   +-- String Label {get; set}
+      |   +-- String TagString {get; set}
+      |   +-- Boolean Enable {get; set}
+      |   +-- Boolean Check {get; set}
+      |   +-- AcMenuItemType Type {get}
+      |   +-- AcadPopupMenu SubMenu {get}
+      |   +-- String Macro {get; set}
+      |   +-- Int32 Index {get}
+      |   +-- String Caption {get}
+      |   +-- String HelpString {get; set}
+      |   +-- Int32 EndSubMenuLevel {get; set}
+      |
+      +-- Methods:
+          +-- public Void Delete()
+
+  +-- interface IAcadPopupMenus
+      Implements: IEnumerable
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadMenuGroup Parent {get}
+      |
+      +-- Methods:
+          +-- public AcadPopupMenu Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+          +-- public AcadPopupMenu Add(String MenuName)
+          +-- public Void InsertMenuInMenuBar(String MenuName, Object Index)
+          +-- public Void RemoveMenuFromMenuBar(Object Index)
+
+  +-- interface IAcadPreferences
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadPreferencesFiles Files {get}
+      |   +-- AcadPreferencesDisplay Display {get}
+      |   +-- AcadPreferencesOpenSave OpenSave {get}
+      |   +-- AcadPreferencesOutput Output {get}
+      |   +-- AcadPreferencesSystem System {get}
+      |   +-- AcadPreferencesUser User {get}
+      |   +-- AcadPreferencesDrafting Drafting {get}
+      |   +-- AcadPreferencesSelection Selection {get}
+      |   +-- AcadPreferencesProfiles Profiles {get}
+
+  +-- interface IAcadPreferencesDisplay
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- Boolean LayoutDisplayMargins {get; set}
+      |   +-- Boolean LayoutDisplayPaper {get; set}
+      |   +-- Boolean LayoutDisplayPaperShadow {get; set}
+      |   +-- Boolean LayoutShowPlotSetup {get; set}
+      |   +-- Boolean LayoutCreateViewport {get; set}
+      |   +-- Boolean DisplayScrollBars {get; set}
+      |   +-- Boolean DisplayScreenMenu {get; set}
+      |   +-- Int32 CursorSize {get; set}
+      |   +-- Int32 DockedVisibleLines {get; set}
+      |   +-- Boolean ShowRasterImage {get; set}
+      |   +-- UInt32 GraphicsWinModelBackgrndColor {get; set}
+      |   +-- UInt32 ModelCrosshairColor {get; set}
+      |   +-- UInt32 GraphicsWinLayoutBackgrndColor {get; set}
+      |   +-- UInt32 TextWinBackgrndColor {get; set}
+      |   +-- UInt32 TextWinTextColor {get; set}
+      |   +-- UInt32 LayoutCrosshairColor {get; set}
+      |   +-- UInt32 AutoTrackingVecColor {get; set}
+      |   +-- String TextFont {get; set}
+      |   +-- AcTextFontStyle TextFontStyle {get; set}
+      |   +-- Int32 TextFontSize {get; set}
+      |   +-- Int32 HistoryLines {get; set}
+      |   +-- Boolean MaxAutoCADWindow {get; set}
+      |   +-- Boolean DisplayLayoutTabs {get; set}
+      |   +-- Boolean ImageFrameHighlight {get; set}
+      |   +-- Boolean TrueColorImages {get; set}
+      |   +-- Int32 XRefFadeIntensity {get; set}
+
+  +-- interface IAcadPreferencesDrafting
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- Boolean AutoSnapMarker {get; set}
+      |   +-- Boolean AutoSnapMagnet {get; set}
+      |   +-- Boolean AutoSnapTooltip {get; set}
+      |   +-- Boolean AutoSnapAperture {get; set}
+      |   +-- Int32 AutoSnapApertureSize {get; set}
+      |   +-- AcColor AutoSnapMarkerColor {get; set}
+      |   +-- Int32 AutoSnapMarkerSize {get; set}
+      |   +-- Boolean PolarTrackingVector {get; set}
+      |   +-- Boolean FullScreenTrackingVector {get; set}
+      |   +-- Boolean AutoTrackTooltip {get; set}
+      |   +-- AcAlignmentPointAcquisition AlignmentPointAcquisition {get; set}
+
+  +-- interface IAcadPreferencesFiles
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- String SupportPath {get; set}
+      |   +-- String DriversPath {get; set}
+      |   +-- String MenuFile {get; set}
+      |   +-- String EnterpriseMenuFile {get; set}
+      |   +-- String CustomIconPath {get; set}
+      |   +-- String HelpFilePath {get; set}
+      |   +-- String DefaultInternetURL {get; set}
+      |   +-- String ConfigFile {get}
+      |   +-- String LicenseServer {get}
+      |   +-- String TextEditor {get; set}
+      |   +-- String MainDictionary {get; set}
+      |   +-- String CustomDictionary {get; set}
+      |   +-- String AltFontFile {get; set}
+      |   +-- String FontFileMap {get; set}
+      |   +-- String PrintFile {get; set}
+      |   +-- String PrintSpoolExecutable {get; set}
+      |   +-- String PostScriptPrologFile {get; set}
+      |   +-- String PrintSpoolerPath {get; set}
+      |   +-- String AutoSavePath {get; set}
+      |   +-- String TemplateDwgPath {get; set}
+      |   +-- String LogFilePath {get; set}
+      |   +-- String TempFilePath {get; set}
+      |   +-- String TempXrefPath {get; set}
+      |   +-- String TextureMapPath {get; set}
+      |   +-- String AltTabletMenuFile {get; set}
+      |   +-- String PrinterConfigPath {get; set}
+      |   +-- String PrinterDescPath {get; set}
+      |   +-- String PrinterStyleSheetPath {get; set}
+      |   +-- String WorkspacePath {get; set}
+      |   +-- String ObjectARXPath {get; set}
+      |   +-- String ColorBookPath {get; set}
+      |   +-- String ToolPalettePath {get; set}
+      |   +-- String QNewTemplateFile {get; set}
+      |   +-- String PlotLogFilePath {get; set}
+      |   +-- String PageSetupOverridesTemplateFile {get; set}
+      |   +-- String ActiveInvProject {get; set}
+      |
+      +-- Methods:
+          +-- public Void SetProjectFilePath(String ProjectName, String ProjectFilePath)
+          +-- public String GetProjectFilePath(String ProjectName)
+
+  +-- interface IAcadPreferencesOpenSave
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- Boolean SavePreviewThumbnail {get; set}
+      |   +-- Int32 IncrementalSavePercent {get; set}
+      |   +-- Int32 AutoSaveInterval {get; set}
+      |   +-- Boolean CreateBackup {get; set}
+      |   +-- Boolean FullCRCValidation {get; set}
+      |   +-- Boolean LogFileOn {get; set}
+      |   +-- String TempFileExtension {get; set}
+      |   +-- AcXRefDemandLoad XrefDemandLoad {get; set}
+      |   +-- AcARXDemandLoad DemandLoadARXApp {get; set}
+      |   +-- AcProxyImage ProxyImage {get; set}
+      |   +-- Boolean ShowProxyDialogBox {get; set}
+      |   +-- Boolean AutoAudit {get; set}
+      |   +-- AcSaveAsType SaveAsType {get; set}
+      |   +-- Int32 MRUNumber {get}
+
+  +-- interface IAcadPreferencesOutput
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- String DefaultOutputDevice {get; set}
+      |   +-- AcPrinterSpoolAlert PrinterSpoolAlert {get; set}
+      |   +-- Boolean PrinterPaperSizeAlert {get; set}
+      |   +-- Boolean PlotLegacy {get; set}
+      |   +-- AcOleQuality OLEQuality {get; set}
+      |   +-- Boolean UseLastPlotSettings {get; set}
+      |   +-- AcPlotPolicy PlotPolicy {get; set}
+      |   +-- String DefaultPlotStyleTable {get; set}
+      |   +-- String DefaultPlotStyleForObjects {get; set}
+      |   +-- String DefaultPlotStyleForLayer {get; set}
+      |   +-- Boolean ContinuousPlotLog {get; set}
+      |   +-- Boolean AutomaticPlotLog {get; set}
+      |   +-- String DefaultPlotToFilePath {get; set}
+
+  +-- interface IAcadPreferencesProfiles
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- String ActiveProfile {get; set}
+      |
+      +-- Methods:
+          +-- public Void ImportProfile(String ProfileName, String RegFile, Boolean IncludePathInfo)
+          +-- public Void ExportProfile(String ProfileName, String RegFile)
+          +-- public Void DeleteProfile(String ProfileName)
+          +-- public Void ResetProfile(String Profile)
+          +-- public Void RenameProfile(String origProfileName, String newProfileName)
+          +-- public Void CopyProfile(String oldProfileName, String newProfileName)
+          +-- public Void GetAllProfileNames(Object& pNames)
+
+  +-- interface IAcadPreferencesSelection
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- Boolean PickFirst {get; set}
+      |   +-- Boolean PickAdd {get; set}
+      |   +-- Boolean PickDrag {get; set}
+      |   +-- Boolean PickAuto {get; set}
+      |   +-- Int32 PickBoxSize {get; set}
+      |   +-- Boolean DisplayGrips {get; set}
+      |   +-- Boolean DisplayGripsWithinBlocks {get; set}
+      |   +-- AcColor GripColorSelected {get; set}
+      |   +-- AcColor GripColorUnselected {get; set}
+      |   +-- Int32 GripSize {get; set}
+      |   +-- Boolean PickGroup {get; set}
+
+  +-- interface IAcadPreferencesSystem
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- Boolean SingleDocumentMode {get; set}
+      |   +-- Boolean DisplayOLEScale {get; set}
+      |   +-- Boolean StoreSQLIndex {get; set}
+      |   +-- Boolean TablesReadOnly {get; set}
+      |   +-- Boolean EnableStartupDialog {get; set}
+      |   +-- Boolean BeepOnError {get; set}
+      |   +-- Boolean ShowWarningMessages {get; set}
+      |   +-- Boolean LoadAcadLspInAllDocuments {get; set}
+
+  +-- interface IAcadPreferencesUser
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcKeyboardAccelerator KeyboardAccelerator {get; set}
+      |   +-- AcKeyboardPriority KeyboardPriority {get; set}
+      |   +-- Boolean HyperlinkDisplayCursor {get; set}
+      |   +-- AcInsertUnits ADCInsertUnitsDefaultSource {get; set}
+      |   +-- AcInsertUnits ADCInsertUnitsDefaultTarget {get; set}
+      |   +-- Boolean ShortCutMenuDisplay {get; set}
+      |   +-- AcDrawingAreaSCMDefault SCMDefaultMode {get; set}
+      |   +-- AcDrawingAreaSCMEdit SCMEditMode {get; set}
+      |   +-- AcDrawingAreaSCMCommand SCMCommandMode {get; set}
+      |   +-- Boolean SCMTimeMode {get; set}
+      |   +-- Int32 SCMTimeValue {get; set}
+
+  +-- interface IAcadSelectionSet
+      Implements: IEnumerable
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- String Name {get}
+      |   +-- IAcadApplication Application {get}
+      |
+      +-- Methods:
+          +-- public AcadEntity Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+          +-- public Void Highlight(Boolean bFlag)
+          +-- public Void Erase()
+          +-- public Void Update()
+          +-- public Void AddItems(Object pSelSet)
+          +-- public Void RemoveItems(Object Objects)
+          +-- public Void Clear()
+          +-- public Void Select(AcSelect Mode, Object Point1, Object Point2, Object FilterType, Object FilterData)
+          +-- public Void SelectAtPoint(Object Point, Object FilterType, Object FilterData)
+          +-- public Void SelectByPolygon(AcSelect Mode, Object PointsList, Object FilterType, Object FilterData)
+          +-- public Void SelectOnScreen(Object FilterType, Object FilterData)
+          +-- public Void Delete()
+
+  +-- interface IAcadSelectionSets
+      Implements: IEnumerable
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- IAcadApplication Application {get}
+      |
+      +-- Methods:
+          +-- public AcadSelectionSet Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+          +-- public AcadSelectionSet Add(String Name)
+
+  +-- interface IAcadState
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- Boolean IsQuiescent {get}
+
+  +-- interface IAcadToolbar
+      Implements: IEnumerable
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- Object Parent {get}
+      |   +-- String Name {get; set}
+      |   +-- Boolean Visible {get; set}
+      |   +-- AcToolbarDockStatus DockStatus {get}
+      |   +-- Boolean LargeButtons {get}
+      |   +-- Int32 left {get; set}
+      |   +-- Int32 top {get; set}
+      |   +-- Int32 Width {get}
+      |   +-- Int32 Height {get}
+      |   +-- Int32 FloatingRows {get; set}
+      |   +-- String HelpString {get; set}
+      |   +-- String TagString {get}
+      |
+      +-- Methods:
+          +-- public AcadToolbarItem Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+          +-- public AcadToolbarItem AddToolbarButton(Object Index, String Name, String HelpString, String Macro, Object FlyoutButton)
+          +-- public AcadToolbarItem AddSeparator(Object Index)
+          +-- public Void Dock(AcToolbarDockStatus Side)
+          +-- public Void Float(Int32 top, Int32 left, Int32 NumberFloatRows)
+          +-- public Void Delete()
+
+  +-- interface IAcadToolbarItem
+      |
+      |-- Properties:
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadToolbar Parent {get}
+      |   +-- String Name {get; set}
+      |   +-- String TagString {get; set}
+      |   +-- AcToolbarItemType Type {get}
+      |   +-- AcadToolbar Flyout {get}
+      |   +-- String Macro {get; set}
+      |   +-- Int32 Index {get}
+      |   +-- String HelpString {get; set}
+      |   +-- String CommandDisplayName {get; set}
+      |
+      +-- Methods:
+          +-- public Void GetBitmaps(String& SmallIconName, String& LargeIconName)
+          +-- public Void SetBitmaps(String SmallIconName, String LargeIconName)
+          +-- public Void AttachToolbarToFlyout(String MenuGroupName, String ToolbarName)
+          +-- public Void Delete()
+
+  +-- interface IAcadToolbars
+      Implements: IEnumerable
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- IAcadApplication Application {get}
+      |   +-- AcadMenuGroup Parent {get}
+      |   +-- Boolean LargeButtons {get; set}
+      |
+      +-- Methods:
+          +-- public AcadToolbar Item(Object Index)
+          +-- public IEnumerator GetEnumerator()
+          +-- public AcadToolbar Add(String ToolbarName)
+
+  +-- interface IAcadUtility
+      |
+      +-- Methods:
+          +-- public Double AngleToReal(String Angle, AcAngleUnits Unit)
+          +-- public String AngleToString(Double Angle, AcAngleUnits Unit, Int32 Precision)
+          +-- public Double DistanceToReal(String Distance, AcUnits Unit)
+          +-- public String RealToString(Double Value, AcUnits Unit, Int32 Precision)
+          +-- public Object TranslateCoordinates(Object Point, AcCoordinateSystem FromCoordSystem, AcCoordinateSystem ToCoordSystem, Int32 Displacement, Object OCSNormal)
+          +-- public Void InitializeUserInput(Int32 Bits, Object KeyWordList)
+          +-- public Int32 GetInteger(Object Prompt)
+          +-- public Double GetReal(Object Prompt)
+          +-- public String GetInput()
+          +-- public String GetKeyword(Object Prompt)
+          +-- public String GetString(Int32 HasSpaces, Object Prompt)
+          +-- public Double GetAngle(Object Point, Object Prompt)
+          +-- public Double AngleFromXAxis(Object StartPoint, Object EndPoint)
+          +-- public Object GetCorner(Object Point, Object Prompt)
+          +-- public Double GetDistance(Object Point, Object Prompt)
+          +-- public Double GetOrientation(Object Point, Object Prompt)
+          +-- public Object GetPoint(Object Point, Object Prompt)
+          +-- public Object PolarPoint(Object Point, Double Angle, Double Distance)
+          +-- public Void CreateTypedArray(Object& varArr, Int32 Type, Object[] inArgs)
+          +-- public Void GetEntity(Object& Object, Object& PickedPoint, Object Prompt)
+          +-- public Void Prompt(String Message)
+          +-- public Void GetSubEntity(Object& Object, Object& PickedPoint, Object& TransMatrix, Object& ContextData, Object Prompt)
+          +-- public Boolean IsURL(String URL)
+          +-- public Void GetRemoteFile(String URL, String& LocalFile, Boolean IgnoreCache)
+          +-- public Void PutRemoteFile(String URL, String LocalFile)
+          +-- public Boolean IsRemoteFile(String LocalFile, String& URL)
+          +-- public Boolean LaunchBrowserDialog(String& SelectedURL, String DialogTitle, String OpenButtonCaption, String StartPageURL, String RegistryRootKey, Boolean OpenButtonAlwaysEnabled)
+          +-- public Void SendModelessOperationStart(String Context)
+          +-- public Void SendModelessOperationEnded(String Context)
+          +-- public String GetObjectIdString(Object Object, Boolean bHex)
+
+

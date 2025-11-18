@@ -1,0 +1,21 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso8859-1"><meta name="product" content="PLNT3D"><meta name="book" content="Developer"><meta name="created" content="2022-12-24"><meta name="topicid" content="GUID-11C12964-41D8-40A3-AB4D-32F163B33956"><meta name="indexterm" content="drawing properties: configuring"><meta name="indexterm" content="getProjectAutogenNextValue()"><meta name="topic-type" content="concept"><title>Project Properties</title><link type="text/css" rel="stylesheet" href="style/adsk.cpm.css"><script type="text/javascript" src="scripts/adsk.strings.js"></script><script type="text/javascript" src="scripts/adsk.common.js"></script><script type="text/javascript" src="scripts/adsk.dynamichelp.js"></script></head><body><div class="head"><div class="head-block"><div class="nav-group"><!--browse buttons--><div class="browse"><nobr><!--No Additional browse buttons are defined--><div class="headNavLinkPrev"><div id="prevTitle" style="display:none">Set or Change Project File Locations</div><a href="GUID-5492A67C-A4C9-4C06-880C-E3FC904CF52E.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('prevTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-prev-xp.gif" border="0"></a></div><div class="headNavLinkUp"><div id="parentTitle" style="display:none">Plant Project</div><a href="GUID-E6722C81-249B-489C-91B9-84B0B5D7D41B.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('parentTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-up-xp.gif" border="0"></a></div><div class="headNavLinkNext"><div id="nextTitle" style="display:none">Set Up Selection Lists</div><a href="GUID-C272B83E-4734-44AD-8DC2-8B1F316F39A6.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('nextTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-next-xp.gif" border="0"></a></div></nobr></div><!--end browse buttons--></div><div class="button-info"><span id="infoline">&nbsp;</span></div><div class="ancestry"><a href="topichead.htm">AutoCAD Plant 3D 2024 SDK: Developer`s Help</a>&nbsp;&gt;&nbsp;<a href="topichead.htm">Plant SDK Developer Help</a>&nbsp;&gt;&nbsp;<a href="GUID-E6722C81-249B-489C-91B9-84B0B5D7D41B.htm">Plant Project</a>&nbsp;&gt;&nbsp;</div><div class="head-text"><a name="WS1A9193826455F5FF84BDDE110D5FBBDED-7D52"></a><h1>Project Properties</h1></div></div></div><div class="head-margin">&nbsp;</div><div style="line-height: 0pt">&nbsp;</div><div class="head-margin">&nbsp;</div><div class="body_content"><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5776"></a>Project properties are available through the managed 
+  <em class="strong">Project</em> class.
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5775"></a>The following code lists all of the Autogen properties currently active in a project. </p><div class="codeBlock"><pre>public static void PnPListAutogen()
+{
+&nbsp;&nbsp;&nbsp;public static void PnPListAutogen()
+&nbsp;&nbsp;&nbsp;Project oProject = PnPActiveProject();
+&nbsp;&nbsp;&nbsp;if (oProject == null) return;
+&nbsp;&nbsp;&nbsp;Database oDwg = &nbsp;&nbsp;&nbsp;AcadApp.DocumentManager.MdiActiveDocument.Database;
+&nbsp;&nbsp;&nbsp;oProject.GetDrawingAutogenProperties(oDwg.Filename);
+&nbsp;&nbsp;&nbsp;oEditor.WriteMessage("\nAutogen Values");
+&nbsp;&nbsp;&nbsp;StringCollection asKeys;
+&nbsp;&nbsp;&nbsp;oProject.GetAutogenPropertyKeys(true, out asKeys);
+&nbsp;&nbsp;&nbsp;foreach (String sKey in asKeys)
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int nLastUsed, nIncrement;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oProject.GetProjectAutogenPropertyValue(sKey, out nLastUsed, out nIncrement);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oEditor.WriteMessage("\n   " + sKey + ": " + "Last (" + nLastUsed + ") Increment (" + nIncrement + ")");
+&nbsp;&nbsp;&nbsp;}
+}</pre></div><div class="footer-block"><a href="javascript:doComments('');"><span class="comments-link">Please send us your comment about this page</span></a></div><br></div></body></html>

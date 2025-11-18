@@ -1,0 +1,2159 @@
+﻿Assembly: PnP3dPartsRepository, Version=15.0.6100.2, Culture=neutral, PublicKeyToken=null
+File: C:\Users\deve_\OneDrive\Documents 1\Visual Studio 2022\ObjectARX_for_Plant3D_2024\inc-x64\PnP3dPartsRepository.dll
+================================================================================
+
+Namespace: Autodesk.ProcessPower.PartsRepository
+----------------------------------------
+  +-- class <GetEnumerator>d__7
+      Implements: IEnumerator`1, IDisposable, IEnumerator
+      |
+      |-- Fields:
+      |   +-- private Int32 <>1__state
+      |   +-- private NominalDiameterMapEntry <>2__current
+      |   +-- public NominalDiameterMap <>4__this
+      |   +-- private Enumerator <>7__wrap1
+      |
+      |-- Properties:
+      |   +-- NominalDiameterMapEntry System.Collections.Generic.IEnumerator<Autodesk.ProcessPower.PartsRepository.NominalDiameterMapEntry>.Current {get}
+      |   +-- Object System.Collections.IEnumerator.Current {get}
+      |
+      +-- Methods:
+          +-- private Void System.IDisposable.Dispose()
+          +-- private Boolean MoveNext()
+          +-- private Void <>m__Finally1()
+          +-- private Void System.Collections.IEnumerator.Reset()
+
+  +-- class AbstractPart
+      |
+      |-- Properties:
+      |   +-- String PartType {get}
+
+  +-- class BaseTablesCallbackImp
+      Implements: BaseTablesCallback
+      |
+      |-- Fields:
+      |   +-- private PartsRepository m_repo
+      |
+      +-- Methods:
+          +-- public StringCollection GetBaseTables(StringTableType type, String table, String column)
+
+  +-- class ColumnValueDifference
+      |
+      |-- Fields:
+      |   +-- private Int32 m_partid1
+      |   +-- private Int32 m_partid2
+      |   +-- private String m_portName
+      |   +-- private String m_columname1
+      |   +-- private String m_columname2
+      |   +-- private Object m_value1
+      |   +-- private Object m_value2
+      |
+      |-- Properties:
+      |   +-- Int32 PartId1 {get}
+      |   +-- Int32 PartId2 {get}
+      |   +-- String PortName {get}
+      |   +-- String ColumnName1 {get}
+      |   +-- String ColumnName2 {get}
+      |   +-- Object Value1 {get}
+      |   +-- Object Value2 {get}
+      |
+      +-- Methods:
+          +-- public String ToString()
+
+  +-- enum CompareTarget
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static CompareTarget Target1
+      |   +-- public static CompareTarget Target2
+
+  +-- enum ErrorStatus
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static ErrorStatus NoError
+      |   +-- public static ErrorStatus GeneralError
+      |   +-- public static ErrorStatus HeaderLessThanBranch
+      |   +-- public static ErrorStatus InvalidPartPropertyName
+      |   +-- public static ErrorStatus InvalidPartPropertyIndex
+      |   +-- public static ErrorStatus InvalidPortPropertyName
+      |   +-- public static ErrorStatus InvalidPortPropertyIndex
+      |   +-- public static ErrorStatus DatabaseNotPartRepository
+      |   +-- public static ErrorStatus MissingRepositoryDescriptor
+      |   +-- public static ErrorStatus WrongRepositoryType
+      |   +-- public static ErrorStatus PortAlreadyExist
+      |   +-- public static ErrorStatus InvalidNominalDiameterMapFile
+      |   +-- public static ErrorStatus MustBeValveBody
+      |   +-- public static ErrorStatus MustBeValveActuator
+      |   +-- public static ErrorStatus InvalidDatabaseTemplate
+      |   +-- public static ErrorStatus NoWallThicknessTable
+      |   +-- public static ErrorStatus NoWallThicknessDefined
+      |   +-- public static ErrorStatus InvalidWallThicknessEntryPropertyName
+      |   +-- public static ErrorStatus RepositoryDoesNotExist
+      |   +-- public static ErrorStatus TypesMismatch
+      |   +-- public static ErrorStatus PropertyLengthGtr255
+      |   +-- public static ErrorStatus PropertyAlreadyDefined
+      |   +-- public static ErrorStatus PropertyAlreadyDefinedInDerivedClass
+      |   +-- public static ErrorStatus PropertyDoesNotExist
+      |   +-- public static ErrorStatus FailedToRemoveProperty
+      |   +-- public static ErrorStatus PartTypeNotExists
+      |   +-- public static ErrorStatus ReadOnlySpecification
+      |   +-- public static ErrorStatus CannotModifyImmutablePart
+      |   +-- public static ErrorStatus PartAlreadyExist
+      |   +-- public static ErrorStatus PartNotExist
+
+  +-- class FilterData
+      |
+      |-- Fields:
+      |   +-- public PartsRepository Repository
+      |   +-- public String PartClass
+      |   +-- public NodeState QualifierState
+      |   +-- public Boolean ProcessingOr
+      |   +-- public Boolean ProcessingAnd
+      |   +-- private ArrayList m_unqualified
+      |   +-- private ArrayList m_qualified
+      |
+      |-- Properties:
+      |   +-- PnPQryNode QualifiedCondition {get}
+      |   +-- PnPQryNode UnqualifiedCondition {get}
+      |
+      +-- Methods:
+          +-- public Void AssignData(FilterData other)
+          +-- public Void AddQualified(PnPQryNode n)
+          +-- public Void AddUnqualified(PnPQryNode n)
+          +-- public Void DecomposeFilter(PartsRepository rep, String classname, String filterStr)
+          +-- internal PnPQryNode CombineNodes(ArrayList nodes)
+
+  +-- class Helpers
+      |
+      +-- Methods:
+          +-- public static String CombineGuids(String strOldGuid, String strTypeName)
+          +-- internal static Object GuidFromString(String guidstr)
+
+  +-- class LocalResources
+      |
+      |-- Fields:
+      |   +-- private static ResourceManager resourceMan
+      |   +-- private static CultureInfo resourceCulture
+      |
+      |-- Properties:
+      |   +-- ResourceManager ResourceManager {get}
+      |   +-- CultureInfo Culture {get; set}
+      |   +-- String IDS_ErrorStatus_CannotModifyImmutablePart {get}
+      |   +-- String IDS_ErrorStatus_DatabaseNotPartRepository {get}
+      |   +-- String IDS_ErrorStatus_FailedToRemoveProperty {get}
+      |   +-- String IDS_ErrorStatus_GeneralError {get}
+      |   +-- String IDS_ErrorStatus_HeaderLessThanBranch {get}
+      |   +-- String IDS_ErrorStatus_InvalidDatabaseTemplate {get}
+      |   +-- String IDS_ErrorStatus_InvalidNominalDiameterMapFile {get}
+      |   +-- String IDS_ErrorStatus_InvalidPartPropertyIndex {get}
+      |   +-- String IDS_ErrorStatus_InvalidPartPropertyName {get}
+      |   +-- String IDS_ErrorStatus_InvalidPortPropertyIndex {get}
+      |   +-- String IDS_ErrorStatus_InvalidPortPropertyName {get}
+      |   +-- String IDS_ErrorStatus_InvalidWallThicknessEntryPropertyName {get}
+      |   +-- String IDS_ErrorStatus_MissingRepositoryDescriptor {get}
+      |   +-- String IDS_ErrorStatus_MustBeValveActuator {get}
+      |   +-- String IDS_ErrorStatus_MustBeValveBody {get}
+      |   +-- String IDS_ErrorStatus_NoError {get}
+      |   +-- String IDS_ErrorStatus_NoWallThicknessDefined {get}
+      |   +-- String IDS_ErrorStatus_NoWallThicknessTable {get}
+      |   +-- String IDS_ErrorStatus_PartTypeNotExists {get}
+      |   +-- String IDS_ErrorStatus_PortAlreadyExist {get}
+      |   +-- String IDS_ErrorStatus_PropertyAlreadyDefined {get}
+      |   +-- String IDS_ErrorStatus_PropertyAlreadyDefinedInDerivedClass {get}
+      |   +-- String IDS_ErrorStatus_PropertyDoesNotExist {get}
+      |   +-- String IDS_ErrorStatus_PropertyLengthGtr255 {get}
+      |   +-- String IDS_ErrorStatus_ReadOnlySpecification {get}
+      |   +-- String IDS_ErrorStatus_RepositoryDoesNotExist {get}
+      |   +-- String IDS_ErrorStatus_TypesMismatch {get}
+      |   +-- String IDS_ErrorStatus_WrongRepositoryType {get}
+      |   +-- String IDS_ErrorStatus_PartNotExist {get}
+      |   +-- String IDS_SPECSHEETSETTING_DELIMITER {get}
+
+  +-- class LongDescriptionConcat
+      : PnPQryConcat
+      Implements: ICloneable, IDisposable
+      |
+      +-- Methods:
+          +-- public Void prepareSExpr(Type& type, Object p2)
+          +-- public Object executeSExpr(Object o)
+
+  +-- class LongDescriptionFormula
+      : PnPCollectionItem
+      Implements: IPnPCollectionItem
+      |
+      |-- Fields:
+      |   +-- private PnPQryNode m_node
+      |   +-- private String m_formulatext
+      |
+      |-- Properties:
+      |   +-- String FormulaText {get; set}
+      |
+      +-- Methods:
+          +-- public PnPQryNode ParseFormula()
+          +-- public Void Prepare(PartsRepository prep)
+          +-- public String Execute(Part part)
+
+  +-- class LongDescriptionFormulaProduction
+      : PnPQryProduction
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private LongDescriptionFormula m_formula
+      |   +-- private PartsRepository m_rep
+      |
+      +-- Methods:
+          +-- public PnPQryObjectRef makeObjectRef()
+          +-- public PnPQryConcat makeConcat()
+          +-- public PnPQryFunction makeFunction()
+
+  +-- class LongDescriptionFormulas
+      : PnPGenericNamedCollection`1
+      Implements: ICollection`1, IEnumerable`1, IEnumerable, PnPAbstractCollection`1
+
+  +-- class LongDescriptionFunction
+      : PnPQryFunction
+      Implements: ICloneable, IDisposable
+      |
+      +-- Methods:
+          +-- public Void prepareSExpr(Type& type, Object p2)
+          +-- public Object executeSExpr(Object o)
+          +-- private String ExecuteArg(PnPQryNode n, Object o)
+
+  +-- class LongDescriptionPropertyReference
+      : PnPQryObjectRef
+      Implements: ICloneable, IDisposable
+      |
+      |-- Fields:
+      |   +-- private LongDescriptionFormula m_formula
+      |   +-- private PartsRepository m_rep
+      |   +-- private String m_name
+      |   +-- private Boolean m_bPort
+      |
+      +-- Methods:
+          +-- public Void prepareSExpr(Type& type, Object p2)
+          +-- public Object executeSExpr(Object obj)
+
+  +-- class LongDescriptionStyle
+      : PnPCollectionItem
+      Implements: IPnPCollectionItem, ICloneable
+      |
+      |-- Fields:
+      |   +-- private LongDescriptionFormulas m_formulas
+      |
+      |-- Properties:
+      |   +-- LongDescriptionFormulas Formulas {get}
+      |
+      +-- Methods:
+          +-- public Object Clone()
+          +-- public LongDescriptionFormula FindFormulaForPartType(PartsRepository rep, String parttype)
+          +-- public LongDescriptionFormula AddFormula(String parttype, String formulatext)
+
+  +-- class LongDescriptionStyles
+      : PnPGenericNamedCollection`1
+      Implements: ICollection`1, IEnumerable`1, IEnumerable, PnPAbstractCollection`1
+      |
+      |-- Fields:
+      |   +-- private static XmlSerializer s_serializer
+      |
+      +-- Methods:
+          +-- public Void ToXmlFile(String filename)
+          +-- public Void ToXmlStream(Stream stream)
+          +-- public Void ToXmlStreamWriter(StreamWriter writer)
+          +-- public static LongDescriptionStyles FromXmlFile(String filename)
+          +-- public static LongDescriptionStyles FromXmlStream(Stream stream)
+          +-- public static LongDescriptionStyles FromXmlStreamReader(StreamReader reader)
+
+  +-- enum NodeState
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static NodeState None
+      |   +-- public static NodeState Qualfied
+      |   +-- public static NodeState NotQualfied
+      |   +-- public static NodeState Decomposed
+
+  +-- struct NominalDiameter
+      : ValueType
+      Implements: IComparable, IComparable`1
+      |
+      |-- Fields:
+      |   +-- private Double m_measure
+      |   +-- private String m_unit
+      |   +-- private Double m_altmeasure
+      |   +-- public static String Metric
+      |   +-- public static String Imperial
+      |   +-- private static String ImperialShort
+      |   +-- private static Double NOMEASURE
+      |   +-- private static Double InchToMm
+      |   +-- private static Double MmToInch
+      |
+      |-- Properties:
+      |   +-- String Units {get; set}
+      |   +-- Units EUnits {get; set}
+      |   +-- Double Value {get; set}
+      |   +-- Boolean IsNull {get}
+      |
+      +-- Methods:
+          +-- public static Double GetScale(Units fromUnit, Units toUnit)
+          +-- public Void ToPnPRow(PnPRow row)
+          +-- public Void ToPnPRow(String vprop, String uprop, PnPRow row)
+          +-- public Int32 CompareTo(Object other)
+          +-- public Int32 CompareTo(NominalDiameter other)
+          +-- public Boolean Equals(Object obj)
+          +-- public Int32 GetHashCode()
+          +-- public String ToString()
+          +-- public String ToDisplayString(NominalDiameterMap ndmap)
+          +-- public String ToDisplayString(NominalDiameterMap ndmap, Units targetUnit, Boolean bIncludeNativeString)
+          +-- public static Boolean TryParse(String val, NominalDiameterMap ndmap, NominalDiameter& nd)
+          +-- public static NominalDiameter FromDisplayString(NominalDiameterMap ndmap, String disp)
+          +-- public NominalDiameter GetAlternativeND(NominalDiameterMap ndmap)
+          +-- public NominalDiameterMapEntry GetNDMapEntry(NominalDiameterMap ndmap)
+          +-- internal static NominalDiameterMapEntry GetNDMapEntry(NominalDiameterMap ndmap, String display)
+
+  +-- class NominalDiameterMap
+      Implements: IEnumerable`1, IEnumerable
+      |
+      |-- Fields:
+      |   +-- private Dictionary`2 m_nd2e
+      |   +-- private Dictionary`2 m_disp2e
+      |   +-- private static NominalDiameterMap s_map
+      |   +-- private static Boolean s_maploaded
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- NominalDiameterMap DefaultMap {get}
+      |
+      +-- Methods:
+          +-- public Void LoadMap(String fname)
+          +-- public Void AddEntry(NominalDiameterMapEntry e)
+          +-- public NominalDiameterMapEntry GetByND(NominalDiameter nd)
+          +-- public NominalDiameterMapEntry GetByDisplay(String disp)
+          +-- public IEnumerator`1 GetEnumerator()
+          +-- private IEnumerator System.Collections.IEnumerable.GetEnumerator()
+
+  +-- class NominalDiameterMapComparer
+      Implements: IEqualityComparer`1
+      |
+      |-- Fields:
+      |   +-- private static NominalDiameterMapComparer s_comp
+      |
+      |-- Properties:
+      |   +-- NominalDiameterMapComparer Default {get}
+      |
+      +-- Methods:
+          +-- public Boolean Equals(NominalDiameter x, NominalDiameter y)
+          +-- public Int32 GetHashCode(NominalDiameter x)
+
+  +-- class NominalDiameterMapEntry
+      |
+      |-- Fields:
+      |   +-- private NominalDiameter m_nd
+      |   +-- private NominalDiameter m_altnd
+      |   +-- private String m_display
+      |   +-- private String m_altdisplay
+      |   +-- private String m_userdisplay
+      |   +-- private Int32 m_id
+      |   +-- private Int32 m_scope
+      |
+      |-- Properties:
+      |   +-- NominalDiameter ND {get; set}
+      |   +-- NominalDiameter AltND {get; set}
+      |   +-- String NDDisplay {get; set}
+      |   +-- String AltNDDisplay {get; set}
+      |   +-- String UserDisplay {get; set}
+      |   +-- Int32 Id {get; set}
+      |   +-- Int32 Scope {get; set}
+
+  +-- class NominalSizeConverter
+      : TypeConverter
+      |
+      +-- Methods:
+          +-- public Boolean CanConvertTo(ITypeDescriptorContext context, Type destinationType)
+          +-- public Boolean CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
+          +-- public Object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+          +-- public Object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, Object value, Type destinationType)
+
+  +-- class P3dEndCondition
+      : PnPCollectionItem
+      Implements: IPnPCollectionItem
+      |
+      |-- Fields:
+      |   +-- private String m_description
+      |   +-- private Boolean m_bCanCutback
+      |   +-- private Boolean m_bIsFlangeLike
+      |   +-- private Boolean m_bIsWaferLike
+      |
+      |-- Properties:
+      |   +-- String Name {get; set}
+      |   +-- String Key {get; set}
+      |   +-- String Description {get; set}
+      |   +-- Boolean CanCutback {get; set}
+      |   +-- Boolean IsFlangeLike {get; set}
+      |   +-- Boolean IsWaferLike {get; set}
+
+  +-- class P3dEndConditionCollection
+      : PnPGenericNamedCollection`1
+      Implements: ICollection`1, IEnumerable`1, IEnumerable, PnPAbstractCollection`1
+      |
+      |-- Fields:
+      |   +-- private P3dEndConditionsConfiguration m_conf
+
+  +-- class P3dEndConditionsConfiguration
+      |
+      |-- Fields:
+      |   +-- private String m_name
+      |   +-- private String m_description
+      |   +-- private P3dEndConditionCollection m_endconditions
+      |   +-- private static XmlSerializer s_serializer
+      |   +-- private static P3dEndConditionsConfiguration s_instance
+      |
+      |-- Properties:
+      |   +-- P3dEndConditionsConfiguration Instance {get; set}
+      |   +-- String Name {get; set}
+      |   +-- String Description {get; set}
+      |   +-- P3dEndConditionCollection EndConditions {get}
+      |
+      +-- Methods:
+          +-- public Void ToXmlFile(String filename)
+          +-- public Void ToXmlStream(Stream stream)
+          +-- public Void ToXmlStreamWriter(StreamWriter writer)
+          +-- public static P3dEndConditionsConfiguration FromXmlFile(String filename)
+          +-- public static P3dEndConditionsConfiguration FromXmlStream(Stream stream)
+          +-- public static P3dEndConditionsConfiguration FromXmlStreamReader(StreamReader reader)
+
+  +-- class P3dEndConditionsUtils
+      |
+      |-- Fields:
+      |   +-- private static P3dEndConditionsConfiguration s_config
+      |   +-- private static String s_filename
+      |
+      |-- Properties:
+      |   +-- P3dEndConditionsConfiguration Instance {get; set}
+      |   +-- String FileName {get}
+      |
+      +-- Methods:
+          +-- public static P3dEndConditionsConfiguration LoadAndSetInstance(String filename)
+          +-- public static P3dEndCondition FindEndCondition(String end_code)
+          +-- public static Boolean IsCutbackAllowed(String end_code)
+          +-- public static Boolean IsFlangeLike(String end_code)
+          +-- public static Boolean IsWaferLike(String end_code)
+
+  +-- class Part
+      : AbstractPart
+      Implements: PropertyContainer
+      |
+      |-- Fields:
+      |   +-- private PnPRow m_Row
+      |   +-- private Int32 m_rowid
+      |   +-- private Boolean m_bConcrete
+      |   +-- private PartsRepository m_repository
+      |   +-- private PortCollection m_portcoll
+      |   +-- private PartGeometry m_geometry
+      |   +-- public static String LengthUnitPropertyName
+      |   +-- public static String LengthUnitAttributeValue
+      |   +-- public static String UNITTYPEATTR
+      |
+      |-- Properties:
+      |   +-- PartsRepository Repository {get}
+      |   +-- String PartType {get}
+      |   +-- Int32 PartId {get; set}
+      |   +-- String PartGuid {get; set}
+      |   +-- String PartFamilyID {get}
+      |   +-- Int32 Count {get}
+      |   +-- StringCollection CustomPartSizePropertyNames {get}
+      |   +-- StringCollection PropertyNames {get}
+      |   +-- String Version {get; set}
+      |   +-- Object Item {get; set}
+      |   +-- Object Item {get; set}
+      |   +-- NominalDiameter NominalDiameter {get}
+      |   +-- Units LinearUnit {get; set}
+      |   +-- PartGeometry Geometry {get}
+      |   +-- PortCollection Ports {get}
+      |   +-- PnPRow Row {get; set}
+      |   +-- Boolean IsPrincipalPortDefined {get}
+      |
+      +-- Methods:
+          +-- internal PartProperty GetPortProperty(String name)
+          +-- public PartProperty GetPropertyDesc(String name)
+          +-- internal static Units GetLinearUnit(PropertyContainer container)
+          +-- internal static Void SetLinearUnit(PropertyContainer container, Units units)
+          +-- public Boolean NeedUnitScale(Units toUnit, Double& scale)
+          +-- public Void TransformPropertiesToUnits(Units linearUnits, Units ndUnits)
+          +-- internal static Void TransformProperties(PropertyContainer container, Double scale)
+          +-- protected Void TransformWeightProperties(Units inlinearUnits)
+          +-- protected Void TransformWeightPropertiesToUnits(String FromWeightUnit, String ToWeightUnit)
+          +-- public Port NewPort(String name)
+          +-- public Port NewPortBySizeRecordId(String name, String partrecordid, Boolean& bNew)
+          +-- public Void Delete()
+          +-- public Void BeginEdit()
+          +-- public Void EndEdit()
+          +-- public Void CancelEdit()
+          +-- private Void InitConcreteRow()
+          +-- internal Void AcceptChanges()
+          +-- internal Void AcceptPorts()
+          +-- internal Void AddPort(Port port)
+          +-- internal Void SetPrincipalPort(Port port)
+          +-- internal Port GetPrincipalPort()
+          +-- internal Void DeletePrincipalPort()
+          +-- public static String FormatSizeDisplay(String size, Units targetUnit, Boolean bIncludeNativeString, Units partUnit)
+          +-- public static String SizeFromDisplay(String displaySize)
+
+  +-- class PartDescriptor
+      |
+      |-- Fields:
+      |   +-- private PartsRepository m_rep
+      |   +-- private PnPTable m_tab
+      |   +-- private StringCollection m_propnames
+      |   +-- private StringCollection m_portpropsnames
+      |   +-- private StringCollection m_localpropnames
+      |   +-- private StringCollection m_custompartsizepropnames
+      |   +-- private Dictionary`2 m_props
+      |   +-- private Dictionary`2 m_portprops
+      |   +-- internal static String GeometryDomainProp
+      |   +-- internal static String GeometryNameProp
+      |   +-- internal static String GeometryDefinitionProp
+      |   +-- internal static String PORTATTRIBUTENAME
+      |   +-- internal static String DEFAULTVALUE
+      |   +-- internal static String CHARLENGTH
+      |   +-- internal static String ADDEDPROPERTY
+      |   +-- internal static String FamilyOrSizeAttr
+      |   +-- internal static String ISHIDDENPROPERTY
+      |   +-- internal static String ISREADONLYPROPERTY
+      |   +-- internal static String TRUEVALUE
+      |
+      |-- Properties:
+      |   +-- PnPTable Table {get}
+      |   +-- StringCollection PropertyNames {get}
+      |   +-- StringCollection LocalPropertyNames {get}
+      |   +-- StringCollection CustomPartSizePropertyNames {get}
+      |   +-- StringCollection PortPropertyNames {get}
+      |
+      +-- Methods:
+          +-- internal Void Initialize(PnPTable tab)
+          +-- internal PartProperty PartPropertyFromColumn(PnPColumn col)
+          +-- internal PnPColumn PartPropertyToColumn(PartProperty prop)
+          +-- internal PartProperty GetPartProperty(String propname, Boolean blocal)
+          +-- internal Void AddPartProperty(PartProperty prop)
+          +-- internal Void RemovePartProperty(String name)
+          +-- internal Boolean DerivedPropertyDefined(PnPTable tab, String prop)
+          +-- internal PartProperty GetPortProperty(String propname)
+
+  +-- class PartGeometry
+      |
+      |-- Fields:
+      |   +-- private Part m_part
+      |
+      |-- Properties:
+      |   +-- String Domain {get; set}
+      |   +-- String Name {get; set}
+      |   +-- String Definition {get; set}
+      |   +-- Part Part {get}
+
+  +-- class PartProperty
+      |
+      |-- Fields:
+      |   +-- private String m_name
+      |   +-- private String m_displayName
+      |   +-- private Type m_type
+      |   +-- private Int32 m_length
+      |   +-- private Object m_defaultValue
+      |   +-- private Boolean m_added
+      |   +-- private Boolean m_hidden
+      |   +-- private Boolean m_onlyread
+      |   +-- private Boolean m_isexpression
+      |   +-- private Dictionary`2 m_attrs
+      |
+      |-- Properties:
+      |   +-- String Name {get; set}
+      |   +-- String DisplayName {get; set}
+      |   +-- Type Type {get; set}
+      |   +-- Int32 Length {get; set}
+      |   +-- Object DefaultValue {get; set}
+      |   +-- Boolean IsAdded {get; set}
+      |   +-- Boolean IsHidden {get; set}
+      |   +-- Boolean IsReadOnly {get; set}
+      |   +-- Boolean IsExpression {get; set}
+      |
+      +-- Methods:
+          +-- public String GetAttributeValue(String attrname)
+          +-- internal Void SetAttributeValue(String attrname, String val)
+
+  +-- class PartQueryResults
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private PartsRepository m_repository
+      |
+      |-- Properties:
+      |   +-- PartsRepository Repository {get}
+      |
+      +-- Methods:
+          +-- public Void Dispose()
+          +-- public Part NextPart()
+
+  +-- class PartQueryResultsMultiple
+      : PartQueryResults
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private PartQueryResults[] m_results
+      |   +-- private Int32 m_curresult
+      |
+      +-- Methods:
+          +-- public Void Dispose()
+          +-- public Part NextPart()
+
+  +-- class PartQueryResultsSingle
+      : PartQueryResults
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private ArrayList m_rows
+      |   +-- private Int32 m_pos
+      |   +-- private PnPQryNode m_cond
+      |
+      +-- Methods:
+          +-- public Void Dispose()
+          +-- public Part NextPart()
+
+  +-- class PartQueryResultsView
+      Implements: IDisposable, IListSource, IBindingListView, IBindingList, IList, ICollection, IEnumerable, ITypedList, IComparer, ISupportInitialize
+      |
+      |-- Properties:
+      |   +-- Boolean ContainsListCollection {get}
+      |   +-- Boolean IsFixedSize {get}
+      |   +-- Boolean IsReadOnly {get}
+      |   +-- Object Item {get; set}
+      |   +-- Int32 Count {get}
+      |   +-- Boolean IsSynchronized {get}
+      |   +-- Object SyncRoot {get}
+      |   +-- Boolean AllowEdit {get; set}
+      |   +-- Boolean AllowNew {get; set}
+      |   +-- Boolean AllowRemove {get; set}
+      |   +-- Boolean SupportsChangeNotification {get}
+      |   +-- Boolean SupportsSearching {get}
+      |   +-- Boolean SupportsSorting {get}
+      |   +-- Boolean IsSorted {get}
+      |   +-- ListSortDirection SortDirection {get}
+      |   +-- PropertyDescriptor SortProperty {get}
+      |   +-- String Filter {get; set}
+      |   +-- ListSortDescriptionCollection SortDescriptions {get}
+      |   +-- Boolean SupportsFiltering {get}
+      |   +-- Boolean SupportsAdvancedSorting {get}
+      |
+      +-- Methods:
+          +-- public Void Dispose()
+          +-- public IList GetList()
+          +-- public Int32 Add(Object value)
+          +-- public Void Clear()
+          +-- public Boolean Contains(Object value)
+          +-- public Int32 IndexOf(Object value)
+          +-- public Void Insert(Int32 index, Object value)
+          +-- public Void Remove(Object value)
+          +-- public Void RemoveAt(Int32 index)
+          +-- public Void CopyTo(Array arr, Int32 index)
+          +-- public IEnumerator`1 GetEnumerator()
+          +-- private IEnumerator System.Collections.IEnumerable.GetEnumerator()
+          +-- public Object AddNew()
+          +-- public Void AddIndex(PropertyDescriptor prop)
+          +-- public Void ApplySort(PropertyDescriptor prop, ListSortDirection direction)
+          +-- public Int32 Find(PropertyDescriptor prop, Object key)
+          +-- public Void RemoveIndex(PropertyDescriptor prop)
+          +-- public Void RemoveSort()
+          +-- public Void RemoveFilter()
+          +-- public Void ApplySort(ListSortDescriptionCollection sort)
+          +-- public Int32 Compare(Object x, Object y)
+          +-- public PropertyDescriptorCollection GetItemProperties(PropertyDescriptor[] listAccessors)
+          +-- public String GetListName(PropertyDescriptor[] listAccessors)
+          +-- public Void BeginInit()
+          +-- public Void EndInit()
+
+  +-- class PartRepositoryException
+      : Exception
+      Implements: ISerializable, _Exception
+      |
+      |-- Fields:
+      |   +-- private ErrorStatus m_stat
+      |
+      |-- Properties:
+      |   +-- ErrorStatus ErrorCode {get; set}
+      |   +-- String Message {get}
+
+  +-- class PartsAnd
+      : PnPQryAnd
+      Implements: ICloneable, IDisposable
+      |
+      |-- Fields:
+      |   +-- private PartsFilter m_filter
+      |
+      +-- Methods:
+          +-- public Void prepareBExpr(Object o)
+
+  +-- class PartsEq
+      : PnPQryEq
+      Implements: ICloneable, IDisposable
+      |
+      |-- Fields:
+      |   +-- private PartsFilter m_filter
+      |
+      +-- Methods:
+          +-- public Void prepareBExpr(Object o)
+
+  +-- class PartsFilter
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private PartsRepository m_repository
+      |   +-- private String m_classname
+      |   +-- private String m_sqlStr
+      |   +-- private String m_expandedSqlStr
+      |   +-- private String m_portSql
+      |   +-- private List`1 m_orderBy
+      |   +-- private PnPSelectFilter m_selectFilter
+      |   +-- private PnPSelectFilter m_sportFilter
+      |   +-- private PnPQryNode m_partCond
+      |   +-- private PnPQryNode m_commonCond
+      |   +-- private Dictionary`2 m_hints
+      |
+      |-- Properties:
+      |   +-- PartsRepository Repository {get}
+      |   +-- String Filter {get}
+      |   +-- String PortFilter {get}
+      |   +-- String ExpandedFilter {get}
+      |   +-- String PartFilter {get}
+      |   +-- String CommonFilter {get}
+      |
+      +-- Methods:
+          +-- public Void Dispose()
+          +-- public Void Prepare()
+          +-- public PartQueryResults Execute()
+          +-- public PartQueryResults Execute(PnPRowIdArray rowids)
+          +-- internal Object GetHint(Int32 hid)
+          +-- internal Void SetHint(Int32 hid, Object hval)
+
+  +-- class PartsFilterFormater
+      : PnPSQLFormatter
+      |
+      +-- Methods:
+          +-- public String ToSQLString(PnPQryNode node)
+
+  +-- class PartsFilterProduction
+      : PnPQryProduction
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private PartsFilter m_filter
+      |
+      +-- Methods:
+          +-- public PnPQryObjectRef makeObjectRef()
+          +-- public PnPQryAnd makeAnd()
+          +-- public PnPQryOr makeOr()
+          +-- public PnPQryCompare makeEq()
+
+  +-- class PartsMerger
+      |
+      |-- Fields:
+      |   +-- private PartsSource m_ref1
+      |   +-- private PartsSource m_ref2
+      |   +-- internal static String GeometryDomainProp
+      |   +-- internal static String GeometryNameProp
+      |   +-- internal static String GeometryDefinitionProp
+      |
+      |-- Properties:
+      |   +-- PartsSource Target1 {get}
+      |   +-- PartsSource Target2 {get}
+      |
+      +-- Methods:
+          +-- private Boolean IsGeometryProperty(String propName)
+          +-- public ColumnValueDifference[] ComparePartsDeep()
+          +-- public ColumnValueDifference[] ComparePartsShallow()
+          +-- private Boolean CompareValues(Object v1, Object v2)
+          +-- public Void MergeDifferences(ColumnValueDifference[] diffs, CompareTarget ctarget)
+
+  +-- class PartsObjectRef
+      : PnPQryObjectRef
+      Implements: ICloneable, IDisposable
+      |
+      |-- Fields:
+      |   +-- private PartsFilter m_filter
+      |   +-- private Int32 m_nPort
+      |
+      +-- Methods:
+          +-- public Void prepareSExpr(Type& type, Object p2)
+          +-- public Object executeSExpr(Object obj)
+
+  +-- class PartsOr
+      : PnPQryOr
+      Implements: ICloneable, IDisposable
+      |
+      |-- Fields:
+      |   +-- private PartsFilter m_filter
+      |
+      +-- Methods:
+          +-- public Void prepareBExpr(Object o)
+
+  +-- class PartsRepository
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private RepositoryOperationOccurredEventHandler m_operationOccurred
+      |   +-- private Boolean m_enableEvents
+      |   +-- private Dictionary`2 m_ndfilters
+      |   +-- private Dictionary`2 m_pffilters
+      |   +-- private Dictionary`2 m_pfndfilters
+      |   +-- private Dictionary`2 m_pfidfilters
+      |   +-- private Dictionary`2 m_pfidndfilters
+      |   +-- private PnPSelectFilter m_findport
+      |   +-- private PnPSelectFilter m_vamapfilter
+      |   +-- private PnPSelectFilter m_sbloofilter
+      |   +-- private PnPSelectFilter m_sblsofilter
+      |   +-- private PnPSelectFilter m_sblssfilter
+      |   +-- private PnPSelectFilter m_sblssulfilter
+      |   +-- private PnPSelectFilter m_sblosulfilter
+      |   +-- private PnPSelectFilter m_sblooulfilter
+      |   +-- private PnPSelectFilter m_eiguidfilters
+      |   +-- private PnPDatabase m_db
+      |   +-- private Int32 m_rid
+      |   +-- private Boolean m_bAttached
+      |   +-- private Boolean m_bAutoAccept
+      |   +-- private Dictionary`2 m_partdesc
+      |   +-- private AppStringTableReader m_stringTable
+      |   +-- private Boolean m_stringTableModified
+      |   +-- private Units m_ndunits
+      |   +-- private Dictionary`2 m_sizemap
+      |   +-- protected BinaryFormatter m_formatter
+      |   +-- private Dictionary`2 m_portIndex
+      |   +-- internal BaseTablesCallbackImp m_callback
+      |   +-- private static String s_ndfilter
+      |   +-- internal static String DataCacheRelationshipID
+      |   +-- internal static String DataCacheRelationshipType
+      |   +-- internal static String RepositoryDescriptorTableName
+      |   +-- internal static String RepositoryDescriptorName
+      |   +-- internal static String RepositoryDescriptorID
+      |   +-- internal static String RepositoryDescriptorDescription
+      |   +-- internal static String RepositoryDescriptorType
+      |   +-- internal static String RepositoryDescriptorContentType
+      |   +-- internal static String RepositoryVersion
+      |   +-- internal static String RepositoryOriginalVersion
+      |   +-- internal static String PnPClassName
+      |   +-- public static String EngineeringItemsTableName
+      |   +-- public static String PipeRunComponentTableName
+      |   +-- public static String FastenersTableName
+      |   +-- public static String PipeBendGroupTableName
+      |   +-- public static String SizePropertyName
+      |   +-- public static String TOPPropertyName
+      |   +-- public static String BOPPropertyName
+      |   +-- public static String CutLengthPropertyName
+      |   +-- public static String PipeBendGroupRelationship
+      |   +-- public static String PipeBendGroupRole
+      |   +-- public static String PipeBendPartRole
+      |   +-- internal static String PortTableName
+      |   +-- internal static String PortNameProperty
+      |   +-- public static String PartFamilyName
+      |   +-- public static String PartFamilyGuid
+      |   +-- public static String PartGuid
+      |   +-- public static String NominalDiameter
+      |   +-- public static String NominalUnit
+      |   +-- public static String EndCondition
+      |   +-- public static String Reducer
+      |   +-- public static String BoltSet
+      |   +-- public static String StandardBoltLength
+      |   +-- public static String BoltCompatibleStd
+      |   +-- public static String BoltSize
+      |   +-- public static String StandardLength
+      |   +-- public static String LengthUnit
+      |   +-- public static String UnitMetric
+      |   +-- public static String UnitImperial
+      |   +-- public static String UnitDefaultDesc
+      |   +-- public static String Weight
+      |   +-- public static String WeightUnit
+      |   +-- public static String LinearWeight
+      |   +-- public static String LinearWeightUnit
+      |   +-- public static String WeightUnitMetric
+      |   +-- public static String WeightUnitImperial
+      |   +-- public static String LinearWeightUnitMetric
+      |   +-- public static String LinearWeightUnitImperial
+      |   +-- public static String PartPortRelationship
+      |   +-- public static String PartRole
+      |   +-- public static String PortRole
+      |   +-- public static String RelNameProperty
+      |   +-- public static String ValveActuatorMapTable
+      |   +-- public static String ValvePartFamilyId
+      |   +-- public static String ActuatorPartSizeId
+      |   +-- public static String MapNominalUnits
+      |   +-- public static String ValveNominalDiameterFrom
+      |   +-- public static String ValveNominalDiameterTo
+      |   +-- public static String Valve
+      |   +-- public static String ValveBody
+      |   +-- public static String ValveActuator
+      |   +-- public static String ValveBodyType
+      |   +-- public static String ValveAlignment
+      |   +-- public static String LongDescription
+      |   +-- public static String ValveBodyFamilyId
+      |   +-- public static String ValveBodyPartSizeId
+      |   +-- public static String ActuatorType
+      |   +-- public static String OperatorType
+      |   +-- public static String ActuatorHeight
+      |   +-- public static String ActuatorWidth
+      |   +-- public static String ControlValve
+      |   +-- public static String ActuatorFamilyName
+      |   +-- public static String ActuatorFamilyId
+      |   +-- public static String CURRENT_VERSION
+      |
+      |-- Properties:
+      |   +-- AppStringTableReader StringTable {get; set}
+      |   +-- Boolean StringTableModified {get; set}
+      |   +-- String Name {get; set}
+      |   +-- String ID {get}
+      |   +-- String Description {get; set}
+      |   +-- String Type {get}
+      |   +-- String ContentType {get; set}
+      |   +-- String Version {get; set}
+      |   +-- String OriginalVersion {get; set}
+      |   +-- Units SizeUnits {get; set}
+      |   +-- Boolean AutoAccept {get; set}
+      |   +-- StringCollection PrincipalPartTypes {get}
+      |   +-- String NominalDiameterFilter {get}
+      |   +-- PnPDatabase Database {get; set}
+      |   +-- PnPTable RepositoryDescriptorTable {get}
+      |   +-- PnPRow RepositoryDescriptorRow {get}
+      |   +-- Boolean IsFiringEvents {get}
+      |   +-- Boolean EnableEventFiring {get; set}
+      |
+      +-- Methods:
+          +-- internal Void AddDatabaseEventHandler()
+          +-- internal Void RemoveDatabaseEventHandler()
+          +-- private Void databasePersistActionOccurred(Object sender, PnPDatabasePersistActionEventArgs e)
+          +-- private Void ReleasePreparedFilters()
+          +-- private Void ReleaseNdSelectFilters(Dictionary`2 ndfilters)
+          +-- private Void tab_ExpressionColumnValueRequired(Object sender, PnPExpressionColumnEventArgs e)
+          +-- public Void tab_ExpressionBendGroupColumnValueRequired(Object sender, PnPExpressionColumnEventArgs e)
+          +-- public Void tab_ExpressionBendGroupColumnValueChanged(Object sender, PnPExpressionColumnEventArgs e)
+          +-- private Void databaseOperationOccurred(Object sender, PnPOperationOccurredEventArgs e)
+          +-- public RepositoryOperationOccurredEventArgs RevertOperation(Byte[] buffer)
+          +-- internal Void FireOperationOccurred(RepositoryOperationOccurredEventArgs args)
+          +-- public Void Dispose()
+          +-- internal static PnPDatabase CreateRepositoryDatabase(String name, PnPDatabaseLink dblink, String template, Type reptype)
+          +-- public static PartsRepository Open(String filename)
+          +-- public static PartsRepository AttachedRepository(PnPDatabase db, Boolean bCheckDescriptor)
+          +-- internal Void OpenRepository(String filename)
+          +-- internal Void AttachDatabase(PnPDatabase db)
+          +-- internal Part CreatePart(PnPRow row)
+          +-- internal Part CreatePart(Int32 rowid)
+          +-- public Void Close()
+          +-- private Void DisposeFilters(Dictionary`2 filters)
+          +-- private String GetVersion(String what)
+          +-- private Void SetVersion(String what, String val)
+          +-- public Void AcceptChanges()
+          +-- public Void RejectChanges()
+          +-- public Void CommitPort(Port port)
+          +-- public Part NewPart(String partclass)
+          +-- public Void AddPart(Part part)
+          +-- public Part FindPart(Int32 partid)
+          +-- public Part FindPart(Guid guid)
+          +-- public Part FindPart(String guid)
+          +-- public StringCollection GetSubparts(String partname)
+          +-- public Boolean IsTypeOfPart(String part, String type)
+          +-- public Boolean IsReducingPart(String parttype)
+          +-- public Boolean IsReducingPartFamily(String parttype, String pfguid)
+          +-- public Boolean ContainsReducingPart(PartQueryResults res)
+          +-- public PnPTable GetPartTable(String partname)
+          +-- public Boolean PartTypeExists(String partname)
+          +-- public PnPTable GetPortTable()
+          +-- public PnPRelationshipType GetPortPortRelationshipType()
+          +-- private static Void SetNominalDiameterParameter(PnPSelectFilter sfilter, NominalDiameter nd)
+          +-- private static Void DefineNominalDiameterParameters(PnPSelectFilter sfilter)
+          +-- public Void ClearFilterCache(String partClass)
+          +-- public PartQueryResults SelectParts(String partclass, String filter, String orderby, Boolean mustSort)
+          +-- public PartQueryResults SelectParts(String partclass, String filter)
+          +-- public PartQueryResults SelectParts(String partclass, String filter, List`1 orderBy)
+          +-- public PartQueryResults SelectParts(String partclass, String filter, PnPRowIdArray rowids, List`1 orderBy)
+          +-- public PartQueryResults SelectParts(String partclass, String filter, String portfilter, PnPRowIdArray rowids, List`1 orderBy)
+          +-- internal PartQueryResults SelectParts(PnPSelectFilter sfilter, PnPRowIdArray rids)
+          +-- internal PnPRow[] SelectPartRows(PnPSelectFilter sfilter, PnPRowIdArray rids, Dictionary`2 hints)
+          +-- public PartQueryResults SelectPartsGroupByPartClassAndFaimlyId()
+          +-- public PartQueryResults SelectParts(String partclass, NominalDiameter nd)
+          +-- public PartQueryResults SelectParts(String partclass, NominalDiameter nd, String endtype)
+          +-- public PartQueryResults SelectPartsByFamilyName(String partclass, String partfamilyname)
+          +-- public PartQueryResults SelectPartsByFamilyGuid(String partclass, String partfamilyguid)
+          +-- public PartQueryResults SelectPartByFamilyGuidNominalDiameter(String partclass, String partfamilyguid, NominalDiameter nd)
+          +-- public PartQueryResults SelectPartByFamilyNameNominalDiameter(String partclass, String partfamilyname, NominalDiameter nd)
+          +-- public PnPDataView CreateDataView(String partType, StringCollection partprops, StringCollection portprops, String filter, String portfilter, Int32 nPorts)
+          +-- public PnPDataView CreateDataView(String partType, StringCollection partprops, StringCollection portprops, String filter, String portfilter, Int32 nPorts, PnPRowIdArray rowIds)
+          +-- public ValveActuatorMapEntry[] SelectValveActuatorMapEntries(Guid valveBodyFamilyId)
+          +-- public ValveActuatorMapEntry[] SelectValveActuatorMapEntries()
+          +-- internal ValveActuatorMapEntry[] CollectValveActuatorMapEntries(PnPRow[] rows)
+          +-- public Boolean hasStandardBoltLengthEntry(String bStd, String bSize, Double bLength, String blUnit)
+          +-- public DataTable GetStandardBoltStdDefinitions()
+          +-- public PnPRow[] GetStandardBoltLengthEntrys(String bStd, String blUnit)
+          +-- public PnPRow[] GetStandardBoltLengthEntrys(String bStd, String bSize, String blUnit)
+          +-- public PnPRow[] FindStandardBoltLengthEntry(Double bLength, String blUnit)
+          +-- public PnPRow[] FindStandardBoltLengthEntry(String bSize, Double bLength, String blUnit)
+          +-- public PnPRow[] FindStandardBoltLengthEntry(String bStd, String bSize, Double bLength, String blUnit)
+          +-- public Part CreatePartFromRow(PnPRow row)
+          +-- public PnPRow[] SelectStandardBoltLengthEntry(String bStd, String bSize)
+          +-- public PnPRow[] SelectStandardBoltLengthEntry(String bSize)
+          +-- public PnPRow[] SelectStandardBoltLengthEntry()
+          +-- internal PnPRow FindPortRowBySizeId(String sizeid)
+          +-- public String GetPartTypeDisplayName(String parttype)
+          +-- public StringCollection GetPartPropertyNames(String partclass, Boolean bLocal)
+          +-- public StringCollection GetPartPropertyNames(String partclass, Boolean bLocal, Boolean bExcludeHidden)
+          +-- public StringCollection GetPortPropertyNames(String partclass)
+          +-- public StringCollection GetPortPropertyNames(String partclass, Boolean bExcludeHidden)
+          +-- public PartProperty GetPartProperty(String partclass, String propname, Boolean bLocal)
+          +-- public PartProperty GetPortProperty(String partclass, String propname)
+          +-- public Void AddPartProperty(String partclass, PartProperty propdef)
+          +-- public Void RemovePartProperty(String partclass, String name)
+          +-- public PnPColumn GetPartColumn(String partclass, String propname)
+          +-- public PnPColumn GetPortColumn(String propname)
+          +-- public NominalDiameter[] GetNominalSizes()
+          +-- public NominalDiameter[] GetPartTypeNominalSizes(String parttype)
+          +-- public static ValveSubTypeInfo BuildValveSubTypeInfo(String strSubType)
+          +-- public static List`1 BuildValveSubTypeInfos(StringCollection strSubTypes)
+          +-- private Boolean IsValveSizeValid(List`1 infos, DataRow row)
+          +-- public NominalDiameter[] GetValveNominalSizes(StringCollection strSubTypes)
+          +-- public NominalDiameter[] GetPartTypePartFamilyIDNominalSizes(String parttype, String partFamilyId)
+          +-- public StringCollection GetPartTypeSizes(String parttype, String partFamilyId, Units targetUnit, Boolean bIncludeNativeString)
+          +-- public StringCollection GetAvailablePartTypes()
+          +-- public Part[] ClonePartsFamily(String partfamilyguid, Dictionary`2 guidMap)
+          +-- public Part[] ClonePartsFamilyTo(String partfamilyguid, PartsRepository rep, Dictionary`2 guidMap)
+          +-- public Part NewPart(Part part, String newFamilyGuid, Boolean newportidentity)
+          +-- internal Void InitizeRepository(PnPDatabase db, String name, String type)
+          +-- public Void ClearPartPropertyCache(String name)
+          +-- public Void ClearAllPartsCache()
+          +-- internal PartDescriptor GetPartDescriptor(String name)
+          +-- internal String MakeSizeString(Part part)
+          +-- internal String MakeSizeString(Int32 partid)
+          +-- internal Double CalculateTOPValue(Part part)
+          +-- internal Double CalculateBOPValue(Part part)
+          +-- internal Double CalculateTOPValue(PnPAbstractRow row)
+          +-- internal Double CalculateBOPValue(PnPAbstractRow row)
+          +-- internal Object CalculateBendGroupColumnValue(Part part, String colName)
+          +-- internal Object CalculateBendGroupColumnValue(PnPAbstractRow row, String colName)
+          +-- internal Double CalculateBendGroupColumnValueSum(PnPAbstractRow row, String colName)
+          +-- internal Double CalculateBendGroupColumnValueCOG(PnPAbstractRow row, String colName)
+          +-- internal Double CalculateBendGroupColumnValueMinMax(PnPAbstractRow row, String colName, Boolean bMax)
+          +-- internal Object GetBendGroupColumnValueClassFirst(PnPAbstractRow row, String colName, String className)
+          +-- internal Object GetBendGroupColumnValueFirst(PnPAbstractRow row, String colName)
+          +-- internal Void SetBendGroupColumnValue(Part part, String colName, Object val)
+          +-- internal Void SetBendGroupColumnValue(PnPAbstractRow row, String colName, Object val)
+          +-- internal Void ClearSizeString(Int32 partid)
+          +-- public String NDToTargetDisplayString(NominalDiameter nd)
+
+  +-- class PartsRowSource
+      : PnPRowSource
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private PartsRepository m_repository
+      |   +-- private String m_parttype
+      |   +-- private String m_filter
+      |   +-- private String m_portfilter
+      |   +-- private StringCollection m_partprops
+      |   +-- private StringCollection m_portprops
+      |   +-- private List`1 m_orderby
+      |   +-- private Int32 m_nPorts
+      |   +-- private PartQueryResults m_res
+      |   +-- private List`1 m_descList
+      |   +-- private Dictionary`2 m_pnames
+      |
+      |-- Properties:
+      |   +-- PnPQualifiedName Name {get}
+      |   +-- Boolean AllowNew {get}
+      |   +-- Boolean AllowEdit {get}
+      |   +-- Boolean AllowRemove {get}
+      |
+      +-- Methods:
+          +-- public Void Dispose()
+          +-- public List`1 Describe()
+          +-- public ArrayList DescribeColumns()
+          +-- public PnPRowView NewRow()
+          +-- public PnPRowView[] Select(String filter, PnPRowIdArray rowids)
+          +-- internal PropertyDesc GetPropertyDesc(String name)
+          +-- internal PropertyDesc GetPropertyDesc(Int32 idx)
+
+  +-- class PartsSource
+      : RowSource
+      |
+      +-- Methods:
+          +-- public PartQueryResults SelectParts()
+          +-- public Boolean IsPortProperty(String propname)
+
+  +-- class PartTypeReference
+      : AbstractPart
+      |
+      |-- Fields:
+      |   +-- private String m_parttype
+      |
+      |-- Properties:
+      |   +-- String PartType {get}
+
+  +-- class PartViewRow
+      : PnPRowView
+      Implements: ICustomTypeDescriptor, IEditableObject, IDisposable
+      |
+      |-- Fields:
+      |   +-- private Part m_part
+      |
+      |-- Properties:
+      |   +-- Object Item {get; set}
+      |   +-- Object Item {get; set}
+      |   +-- Object Item {get; set}
+      |   +-- Int32 RowId {get}
+      |   +-- String ClassName {get}
+      |
+      +-- Methods:
+          +-- public Void BeginEdit()
+          +-- public Void CancelEdit()
+          +-- public Void EndEdit()
+          +-- internal String MakeSizeString()
+          +-- public Void Delete()
+          +-- public Boolean IsNull(Int32 colindex)
+          +-- public Boolean IsNull(String colname)
+          +-- public Boolean IsEqual(PnPRowView other)
+          +-- public Boolean IsPersistent()
+
+  +-- class Port
+      Implements: PropertyContainer
+      |
+      |-- Fields:
+      |   +-- private Part m_part
+      |   +-- private PnPRow m_Row
+      |   +-- private Int32 m_rowid
+      |   +-- private String m_name
+      |
+      |-- Properties:
+      |   +-- Part Part {get}
+      |   +-- String Name {get}
+      |   +-- Int32 Count {get}
+      |   +-- StringCollection PropertyNames {get}
+      |   +-- Object Item {get; set}
+      |   +-- Object Item {get; set}
+      |   +-- Boolean IsPrincipalPort {get}
+      |   +-- NominalDiameter NominalDiameter {get; set}
+      |   +-- String EndCondition {get; set}
+      |   +-- PnPRow Row {get; set}
+      |   +-- Int32 PortId {get; set}
+      |   +-- Units LinearUnit {get; set}
+      |
+      +-- Methods:
+          +-- public PartProperty GetPropertyDesc(String name)
+          +-- public Boolean NeedUnitScale(Units toUnit, Double& scale)
+
+  +-- class PortCollection
+      Implements: ICollection`1, IEnumerable`1, IEnumerable
+      |
+      |-- Fields:
+      |   +-- private Part m_owner
+      |   +-- private ArrayList m_ports
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- Boolean IsReadOnly {get}
+      |   +-- Port Item {get}
+      |   +-- Port Item {get}
+      |   +-- Part Owner {get}
+      |
+      +-- Methods:
+          +-- public Void Add(Port item)
+          +-- public Boolean Contains(Port item)
+          +-- public Boolean Contains(String name)
+          +-- public Void Clear()
+          +-- public Boolean Remove(Port item)
+          +-- public Boolean Remove(String name)
+          +-- public IEnumerator`1 GetEnumerator()
+          +-- private IEnumerator System.Collections.IEnumerable.GetEnumerator()
+          +-- public Void CopyTo(Port[] arr, Int32 startAt)
+          +-- internal Void AddPortRows()
+
+  +-- class PortEnumerator
+      Implements: IEnumerator`1, IDisposable, IEnumerator
+      |
+      |-- Fields:
+      |   +-- private PortCollection m_coll
+      |   +-- private Int32 m_pos
+      |
+      |-- Properties:
+      |   +-- Port Current {get}
+      |   +-- Object System.Collections.IEnumerator.Current {get}
+      |
+      +-- Methods:
+          +-- public Void Dispose()
+          +-- public Boolean MoveNext()
+          +-- public Void Reset()
+
+  +-- interface PropertyContainer
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- StringCollection PropertyNames {get}
+      |   +-- Object Item {get; set}
+      |   +-- Object Item {get; set}
+      |   +-- Units LinearUnit {get; set}
+      |
+      +-- Methods:
+          +-- public PartProperty GetPropertyDesc(String name)
+
+  +-- class PropertyDesc
+      |
+      |-- Fields:
+      |   +-- internal String Name
+      |   +-- internal KeyValuePair`2 P
+      |   +-- internal Int32 PortId
+      |   +-- internal String BoundName
+
+  +-- class RepositoryOperationOccurredEventArgs
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private Int16 m_opcode
+      |   +-- private Byte[] m_buffer
+      |   +-- private Object m_object
+      |   +-- public static Int16 NoOp
+      |   +-- public static Int16 DatabaseOp
+      |
+      |-- Properties:
+      |   +-- Int16 OpCode {get}
+      |   +-- Byte[] Buffer {get}
+      |   +-- Int32 Length {get}
+      |   +-- Object Value {get}
+      |
+      +-- Methods:
+          +-- public Void Dispose()
+
+  +-- class RepositoryOperationOccurredEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Object sender, RepositoryOperationOccurredEventArgs args)
+          +-- public IAsyncResult BeginInvoke(Object sender, RepositoryOperationOccurredEventArgs args, AsyncCallback callback, Object object)
+          +-- public Void EndInvoke(IAsyncResult result)
+
+  +-- class RepositoryOperationSerializer
+      Implements: ISerializable
+      |
+      |-- Fields:
+      |   +-- protected Int16 m_opcode
+      |   +-- protected Object m_object
+      |
+      |-- Properties:
+      |   +-- Int16 OperationCode {get}
+      |   +-- Object ObjectData {get}
+      |
+      +-- Methods:
+          +-- protected Void GetOperationCode(SerializationInfo info, StreamingContext context)
+          +-- protected Int16 ToOperationCode(SerializationInfo info, StreamingContext context)
+          +-- public Void GetObjectData(SerializationInfo info, StreamingContext context)
+
+  +-- class RepositoryPartsSource
+      : PartsSource
+      |
+      |-- Fields:
+      |   +-- private PartsRepository m_rep
+      |   +-- private PnPRowIdArray m_rowids
+      |   +-- private String m_filter
+      |
+      |-- Properties:
+      |   +-- PartsRepository Repository {get}
+      |   +-- PnPRowIdArray PartIds {get; set}
+      |   +-- String PartsFilter {get; set}
+      |
+      +-- Methods:
+          +-- public PartQueryResults SelectParts()
+          +-- public PnPRow[] SelectRows()
+          +-- public PnPRow[] SelectByRowIds(PnPRowIdArray rids)
+          +-- public Part[] SelectPartsByIds(PnPRowIdArray partids)
+          +-- public PnPRow GetRow(Int32 rowid)
+          +-- public Void ReleaseRows(PnPRow[] rows)
+          +-- public Boolean IsPortProperty(String propname)
+
+  +-- class RowSource
+      |
+      |-- Fields:
+      |   +-- private String m_keycol
+      |   +-- private Boolean m_bUnique
+      |   +-- private String m_classname
+      |   +-- private StringCollection m_columnnames
+      |
+      |-- Properties:
+      |   +-- String ClassName {get}
+      |   +-- String KeyColumn {get}
+      |   +-- Boolean IsKeyUnique {get}
+      |   +-- StringCollection ColumnNames {get}
+      |
+      +-- Methods:
+          +-- public PnPRow[] SelectRows()
+          +-- public PnPRow[] SelectByRowIds(PnPRowIdArray rowds)
+          +-- public Part[] SelectPartsByIds(PnPRowIdArray partids)
+          +-- public PnPRow GetRow(Int32 rowid)
+          +-- public Void ReleaseRows(PnPRow[] rows)
+
+  +-- enum Units
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static Units Undefined
+      |   +-- public static Units Mm
+      |   +-- public static Units Inch
+
+  +-- class ValveActuatorMapEntry
+      |
+      |-- Fields:
+      |   +-- private Guid m_valveFamilyId
+      |   +-- private Guid m_actuatorSizeRecordId
+      |   +-- private NominalDiameter m_ndFrom
+      |   +-- private NominalDiameter m_ndTo
+      |
+      |-- Properties:
+      |   +-- Guid ValveBodyFamilyId {get}
+      |   +-- Guid ActuatorSizeRecordId {get}
+      |   +-- NominalDiameter NdFrom {get}
+      |   +-- NominalDiameter NdTo {get}
+
+  +-- class ValveSubTypeInfo
+      |
+      |-- Fields:
+      |   +-- private String m_strValveBodyType
+      |   +-- private String m_strValveAlignment
+      |
+      |-- Properties:
+      |   +-- String ValveBodyType {get; set}
+      |   +-- String ValveAlignment {get; set}
+
+
+Namespace: Autodesk.ProcessPower.PartsRepository.Catalog
+----------------------------------------
+  +-- class ArrayOfObjectsComparer
+      Implements: IEqualityComparer`1
+      |
+      |-- Fields:
+      |   +-- private static ArrayOfObjectsComparer s_comp
+      |
+      |-- Properties:
+      |   +-- ArrayOfObjectsComparer Default {get}
+      |
+      +-- Methods:
+          +-- public Boolean Equals(ArrayList x, ArrayList y)
+          +-- public Int32 GetHashCode(ArrayList x)
+
+  +-- class CatalogPart
+      : Part
+      Implements: PropertyContainer
+
+  +-- class PipePartCatalog
+      : PartsRepository
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private WallThicknessMappingTable m_wtmap
+      |   +-- public static String DataFileExtension
+      |
+      |-- Properties:
+      |   +-- WallThicknessMappingTable WallThicknessMappingTable {get}
+      |
+      +-- Methods:
+          +-- public static PipePartCatalog CreateCatalog(String name, PnPDatabaseLink dblink, String template)
+          +-- public static PipePartCatalog CreateCopy(String name, PnPDatabaseLink dblink, PipePartCatalog s_cat)
+          +-- public static PipePartCatalog OpenCatalog(String specfile)
+          +-- internal Void AttachDatabase(PnPDatabase db)
+          +-- internal Part CreatePart(PnPRow row)
+          +-- internal Part CreatePart(Int32 rowid)
+
+  +-- class WallThicknessComparer
+      Implements: IEqualityComparer`1
+      |
+      |-- Fields:
+      |   +-- private static WallThicknessComparer s_comp
+      |
+      |-- Properties:
+      |   +-- WallThicknessComparer Default {get}
+      |
+      +-- Methods:
+          +-- public Boolean Equals(KeyValuePair`2 x, KeyValuePair`2 y)
+          +-- public Int32 GetHashCode(KeyValuePair`2 x)
+
+  +-- class WallThicknessMapEntry
+      |
+      |-- Fields:
+      |   +-- private PnPRow m_row
+      |   +-- public static String WallThickness
+      |   +-- public static String LengthUnit
+      |
+      |-- Properties:
+      |   +-- Int32 Id {get}
+      |   +-- NominalDiameter NominalDiameter {get; set}
+      |   +-- Double Thickness {get; set}
+      |   +-- String ThicknessUnit {get; set}
+      |   +-- Object Item {get; set}
+      |   +-- PnPRow Row {get}
+      |
+      +-- Methods:
+          +-- public Void Delete()
+
+  +-- class WallThicknessMappingResults
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private WallThicknessMappingTable m_mtab
+      |   +-- private LinkedList`1 m_rows
+      |   +-- private LinkedListNode`1 m_pos
+      |
+      |-- Properties:
+      |   +-- WallThicknessMappingTable MappingTable {get}
+      |
+      +-- Methods:
+          +-- public Void Dispose()
+          +-- public WallThicknessMapEntry Next()
+
+  +-- class WallThicknessMappingTable
+      |
+      |-- Fields:
+      |   +-- private PipePartCatalog m_catalog
+      |   +-- private PnPTable m_tab
+      |   +-- private static String WallThicknessMap
+      |
+      |-- Properties:
+      |   +-- PipePartCatalog Catalog {get}
+      |   +-- StringCollection PropertyNames {get}
+      |
+      +-- Methods:
+          +-- public WallThicknessMapEntry NewMapEntry(NominalDiameter nd, Double thickness)
+          +-- public WallThicknessMapEntry NewMapEntry()
+          +-- public Void Add(WallThicknessMapEntry ws)
+          +-- public Type GetPropertyType(String name)
+          +-- public WallThicknessMappingResults Select()
+          +-- public WallThicknessMapEntry Find(Int32 id)
+          +-- public WallThicknessMappingResults Select(NominalDiameter nd, KeyValuePair`2[] filter)
+          +-- public KeyValuePair`2[] SelectDistinctThicknesses(NominalDiameter nd, KeyValuePair`2[] filter)
+          +-- private Void CheckTable()
+
+
+Namespace: Autodesk.ProcessPower.PartsRepository.Specification
+----------------------------------------
+  +-- class <GetEnumerator>d__11
+      Implements: IEnumerator`1, IDisposable, IEnumerator
+      |
+      |-- Fields:
+      |   +-- private Int32 <>1__state
+      |   +-- private SpecSheetClassOrderItem <>2__current
+      |   +-- public SpecSheetClassOrder <>4__this
+      |   +-- private Int32 <i>5__2
+      |
+      |-- Properties:
+      |   +-- SpecSheetClassOrderItem System.Collections.Generic.IEnumerator<Autodesk.ProcessPower.PartsRepository.Specification.SpecSheetClassOrderItem>.Current {get}
+      |   +-- Object System.Collections.IEnumerator.Current {get}
+      |
+      +-- Methods:
+          +-- private Void System.IDisposable.Dispose()
+          +-- private Boolean MoveNext()
+          +-- private Void System.Collections.IEnumerator.Reset()
+
+  +-- class <GetEnumerator>d__13
+      Implements: IEnumerator`1, IDisposable, IEnumerator
+      |
+      |-- Fields:
+      |   +-- private Int32 <>1__state
+      |   +-- private BranchTableItem <>2__current
+      |   +-- public BranchTable <>4__this
+      |   +-- private Int32 <i>5__2
+      |
+      |-- Properties:
+      |   +-- BranchTableItem System.Collections.Generic.IEnumerator<Autodesk.ProcessPower.PartsRepository.Specification.BranchTableItem>.Current {get}
+      |   +-- Object System.Collections.IEnumerator.Current {get}
+      |
+      +-- Methods:
+          +-- private Void System.IDisposable.Dispose()
+          +-- private Boolean MoveNext()
+          +-- private Void System.Collections.IEnumerator.Reset()
+
+  +-- class <GetEnumerator>d__14
+      Implements: IEnumerator`1, IDisposable, IEnumerator
+      |
+      |-- Fields:
+      |   +-- private Int32 <>1__state
+      |   +-- private PartTypeUsePriority <>2__current
+      |   +-- public PartUsePriorityCollection <>4__this
+      |   +-- private Int32 <i>5__2
+      |
+      |-- Properties:
+      |   +-- PartTypeUsePriority System.Collections.Generic.IEnumerator<Autodesk.ProcessPower.PartsRepository.Specification.PartTypeUsePriority>.Current {get}
+      |   +-- Object System.Collections.IEnumerator.Current {get}
+      |
+      +-- Methods:
+          +-- private Void System.IDisposable.Dispose()
+          +-- private Boolean MoveNext()
+          +-- private Void System.Collections.IEnumerator.Reset()
+
+  +-- class AliasName
+      : PnPCollectionItem
+      Implements: IPnPCollectionItem
+      |
+      |-- Fields:
+      |   +-- private String m_AliasName
+      |
+      |-- Properties:
+      |   +-- String Alias {get; set}
+      |   +-- PipePartSpecification Specification {get}
+
+  +-- class BranchPartReference
+      |
+      |-- Fields:
+      |   +-- private SpecPartReference m_partref
+      |   +-- private String m_notes
+      |
+      |-- Properties:
+      |   +-- SpecPartReference PartReference {get; set}
+      |   +-- String Notes {get; set}
+
+  +-- class BranchParts
+      |
+      |-- Fields:
+      |   +-- private AbstractPart[] m_parts
+      |   +-- private String m_symbol
+      |
+      |-- Properties:
+      |   +-- String Symbol {get}
+      |   +-- AbstractPart[] Parts {get}
+
+  +-- class BranchSymbol
+      : PnPCollectionItem
+      Implements: IPnPCollectionItem, IComparable`1, IComparable, ICloneable
+      |
+      |-- Fields:
+      |   +-- private String m_description
+      |   +-- private ArrayList m_partrefs
+      |
+      |-- Properties:
+      |   +-- String Description {get; set}
+      |   +-- ArrayList BranchPartReferences {get; set}
+      |
+      +-- Methods:
+          +-- public Int32 CompareTo(Object other)
+          +-- public Int32 CompareTo(BranchSymbol other)
+          +-- public Object Clone()
+
+  +-- class BranchSymbols
+      : PnPGenericNamedCollection`1
+      Implements: ICollection`1, IEnumerable`1, IEnumerable, PnPAbstractCollection`1
+      |
+      |-- Fields:
+      |   +-- private SpecBranchTable m_btable
+
+  +-- class BranchTable
+      Implements: ICollection`1, IEnumerable`1, IEnumerable, IEqualityComparer`1
+      |
+      |-- Fields:
+      |   +-- private SpecBranchTable m_branchTable
+      |   +-- private ArrayList m_items
+      |   +-- private Dictionary`2 m_itemsmap
+      |
+      |-- Properties:
+      |   +-- PipePartSpecification Specification {get}
+      |   +-- Int32 Count {get}
+      |   +-- Boolean IsReadOnly {get}
+      |   +-- BranchTableItem Item {get}
+      |   +-- BranchTableItem Item {get; set}
+      |
+      +-- Methods:
+          +-- public Void Add(BranchTableItem item)
+          +-- public Boolean Contains(BranchTableItem item)
+          +-- public Boolean Contains(NominalDiameter header, NominalDiameter branch)
+          +-- public Void Clear()
+          +-- public Boolean Remove(BranchTableItem item)
+          +-- public Boolean Remove(NominalDiameter header, NominalDiameter branch)
+          +-- public IEnumerator`1 GetEnumerator()
+          +-- private IEnumerator System.Collections.IEnumerable.GetEnumerator()
+          +-- public Void CopyTo(BranchTableItem[] arr, Int32 startAt)
+          +-- public Boolean Equals(BranchTableItem x, BranchTableItem y)
+          +-- public Int32 GetHashCode(BranchTableItem x)
+
+  +-- class BranchTableEditorSettings
+      |
+      |-- Fields:
+      |   +-- private String m_specFullName
+      |   +-- private String m_strHorizontalAxisTitle
+      |   +-- private String m_strVerticalAxisTitle
+      |   +-- private String m_strLegendNotes
+      |   +-- private DisplayLegendNotesType m_eDisplayLegendNotesType
+      |   +-- private Boolean m_bDisplayCellShaded
+      |   +-- private DisplayBranchCellsStyle m_eDisplayBranchCellsStyle
+      |
+      |-- Properties:
+      |   +-- Boolean IsDisplayCellShaded {get; set}
+      |   +-- String HorizontalAxisTitle {get; set}
+      |   +-- String VerticalAxisTitle {get; set}
+      |   +-- String LegendNotes {get; set}
+      |   +-- DisplayLegendNotesType DisplayLegendNotesType {get; set}
+      |   +-- DisplayBranchCellsStyle DisplayBranchCellsStyle {get; set}
+
+  +-- class BranchTableItem
+      Implements: IComparable, IComparable`1, ICloneable
+      |
+      |-- Fields:
+      |   +-- private NominalDiameter m_header
+      |   +-- private NominalDiameter m_branch
+      |   +-- private StringCollection m_branches
+      |
+      |-- Properties:
+      |   +-- NominalDiameter Header {get; set}
+      |   +-- NominalDiameter Branch {get; set}
+      |   +-- StringCollection Branches {get; set}
+      |
+      +-- Methods:
+          +-- public Int32 GetHashCode()
+          +-- public Boolean Equals(Object obj)
+          +-- public Int32 CompareTo(Object other)
+          +-- public Int32 CompareTo(BranchTableItem other)
+          +-- public Object Clone()
+
+  +-- class BranchTableQueryResults
+      |
+      |-- Fields:
+      |   +-- private ArrayList m_branchparts
+      |   +-- private NominalDiameter m_header
+      |   +-- private NominalDiameter m_branch
+      |
+      |-- Properties:
+      |   +-- NominalDiameter HeaderDiameter {get}
+      |   +-- NominalDiameter BranchDiameter {get}
+      |   +-- BranchParts[] Branches {get}
+      |
+      +-- Methods:
+          +-- internal Void Add(BranchParts bparts)
+
+  +-- enum DisplayBranchCellsStyle
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static DisplayBranchCellsStyle eAll
+      |   +-- public static DisplayBranchCellsStyle eFirst
+
+  +-- enum DisplayLegendNotesType
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static DisplayLegendNotesType eAboveLegend
+      |   +-- public static DisplayLegendNotesType eBelowLegend
+      |   +-- public static DisplayLegendNotesType eNoDisplay
+
+  +-- class GroupNote
+      : PnPCollectionItem
+      Implements: IPnPCollectionItem
+      |
+      |-- Fields:
+      |   +-- private String m_note
+      |
+      |-- Properties:
+      |   +-- PipePartSpecification Specification {get}
+      |   +-- String Note {get; set}
+
+  +-- class PartTypeUsePriority
+      Implements: IComparable, IComparable`1, ICloneable, IComparer
+      |
+      |-- Fields:
+      |   +-- private PartUsePriorityCollection m_owner
+      |   +-- private String m_classname
+      |   +-- private NominalDiameter m_nd
+      |   +-- private Boolean m_bResolved
+      |   +-- private ArrayList m_partreferences
+      |   +-- private Dictionary`2 m_partweights
+      |
+      |-- Properties:
+      |   +-- PartUsePriorityCollection Owner {get; set}
+      |   +-- PipePartSpecification Specification {get}
+      |   +-- String PartType {get; set}
+      |   +-- NominalDiameter ND {get; set}
+      |   +-- Boolean IsResolved {get; set}
+      |   +-- ArrayList PartFamilyUseOrder {get; set}
+      |
+      +-- Methods:
+          +-- public Boolean Equals(Object obj)
+          +-- public Int32 GetHashCode()
+          +-- public Int32 CompareTo(Object other)
+          +-- public Int32 CompareTo(PartTypeUsePriority other)
+          +-- public Object Clone()
+          +-- public Int32 Compare(Object x, Object y)
+          +-- public Void Sort(PnPRow[] rows)
+
+  +-- class PartUsePriorities
+      Implements: SpecificationPackagePart
+      |
+      |-- Fields:
+      |   +-- private PipePartSpecification m_spec
+      |   +-- private PartUsePriorityCollection m_usepriorites
+      |   +-- private static XmlSerializer s_serializer
+      |
+      |-- Properties:
+      |   +-- PipePartSpecification Specification {get}
+      |   +-- PartUsePriorityCollection PartUsePriorites {get}
+      |
+      +-- Methods:
+          +-- public Dictionary`2 FindSizeConflicts(String parttype, Boolean bDoNotReportResolved, Boolean bIncludeDerived)
+          +-- public Dictionary`2 FindSizeConflicts(String parttype, NominalDiameter ndi, Boolean bDoNotReportResolved, Boolean bIncludeDerived)
+          +-- private Dictionary`2 FindSizeConflicts(String parttype, String filter, Boolean bDoNotReportResolved)
+          +-- public Void Purge()
+          +-- public Void AcceptChanges()
+          +-- public Void RejectChanges()
+          +-- internal Void CopyFrom(PartUsePriorities other)
+          +-- public Void ToXmlFile(String filename)
+          +-- public Void ToXmlStream(Stream stream)
+          +-- public Void ToXmlStreamWriter(StreamWriter writer)
+          +-- public static PartUsePriorities FromXmlFile(String filename)
+          +-- public static PartUsePriorities FromXmlStream(Stream stream)
+          +-- public static PartUsePriorities FromXmlStreamReader(StreamReader reader)
+          +-- public Void ToStream(Stream stream)
+          +-- public Void FromStream(Stream stream)
+
+  +-- class PartUsePriorityCollection
+      Implements: ICollection`1, IEnumerable`1, IEnumerable, IEqualityComparer`1
+      |
+      |-- Fields:
+      |   +-- private PartUsePriorities m_pup
+      |   +-- private ArrayList m_items
+      |   +-- private Dictionary`2 m_itemsmap
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- PipePartSpecification Specification {get}
+      |   +-- Boolean IsReadOnly {get}
+      |   +-- PartTypeUsePriority Item {get}
+      |   +-- PartTypeUsePriority Item {get; set}
+      |   +-- NominalDiameter[] Item {get}
+      |
+      +-- Methods:
+          +-- public Void Add(PartTypeUsePriority item)
+          +-- public Boolean Contains(PartTypeUsePriority item)
+          +-- public Boolean Contains(String parttype, NominalDiameter nd)
+          +-- public Void Clear()
+          +-- public Boolean Remove(PartTypeUsePriority item)
+          +-- public Boolean Remove(String parttype, NominalDiameter nd)
+          +-- public IEnumerator`1 GetEnumerator()
+          +-- private IEnumerator System.Collections.IEnumerable.GetEnumerator()
+          +-- public Boolean HasPriorites(String parttype)
+          +-- public Void CopyTo(PartTypeUsePriority[] arr, Int32 startAt)
+          +-- public Boolean Equals(PartTypeUsePriority x, PartTypeUsePriority y)
+          +-- public Int32 GetHashCode(PartTypeUsePriority x)
+
+  +-- class PipePartSpecification
+      : PartsRepository
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private String m_packagefilename
+      |   +-- private String m_datafile
+      |   +-- private SpecBranchTable m_branchtab
+      |   +-- private PartUsePriorities m_partpriorities
+      |   +-- private SpecNotes m_specnotes
+      |   +-- private SpecSheetSettings m_specsheetsettings
+      |   +-- private FileStream m_lckfile
+      |   +-- public static String PkgPlantBranchTable
+      |   +-- public static String PkgPlantBranchTableType
+      |   +-- private static String BranchTableUri
+      |   +-- public static String PkgPlantPartPriorities
+      |   +-- public static String PkgPlantPartPrioritiesType
+      |   +-- private static String PartPrioritiesUri
+      |   +-- public static String PkgPlantSpecNotes
+      |   +-- public static String PkgPlantSpecNotesType
+      |   +-- private static String SpecNotesUri
+      |   +-- public static String PkgPlantSpecSheetSettings
+      |   +-- public static String PkgPlantSpecSheetSettingsType
+      |   +-- private static String SpecSheetSettingsUri
+      |   +-- public static String PkgPlantSpecContent
+      |   +-- public static String PkgPlantSpecContentType
+      |   +-- public static String DataFileExtension
+      |   +-- public static String PackageFileExtension
+      |   +-- public static String PropCatalogId
+      |   +-- private static Int32 HintOrder
+      |
+      |-- Properties:
+      |   +-- Boolean IsReadOnly {get}
+      |   +-- StringCollection ReferencedCatalogs {get}
+      |   +-- SpecBranchTable BranchTable {get}
+      |   +-- PartUsePriorities PartPriorities {get}
+      |   +-- SpecNotes Notes {get}
+      |   +-- SpecSheetSettings SpecSettings {get}
+      |
+      +-- Methods:
+          +-- public static PipePartSpecification CreateSpecification(String name, PnPDatabaseLink dblink, String template)
+          +-- internal static PipePartSpecification CreateSpecificationData(String name, PnPDatabaseLink dblink, String template)
+          +-- public static PipePartSpecification CreateSpecificationPackage(String name, String packagefile, String template)
+          +-- public static PipePartSpecification CreateSpecificationPackage(String name, String packagefile, PnPDatabaseLink dblink, String template)
+          +-- public static PipePartSpecification CreateCopy(String name, String packagefile, PipePartSpecification s_spec)
+          +-- private Void CopyParts(PipePartSpecification s_spec)
+          +-- public static PipePartSpecification OpenSpecification(String specfile)
+          +-- public static PipePartSpecification OpenSpecification(String specfile, Boolean bReadWrite)
+          +-- public Void Close()
+          +-- internal Void LockSpec()
+          +-- internal Void UnlockSpec()
+          +-- internal Void Load(String specfile)
+          +-- private Void SavePackage(Boolean bCreate)
+          +-- private Void LoadPackage()
+          +-- private Void SavePackagePart(Package package, String name, String type, String uri, SpecificationPackagePart ppart)
+          +-- private Void LoadPackagePart(Package package, String name, String type, String uri, SpecificationPackagePart ppart)
+          +-- private Void SaveBranchTablePart(Package package)
+          +-- private Void SavePartUsePrioritiesPart(Package package)
+          +-- private Void SaveSpecNotesPart(Package package)
+          +-- private Void SaveSpecSheetSettingsPart(Package package)
+          +-- private Void SaveDataPart(Package package)
+          +-- private Void LoadBranchTablePart(Package package)
+          +-- private Void LoadPartUsePrioritiesPart(Package package)
+          +-- private Void LoadSpecNotesPart(Package package)
+          +-- private Void LoadSpecSheetSettingsPart(Package package)
+          +-- private Void LoadDataPart(Package package)
+          +-- private String ResolveDataUri(Uri datauri)
+          +-- internal PackagePart GetSpecPackagePart(Package package, String relid, String reltype)
+          +-- internal Void SaveBranchTable()
+          +-- internal Void LoadBranchTable()
+          +-- internal Void SavePartUsePriorities()
+          +-- internal Void LoadPartUsePriorities()
+          +-- internal Void SaveSpecNotes()
+          +-- internal Void LoadSpecNotes()
+          +-- internal Void SaveSpecSheetSettings()
+          +-- internal Void LoadSpecSheetSettings()
+          +-- public Void LoadXPackagePart(String name, String type, String uri, SpecificationPackagePart ppart)
+          +-- public Void SaveXPackagePart(String name, String type, String uri, SpecificationPackagePart ppart)
+          +-- internal Void AttachDatabase(PnPDatabase db)
+          +-- internal Part CreatePart(PnPRow row)
+          +-- internal Part CreatePart(Int32 rowid)
+          +-- public SpecPart NewPartFromCatalogPart(CatalogPart catpart)
+          +-- public static Void SetActuatorProperties(Part Valve, Part Actuator, Part ValveBody)
+          +-- public static Void UpdateValveLongDesc(Part Valve, String ValveBodyLongDesc, String ActuatorType, String ActuatorWidth, String ActuatorHeight)
+          +-- public SpecPart CreateValveFromValveBobyActuator(CatalogPart body, CatalogPart actuator)
+          +-- public Void AddPart(Part part)
+          +-- public Void UpdatePartUsePriority(Part part)
+          +-- private String MakeFamilyIdFilter(Dictionary`2 map)
+          +-- private Void CopyPart(Part part, Part src)
+          +-- public PnPRowIdArray SelectValveIdsByCatalogName(String catalog, String& partSizeIdFilter, PnPRowIdArray res2, String& partSizeIdFilter2)
+          +-- public PnPRowIdArray SelectPartIdsByCatalogName(String partType, String catalog, String& partSizeIdFilter)
+          +-- public Void AcceptChanges()
+          +-- public Void RejectChanges()
+          +-- public PartQueryResults SelectParts(String partclass, String filter, String portfilter, PnPRowIdArray rowids, List`1 orderBy)
+          +-- internal PartQueryResults SelectParts(PnPSelectFilter sfilter, PnPRowIdArray rids)
+          +-- internal PnPRow[] SelectPartRows(PnPSelectFilter sfilter, PnPRowIdArray rids, Dictionary`2 hints)
+          +-- private PnPRow[] SortSpecQueryResults(String parttype, PnPRow[] res, Boolean hasND)
+          +-- private Boolean HasNDExpression(PnPQryNode n)
+          +-- private static Void CopyStream(Stream source, Stream target)
+          +-- public RepositoryOperationOccurredEventArgs RevertOperation(Byte[] buffer)
+          +-- internal Void FireSpecificationOperationOccurred(Int16 opcode, Object obj)
+          +-- internal Void FireNotesOperationOccurred(Int16 opcode, GroupNote notes)
+          +-- internal Void FireBranchTableOperationOccurred(Int16 opcode, BranchTableItem item)
+          +-- internal Void FirePartUsePrioritiesOperationOccurred(Int16 opcode, PartTypeUsePriority item)
+          +-- internal Void FireAliasNameOperationOccurred(Int16 opcode, AliasName item)
+
+  +-- class PipeSpecOperationOccurredEventArgs
+      : RepositoryOperationOccurredEventArgs
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- public static Int16 NotesAdded
+      |   +-- public static Int16 NotesRemoved
+      |   +-- public static Int16 NotesUpdating
+      |   +-- public static Int16 BranchAdded
+      |   +-- public static Int16 BranchRemoved
+      |   +-- public static Int16 PartUsePrioritiesAdded
+      |   +-- public static Int16 PartUsePrioritiesRemoved
+      |   +-- public static Int16 PartUsePrioritiesUpdating
+      |   +-- public static Int16 AliasNameAdded
+      |   +-- public static Int16 AliasNameRemoved
+      |   +-- public static Int16 AliasNameUpdating
+
+  +-- class RowIdComparer
+      Implements: IComparer
+      |
+      |-- Fields:
+      |   +-- private static RowIdComparer m_default
+      |
+      |-- Properties:
+      |   +-- RowIdComparer Default {get}
+      |
+      +-- Methods:
+          +-- public Int32 Compare(Object x, Object y)
+
+  +-- class SpecBranchTable
+      Implements: SpecificationPackagePart
+      |
+      |-- Fields:
+      |   +-- private PipePartSpecification m_spec
+      |   +-- private BranchSymbols m_bsymbols
+      |   +-- private BranchTable m_btable
+      |   +-- private static XmlSerializer s_serializer
+      |
+      |-- Properties:
+      |   +-- BranchSymbols BranchSymbols {get}
+      |   +-- BranchTable Branches {get}
+      |   +-- PipePartSpecification Specification {get}
+      |
+      +-- Methods:
+          +-- public Boolean IsValidBranch(NominalDiameter header, NominalDiameter branch)
+          +-- public BranchTableQueryResults SelectBranches(NominalDiameter header, NominalDiameter branch, PipePartSpecification alternativeSpec)
+          +-- private ArrayList SelectBranchSymbolParts(BranchSymbol bs, NominalDiameter header, NominalDiameter branch, PipePartSpecification alternativeSpec)
+          +-- private Boolean IsReducingPartReference(BranchPartReference pref)
+          +-- private AbstractPart SelectPartByPartReference(SpecPartReference bpref, NominalDiameter header, NominalDiameter branch, PipePartSpecification alternativeSpec)
+          +-- public Void Purge()
+          +-- public Void AcceptChanges()
+          +-- public Void RejectChanges()
+          +-- internal Void CopyFrom(SpecBranchTable other)
+          +-- public Void ToXmlFile(String filename)
+          +-- public Void ToXmlStream(Stream stream)
+          +-- public Void ToXmlStreamWriter(StreamWriter writer)
+          +-- public static SpecBranchTable FromXmlFile(String filename)
+          +-- public static SpecBranchTable FromXmlStream(Stream stream)
+          +-- public static SpecBranchTable FromXmlStreamReader(StreamReader reader)
+          +-- public Void ToStream(Stream stream)
+          +-- public Void FromStream(Stream stream)
+
+  +-- interface SpecificationPackagePart
+      |
+      +-- Methods:
+          +-- public Void ToStream(Stream stream)
+          +-- public Void FromStream(Stream stream)
+
+  +-- class SpecNotes
+      : PnPGenericNamedCollection`1
+      Implements: ICollection`1, IEnumerable`1, IEnumerable, PnPAbstractCollection`1, SpecificationPackagePart
+      |
+      |-- Fields:
+      |   +-- private PipePartSpecification m_spec
+      |   +-- private static XmlSerializer s_serializer
+      |
+      |-- Properties:
+      |   +-- PipePartSpecification Specification {get}
+      |
+      +-- Methods:
+          +-- public Void Add(GroupNote item)
+          +-- public Boolean Remove(GroupNote item)
+          +-- public Boolean Remove(String name)
+          +-- public Void AcceptChanges()
+          +-- public Void RejectChanges()
+          +-- internal Void CopyFrom(SpecNotes other)
+          +-- public Void ToXmlFile(String filename)
+          +-- public Void ToXmlStream(Stream stream)
+          +-- public Void ToXmlStreamWriter(StreamWriter writer)
+          +-- public static SpecNotes FromXmlFile(String filename)
+          +-- public static SpecNotes FromXmlStream(Stream stream)
+          +-- public static SpecNotes FromXmlStreamReader(StreamReader reader)
+          +-- public Void ToStream(Stream stream)
+          +-- public Void FromStream(Stream stream)
+
+  +-- class SpecOperationSerializer
+      : RepositoryOperationSerializer
+      Implements: ISerializable
+      |
+      +-- Methods:
+          +-- public Void GetObjectData(SerializationInfo info, StreamingContext context)
+          +-- private Void GetNoteData(SerializationInfo info, StreamingContext context)
+          +-- private Void ToNoteData(SerializationInfo info, StreamingContext context)
+          +-- private Void GetBranchData(SerializationInfo info, StreamingContext context)
+          +-- private Void ToBranchData(SerializationInfo info, StreamingContext context)
+          +-- private Void GetPartPrioritesData(SerializationInfo info, StreamingContext context)
+          +-- private Void ToPartPrioritesData(SerializationInfo info, StreamingContext context)
+          +-- private Void GetAliasNameData(SerializationInfo info, StreamingContext context)
+          +-- private Void ToAliasNameData(SerializationInfo info, StreamingContext context)
+
+  +-- class SpecPart
+      : Part
+      Implements: PropertyContainer
+      |
+      |-- Properties:
+      |   +-- String CatalogId {get; set}
+
+  +-- class SpecPartReference
+      |
+      |-- Fields:
+      |   +-- private String m_parttype
+      |   +-- private String m_partname
+      |   +-- private String m_partnameid
+      |
+      |-- Properties:
+      |   +-- String PartType {get; set}
+      |   +-- String PartFamilyName {get; set}
+      |   +-- String PartFamilyId {get; set}
+
+  +-- class SpecSheetAliasNames
+      : PnPGenericNamedCollection`1
+      Implements: ICollection`1, IEnumerable`1, IEnumerable, PnPAbstractCollection`1
+      |
+      |-- Fields:
+      |   +-- private PipePartSpecification m_spec
+      |   +-- private static XmlSerializer s_serializer
+      |
+      |-- Properties:
+      |   +-- PipePartSpecification Specification {get; set}
+      |
+      +-- Methods:
+          +-- public Void AddNewAlias(AliasName Alias)
+          +-- public Boolean HasAlias(String ClassName)
+          +-- public String GetAlias(String ClassName)
+          +-- public Boolean Remove(String name)
+          +-- public Boolean Remove(AliasName item)
+          +-- public Void Add(AliasName alias)
+          +-- internal Void CopyFrom(SpecSheetAliasNames other)
+          +-- public Void ToXmlFile(String filename)
+          +-- public Void ToXmlStream(Stream stream)
+          +-- public Void ToXmlStreamWriter(StreamWriter writer)
+          +-- public static SpecSheetAliasNames FromXmlFile(String filename)
+          +-- public static SpecSheetAliasNames FromXmlStream(Stream stream)
+          +-- public static SpecSheetAliasNames FromXmlStreamReader(StreamReader reader)
+
+  +-- class SpecSheetClassOrder
+      Implements: ICollection`1, IEnumerable`1, IEnumerable
+      |
+      |-- Fields:
+      |   +-- private ArrayList m_Items
+      |   +-- private PipePartSpecification m_spec
+      |   +-- private static XmlSerializer s_serializer
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- Boolean IsReadOnly {get}
+      |   +-- SpecSheetClassOrderItem Item {get}
+      |   +-- PipePartSpecification Specification {get; set}
+      |
+      +-- Methods:
+          +-- public Void Clear()
+          +-- public Void Add(SpecSheetClassOrderItem Item)
+          +-- public Boolean Contains(SpecSheetClassOrderItem Item)
+          +-- public Int32 IndexOf(SpecSheetClassOrderItem Item)
+          +-- public Void CopyTo(SpecSheetClassOrderItem[] arr, Int32 startAt)
+          +-- public Boolean Remove(SpecSheetClassOrderItem Item)
+          +-- public IEnumerator`1 GetEnumerator()
+          +-- private IEnumerator System.Collections.IEnumerable.GetEnumerator()
+          +-- internal Void CopyFrom(SpecSheetClassOrder other)
+          +-- public Int32 CompareCategories(String Category1, String Category2)
+          +-- public Int32 CompareClasses(String CategoryName, String ClassName1, String ClassName2)
+          +-- public Void MoveUp(String Category, String Class)
+          +-- public Void MoveDown(String Category, String Class)
+          +-- public Void MoveUp(String CategoryName)
+          +-- public Void MoveDown(String CategoryName)
+          +-- private Void Move(SpecSheetClassOrderItem RowCategoryClass, Boolean bMoveUp)
+          +-- private Void Move(String CategoryName, Boolean bMoveUp)
+          +-- public Void ToXmlFile(String filename)
+          +-- public Void ToXmlStream(Stream stream)
+          +-- public Void ToXmlStreamWriter(StreamWriter writer)
+          +-- public static SpecSheetClassOrder FromXmlFile(String filename)
+          +-- public static SpecSheetClassOrder FromXmlStream(Stream stream)
+          +-- public static SpecSheetClassOrder FromXmlStreamReader(StreamReader reader)
+
+  +-- class SpecSheetClassOrderItem
+      |
+      |-- Fields:
+      |   +-- private PipePartSpecification m_spec
+      |   +-- private String m_Key
+      |   +-- private String m_Value
+      |   +-- private static XmlSerializer s_serializer
+      |
+      |-- Properties:
+      |   +-- String Key {get; set}
+      |   +-- String Value {get; set}
+      |   +-- PipePartSpecification Specification {get; set}
+      |
+      +-- Methods:
+          +-- internal Void CopyFrom(SpecSheetClassOrderItem other)
+          +-- public Void ToXmlFile(String filename)
+          +-- public Void ToXmlStream(Stream stream)
+          +-- public Void ToXmlStreamWriter(StreamWriter writer)
+          +-- public static SpecSheetClassOrderItem FromXmlFile(String filename)
+          +-- public static SpecSheetClassOrderItem FromXmlStream(Stream stream)
+          +-- public static SpecSheetClassOrderItem FromXmlStreamReader(StreamReader reader)
+
+  +-- class SpecSheetHiddenNames
+      : ArrayList
+      Implements: IList, ICollection, IEnumerable, ICloneable
+      |
+      |-- Fields:
+      |   +-- private PipePartSpecification m_spec
+      |   +-- private static XmlSerializer s_serializer
+      |
+      |-- Properties:
+      |   +-- PipePartSpecification Specification {get; set}
+      |
+      +-- Methods:
+          +-- internal Void CopyFrom(SpecSheetHiddenNames other)
+          +-- public Void ToXmlFile(String filename)
+          +-- public Void ToXmlStream(Stream stream)
+          +-- public Void ToXmlStreamWriter(StreamWriter writer)
+          +-- public static SpecSheetHiddenNames FromXmlFile(String filename)
+          +-- public static SpecSheetHiddenNames FromXmlStream(Stream stream)
+          +-- public static SpecSheetHiddenNames FromXmlStreamReader(StreamReader reader)
+
+  +-- class SpecSheetSettings
+      Implements: SpecificationPackagePart
+      |
+      |-- Fields:
+      |   +-- private String m_RangeDelimiter
+      |   +-- private Boolean m_bDisplayColumnHeaders
+      |   +-- private Int32 m_SpecSheetGrouping
+      |   +-- private Units m_SpecSheetUnits
+      |   +-- private SpecSheetClassOrder m_ClassOrder
+      |   +-- private SpecSheetAliasNames m_AliasNames
+      |   +-- private SpecSheetHiddenNames m_HiddenNames
+      |   +-- private BranchTableEditorSettings m_branchTableEditorSettings
+      |   +-- private WallThicknessCriteria m_WallThicknessCriteria
+      |   +-- private String m_LongDescPartFamilyStyle
+      |   +-- private String m_LongDescPartSizeStyle
+      |   +-- private PipePartSpecification m_spec
+      |   +-- private static XmlSerializer s_serializer
+      |
+      |-- Properties:
+      |   +-- String RangeDelimiter {get; set}
+      |   +-- Boolean DisplayHeaders {get; set}
+      |   +-- Int32 SpecSheetGrouping {get; set}
+      |   +-- Units SpecSheetUnits {get; set}
+      |   +-- SpecSheetClassOrder ClassOrder {get}
+      |   +-- SpecSheetAliasNames AliasNames {get}
+      |   +-- SpecSheetHiddenNames HiddenNames {get}
+      |   +-- BranchTableEditorSettings BranchTableEditorSettings {get; set}
+      |   +-- WallThicknessCriteria WallThicknessMatchProperties {get}
+      |   +-- String LongDescPartSizeStyle {get; set}
+      |   +-- String LongDescPartFamilyStyle {get; set}
+      |   +-- PipePartSpecification Specification {get; set}
+      |
+      +-- Methods:
+          +-- private Void Construct()
+          +-- public Void AcceptChanges()
+          +-- public Void RejectChanges()
+          +-- internal Void CopyFrom(SpecSheetSettings other)
+          +-- public Void ToXmlFile(String filename)
+          +-- public Void ToXmlStream(Stream stream)
+          +-- public Void ToXmlStreamWriter(StreamWriter writer)
+          +-- public static SpecSheetSettings FromXmlFile(String filename)
+          +-- public static SpecSheetSettings FromXmlStream(Stream stream)
+          +-- public static SpecSheetSettings FromXmlStreamReader(StreamReader reader)
+          +-- public Void ToStream(Stream stream)
+          +-- public Void FromStream(Stream stream)
+
+  +-- class WallThicknessCriteria
+      : ArrayList
+      Implements: IList, ICollection, IEnumerable, ICloneable
+      |
+      |-- Fields:
+      |   +-- private PipePartSpecification m_spec
+      |   +-- private static XmlSerializer s_serializer
+      |
+      |-- Properties:
+      |   +-- PipePartSpecification Specification {get; set}
+      |
+      +-- Methods:
+          +-- internal Void CopyFrom(WallThicknessCriteria other)
+          +-- public Void ToXmlFile(String filename)
+          +-- public Void ToXmlStream(Stream stream)
+          +-- public Void ToXmlStreamWriter(StreamWriter writer)
+          +-- public static WallThicknessCriteria FromXmlFile(String filename)
+          +-- public static WallThicknessCriteria FromXmlStream(Stream stream)
+          +-- public static WallThicknessCriteria FromXmlStreamReader(StreamReader reader)
+
+

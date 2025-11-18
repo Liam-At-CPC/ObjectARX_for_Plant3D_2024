@@ -1,0 +1,245 @@
+<!DOCTYPE html
+  PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+   <HEAD>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso8859-1">
+      <meta name="GENERATOR" content="Microsoft HTML Help Workshop 4.1">
+      <title>TOC</title>
+   </HEAD>
+   <BODY>
+      <UL>
+         <!-- TOC BEGIN -->
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Plant SDK Developer Help">
+               <param name="Local" value="topichead.htm"></OBJECT></LI>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Introduction">
+                  <param name="Local" value="GUID-D29A9DF4-26E3-4559-8AC0-65CB0FE5123B.htm"></OBJECT></LI>
+            <UL></UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Getting Started">
+                  <param name="Local" value="GUID-DC721928-E8CC-4DB6-AC3C-69EA22B3B7C8.htm"></OBJECT></LI>
+            <UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="API Architecture (P&amp;ID)">
+                     <param name="Local" value="GUID-FC5FF9D6-28B8-405F-AEF6-1AC4D12C7EFC.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Plant 3D and P&amp;ID Managed Classes">
+                     <param name="Local" value="GUID-6CE27D1B-E5CB-44E5-82C2-94B7E46A44E7.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Setting Up a .NET Project">
+                     <param name="Local" value="GUID-55A8B527-F916-4C24-8409-879DB45EEB2E.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Setting Up an ObjectARX Unmanaged Project">
+                     <param name="Local" value="GUID-FA112334-D503-4210-B31C-95FBBEC060E2.htm"></OBJECT></LI>
+               <UL></UL>
+            </UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Drawing Entities and Objects">
+                  <param name="Local" value="GUID-640F100A-5350-4B42-A5CC-D110506968C3.htm"></OBJECT></LI>
+            <UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Identifiers">
+                     <param name="Local" value="GUID-46569365-F4F9-44A3-95CF-69AC7631B537.htm"></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="PpObjectId">
+                        <param name="Local" value="GUID-44A7D9DD-E18B-45A9-ADF5-0C8F63ADD1DC.htm"></OBJECT></LI>
+                  <UL></UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="PpRowId">
+                        <param name="Local" value="GUID-B8868282-0EE0-43BA-B444-3A8C8E725CB1.htm"></OBJECT></LI>
+                  <UL></UL>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Schematic Lines">
+                     <param name="Local" value="GUID-1391385D-2463-499C-9A3B-13A6B97505F1.htm"></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Line Segments">
+                        <param name="Local" value="GUID-21730027-5C7E-4B0F-A575-D47B0562C306.htm"></OBJECT></LI>
+                  <UL></UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Line Groups">
+                        <param name="Local" value="GUID-E0456D3E-F77C-4815-B50D-5B9793A56E16.htm"></OBJECT></LI>
+                  <UL></UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Line Style">
+                        <param name="Local" value="GUID-80E858C5-AA04-40BE-9B9B-9A4E0E060E61.htm"></OBJECT></LI>
+                  <UL></UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Line Objects">
+                        <param name="Local" value="GUID-E4F0D574-F5C1-4171-8768-DF03A3961FDD.htm"></OBJECT></LI>
+                  <UL></UL>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Assets (Equipment)">
+                     <param name="Local" value="GUID-18D19F6B-6EA9-4CDD-A46E-B3CAD0C875EF.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Styles">
+                     <param name="Local" value="GUID-169B4FC1-8A10-4743-A057-52C82EC0FEAF.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Tagging">
+                     <param name="Local" value="GUID-8FB5562C-A262-4948-A5E9-34205B29E056.htm"></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="AcPpTagFormat">
+                        <param name="Local" value="GUID-48048AEF-F827-40D7-BF5B-31FB309455E7.htm"></OBJECT></LI>
+                  <UL></UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="FormatStringUtils">
+                        <param name="Local" value="GUID-5C49E10B-8776-4471-953C-C82DA777F660.htm"></OBJECT></LI>
+                  <UL></UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Format Strings">
+                        <param name="Local" value="GUID-08089DFF-12E7-43F4-8BD4-24C4AF3D7A89.htm"></OBJECT></LI>
+                  <UL></UL>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Annotation">
+                     <param name="Local" value="GUID-E46724B2-0223-4CE6-852B-C48D0F2FB138.htm"></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Annotation">
+                        <param name="Local" value="GUID-4609C6CE-BD69-4581-8227-6840EBA97DF9.htm"></OBJECT></LI>
+                  <UL></UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="AnnotationUtils">
+                        <param name="Local" value="GUID-0A1B6011-6FD0-465C-9C04-ABEBC4C5BE1C.htm"></OBJECT></LI>
+                  <UL></UL>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Accessing Entities">
+                     <param name="Local" value="GUID-61456C4B-08F9-4425-9B6C-D7BEEC849420.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Accessing Objects">
+                     <param name="Local" value="GUID-12895BEC-4F59-46E2-8C2B-D878A45192BD.htm"></OBJECT></LI>
+               <UL></UL>
+            </UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Plant Project">
+                  <param name="Local" value="GUID-E6722C81-249B-489C-91B9-84B0B5D7D41B.htm"></OBJECT></LI>
+            <UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Project Manager">
+                     <param name="Local" value="GUID-DB81D15A-6D0D-4E27-B443-324F0652AFFF.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Project Settings and Configuration">
+                     <param name="Local" value="GUID-926681EE-9105-44B5-87FF-2CB6535EC2DF.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Set or Change Project File Locations">
+                     <param name="Local" value="GUID-5492A67C-A4C9-4C06-880C-E3FC904CF52E.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Project Properties">
+                     <param name="Local" value="GUID-11C12964-41D8-40A3-AB4D-32F163B33956.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Set Up Selection Lists">
+                     <param name="Local" value="GUID-C272B83E-4734-44AD-8DC2-8B1F316F39A6.htm"></OBJECT></LI>
+               <UL></UL>
+            </UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Data Manager">
+                  <param name="Local" value="GUID-48F184C7-A298-49F0-B75E-5F32034A6C05.htm"></OBJECT></LI>
+            <UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Datalinks Manager">
+                     <param name="Local" value="GUID-17218469-1D92-41CF-AA92-A76214386E45.htm"></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="AcDbObject to PnID Database Link">
+                        <param name="Local" value="GUID-E533E4DF-8E3C-475C-8BFB-EB0448CE07D3.htm"></OBJECT></LI>
+                  <UL></UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="PnID Data Properties">
+                        <param name="Local" value="GUID-67678EF0-871F-414D-A837-002AE81F78E8.htm"></OBJECT></LI>
+                  <UL></UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Data Cache Relationships">
+                        <param name="Local" value="GUID-5949FE0E-8594-41EF-95A5-235EA9E5F30B.htm"></OBJECT></LI>
+                  <UL>
+                     <LI><OBJECT type="text/sitemap">
+                           <param name="Name" value="Role and Relationship Types">
+                           <param name="Local" value="GUID-320EDA04-36A3-491D-AA17-831832CDF4E2.htm"></OBJECT></LI>
+                     <UL></UL>
+                     <LI><OBJECT type="text/sitemap">
+                           <param name="Name" value="Relationship Query (Sample)">
+                           <param name="Local" value="GUID-FCD5F42C-54BA-4B8F-85F8-3A5347FCE752.htm"></OBJECT></LI>
+                     <UL></UL>
+                  </UL>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Data Objects">
+                     <param name="Local" value="GUID-7A762A24-BA49-4EAC-80FB-ADCF2F0EE113.htm"></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Data Objects Extensions">
+                        <param name="Local" value="GUID-B55BB863-EC7D-45BF-A468-29388932C146.htm"></OBJECT></LI>
+                  <UL></UL>
+               </UL>
+            </UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Granular Piping and Publishing (P&amp;ID)">
+                  <param name="Local" value="GUID-F3EAA991-8BBA-4BEC-9DAA-93A5D78CBE93.htm"></OBJECT></LI>
+            <UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="AcPpGranularInfo">
+                     <param name="Local" value="GUID-E3C53EEC-2943-404F-8685-8E6892920052.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="DWF Publishing">
+                     <param name="Local" value="GUID-1A82D198-6875-4B0A-AE2D-F32051CCF54B.htm"></OBJECT></LI>
+               <UL></UL>
+            </UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Samples">
+                  <param name="Local" value="GUID-205FC0ED-65B8-459D-A62A-93ADBDCEB221.htm"></OBJECT></LI>
+            <UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Create and Connect a P&amp;ID SLINE">
+                     <param name="Local" value="GUID-A03B3AF1-A28A-486D-A1D7-E445F6DEAB51.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Sample: Create Equipment">
+                     <param name="Local" value="GUID-E20AF580-495E-4A3D-8174-5A7306CA2522.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Sample: Route and Connect Piping">
+                     <param name="Local" value="GUID-5CC931A7-A16D-459D-BEA6-C138331E7B57.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Sample: Piping Supports">
+                     <param name="Local" value="GUID-8A9BC626-413F-4324-8EFE-6FE50E7EBA07.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Create and Connect Piping in the 3D Model">
+                     <param name="Local" value="GUID-CB89D656-9F59-44F9-910F-FC5E2094497E.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value=".NET Sample">
+                     <param name="Local" value="GUID-E1974E5C-08A5-444A-8DDC-A29047AE0E67.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="ObjectARX Sample">
+                     <param name="Local" value="GUID-06507BB2-F40D-4DD3-A71C-F70813FE547A.htm"></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="C++ interop">
+                     <param name="Local" value="GUID-0C090E56-87A9-40D3-887D-66E84134970A.htm"></OBJECT></LI>
+               <UL></UL>
+            </UL>
+         </UL>
+         <!-- TOC END -->
+      </UL>
+   </BODY>
+</HTML>

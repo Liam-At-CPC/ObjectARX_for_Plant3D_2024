@@ -1,0 +1,171 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso8859-1"><meta name="product" content="PLNT3D"><meta name="book" content="Developer"><meta name="created" content="2022-12-24"><meta name="topicid" content="GUID-7A762A24-BA49-4EAC-80FB-ADCF2F0EE113"><meta name="topic-type" content="concept"><title>Data Objects</title><link type="text/css" rel="stylesheet" href="style/adsk.cpm.css"><script type="text/javascript" src="scripts/adsk.strings.js"></script><script type="text/javascript" src="scripts/adsk.common.js"></script><script type="text/javascript" src="scripts/adsk.dynamichelp.js"></script></head><body><div class="head"><div class="head-block"><div class="nav-group"><!--browse buttons--><div class="browse"><nobr><!--No Additional browse buttons are defined--><div class="headNavLinkPrev"><div id="prevTitle" style="display:none">Relationship Query (Sample)</div><a href="GUID-FCD5F42C-54BA-4B8F-85F8-3A5347FCE752.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('prevTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-prev-xp.gif" border="0"></a></div><div class="headNavLinkUp"><div id="parentTitle" style="display:none">Data Manager</div><a href="GUID-48F184C7-A298-49F0-B75E-5F32034A6C05.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('parentTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-up-xp.gif" border="0"></a></div><div class="headNavLinkNext"><div id="nextTitle" style="display:none">Data Objects Extensions</div><a href="GUID-B55BB863-EC7D-45BF-A468-29388932C146.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('nextTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-next-xp.gif" border="0"></a></div></nobr></div><!--end browse buttons--></div><div class="button-info"><span id="infoline">&nbsp;</span></div><div class="ancestry"><a href="topichead.htm">AutoCAD Plant 3D 2024 SDK: Developer`s Help</a>&nbsp;&gt;&nbsp;<a href="topichead.htm">Plant SDK Developer Help</a>&nbsp;&gt;&nbsp;<a href="GUID-48F184C7-A298-49F0-B75E-5F32034A6C05.htm">Data Manager</a>&nbsp;&gt;&nbsp;</div><div class="head-text"><a name="WS1A9193826455F5FF1DBC2985116285E2CB453E4"></a><h1>Data Objects</h1></div></div></div><div class="head-margin">&nbsp;</div><div style="line-height: 0pt">&nbsp;</div><div class="head-margin">&nbsp;</div><div class="body_content"><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5753"></a>Using 
+  <em class="strong">ProcessPower.DataObjects</em>, developers may query and extend the non-graphical properties in the Data Manager. 
+  <em class="strong">PnPDataObjects.dll</em> defines Data Object classes including PnPDatabase, PnPTable, PnPColumn, and PnPRow. 
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5768"></a>The following .NET managed code gets the Piping (3D Model) database from the project. It then selects and lists rows from a table. 
+</p><div class="codeBlock"><pre>//C#
+//using Autodesk.ProcessPower.PlantInstance;
+//using Autodesk.ProcessPower.ProjectManager;
+//using Autodesk.ProcessPower.DataLinks;
+//using Autodesk.ProcessPower.DataObjects;
+
+PlantProject objPlantProject = PlantApplication.CurrentProject;
+Project prj = objPlantProject.ProjectParts["Piping"];
+DataLinksManager dlm = prj.DataLinksManager;
+PnPDatabase db = dlm.GetPnPDatabase();
+
+PnPRowIdArray ids = null;
+PnPTable ctab = db.Tables["PipeRunComponent"];
+PnPRow [] rows = ctab.Select (null, ids);
+//Tables.Rows returns only in-memory rows pending commit.
+
+dumpRows(rows);</pre></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-574F"></a> <div><a name="GUID-19FB9502-8B0A-4B68-A62A-B8948D9370EE"></a><div class="note-note"><span class="label label-target-language">NOTE:</span>Beginning with Plant SDK 2012, the PnPTable 
+	 <em class="strong">Rows</em> property contains only data pending commit. To reduce memory consumption, it no longer contains data for the entire table. Use the Select method to obtain table data. 
+  </div></div> </p><p><a name="GUID-190BA378-D189-444F-B662-83D21BAC6A2D"></a>The following utility functions gets a named property (column) value from a PnPRow. 
+</p><div class="codeBlock"><pre>object getRowVal(PnPRow row, string sColName)
+{
+        foreach (PnPColumn c in row.Table.AllColumns)
+        {
+            object val = row[c];
+            if (c.Name == sColName) return val;
+        }
+        return null;
+}</pre></div><p><a name="GUID-C1FA6268-EAE0-4183-B48B-CD59ECC109D1"></a>The following utility function lists all values in a PnPRow array. 
+</p><div class="codeBlock"><pre>void dumpRows(PnPRow[] rows)
+{
+    foreach (PnPRow r in rows)
+    {
+        dumpRow(r);
+    }
+}
+
+void dumpRow(PnPRow r)
+{
+    Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
+    ed.WriteMessage("\n   ");
+    //For every column in the row list the value.
+    foreach (PnPColumn c in r.Table.AllColumns)
+    {
+        object val = r[c];
+        ed.WriteMessage(string.Format("{0}={1} ", c.Name, val));
+    }
+}</pre></div><p><a name="GUID-977439FA-E951-4E24-B28F-99F2304E3303"></a>The following code lists all table names in a database 
+</p><div class="codeBlock"><pre>public void ListTables() // This method can have any name
+{
+    Project prj = PnPProjectUtils.GetProjectPartForCurrentDocument();
+    DataLinksManager dlm = prj.DataLinksManager;
+    PnPDatabase db = dlm.GetPnPDatabase();
+    foreach (PnPTable tb in db.Tables)
+    {
+        Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
+        ed.WriteMessage("\n" + tb.Name);
+    }
+}</pre></div><a name="SECTION_5321565F7E504DE2A56D0FBBAD84111E"></a><div class="collapsible"><span onClick="showHide('collapsible_d44e3203'); swapImage(document.getElementById('d44e3203'), 'images/ac.down.gif', 'images/ac.right.gif')"><img id="d44e3203" class="collapsible" src="images/ac.right.gif"><a name="GUID-126BB9CA-DAD0-4707-8DD1-A313CAE321A9"></a><span class="collapsible-section-title">Sample Table listing for "Piping" database</span></span><div class="collapsible-section hidden" id="collapsible_d44e3203"><div class="codeBlock"><pre>PnPBase
+PnPDataLinks
+PnPDrawings
+PnPTagRegistries
+PnPTagEnlistedColumns
+RepositoryDescriptor
+EngineeringItems
+Equipment
+Blower
+Centrifuge
+Columns
+Compressor
+Conveyors
+Cyclone
+Dryer
+Filter
+Furnace
+GlobalEquipment
+Heater
+HeatExchanger
+MechanicalDrivers
+MixingEquipment
+Motor
+Pump
+Scrubber
+StrainerEquipment
+Tank
+Vessel
+MiscEquipment
+PipeRunComponent
+Adapter
+BleedRing
+BlindDisk
+Cap
+Coupling
+Cross
+Crossover
+Elbow
+ElbowSideOutlet
+Flange
+BlindFlange
+Instrument
+InlineInstrument
+Nipple
+Nozzle
+Olet
+OrificePlate
+Pipe
+Plug
+Reducer
+Swage
+SpacerDisk
+SpectacleBlind
+Sleeve
+Strainer
+Support
+SingleBranchFitting
+Lateral
+Tee
+TeeCrossover
+Wye
+TeeSideOutlet
+Valve
+ACP
+Fasteners
+Gasket
+Buttweld
+Socketweld
+FusionWeld
+TapWeld
+ReinforcementRing
+BackingRing
+Clamp
+Collar
+StubEnd
+BoltSet
+Thread
+SlipOn
+Glue
+Universal
+Gland
+Port
+P3dConnector
+P3dLineGroup
+SteelStructure
+StructureMember
+StructureRailing
+StructureLadder
+StructureStair
+StructureStep
+StructureAnchor
+StructurePlate
+StructureGrating
+LayerColorGlobalSettings
+LayerColorSchemeAssignment
+ColorSettings
+PnPProjectCategories
+PnPProject
+PnPDrawingCategories
+PnPPicklists
+PnPPicklistValues
+PnPProjectVariables
+PnPTagFormat
+PnPWorkHistory
+FileNameFormat
+PnPAutoGenProperties
+PnPDrawingCustomProperties
+PnPTagRegistry</pre></div></div></div><span class="noindex"><div class="topic-list"><h4 class="related">Topics in this section</h4><ul class="jumplist"><li><a href="GUID-B55BB863-EC7D-45BF-A468-29388932C146.htm"> Data Objects Extensions </a></li></ul></div></span><div class="footer-block"><a href="javascript:doComments('');"><span class="comments-link">Please send us your comment about this page</span></a></div><br></div></body></html>

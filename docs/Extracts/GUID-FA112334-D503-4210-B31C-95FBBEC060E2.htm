@@ -1,0 +1,43 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso8859-1"><meta name="product" content="PLNT3D"><meta name="book" content="Developer"><meta name="created" content="2022-12-24"><meta name="topicid" content="GUID-FA112334-D503-4210-B31C-95FBBEC060E2"><meta name="indexterm" content="AcPpHeaders.h"><meta name="indexterm" content="setup: C++ interop (clr)"><meta name="topic-type" content="concept"><title>Setting Up an ObjectARX Unmanaged Project</title><link type="text/css" rel="stylesheet" href="style/adsk.cpm.css"><script type="text/javascript" src="scripts/adsk.strings.js"></script><script type="text/javascript" src="scripts/adsk.common.js"></script><script type="text/javascript" src="scripts/adsk.dynamichelp.js"></script></head><body><div class="head"><div class="head-block"><div class="nav-group"><!--browse buttons--><div class="browse"><nobr><!--No Additional browse buttons are defined--><div class="headNavLinkPrev"><div id="prevTitle" style="display:none">Setting Up a .NET Project</div><a href="GUID-55A8B527-F916-4C24-8409-879DB45EEB2E.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('prevTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-prev-xp.gif" border="0"></a></div><div class="headNavLinkUp"><div id="parentTitle" style="display:none">Getting Started</div><a href="GUID-DC721928-E8CC-4DB6-AC3C-69EA22B3B7C8.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('parentTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-up-xp.gif" border="0"></a></div><div class="headNavLinkNext"><div id="nextTitle" style="display:none">Drawing Entities and Objects</div><a href="GUID-640F100A-5350-4B42-A5CC-D110506968C3.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('nextTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-next-xp.gif" border="0"></a></div></nobr></div><!--end browse buttons--></div><div class="button-info"><span id="infoline">&nbsp;</span></div><div class="ancestry"><a href="topichead.htm">AutoCAD Plant 3D 2024 SDK: Developer`s Help</a>&nbsp;&gt;&nbsp;<a href="topichead.htm">Plant SDK Developer Help</a>&nbsp;&gt;&nbsp;<a href="GUID-DC721928-E8CC-4DB6-AC3C-69EA22B3B7C8.htm">Getting Started</a>&nbsp;&gt;&nbsp;</div><div class="head-text"><a name="WS1A9193826455F5FF-29C43AA61173633F416-7C22"></a><h1>Setting Up an ObjectARX Unmanaged Project</h1></div></div></div><div class="head-margin">&nbsp;</div><div style="line-height: 0pt">&nbsp;</div><div class="head-margin">&nbsp;</div><div class="body_content"><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57FA"></a>To create a new 
+  <span class="code">.arx 
+  </span>or 
+  <span class="code">.dbx 
+  </span>application, begin by setting up a standard unmanaged AutoCAD ObjectARX project. If you have installed the ObjectARX Wizard for AutoCAD 
+  <span class="charspan-msgph">2024</span>, you can use the 
+  <em class="strong">New Project</em> wizard to begin an 
+  <em class="strong">ObjectARX</em> project. The ObjectARX Wizard for AutoCAD 
+  <span class="charspan-msgph">2024</span> can be downloaded from here: 
+  <a href="https://www.autodesk.com/developautocad" target="_blank">https://www.autodesk.com/developautocad</a> </p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57F9"></a>Add the 
+  <span class="code">inc</span> directory (default location 
+  <em class="mild">C:\ObjectARX\inc</em>) to the project 
+  <em class="mild">C/C++ General 
+  </em>property 
+  <em class="strong">Additional Include Directories</em>. This places both the 
+  <span class="charspan-msgph">Plant SDK</span> headers and the standard AutoCAD ObjectARX headers into the 
+  <span class="code">#include</span> search path. 
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57F8"></a>Add the 
+  <span class="code">lib-x64</span> folder name to the project 
+  <em class="mild">Linker Input</em> property 
+  <em class="strong">Additional Library Directories</em>. This allows the linker to find both the standard ObjectARX and the 
+  <span class="charspan-msgph">Plant SDK</span> import libraries. 
+</p><div><a name="GUID-32FD4151-95A6-4B80-8605-E5E82F34C8EF"></a><div class="note-note"><span class="label label-target-language">NOTE:</span>Starting with AutoCAD Plant 3D 2017, 32-bit support is no longer available. 
+</div></div><a name="WS1A9193826455F5FF-29C43AA61173633F416-7C20"></a><div class="figure-anchor"><img src="GUID-AE056171-6DE5-42F1-A8EE-3F52DAAC5828-low.png"></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57F7"></a>An aggregate header file 
+  <em class="strong">AcPpHeaders.h</em> is available that includes all P&amp;ID headers. Including 
+  <span class="code">AcPpHeaders.h</span> creates P&amp;ID library-search records that do not need to be identified as 
+  <em class="mild">Additional Dependencies 
+  </em>in the 
+  <span class="code">.vcproj</span><em class="mild"> Linker Configuration</em>. 
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57F6"></a>If you created the project using the ObjextARX Wizard, place the 
+  <span class="code">AcPpHeaders.h</span> include below the wizard-generated 
+  <span class="code">arxHeaders.h</span> as shown below. </p><div class="codeBlock"><pre>//StdAfx.h
+#include "arxHeaders.h" &nbsp;//Generated by the ObjectARX wizard
+#include "AcPpHeaders.h" //Added for P&amp;ID</pre></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57F5"></a>Developer&#8217;s can include individual headers instead of the aggregate header file. Each class in the 
+  <em class="mild"><span class="charspan-msgph">Plant SDK</span><span class="charspan-msgph">2024</span>: Developer Reference</em> (<em class="strong">plantsdk_ref.chm</em>) lists both the class definition 
+  <span class="code">.h</span> header file name and the 
+  <span class="code">.lib</span> import library file name. 
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57F4"></a>To enable 
+  <em class="strong">C++ interop</em>, in the Properties for the Source File in the Solution Explorer, set 
+  <em class="mild">Compile with Common Language Runtime support</em> to 
+  <em class="mild">Common Language Runtime Support (/clr)</em>. This setting allows you to access classes that are available only as managed objects from the PnPSDK. </p><div class="footer-block"><a href="javascript:doComments('');"><span class="comments-link">Please send us your comment about this page</span></a></div><br></div></body></html>

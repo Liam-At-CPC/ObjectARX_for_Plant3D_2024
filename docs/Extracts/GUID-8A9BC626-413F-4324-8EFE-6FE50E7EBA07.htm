@@ -1,0 +1,99 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso8859-1"><meta name="product" content="PLNT3D"><meta name="book" content="Developer"><meta name="created" content="2022-12-24"><meta name="topicid" content="GUID-8A9BC626-413F-4324-8EFE-6FE50E7EBA07"><meta name="topic-type" content="concept"><title>Sample: Piping Supports</title><link type="text/css" rel="stylesheet" href="style/adsk.cpm.css"><script type="text/javascript" src="scripts/adsk.strings.js"></script><script type="text/javascript" src="scripts/adsk.common.js"></script><script type="text/javascript" src="scripts/adsk.dynamichelp.js"></script></head><body><div class="head"><div class="head-block"><div class="nav-group"><!--browse buttons--><div class="browse"><nobr><!--No Additional browse buttons are defined--><div class="headNavLinkPrev"><div id="prevTitle" style="display:none">Sample: Route and Connect Piping</div><a href="GUID-5CC931A7-A16D-459D-BEA6-C138331E7B57.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('prevTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-prev-xp.gif" border="0"></a></div><div class="headNavLinkUp"><div id="parentTitle" style="display:none">Samples</div><a href="GUID-205FC0ED-65B8-459D-A62A-93ADBDCEB221.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('parentTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-up-xp.gif" border="0"></a></div><div class="headNavLinkNext"><div id="nextTitle" style="display:none">Create and Connect Piping in the 3D Model</div><a href="GUID-CB89D656-9F59-44F9-910F-FC5E2094497E.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('nextTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-next-xp.gif" border="0"></a></div></nobr></div><!--end browse buttons--></div><div class="button-info"><span id="infoline">&nbsp;</span></div><div class="ancestry"><a href="topichead.htm">AutoCAD Plant 3D 2024 SDK: Developer`s Help</a>&nbsp;&gt;&nbsp;<a href="topichead.htm">Plant SDK Developer Help</a>&nbsp;&gt;&nbsp;<a href="GUID-205FC0ED-65B8-459D-A62A-93ADBDCEB221.htm">Samples</a>&nbsp;&gt;&nbsp;</div><div class="head-text"><a name="GUID-A10712FD-2E50-4945-ADEC-C9AF0CF2B7CD"></a><h1>Sample: Piping Supports</h1></div></div></div><div class="head-margin">&nbsp;</div><div style="line-height: 0pt">&nbsp;</div><div class="head-margin">&nbsp;</div><div class="body_content"><p class="blurb">  </p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-572C"></a>The sample illustrates how to use high-level APIs to create and modify pipe supports. 
+	 </p><p><a name="GUID-3510A51D-35D6-4E21-8E78-CAB4CF539907"></a>The high-level APIs are implemented by the managed class 
+		<em class="strong">SupportHelper</em> in Autodesk.Autodesk.ProcessPower.PnP3dPipeSupport. Supports can be created from script, the pipe support spec, or blocks. Helper classes are also available to change parametric dimensions and join objects to pipe supports. 
+	 </p><p><a name="GUID-FCC6DEAA-A259-4F66-84D1-94950A6B68E1"></a> <div class="codeBlock"><pre>NETLOAD Supports
+SupportScriptCreate 1.SimplePipeSupport 0,0,0 0</pre></div>After compiling the sample you can run 
+		<em class="strong">SupportScriptCreate</em> at the Command: prompt 
+	 </p><a name="FIG_99D4F83919B14356B85F106B733A6DAE"></a><div class="figure-anchor"><img src="GUID-C0C1752B-1B53-4583-84CD-2492E2521F3F-low.png"></div><p><a name="GUID-983B60A0-64AE-4C90-818A-E507C3BF7D0C"></a>In the sample, the SupportScriptCreate gets a list of parametric supports, prompts to specify the type, and places the support. 
+	 </p><p><a name="GUID-FD099C38-687F-46AB-BC25-DC364F5B8B97"></a>SupportSpecCreate illustrates how to use the pipe support spec to create pipe supports: 
+	 </p><div class="codeBlock"><pre>// Create support from support spec
+//
+[CommandMethod("SupportSpecCreate")]
+public static void SupportSpecCreate()
+{
+    try
+    {
+        Editor ed = AcadApp.DocumentManager.MdiActiveDocument.Editor;
+        Database db = AcadApp.DocumentManager.MdiActiveDocument.Database;
+
+        // Use current size
+        //
+        UISettings sett = new UISettings();
+        NominalDiameter nd = NominalDiameter.FromDisplayString(null, sett.CurrentSize);
+
+        // Select from support spec
+        //
+        List&lt;PartSizeProperties&gt; parts = new List&lt;PartSizeProperties&gt;();
+        SpecManager specMgr = SpecManager.GetSpecManager();
+        SpecPartReader reader = specMgr.SelectParts("PipeSupportsSpec", "Support", nd);
+        while (reader.Next())
+        {
+            SpecPart part = new SpecPart();
+            part.AssignFrom(reader.Current);
+            parts.Add(part);
+        }
+
+        // Ask for a part
+        //
+        List&lt;String&gt; kwds = new List&lt;String&gt;();
+        int cnt = 0;
+        foreach (PartSizeProperties part in parts)
+        {
+            // Make a keyword in the form "n.PartFamilyLongDescrtiption"
+            // And kill spaces and other special symbols
+            //
+            cnt += 1;
+            String s = "";
+            try
+            {
+                Object val = part.PropValue("PartFamilyLongDesc");
+                if (val != null)
+                {
+                    s = val.ToString();
+                    s = s.Replace(" ", "");
+                    s = s.Replace("/", "");
+                    s = s.Replace(".", "");
+                }
+            }
+            catch (System.Exception)
+            {
+            }
+            kwds.Add(cnt.ToString() + "." + s);
+        }
+
+        if (kwds.Count == 0)
+        {
+            ed.WriteMessage("\nNo parts of the current size found");
+            return;
+        }
+
+        // Ask
+        //
+        PromptResult res = ed.GetKeywords("\nSelect support", kwds.ToArray());
+        if (res.Status != PromptStatus.OK)
+        {
+            return;
+        }
+
+        // Find selected
+        //
+        int j = kwds.IndexOf(res.StringResult);
+        PartSizeProperties supportPart = parts[j];
+
+        // Create entity
+        //
+        using (Support support = SupportHelper.CreateSupportEntity(supportPart, db))
+        {
+            // Place
+            //
+            PlaceSupport(support, supportPart);
+        }
+    }
+    catch (System.Exception)
+    {
+    }
+} 	 </pre></div><p><a name="GUID-6BED5879-0CB8-4B91-AD91-295B21E5EF2B"></a>See 
+		<em class="mild">readme.txt</em> in the project sample for details. 
+	 </p><div class="footer-block"><a href="javascript:doComments('');"><span class="comments-link">Please send us your comment about this page</span></a></div><br></div></body></html>

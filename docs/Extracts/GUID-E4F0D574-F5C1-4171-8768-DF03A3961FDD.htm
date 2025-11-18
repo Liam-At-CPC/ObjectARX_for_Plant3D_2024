@@ -1,0 +1,55 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso8859-1"><meta name="product" content="PLNT3D"><meta name="book" content="Developer"><meta name="created" content="2022-12-24"><meta name="topicid" content="GUID-E4F0D574-F5C1-4171-8768-DF03A3961FDD"><meta name="indexterm" content="Line Objects"><meta name="indexterm" content="AcPpLineObjects"><meta name="indexterm" content="AcPpLineObjectIterator"><meta name="indexterm" content="ObjectARX"><meta name="indexterm" content="AcPpEndlineObject"><meta name="indexterm" content="AcPpInlineEntity"><meta name="indexterm" content="AcPpInlineGap"><meta name="indexterm" content="AcPpInlineIntersection"><meta name="indexterm" content="code sample: line objects"><meta name="indexterm" content="code sample: C#"><meta name="indexterm" content="code sample: locating assets"><meta name="indexterm" content="enumerations"><meta name="indexterm" content="code sample: C#"><meta name="indexterm" content="line objects: sample"><meta name="topic-type" content="concept"><title>Line Objects</title><link type="text/css" rel="stylesheet" href="style/adsk.cpm.css"><script type="text/javascript" src="scripts/adsk.strings.js"></script><script type="text/javascript" src="scripts/adsk.common.js"></script><script type="text/javascript" src="scripts/adsk.dynamichelp.js"></script></head><body><div class="head"><div class="head-block"><div class="nav-group"><!--browse buttons--><div class="browse"><nobr><!--No Additional browse buttons are defined--><div class="headNavLinkPrev"><div id="prevTitle" style="display:none">Line Style</div><a href="GUID-80E858C5-AA04-40BE-9B9B-9A4E0E060E61.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('prevTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-prev-xp.gif" border="0"></a></div><div class="headNavLinkUp"><div id="parentTitle" style="display:none">Schematic Lines</div><a href="GUID-1391385D-2463-499C-9A3B-13A6B97505F1.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('parentTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-up-xp.gif" border="0"></a></div><div class="headNavLinkNext"><div id="nextTitle" style="display:none">Assets (Equipment)</div><a href="GUID-18D19F6B-6EA9-4CDD-A46E-B3CAD0C875EF.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('nextTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-next-xp.gif" border="0"></a></div></nobr></div><!--end browse buttons--></div><div class="button-info"><span id="infoline">&nbsp;</span></div><div class="ancestry"><a href="topichead.htm">AutoCAD Plant 3D 2024 SDK: Developer`s Help</a>&nbsp;&gt;&nbsp;<a href="topichead.htm">Plant SDK Developer Help</a>&nbsp;&gt;&nbsp;<a href="GUID-640F100A-5350-4B42-A5CC-D110506968C3.htm">Drawing Entities and Objects</a>&nbsp;&gt;&nbsp;<a href="GUID-1391385D-2463-499C-9A3B-13A6B97505F1.htm">Schematic Lines</a>&nbsp;&gt;&nbsp;</div><div class="head-text"><a name="WS1A9193826455F5FFF27B6E112726E15C9-6FF1"></a><h1>Line Objects</h1></div></div></div><div class="head-margin">&nbsp;</div><div style="line-height: 0pt">&nbsp;</div><div class="head-margin">&nbsp;</div><div class="body_content"><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57CE"></a> <span class="code">AcPpLineObjects</span> are utility constructs that provide developers with a means to analyze sline connectivity in a flow iterative, segmented manner. 
+   </p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57CD"></a>An 
+  <span class="code">AcPpLineObject</span> is collected by gathering an 
+  <span class="code">AcPpLineObjectIterator</span> from 
+  <span class="code">AcPpLineSegment::lineObjectIterator</span>. You may 
+  <span class="code">step</span> through the iterator to access 
+  <span class="code">AcPpLineObjects</span>. 
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57CC"></a>Line Objects can be used to modify line segments. For example, you can remove an 
+  <span class="code">AcPpInlineGap</span> by calling 
+  <span class="code">AcPpLineSegment::RemoveLineObject</span>. 
+</p><div><a name="WS73099CC142F48755-63C0748611A1FA08F71-67EC"></a><div class="note-note"><span class="label label-target-language">NOTE:</span>Line Objects are not drawing entities and do not reside in the drawing database. They are utility objects used to identify sline segments, gaps, intersections, attached assets, and connected slines. </div></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57CB"></a>The following are 
+  <span class="code">AcPpLineObjects</span>: </p><a name="WS1A9193826455F5FFF27B6E112726E15C9-6FE8"></a><ul><li> <span class="code">AcPpEndlineObject</span> - Asset or segment at the Start or End of the line. 
+  </li><li> <span class="code">AcPpInlineEntity</span> - All other assets or segments that are not Endline. 
+  </li><li> <span class="code">AcPpInlineGap</span> - An explicit, manually created usergap. 
+  </li><li> <span class="code">AcPpInlineIntersection</span> - Implied gaps, as from an intersection. 
+  </li></ul><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57CA"></a>The following code sample selects an 
+  <em class="strong">sline</em>, then lists the type and location of each line object on the chosen sline. </p><div class="codeBlock"><pre>//C#
+using Autodesk.AutoCAD.ApplicationServices;
+using Autodesk.AutoCAD.EditorInput;
+using Autodesk.AutoCAD.DatabaseServices;
+using Autodesk.ProcessPower.PnIDObjects;
+{
+&nbsp;&nbsp;&nbsp;Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
+&nbsp;&nbsp;&nbsp;Database db = Application.DocumentManager.MdiActiveDocument.Database;
+&nbsp;&nbsp;&nbsp;ObjectId entId = ed.GetEntity("Pick an SLINE: ").ObjectId;
+&nbsp;&nbsp;&nbsp;if (entId.IsNull) return;
+&nbsp;&nbsp;&nbsp;Autodesk.AutoCAD.DatabaseServices.TransactionManager tm = db.TransactionManager;
+&nbsp;&nbsp;&nbsp;using (Transaction tr = tm.StartTransaction())
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Entity entity = (Entity)tm.GetObject(entId, OpenMode.ForRead);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LineSegment sline = entity as LineSegment;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (sline == null) return;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LineObjectCollection colLineObj = sline.GetLineObjectCollection(null);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach (LineObject lo in colLineObj)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ed.WriteMessage("\nSegment " + lo.SegmentIndex + ": " + lo.GetType() + ", " + lo.Position);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;}
+}</pre></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57C9"></a>The following code would list the 
+  <span class="code">ClassName</span> of all 
+  <span class="code">Asset</span> items on the line. 
+   </p><div class="codeBlock"><pre>//C#
+foreach (LineObject lo in colLineObj)
+{
+&nbsp;&nbsp;&nbsp;if (lo is InlineEntity) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InlineEntity loInlineEntity = (InlineEntity)lo;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Entity entityLo = (Entity)tm.GetObject(loInlineEntity.ObjectId, OpenMode.ForRead);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (entityLo is Asset) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Asset assetLo = (Asset)entityLo;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ed.WriteMessage ("\nConnected to (" + assetLo.ClassName +").");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;}
+}</pre></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57C8"></a>  </p><div class="footer-block"><a href="javascript:doComments('');"><span class="comments-link">Please send us your comment about this page</span></a></div><br></div></body></html>

@@ -1,0 +1,519 @@
+﻿Assembly: PnP3dACPUtils, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+File: C:\Users\deve_\OneDrive\Documents 1\Visual Studio 2022\ObjectARX_for_Plant3D_2024\inc-x64\PnP3dACPUtils.dll
+================================================================================
+
+Namespace: <Global>
+----------------------------------------
+  +-- struct $_s__CatchableTypeArray$_extraBytes_24
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int32 <alignment member>
+
+  +-- struct $_s__RTTIBaseClassArray$_extraBytes_16
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int32 <alignment member>
+
+  +-- struct $_s__RTTIBaseClassArray$_extraBytes_24
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int32 <alignment member>
+
+  +-- struct $_s__RTTIBaseClassArray$_extraBytes_8
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int32 <alignment member>
+
+  +-- struct $_TypeDescriptor$_extraBytes_19
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct $_TypeDescriptor$_extraBytes_20
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct $_TypeDescriptor$_extraBytes_31
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct __s_GUID
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int32 <alignment member>
+
+  +-- enum __scrt_native_startup_state
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+
+  +-- struct __std_exception_data
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct _EXCEPTION_POINTERS
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct _GUID
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int32 <alignment member>
+
+  +-- struct _s__CatchableType
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int32 <alignment member>
+
+  +-- struct _s__RTTIBaseClassDescriptor
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int32 <alignment member>
+
+  +-- struct _s__RTTIClassHierarchyDescriptor
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int32 <alignment member>
+
+  +-- struct _s__RTTICompleteObjectLocator2
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int32 <alignment member>
+
+  +-- struct _s__ThrowInfo
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int32 <alignment member>
+
+  +-- struct AQA_ParamValue
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct AQA_TPSharedObject<AQA_ValueRepresentation>
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct AQA_Value
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct AQA_ValueRepresentation
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct EHExceptionRecord
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct gcroot<System::String ^>
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct ICLRRuntimeHost
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct ICorRuntimeHost
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct IUnknown
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct Selector
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+
+Namespace: <CppImplementationDetails>
+----------------------------------------
+  +-- struct $ArrayType$$$BY00$$CB_W
+      : ValueType
+
+  +-- struct $ArrayType$$$BY00Q6MPEBXXZ
+      : ValueType
+
+  +-- struct $ArrayType$$$BY01$$CB_W
+      : ValueType
+
+  +-- struct $ArrayType$$$BY01Q6AXXZ
+      : ValueType
+
+  +-- struct $ArrayType$$$BY02$$CB_W
+      : ValueType
+
+  +-- struct $ArrayType$$$BY02Q6AXXZ
+      : ValueType
+
+  +-- struct $ArrayType$$$BY04$$CB_W
+      : ValueType
+
+  +-- struct $ArrayType$$$BY05$$CB_W
+      : ValueType
+
+  +-- struct $ArrayType$$$BY06$$CB_W
+      : ValueType
+
+  +-- struct $ArrayType$$$BY07$$CB_W
+      : ValueType
+
+  +-- struct $ArrayType$$$BY0A@P6AHXZ
+      : ValueType
+
+  +-- struct $ArrayType$$$BY0A@P6AXXZ
+      : ValueType
+
+  +-- struct $ArrayType$$$BY0BA@$$CBD
+      : ValueType
+
+  +-- struct $ArrayType$$$BY0BC@$$CBD
+      : ValueType
+
+  +-- struct $ArrayType$$$BY0BF@$$CBD
+      : ValueType
+
+
+Namespace: <CrtImplementationDetails>
+----------------------------------------
+  +-- struct LanguageSupport
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- class ModuleLoadException
+      : Exception
+      Implements: ISerializable, _Exception
+      |
+      |-- Fields:
+      |   +-- public static String Nested
+
+  +-- class ModuleLoadExceptionHandlerException
+      : ModuleLoadException
+      Implements: ISerializable, _Exception
+      |
+      |-- Fields:
+      |   +-- private Exception <backing_store>NestedException
+      |   +-- private static String formatString
+      |
+      |-- Properties:
+      |   +-- Exception NestedException {get; set}
+      |
+      +-- Methods:
+          +-- public String ToString()
+          +-- public Void GetObjectData(SerializationInfo info, StreamingContext context)
+
+  +-- class ModuleUninitializer
+      : Stack
+      Implements: ICollection, IEnumerable, ICloneable
+      |
+      |-- Fields:
+      |   +-- private static Object lock
+      |   +-- internal static ModuleUninitializer _ModuleUninitializer
+      |
+      +-- Methods:
+          +-- internal Void AddHandler(EventHandler handler)
+          +-- private Void SingletonDomainUnload(Object source, EventArgs arguments)
+
+  +-- enum Progress
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+
+  +-- struct ThisModule
+      : ValueType
+
+  +-- enum TriBool
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+
+
+Namespace: Autodesk.ProcessPower.ACPUtils
+----------------------------------------
+  +-- class BaseInfo
+      Implements: ICloneable, IComparable
+      |
+      |-- Fields:
+      |   +-- protected String m_Name
+      |   +-- protected String m_DisplayName
+      |   +-- protected String m_Tooltip
+      |   +-- protected Boolean m_Tag
+      |
+      |-- Properties:
+      |   +-- Boolean Tag {get; set}
+      |   +-- String Tooltip {get; set}
+      |   +-- String DisplayName {get; set}
+      |   +-- String Name {get; set}
+      |
+      +-- Methods:
+          +-- public String ToString()
+          +-- public Boolean Equals(Object o)
+          +-- public Int32 GetHashCode()
+          +-- public Int32 CompareTo(Object o)
+          +-- public Object Clone()
+          +-- public BaseInfo MakeTemplate()
+          +-- public Void MergeTemplate(BaseInfo tmplt)
+          +-- public Boolean IsHidden()
+          +-- public Void Hide()
+
+  +-- class DisplayNameSource
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public String Invoke(String tableName, String propName)
+          +-- public IAsyncResult BeginInvoke(String tableName, String propName, AsyncCallback callback, Object obj)
+          +-- public String EndInvoke(IAsyncResult result)
+
+  +-- class ParameterInfo
+      : PropertyInfo
+      Implements: ICloneable, IComparable
+      |
+      |-- Fields:
+      |   +-- protected String m_Type
+      |   +-- protected String m_Data
+      |   +-- protected String m_Source
+      |   +-- protected Boolean m_UseMouse
+      |   +-- protected Nullable`1 m_bValueMode
+      |   +-- public static Char* TypeLength
+      |   +-- public static Char* TypeLengthAllowZero
+      |   +-- public static Char* TypeLinearOffset
+      |   +-- public static Char* TypeAngle
+      |   +-- public static Char* TypeAnglePi
+      |   +-- public static Char* TypeNumeric
+      |   +-- public static Char* TypeBool
+      |   +-- public static Char* TypePickList
+      |   +-- public static Char* TypeComboBox
+      |   +-- public static Char* TypeComboBoxIntAllowZero
+      |   +-- public static Char* TypeButton
+      |   +-- public static Char* TypeIntAllowZero
+      |   +-- public static String mgdTypeLength
+      |   +-- public static String mgdTypeLengthAllowZero
+      |   +-- public static String mgdTypeLinearOffset
+      |   +-- public static String mgdTypeAngle
+      |   +-- public static String mgdTypeAnglePi
+      |   +-- public static String mgdTypeNumeric
+      |   +-- public static String mgdTypeBool
+      |   +-- public static String mgdTypePickList
+      |   +-- public static String mgdTypeComboBox
+      |   +-- public static String mgdTypeComboBoxIntAllowZero
+      |   +-- public static String mgdTypeButton
+      |   +-- public static String mgdTypeIntAllowZero
+      |
+      |-- Properties:
+      |   +-- Nullable`1 valueMode {get; set}
+      |   +-- Boolean UseMouse {get; set}
+      |   +-- String Data {get; set}
+      |   +-- String Source {get; set}
+      |   +-- String Type {get; set}
+      |
+      +-- Methods:
+          +-- public String ToDefinitionString()
+          +-- public Void Scale(Double scale)
+          +-- public Boolean isTypeLength()
+          +-- public Boolean isTypeLengthAllowZero()
+          +-- public Boolean isTypeLinearOffset()
+          +-- public Boolean isTypeAngle()
+          +-- public Boolean isTypeAnglePi()
+          +-- public Boolean isTypeNumeric()
+          +-- public Boolean isTypeBool()
+          +-- public Boolean isTypePickList()
+          +-- public Boolean isTypeComboBox()
+          +-- public Boolean isTypeComboBoxIntAllowZero()
+          +-- public Boolean isTypeButton()
+          +-- public Boolean isTypeIntAllowZero()
+          +-- public Object Clone()
+          +-- public ParameterInfo MakeTemplate()
+          +-- public Void MergeTemplate(ParameterInfo tmplt)
+
+  +-- class ParameterList
+      : List`1
+      Implements: IList`1, ICollection`1, IEnumerable`1, IEnumerable, IList, ICollection, IReadOnlyList`1, IReadOnlyCollection`1, ICloneable
+      |
+      |-- Properties:
+      |   +-- ParameterInfo Item {get}
+      |
+      +-- Methods:
+          +-- public String ToString()
+          +-- public static ParameterList FromDefinition(String def)
+          +-- public AQA_ParamValue* asParamValue(AQA_ParamValue* )
+          +-- public Void Scale(Double scale)
+          +-- public Object Clone()
+          +-- public ParameterList MakeTemplate()
+          +-- public Void MergeTemplate(ParameterList tmplt)
+
+  +-- class PropertyInfo
+      : BaseInfo
+      Implements: ICloneable, IComparable
+      |
+      |-- Fields:
+      |   +-- protected String m_Value
+      |   +-- protected String m_DefaultValue
+      |
+      |-- Properties:
+      |   +-- String DefaultValueLocal {get; set}
+      |   +-- String DefaultValue {get; set}
+      |   +-- String Value {get; set}
+      |
+      +-- Methods:
+          +-- public Object Clone()
+          +-- public PropertyInfo MakeTemplate()
+          +-- public Void MergeTemplate(PropertyInfo tmplt)
+
+  +-- class PropertyList
+      : List`1
+      Implements: IList`1, ICollection`1, IEnumerable`1, IEnumerable, IList, ICollection, IReadOnlyList`1, IReadOnlyCollection`1, ICloneable
+      |
+      |-- Fields:
+      |   +-- public static String GeometryDomainProp
+      |   +-- public static String GeometryNameProp
+      |   +-- public static String GeometryDefinitionProp
+      |   +-- public static String PORTATTRIBUTENAME
+      |   +-- public static String HIDDENATTRIBUTENAME
+      |   +-- public static String GEOMETRYATTRIBUTENAME
+      |   +-- public static String ATTRIBUTE_TRUE
+      |
+      |-- Properties:
+      |   +-- PropertyInfo Item {get}
+      |
+      +-- Methods:
+          +-- public Void Initialize(PnPTable tab, Boolean fromPort, DisplayNameSource dns)
+          +-- public Object Clone()
+          +-- public PropertyList MakeTemplate()
+          +-- public Void MergeTemplate(PropertyList tmplt)
+          +-- public StringCollection propertyNames()
+          +-- public StringCollection propertyValues()
+
+
+Namespace: std
+----------------------------------------
+  +-- struct _Bxty
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct _Bxty
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct _Compressed_pair<std::allocator<char>\,std::_String_val<std::_Simple_types<char> >\,1>
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct _Compressed_pair<std::allocator<wchar_t>\,std::_String_val<std::_Simple_types<wchar_t> >\,1>
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct _String_val<std::_Simple_types<char> >
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct _String_val<std::_Simple_types<wchar_t> >
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct allocator<wchar_t>
+      : ValueType
+
+  +-- struct bad_alloc
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct bad_array_new_length
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct bad_cast
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct basic_string<char\,std::char_traits<char>\,std::allocator<char> >
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct basic_string<wchar_t\,std::char_traits<wchar_t>\,std::allocator<wchar_t> >
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct exception
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+
+Namespace: std.?assign@?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@$$FQEAAAEAV12@QEB_W_K@Z.__l2
+----------------------------------------
+  +-- struct <lambda_d4301fda4684ac16da26da6c6383f5f5>
+      : ValueType
+
+

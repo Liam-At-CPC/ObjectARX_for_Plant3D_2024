@@ -1,0 +1,4506 @@
+﻿Assembly: log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a
+File: C:\Users\deve_\OneDrive\Documents 1\Visual Studio 2022\ObjectARX_for_Plant3D_2024\inc-x64\log4net.dll
+================================================================================
+
+Namespace: <Global>
+----------------------------------------
+  +-- struct __StaticArrayInitTypeSize=54
+      : ValueType
+
+  +-- class <PrivateImplementationDetails>
+      |
+      |-- Fields:
+      |   +-- internal static __StaticArrayInitTypeSize=54 5E84DC71DE8127A5458EC36BB76523E75C1A0B1792D62BBB8C947FD32AA0974D
+
+
+Namespace: log4net
+----------------------------------------
+  +-- class GlobalContext
+      |
+      |-- Fields:
+      |   +-- private static GlobalContextProperties s_properties
+      |
+      |-- Properties:
+      |   +-- GlobalContextProperties Properties {get}
+
+  +-- interface ILog
+      Implements: ILoggerWrapper
+      |
+      |-- Properties:
+      |   +-- Boolean IsDebugEnabled {get}
+      |   +-- Boolean IsInfoEnabled {get}
+      |   +-- Boolean IsWarnEnabled {get}
+      |   +-- Boolean IsErrorEnabled {get}
+      |   +-- Boolean IsFatalEnabled {get}
+      |
+      +-- Methods:
+          +-- public Void Debug(Object message)
+          +-- public Void Debug(Object message, Exception exception)
+          +-- public Void DebugFormat(String format, Object[] args)
+          +-- public Void DebugFormat(String format, Object arg0)
+          +-- public Void DebugFormat(String format, Object arg0, Object arg1)
+          +-- public Void DebugFormat(String format, Object arg0, Object arg1, Object arg2)
+          +-- public Void DebugFormat(IFormatProvider provider, String format, Object[] args)
+          +-- public Void Info(Object message)
+          +-- public Void Info(Object message, Exception exception)
+          +-- public Void InfoFormat(String format, Object[] args)
+          +-- public Void InfoFormat(String format, Object arg0)
+          +-- public Void InfoFormat(String format, Object arg0, Object arg1)
+          +-- public Void InfoFormat(String format, Object arg0, Object arg1, Object arg2)
+          +-- public Void InfoFormat(IFormatProvider provider, String format, Object[] args)
+          +-- public Void Warn(Object message)
+          +-- public Void Warn(Object message, Exception exception)
+          +-- public Void WarnFormat(String format, Object[] args)
+          +-- public Void WarnFormat(String format, Object arg0)
+          +-- public Void WarnFormat(String format, Object arg0, Object arg1)
+          +-- public Void WarnFormat(String format, Object arg0, Object arg1, Object arg2)
+          +-- public Void WarnFormat(IFormatProvider provider, String format, Object[] args)
+          +-- public Void Error(Object message)
+          +-- public Void Error(Object message, Exception exception)
+          +-- public Void ErrorFormat(String format, Object[] args)
+          +-- public Void ErrorFormat(String format, Object arg0)
+          +-- public Void ErrorFormat(String format, Object arg0, Object arg1)
+          +-- public Void ErrorFormat(String format, Object arg0, Object arg1, Object arg2)
+          +-- public Void ErrorFormat(IFormatProvider provider, String format, Object[] args)
+          +-- public Void Fatal(Object message)
+          +-- public Void Fatal(Object message, Exception exception)
+          +-- public Void FatalFormat(String format, Object[] args)
+          +-- public Void FatalFormat(String format, Object arg0)
+          +-- public Void FatalFormat(String format, Object arg0, Object arg1)
+          +-- public Void FatalFormat(String format, Object arg0, Object arg1, Object arg2)
+          +-- public Void FatalFormat(IFormatProvider provider, String format, Object[] args)
+
+  +-- class LogicalThreadContext
+      |
+      |-- Fields:
+      |   +-- private static LogicalThreadContextProperties s_properties
+      |   +-- private static LogicalThreadContextStacks s_stacks
+      |
+      |-- Properties:
+      |   +-- LogicalThreadContextProperties Properties {get}
+      |   +-- LogicalThreadContextStacks Stacks {get}
+
+  +-- class LogManager
+      |
+      |-- Fields:
+      |   +-- private static WrapperMap s_wrapperMap
+      |
+      +-- Methods:
+          +-- public static ILog Exists(String name)
+          +-- public static ILog[] GetCurrentLoggers()
+          +-- public static ILog GetLogger(String name)
+          +-- public static ILog Exists(String repository, String name)
+          +-- public static ILog Exists(Assembly repositoryAssembly, String name)
+          +-- public static ILog[] GetCurrentLoggers(String repository)
+          +-- public static ILog[] GetCurrentLoggers(Assembly repositoryAssembly)
+          +-- public static ILog GetLogger(String repository, String name)
+          +-- public static ILog GetLogger(Assembly repositoryAssembly, String name)
+          +-- public static ILog GetLogger(Type type)
+          +-- public static ILog GetLogger(String repository, Type type)
+          +-- public static ILog GetLogger(Assembly repositoryAssembly, Type type)
+          +-- public static Void Shutdown()
+          +-- public static Void ShutdownRepository()
+          +-- public static Void ShutdownRepository(String repository)
+          +-- public static Void ShutdownRepository(Assembly repositoryAssembly)
+          +-- public static Void ResetConfiguration()
+          +-- public static Void ResetConfiguration(String repository)
+          +-- public static Void ResetConfiguration(Assembly repositoryAssembly)
+          +-- public static ILoggerRepository GetLoggerRepository()
+          +-- public static ILoggerRepository GetLoggerRepository(String repository)
+          +-- public static ILoggerRepository GetLoggerRepository(Assembly repositoryAssembly)
+          +-- public static ILoggerRepository GetRepository()
+          +-- public static ILoggerRepository GetRepository(String repository)
+          +-- public static ILoggerRepository GetRepository(Assembly repositoryAssembly)
+          +-- public static ILoggerRepository CreateDomain(Type repositoryType)
+          +-- public static ILoggerRepository CreateRepository(Type repositoryType)
+          +-- public static ILoggerRepository CreateDomain(String repository)
+          +-- public static ILoggerRepository CreateRepository(String repository)
+          +-- public static ILoggerRepository CreateDomain(String repository, Type repositoryType)
+          +-- public static ILoggerRepository CreateRepository(String repository, Type repositoryType)
+          +-- public static ILoggerRepository CreateDomain(Assembly repositoryAssembly, Type repositoryType)
+          +-- public static ILoggerRepository CreateRepository(Assembly repositoryAssembly, Type repositoryType)
+          +-- public static ILoggerRepository[] GetAllRepositories()
+          +-- public static Boolean Flush(Int32 millisecondsTimeout)
+          +-- private static ILog WrapLogger(ILogger logger)
+          +-- private static ILog[] WrapLoggers(ILogger[] loggers)
+          +-- private static ILoggerWrapper WrapperCreationHandler(ILogger logger)
+
+  +-- class MDC
+      |
+      +-- Methods:
+          +-- public static String Get(String key)
+          +-- public static Void Set(String key, String value)
+          +-- public static Void Remove(String key)
+          +-- public static Void Clear()
+
+  +-- class NDC
+      |
+      |-- Properties:
+      |   +-- Int32 Depth {get}
+      |
+      +-- Methods:
+          +-- public static Void Clear()
+          +-- public static Stack CloneStack()
+          +-- public static Void Inherit(Stack stack)
+          +-- public static String Pop()
+          +-- public static IDisposable Push(String message)
+          +-- public static IDisposable PushFormat(String messageFormat, Object[] args)
+          +-- public static Void Remove()
+          +-- public static Void SetMaxDepth(Int32 maxDepth)
+
+  +-- class ThreadContext
+      |
+      |-- Fields:
+      |   +-- private static ThreadContextProperties s_properties
+      |   +-- private static ThreadContextStacks s_stacks
+      |
+      |-- Properties:
+      |   +-- ThreadContextProperties Properties {get}
+      |   +-- ThreadContextStacks Stacks {get}
+
+
+Namespace: log4net.Appender
+----------------------------------------
+  +-- class AdoNetAppender
+      : BufferingAppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- protected ArrayList m_parameters
+      |   +-- private SecurityContext m_securityContext
+      |   +-- private IDbConnection m_dbConnection
+      |   +-- private String m_connectionString
+      |   +-- private String m_appSettingsKey
+      |   +-- private String m_connectionStringName
+      |   +-- private String m_connectionType
+      |   +-- private String m_commandText
+      |   +-- private CommandType m_commandType
+      |   +-- private Boolean m_useTransactions
+      |   +-- private Boolean m_reconnectOnError
+      |   +-- private static Type declaringType
+      |
+      |-- Properties:
+      |   +-- String ConnectionString {get; set}
+      |   +-- String AppSettingsKey {get; set}
+      |   +-- String ConnectionStringName {get; set}
+      |   +-- String ConnectionType {get; set}
+      |   +-- String CommandText {get; set}
+      |   +-- CommandType CommandType {get; set}
+      |   +-- Boolean UseTransactions {get; set}
+      |   +-- SecurityContext SecurityContext {get; set}
+      |   +-- Boolean ReconnectOnError {get; set}
+      |   +-- IDbConnection Connection {get; set}
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- protected Void OnClose()
+          +-- protected Void SendBuffer(LoggingEvent[] events)
+          +-- public Void AddParameter(AdoNetAppenderParameter parameter)
+          +-- protected Void SendBuffer(IDbTransaction dbTran, LoggingEvent[] events)
+          +-- protected String GetLogStatement(LoggingEvent logEvent)
+          +-- protected IDbConnection CreateConnection(Type connectionType, String connectionString)
+          +-- protected String ResolveConnectionString(String& connectionStringContext)
+          +-- protected Type ResolveConnectionType()
+          +-- private Void InitializeDatabaseConnection()
+          +-- private Void DiposeConnection()
+
+  +-- class AdoNetAppenderParameter
+      |
+      |-- Fields:
+      |   +-- private String m_parameterName
+      |   +-- private DbType m_dbType
+      |   +-- private Boolean m_inferType
+      |   +-- private Byte m_precision
+      |   +-- private Byte m_scale
+      |   +-- private Int32 m_size
+      |   +-- private IRawLayout m_layout
+      |
+      |-- Properties:
+      |   +-- String ParameterName {get; set}
+      |   +-- DbType DbType {get; set}
+      |   +-- Byte Precision {get; set}
+      |   +-- Byte Scale {get; set}
+      |   +-- Int32 Size {get; set}
+      |   +-- IRawLayout Layout {get; set}
+      |
+      +-- Methods:
+          +-- public Void Prepare(IDbCommand command)
+          +-- public Void FormatValue(IDbCommand command, LoggingEvent loggingEvent)
+
+  +-- enum AnsiAttributes
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static AnsiAttributes Bright
+      |   +-- public static AnsiAttributes Dim
+      |   +-- public static AnsiAttributes Underscore
+      |   +-- public static AnsiAttributes Blink
+      |   +-- public static AnsiAttributes Reverse
+      |   +-- public static AnsiAttributes Hidden
+      |   +-- public static AnsiAttributes Strikethrough
+      |   +-- public static AnsiAttributes Light
+
+  +-- enum AnsiColor
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static AnsiColor Black
+      |   +-- public static AnsiColor Red
+      |   +-- public static AnsiColor Green
+      |   +-- public static AnsiColor Yellow
+      |   +-- public static AnsiColor Blue
+      |   +-- public static AnsiColor Magenta
+      |   +-- public static AnsiColor Cyan
+      |   +-- public static AnsiColor White
+
+  +-- class AnsiColorTerminalAppender
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private Boolean m_writeToErrorStream
+      |   +-- private LevelMapping m_levelMapping
+      |   +-- public static String ConsoleOut
+      |   +-- public static String ConsoleError
+      |   +-- private static String PostEventCodes
+      |
+      |-- Properties:
+      |   +-- String Target {get; set}
+      |   +-- Boolean RequiresLayout {get}
+      |
+      +-- Methods:
+          +-- public Void AddMapping(LevelColors mapping)
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- public Void ActivateOptions()
+
+  +-- class AppenderCollection
+      Implements: ICollection, IEnumerable, IList, ICloneable
+      |
+      |-- Fields:
+      |   +-- private IAppender[] m_array
+      |   +-- private Int32 m_count
+      |   +-- private Int32 m_version
+      |   +-- public static AppenderCollection EmptyCollection
+      |   +-- private static Int32 DEFAULT_CAPACITY
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- Boolean IsSynchronized {get}
+      |   +-- Object SyncRoot {get}
+      |   +-- IAppender Item {get; set}
+      |   +-- Boolean IsFixedSize {get}
+      |   +-- Boolean IsReadOnly {get}
+      |   +-- Int32 Capacity {get; set}
+      |   +-- Object System.Collections.IList.Item {get; set}
+      |
+      +-- Methods:
+          +-- public static AppenderCollection ReadOnly(AppenderCollection list)
+          +-- public Void CopyTo(IAppender[] array)
+          +-- public Void CopyTo(IAppender[] array, Int32 start)
+          +-- public Int32 Add(IAppender item)
+          +-- public Void Clear()
+          +-- public Object Clone()
+          +-- public Boolean Contains(IAppender item)
+          +-- public Int32 IndexOf(IAppender item)
+          +-- public Void Insert(Int32 index, IAppender item)
+          +-- public Void Remove(IAppender item)
+          +-- public Void RemoveAt(Int32 index)
+          +-- public IAppenderCollectionEnumerator GetEnumerator()
+          +-- public Int32 AddRange(AppenderCollection x)
+          +-- public Int32 AddRange(IAppender[] x)
+          +-- public Int32 AddRange(ICollection col)
+          +-- public Void TrimToSize()
+          +-- public IAppender[] ToArray()
+          +-- private Void ValidateIndex(Int32 i)
+          +-- private Void ValidateIndex(Int32 i, Boolean allowEqualEnd)
+          +-- private Void EnsureCapacity(Int32 min)
+          +-- private Void System.Collections.ICollection.CopyTo(Array array, Int32 start)
+          +-- private Int32 System.Collections.IList.Add(Object x)
+          +-- private Boolean System.Collections.IList.Contains(Object x)
+          +-- private Int32 System.Collections.IList.IndexOf(Object x)
+          +-- private Void System.Collections.IList.Insert(Int32 pos, Object x)
+          +-- private Void System.Collections.IList.Remove(Object x)
+          +-- private Void System.Collections.IList.RemoveAt(Int32 pos)
+          +-- private IEnumerator System.Collections.IEnumerable.GetEnumerator()
+
+  +-- class AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private ILayout m_layout
+      |   +-- private String m_name
+      |   +-- private Level m_threshold
+      |   +-- private IErrorHandler m_errorHandler
+      |   +-- private IFilter m_headFilter
+      |   +-- private IFilter m_tailFilter
+      |   +-- private Boolean m_closed
+      |   +-- private Boolean m_recursiveGuard
+      |   +-- private ReusableStringWriter m_renderWriter
+      |   +-- private static Type declaringType
+      |   +-- private static Int32 c_renderBufferSize
+      |   +-- private static Int32 c_renderBufferMaxCapacity
+      |
+      |-- Properties:
+      |   +-- Level Threshold {get; set}
+      |   +-- IErrorHandler ErrorHandler {get; set}
+      |   +-- IFilter FilterHead {get}
+      |   +-- ILayout Layout {get; set}
+      |   +-- String Name {get; set}
+      |   +-- Boolean RequiresLayout {get}
+      |
+      +-- Methods:
+          +-- protected Void Finalize()
+          +-- public Void ActivateOptions()
+          +-- public Void Close()
+          +-- public Void DoAppend(LoggingEvent loggingEvent)
+          +-- public Void DoAppend(LoggingEvent[] loggingEvents)
+          +-- protected Boolean FilterEvent(LoggingEvent loggingEvent)
+          +-- public Void AddFilter(IFilter filter)
+          +-- public Void ClearFilters()
+          +-- protected Boolean IsAsSevereAsThreshold(Level level)
+          +-- protected Void OnClose()
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- protected Void Append(LoggingEvent[] loggingEvents)
+          +-- protected Boolean PreAppendCheck()
+          +-- protected String RenderLoggingEvent(LoggingEvent loggingEvent)
+          +-- protected Void RenderLoggingEvent(TextWriter writer, LoggingEvent loggingEvent)
+          +-- public Boolean Flush(Int32 millisecondsTimeout)
+
+  +-- class AspNetTraceAppender
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private PatternLayout m_category
+      |
+      |-- Properties:
+      |   +-- Boolean RequiresLayout {get}
+      |   +-- PatternLayout Category {get; set}
+      |
+      +-- Methods:
+          +-- protected Void Append(LoggingEvent loggingEvent)
+
+  +-- class BufferingAppenderSkeleton
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private Int32 m_bufferSize
+      |   +-- private CyclicBuffer m_cb
+      |   +-- private ITriggeringEventEvaluator m_evaluator
+      |   +-- private Boolean m_lossy
+      |   +-- private ITriggeringEventEvaluator m_lossyEvaluator
+      |   +-- private FixFlags m_fixFlags
+      |   +-- private Boolean m_eventMustBeFixed
+      |   +-- private static Int32 DEFAULT_BUFFER_SIZE
+      |
+      |-- Properties:
+      |   +-- Boolean Lossy {get; set}
+      |   +-- Int32 BufferSize {get; set}
+      |   +-- ITriggeringEventEvaluator Evaluator {get; set}
+      |   +-- ITriggeringEventEvaluator LossyEvaluator {get; set}
+      |   +-- Boolean OnlyFixPartialEventData {get; set}
+      |   +-- FixFlags Fix {get; set}
+      |
+      +-- Methods:
+          +-- public Boolean Flush(Int32 millisecondsTimeout)
+          +-- public Void Flush()
+          +-- public Void Flush(Boolean flushLossyBuffer)
+          +-- public Void ActivateOptions()
+          +-- protected Void OnClose()
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- protected Void SendFromBuffer(LoggingEvent firstLoggingEvent, CyclicBuffer buffer)
+          +-- protected Void SendBuffer(LoggingEvent[] events)
+
+  +-- class BufferingForwardingAppender
+      : BufferingAppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable, IAppenderAttachable
+      |
+      |-- Fields:
+      |   +-- private AppenderAttachedImpl m_appenderAttachedImpl
+      |
+      |-- Properties:
+      |   +-- AppenderCollection Appenders {get}
+      |
+      +-- Methods:
+          +-- protected Void OnClose()
+          +-- protected Void SendBuffer(LoggingEvent[] events)
+          +-- public Void AddAppender(IAppender newAppender)
+          +-- public IAppender GetAppender(String name)
+          +-- public Void RemoveAllAppenders()
+          +-- public IAppender RemoveAppender(IAppender appender)
+          +-- public IAppender RemoveAppender(String name)
+
+  +-- class ColoredConsoleAppender
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private Boolean m_writeToErrorStream
+      |   +-- private LevelMapping m_levelMapping
+      |   +-- private StreamWriter m_consoleOutputWriter
+      |   +-- private static Char[] s_windowsNewline
+      |   +-- public static String ConsoleOut
+      |   +-- public static String ConsoleError
+      |   +-- private static UInt32 STD_OUTPUT_HANDLE
+      |   +-- private static UInt32 STD_ERROR_HANDLE
+      |
+      |-- Properties:
+      |   +-- String Target {get; set}
+      |   +-- Boolean RequiresLayout {get}
+      |
+      +-- Methods:
+          +-- public Void AddMapping(LevelColors mapping)
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- public Void ActivateOptions()
+          +-- private static Int32 GetConsoleOutputCP()
+          +-- private static Boolean SetConsoleTextAttribute(IntPtr consoleHandle, UInt16 attributes)
+          +-- private static Boolean GetConsoleScreenBufferInfo(IntPtr consoleHandle, CONSOLE_SCREEN_BUFFER_INFO& bufferInfo)
+          +-- private static IntPtr GetStdHandle(UInt32 type)
+
+  +-- enum Colors
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static Colors Blue
+      |   +-- public static Colors Green
+      |   +-- public static Colors Red
+      |   +-- public static Colors White
+      |   +-- public static Colors Yellow
+      |   +-- public static Colors Purple
+      |   +-- public static Colors Cyan
+      |   +-- public static Colors HighIntensity
+
+  +-- struct CONSOLE_SCREEN_BUFFER_INFO
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- public COORD dwSize
+      |   +-- public COORD dwCursorPosition
+      |   +-- public UInt16 wAttributes
+      |   +-- public SMALL_RECT srWindow
+      |   +-- public COORD dwMaximumWindowSize
+
+  +-- class ConsoleAppender
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private Boolean m_writeToErrorStream
+      |   +-- public static String ConsoleOut
+      |   +-- public static String ConsoleError
+      |
+      |-- Properties:
+      |   +-- String Target {get; set}
+      |   +-- Boolean RequiresLayout {get}
+      |
+      +-- Methods:
+          +-- protected Void Append(LoggingEvent loggingEvent)
+
+  +-- struct COORD
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- public UInt16 x
+      |   +-- public UInt16 y
+
+  +-- class DebugAppender
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private Boolean m_immediateFlush
+      |   +-- private PatternLayout m_category
+      |
+      |-- Properties:
+      |   +-- Boolean ImmediateFlush {get; set}
+      |   +-- PatternLayout Category {get; set}
+      |   +-- Boolean RequiresLayout {get}
+      |
+      +-- Methods:
+          +-- public Boolean Flush(Int32 millisecondsTimeout)
+          +-- protected Void Append(LoggingEvent loggingEvent)
+
+  +-- class Enumerator
+      Implements: IEnumerator, IAppenderCollectionEnumerator
+      |
+      |-- Fields:
+      |   +-- private AppenderCollection m_collection
+      |   +-- private Int32 m_index
+      |   +-- private Int32 m_version
+      |
+      |-- Properties:
+      |   +-- IAppender Current {get}
+      |   +-- Object System.Collections.IEnumerator.Current {get}
+      |
+      +-- Methods:
+          +-- public Boolean MoveNext()
+          +-- public Void Reset()
+
+  +-- class EventLogAppender
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private String m_logName
+      |   +-- private String m_applicationName
+      |   +-- private String m_machineName
+      |   +-- private LevelMapping m_levelMapping
+      |   +-- private SecurityContext m_securityContext
+      |   +-- private Int32 m_eventId
+      |   +-- private Int16 m_category
+      |   +-- private static Type declaringType
+      |   +-- private static Int32 MAX_EVENTLOG_MESSAGE_SIZE_DEFAULT
+      |   +-- private static Int32 MAX_EVENTLOG_MESSAGE_SIZE_VISTA_OR_NEWER
+      |   +-- private static Int32 MAX_EVENTLOG_MESSAGE_SIZE
+      |
+      |-- Properties:
+      |   +-- String LogName {get; set}
+      |   +-- String ApplicationName {get; set}
+      |   +-- String MachineName {get; set}
+      |   +-- SecurityContext SecurityContext {get; set}
+      |   +-- Int32 EventId {get; set}
+      |   +-- Int16 Category {get; set}
+      |   +-- Boolean RequiresLayout {get}
+      |
+      +-- Methods:
+          +-- public Void AddMapping(Level2EventLogEntryType mapping)
+          +-- public Void ActivateOptions()
+          +-- private static Void CreateEventSource(String source, String logName, String machineName)
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- protected EventLogEntryType GetEntryType(Level level)
+          +-- private static Int32 GetMaxEventLogMessageSize()
+
+  +-- class ExclusiveLock
+      : LockingModelBase
+      |
+      |-- Fields:
+      |   +-- private Stream m_stream
+      |
+      +-- Methods:
+          +-- public Void OpenFile(String filename, Boolean append, Encoding encoding)
+          +-- public Void CloseFile()
+          +-- public Stream AcquireLock()
+          +-- public Void ReleaseLock()
+          +-- public Void ActivateOptions()
+          +-- public Void OnClose()
+
+  +-- class FileAppender
+      : TextWriterAppender
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private Boolean m_appendToFile
+      |   +-- private String m_fileName
+      |   +-- private Encoding m_encoding
+      |   +-- private SecurityContext m_securityContext
+      |   +-- private LockingStream m_stream
+      |   +-- private LockingModelBase m_lockingModel
+      |   +-- private static Type declaringType
+      |
+      |-- Properties:
+      |   +-- String File {get; set}
+      |   +-- Boolean AppendToFile {get; set}
+      |   +-- Encoding Encoding {get; set}
+      |   +-- SecurityContext SecurityContext {get; set}
+      |   +-- LockingModelBase LockingModel {get; set}
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- protected Void Reset()
+          +-- protected Void OnClose()
+          +-- protected Void PrepareWriter()
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- protected Void Append(LoggingEvent[] loggingEvents)
+          +-- protected Void WriteFooter()
+          +-- protected Void WriteHeader()
+          +-- protected Void CloseWriter()
+          +-- protected Void CloseFile()
+          +-- protected Void SafeOpenFile(String fileName, Boolean append)
+          +-- protected Void OpenFile(String fileName, Boolean append)
+          +-- protected Void SetQWForFiles(Stream fileStream)
+          +-- protected Void SetQWForFiles(TextWriter writer)
+          +-- protected static String ConvertToFullPath(String path)
+
+  +-- class ForwardingAppender
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable, IAppenderAttachable
+      |
+      |-- Fields:
+      |   +-- private AppenderAttachedImpl m_appenderAttachedImpl
+      |
+      |-- Properties:
+      |   +-- AppenderCollection Appenders {get}
+      |
+      +-- Methods:
+          +-- protected Void OnClose()
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- protected Void Append(LoggingEvent[] loggingEvents)
+          +-- public Void AddAppender(IAppender newAppender)
+          +-- public IAppender GetAppender(String name)
+          +-- public Void RemoveAllAppenders()
+          +-- public IAppender RemoveAppender(IAppender appender)
+          +-- public IAppender RemoveAppender(String name)
+
+  +-- interface IAppender
+      |
+      |-- Properties:
+      |   +-- String Name {get; set}
+      |
+      +-- Methods:
+          +-- public Void Close()
+          +-- public Void DoAppend(LoggingEvent loggingEvent)
+
+  +-- interface IAppenderCollectionEnumerator
+      |
+      |-- Properties:
+      |   +-- IAppender Current {get}
+      |
+      +-- Methods:
+          +-- public Boolean MoveNext()
+          +-- public Void Reset()
+
+  +-- interface IBulkAppender
+      Implements: IAppender
+      |
+      +-- Methods:
+          +-- public Void DoAppend(LoggingEvent[] loggingEvents)
+
+  +-- interface IDateTime
+      |
+      |-- Properties:
+      |   +-- DateTime Now {get}
+
+  +-- interface IFlushable
+      |
+      +-- Methods:
+          +-- public Boolean Flush(Int32 millisecondsTimeout)
+
+  +-- class InterProcessLock
+      : LockingModelBase
+      |
+      |-- Fields:
+      |   +-- private Mutex m_mutex
+      |   +-- private Stream m_stream
+      |   +-- private Int32 m_recursiveWatch
+      |
+      +-- Methods:
+          +-- public Void OpenFile(String filename, Boolean append, Encoding encoding)
+          +-- public Void CloseFile()
+          +-- public Stream AcquireLock()
+          +-- public Void ReleaseLock()
+          +-- public Void ActivateOptions()
+          +-- public Void OnClose()
+
+  +-- interface IRemoteLoggingSink
+      |
+      +-- Methods:
+          +-- public Void LogEvents(LoggingEvent[] events)
+
+  +-- class Level2EventLogEntryType
+      : LevelMappingEntry
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private EventLogEntryType m_entryType
+      |
+      |-- Properties:
+      |   +-- EventLogEntryType EventLogEntryType {get; set}
+
+  +-- class LevelColors
+      : LevelMappingEntry
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private ConsoleColor foreColor
+      |   +-- private Boolean hasForeColor
+      |   +-- private ConsoleColor backColor
+      |   +-- private Boolean hasBackColor
+      |
+      |-- Properties:
+      |   +-- ConsoleColor ForeColor {get; set}
+      |   +-- Boolean HasForeColor {get}
+      |   +-- ConsoleColor BackColor {get; set}
+      |   +-- Boolean HasBackColor {get}
+
+  +-- class LevelColors
+      : LevelMappingEntry
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private AnsiColor m_foreColor
+      |   +-- private AnsiColor m_backColor
+      |   +-- private AnsiAttributes m_attributes
+      |   +-- private String m_combinedColor
+      |
+      |-- Properties:
+      |   +-- AnsiColor ForeColor {get; set}
+      |   +-- AnsiColor BackColor {get; set}
+      |   +-- AnsiAttributes Attributes {get; set}
+      |   +-- String CombinedColor {get}
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+
+  +-- class LevelColors
+      : LevelMappingEntry
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private Colors m_foreColor
+      |   +-- private Colors m_backColor
+      |   +-- private UInt16 m_combinedColor
+      |
+      |-- Properties:
+      |   +-- Colors ForeColor {get; set}
+      |   +-- Colors BackColor {get; set}
+      |   +-- UInt16 CombinedColor {get}
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+
+  +-- class LevelSeverity
+      : LevelMappingEntry
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private SyslogSeverity m_severity
+      |
+      |-- Properties:
+      |   +-- SyslogSeverity Severity {get; set}
+
+  +-- class LevelSeverity
+      : LevelMappingEntry
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private SyslogSeverity m_severity
+      |
+      |-- Properties:
+      |   +-- SyslogSeverity Severity {get; set}
+
+  +-- class LocalDateTime
+      Implements: IDateTime
+      |
+      |-- Properties:
+      |   +-- DateTime Now {get}
+
+  +-- class LocalSyslogAppender
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private SyslogFacility m_facility
+      |   +-- private String m_identity
+      |   +-- private IntPtr m_handleToIdentity
+      |   +-- private LevelMapping m_levelMapping
+      |
+      |-- Properties:
+      |   +-- String Identity {get; set}
+      |   +-- SyslogFacility Facility {get; set}
+      |   +-- Boolean RequiresLayout {get}
+      |
+      +-- Methods:
+          +-- public Void AddMapping(LevelSeverity mapping)
+          +-- public Void ActivateOptions()
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- protected Void OnClose()
+          +-- protected SyslogSeverity GetSeverity(Level level)
+          +-- private static Int32 GeneratePriority(SyslogFacility facility, SyslogSeverity severity)
+          +-- private static Void openlog(IntPtr ident, Int32 option, SyslogFacility facility)
+          +-- private static Void syslog(Int32 priority, String format, String message)
+          +-- private static Void closelog()
+
+  +-- class LockingModelBase
+      |
+      |-- Fields:
+      |   +-- private FileAppender m_appender
+      |
+      |-- Properties:
+      |   +-- FileAppender CurrentAppender {get; set}
+      |
+      +-- Methods:
+          +-- public Void OpenFile(String filename, Boolean append, Encoding encoding)
+          +-- public Void CloseFile()
+          +-- public Void ActivateOptions()
+          +-- public Void OnClose()
+          +-- public Stream AcquireLock()
+          +-- public Void ReleaseLock()
+          +-- protected Stream CreateStream(String filename, Boolean append, FileShare fileShare)
+          +-- protected Void CloseStream(Stream stream)
+
+  +-- class LockingStream
+      : Stream
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private Stream m_realStream
+      |   +-- private LockingModelBase m_lockingModel
+      |   +-- private Int32 m_lockLevel
+      |   +-- private Int32 m_readTotal
+      |
+      |-- Properties:
+      |   +-- Boolean CanRead {get}
+      |   +-- Boolean CanSeek {get}
+      |   +-- Boolean CanWrite {get}
+      |   +-- Int64 Length {get}
+      |   +-- Int64 Position {get; set}
+      |
+      +-- Methods:
+          +-- public IAsyncResult BeginRead(Byte[] buffer, Int32 offset, Int32 count, AsyncCallback callback, Object state)
+          +-- public IAsyncResult BeginWrite(Byte[] buffer, Int32 offset, Int32 count, AsyncCallback callback, Object state)
+          +-- public Void Close()
+          +-- public Int32 EndRead(IAsyncResult asyncResult)
+          +-- public Void EndWrite(IAsyncResult asyncResult)
+          +-- public Task`1 ReadAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+          +-- public Task WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+          +-- public Void Flush()
+          +-- public Int32 Read(Byte[] buffer, Int32 offset, Int32 count)
+          +-- public Int32 ReadByte()
+          +-- public Int64 Seek(Int64 offset, SeekOrigin origin)
+          +-- public Void SetLength(Int64 value)
+          +-- private Void System.IDisposable.Dispose()
+          +-- public Void Write(Byte[] buffer, Int32 offset, Int32 count)
+          +-- public Void WriteByte(Byte value)
+          +-- private Void AssertLocked()
+          +-- public Boolean AcquireLock()
+          +-- public Void ReleaseLock()
+
+  +-- class LockStateException
+      : LogException
+      Implements: ISerializable, _Exception
+
+  +-- class ManagedColoredConsoleAppender
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private Boolean m_writeToErrorStream
+      |   +-- private LevelMapping m_levelMapping
+      |   +-- public static String ConsoleOut
+      |   +-- public static String ConsoleError
+      |
+      |-- Properties:
+      |   +-- String Target {get; set}
+      |   +-- Boolean RequiresLayout {get}
+      |
+      +-- Methods:
+          +-- public Void AddMapping(LevelColors mapping)
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- public Void ActivateOptions()
+
+  +-- class MemoryAppender
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- protected ArrayList m_eventsList
+      |   +-- protected FixFlags m_fixFlags
+      |
+      |-- Properties:
+      |   +-- Boolean OnlyFixPartialEventData {get; set}
+      |   +-- FixFlags Fix {get; set}
+      |
+      +-- Methods:
+          +-- public LoggingEvent[] GetEvents()
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- public Void Clear()
+          +-- public LoggingEvent[] PopAllEvents()
+
+  +-- class MinimalLock
+      : LockingModelBase
+      |
+      |-- Fields:
+      |   +-- private String m_filename
+      |   +-- private Boolean m_append
+      |   +-- private Stream m_stream
+      |
+      +-- Methods:
+          +-- public Void OpenFile(String filename, Boolean append, Encoding encoding)
+          +-- public Void CloseFile()
+          +-- public Stream AcquireLock()
+          +-- public Void ReleaseLock()
+          +-- public Void ActivateOptions()
+          +-- public Void OnClose()
+
+  +-- class NetSendAppender
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private String m_server
+      |   +-- private String m_sender
+      |   +-- private String m_recipient
+      |   +-- private SecurityContext m_securityContext
+      |
+      |-- Properties:
+      |   +-- String Sender {get; set}
+      |   +-- String Recipient {get; set}
+      |   +-- String Server {get; set}
+      |   +-- SecurityContext SecurityContext {get; set}
+      |   +-- Boolean RequiresLayout {get}
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- protected static Int32 NetMessageBufferSend(String serverName, String msgName, String fromName, String buffer, Int32 bufferSize)
+
+  +-- class OutputDebugStringAppender
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Properties:
+      |   +-- Boolean RequiresLayout {get}
+      |
+      +-- Methods:
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- protected static Void OutputDebugString(String message)
+
+  +-- class ReadOnlyAppenderCollection
+      : AppenderCollection
+      Implements: ICollection, IEnumerable, IList, ICloneable
+      |
+      |-- Fields:
+      |   +-- private AppenderCollection m_collection
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- Boolean IsSynchronized {get}
+      |   +-- Object SyncRoot {get}
+      |   +-- IAppender Item {get; set}
+      |   +-- Boolean IsFixedSize {get}
+      |   +-- Boolean IsReadOnly {get}
+      |   +-- Int32 Capacity {get; set}
+      |
+      +-- Methods:
+          +-- public Void CopyTo(IAppender[] array)
+          +-- public Void CopyTo(IAppender[] array, Int32 start)
+          +-- private Void System.Collections.ICollection.CopyTo(Array array, Int32 start)
+          +-- public Int32 Add(IAppender x)
+          +-- public Void Clear()
+          +-- public Boolean Contains(IAppender x)
+          +-- public Int32 IndexOf(IAppender x)
+          +-- public Void Insert(Int32 pos, IAppender x)
+          +-- public Void Remove(IAppender x)
+          +-- public Void RemoveAt(Int32 pos)
+          +-- public IAppenderCollectionEnumerator GetEnumerator()
+          +-- public Int32 AddRange(AppenderCollection x)
+          +-- public Int32 AddRange(IAppender[] x)
+          +-- public IAppender[] ToArray()
+          +-- public Void TrimToSize()
+
+  +-- class RemoteSyslogAppender
+      : UdpAppender
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private SyslogFacility m_facility
+      |   +-- private PatternLayout m_identity
+      |   +-- private LevelMapping m_levelMapping
+      |   +-- private static Int32 DefaultSyslogPort
+      |   +-- private static Int32 c_renderBufferSize
+      |   +-- private static Int32 c_renderBufferMaxCapacity
+      |
+      |-- Properties:
+      |   +-- PatternLayout Identity {get; set}
+      |   +-- SyslogFacility Facility {get; set}
+      |
+      +-- Methods:
+          +-- public Void AddMapping(LevelSeverity mapping)
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- public Void ActivateOptions()
+          +-- protected SyslogSeverity GetSeverity(Level level)
+          +-- public static Int32 GeneratePriority(SyslogFacility facility, SyslogSeverity severity)
+
+  +-- class RemotingAppender
+      : BufferingAppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private String m_sinkUrl
+      |   +-- private IRemoteLoggingSink m_sinkObj
+      |   +-- private Int32 m_queuedCallbackCount
+      |   +-- private ManualResetEvent m_workQueueEmptyEvent
+      |
+      |-- Properties:
+      |   +-- String Sink {get; set}
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- protected Void SendBuffer(LoggingEvent[] events)
+          +-- protected Void OnClose()
+          +-- public Boolean Flush(Int32 millisecondsTimeout)
+          +-- private Void BeginAsyncSend()
+          +-- private Void EndAsyncSend()
+          +-- private Void SendBufferCallback(Object state)
+
+  +-- class RollingFileAppender
+      : FileAppender
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private IDateTime m_dateTime
+      |   +-- private String m_datePattern
+      |   +-- private String m_scheduledFilename
+      |   +-- private DateTime m_nextCheck
+      |   +-- private DateTime m_now
+      |   +-- private RollPoint m_rollPoint
+      |   +-- private Int64 m_maxFileSize
+      |   +-- private Int32 m_maxSizeRollBackups
+      |   +-- private Int32 m_curSizeRollBackups
+      |   +-- private Int32 m_countDirection
+      |   +-- private RollingMode m_rollingStyle
+      |   +-- private Boolean m_rollDate
+      |   +-- private Boolean m_rollSize
+      |   +-- private Boolean m_staticLogFileName
+      |   +-- private Boolean m_preserveLogFileNameExtension
+      |   +-- private String m_baseFileName
+      |   +-- private Mutex m_mutexForRolling
+      |   +-- private static Type declaringType
+      |   +-- private static DateTime s_date1970
+      |
+      |-- Properties:
+      |   +-- IDateTime DateTimeStrategy {get; set}
+      |   +-- String DatePattern {get; set}
+      |   +-- Int32 MaxSizeRollBackups {get; set}
+      |   +-- Int64 MaxFileSize {get; set}
+      |   +-- String MaximumFileSize {get; set}
+      |   +-- Int32 CountDirection {get; set}
+      |   +-- RollingMode RollingStyle {get; set}
+      |   +-- Boolean PreserveLogFileNameExtension {get; set}
+      |   +-- Boolean StaticLogFileName {get; set}
+      |
+      +-- Methods:
+          +-- protected Void Finalize()
+          +-- protected Void SetQWForFiles(TextWriter writer)
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- protected Void Append(LoggingEvent[] loggingEvents)
+          +-- protected Void AdjustFileBeforeAppend()
+          +-- protected Void OpenFile(String fileName, Boolean append)
+          +-- protected String GetNextOutputFileName(String fileName)
+          +-- private Void DetermineCurSizeRollBackups()
+          +-- private String GetWildcardPatternForFile(String baseFileName)
+          +-- private ArrayList GetExistingFiles(String baseFilePath)
+          +-- private Void RollOverIfDateBoundaryCrossing()
+          +-- protected Void ExistingInit()
+          +-- private Void InitializeFromOneFile(String baseFile, String curFileName)
+          +-- private Int32 GetBackUpIndex(String curFileName)
+          +-- private Void InitializeRollBackups(String baseFile, ArrayList arrayFiles)
+          +-- private RollPoint ComputeCheckPeriod(String datePattern)
+          +-- public Void ActivateOptions()
+          +-- private String CombinePath(String path1, String path2)
+          +-- protected Void RollOverTime(Boolean fileIsOpen)
+          +-- protected Void RollFile(String fromFile, String toFile)
+          +-- protected Boolean FileExists(String path)
+          +-- protected Void DeleteFile(String fileName)
+          +-- protected Void RollOverSize()
+          +-- protected Void RollOverRenameFiles(String baseFileName)
+          +-- protected DateTime NextCheckDate(DateTime currentDateTime, RollPoint rollPoint)
+
+  +-- enum RollingMode
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static RollingMode Once
+      |   +-- public static RollingMode Size
+      |   +-- public static RollingMode Date
+      |   +-- public static RollingMode Composite
+
+  +-- enum RollPoint
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static RollPoint InvalidRollPoint
+      |   +-- public static RollPoint TopOfMinute
+      |   +-- public static RollPoint TopOfHour
+      |   +-- public static RollPoint HalfDay
+      |   +-- public static RollPoint TopOfDay
+      |   +-- public static RollPoint TopOfWeek
+      |   +-- public static RollPoint TopOfMonth
+
+  +-- struct SMALL_RECT
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- public UInt16 Left
+      |   +-- public UInt16 Top
+      |   +-- public UInt16 Right
+      |   +-- public UInt16 Bottom
+
+  +-- class SmtpAppender
+      : BufferingAppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private String m_to
+      |   +-- private String m_cc
+      |   +-- private String m_bcc
+      |   +-- private String m_from
+      |   +-- private String m_subject
+      |   +-- private String m_smtpHost
+      |   +-- private Encoding m_subjectEncoding
+      |   +-- private Encoding m_bodyEncoding
+      |   +-- private SmtpAuthentication m_authentication
+      |   +-- private String m_username
+      |   +-- private String m_password
+      |   +-- private Int32 m_port
+      |   +-- private MailPriority m_mailPriority
+      |   +-- private Boolean m_enableSsl
+      |   +-- private String m_replyTo
+      |   +-- private static Char[] ADDRESS_DELIMITERS
+      |
+      |-- Properties:
+      |   +-- String To {get; set}
+      |   +-- String Cc {get; set}
+      |   +-- String Bcc {get; set}
+      |   +-- String From {get; set}
+      |   +-- String Subject {get; set}
+      |   +-- String SmtpHost {get; set}
+      |   +-- Boolean LocationInfo {get; set}
+      |   +-- SmtpAuthentication Authentication {get; set}
+      |   +-- String Username {get; set}
+      |   +-- String Password {get; set}
+      |   +-- Int32 Port {get; set}
+      |   +-- MailPriority Priority {get; set}
+      |   +-- Boolean EnableSsl {get; set}
+      |   +-- String ReplyTo {get; set}
+      |   +-- Encoding SubjectEncoding {get; set}
+      |   +-- Encoding BodyEncoding {get; set}
+      |   +-- Boolean RequiresLayout {get}
+      |
+      +-- Methods:
+          +-- protected Void SendBuffer(LoggingEvent[] events)
+          +-- protected Void SendEmail(String messageBody)
+          +-- private static String MaybeTrimSeparators(String s)
+
+  +-- enum SmtpAuthentication
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static SmtpAuthentication None
+      |   +-- public static SmtpAuthentication Basic
+      |   +-- public static SmtpAuthentication Ntlm
+
+  +-- class SmtpPickupDirAppender
+      : BufferingAppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private String m_to
+      |   +-- private String m_from
+      |   +-- private String m_subject
+      |   +-- private String m_pickupDir
+      |   +-- private String m_fileExtension
+      |   +-- private SecurityContext m_securityContext
+      |
+      |-- Properties:
+      |   +-- String To {get; set}
+      |   +-- String From {get; set}
+      |   +-- String Subject {get; set}
+      |   +-- String PickupDir {get; set}
+      |   +-- String FileExtension {get; set}
+      |   +-- SecurityContext SecurityContext {get; set}
+      |   +-- Boolean RequiresLayout {get}
+      |
+      +-- Methods:
+          +-- protected Void SendBuffer(LoggingEvent[] events)
+          +-- public Void ActivateOptions()
+          +-- protected static String ConvertToFullPath(String path)
+
+  +-- class SocketClient
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private Socket m_socket
+      |   +-- private StreamWriter m_writer
+      |
+      +-- Methods:
+          +-- public Void Send(String message)
+          +-- public Void Dispose()
+
+  +-- class SocketHandler
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private Socket m_serverSocket
+      |   +-- private ArrayList m_clients
+      |   +-- private static Int32 MAX_CONNECTIONS
+      |
+      |-- Properties:
+      |   +-- Boolean HasConnections {get}
+      |
+      +-- Methods:
+          +-- private Void AcceptConnection()
+          +-- public Void Send(String message)
+          +-- private Void AddClient(SocketClient client)
+          +-- private Void RemoveClient(SocketClient client)
+          +-- private Void OnConnect(IAsyncResult asyncResult)
+          +-- public Void Dispose()
+
+  +-- enum SyslogFacility
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static SyslogFacility Kernel
+      |   +-- public static SyslogFacility User
+      |   +-- public static SyslogFacility Mail
+      |   +-- public static SyslogFacility Daemons
+      |   +-- public static SyslogFacility Authorization
+      |   +-- public static SyslogFacility Syslog
+      |   +-- public static SyslogFacility Printer
+      |   +-- public static SyslogFacility News
+      |   +-- public static SyslogFacility Uucp
+      |   +-- public static SyslogFacility Clock
+      |   +-- public static SyslogFacility Authorization2
+      |   +-- public static SyslogFacility Ftp
+      |   +-- public static SyslogFacility Ntp
+      |   +-- public static SyslogFacility Audit
+      |   +-- public static SyslogFacility Alert
+      |   +-- public static SyslogFacility Clock2
+      |   +-- public static SyslogFacility Local0
+      |   +-- public static SyslogFacility Local1
+      |   +-- public static SyslogFacility Local2
+      |   +-- public static SyslogFacility Local3
+      |   +-- public static SyslogFacility Local4
+      |   +-- public static SyslogFacility Local5
+      |   +-- public static SyslogFacility Local6
+      |   +-- public static SyslogFacility Local7
+
+  +-- enum SyslogFacility
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static SyslogFacility Kernel
+      |   +-- public static SyslogFacility User
+      |   +-- public static SyslogFacility Mail
+      |   +-- public static SyslogFacility Daemons
+      |   +-- public static SyslogFacility Authorization
+      |   +-- public static SyslogFacility Syslog
+      |   +-- public static SyslogFacility Printer
+      |   +-- public static SyslogFacility News
+      |   +-- public static SyslogFacility Uucp
+      |   +-- public static SyslogFacility Clock
+      |   +-- public static SyslogFacility Authorization2
+      |   +-- public static SyslogFacility Ftp
+      |   +-- public static SyslogFacility Ntp
+      |   +-- public static SyslogFacility Audit
+      |   +-- public static SyslogFacility Alert
+      |   +-- public static SyslogFacility Clock2
+      |   +-- public static SyslogFacility Local0
+      |   +-- public static SyslogFacility Local1
+      |   +-- public static SyslogFacility Local2
+      |   +-- public static SyslogFacility Local3
+      |   +-- public static SyslogFacility Local4
+      |   +-- public static SyslogFacility Local5
+      |   +-- public static SyslogFacility Local6
+      |   +-- public static SyslogFacility Local7
+
+  +-- enum SyslogSeverity
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static SyslogSeverity Emergency
+      |   +-- public static SyslogSeverity Alert
+      |   +-- public static SyslogSeverity Critical
+      |   +-- public static SyslogSeverity Error
+      |   +-- public static SyslogSeverity Warning
+      |   +-- public static SyslogSeverity Notice
+      |   +-- public static SyslogSeverity Informational
+      |   +-- public static SyslogSeverity Debug
+
+  +-- enum SyslogSeverity
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static SyslogSeverity Emergency
+      |   +-- public static SyslogSeverity Alert
+      |   +-- public static SyslogSeverity Critical
+      |   +-- public static SyslogSeverity Error
+      |   +-- public static SyslogSeverity Warning
+      |   +-- public static SyslogSeverity Notice
+      |   +-- public static SyslogSeverity Informational
+      |   +-- public static SyslogSeverity Debug
+
+  +-- enum Tag
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static Tag Default
+
+  +-- class TelnetAppender
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private SocketHandler m_handler
+      |   +-- private Int32 m_listeningPort
+      |   +-- private static Type declaringType
+      |
+      |-- Properties:
+      |   +-- Int32 Port {get; set}
+      |   +-- Boolean RequiresLayout {get}
+      |
+      +-- Methods:
+          +-- protected Void OnClose()
+          +-- public Void ActivateOptions()
+          +-- protected Void Append(LoggingEvent loggingEvent)
+
+  +-- class TextWriterAppender
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private QuietTextWriter m_qtw
+      |   +-- private Boolean m_immediateFlush
+      |   +-- private static Type declaringType
+      |
+      |-- Properties:
+      |   +-- Boolean ImmediateFlush {get; set}
+      |   +-- TextWriter Writer {get; set}
+      |   +-- IErrorHandler ErrorHandler {get; set}
+      |   +-- Boolean RequiresLayout {get}
+      |   +-- QuietTextWriter QuietWriter {get; set}
+      |
+      +-- Methods:
+          +-- protected Boolean PreAppendCheck()
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- protected Void Append(LoggingEvent[] loggingEvents)
+          +-- protected Void OnClose()
+          +-- protected Void WriteFooterAndCloseWriter()
+          +-- protected Void CloseWriter()
+          +-- protected Void Reset()
+          +-- protected Void WriteFooter()
+          +-- protected Void WriteHeader()
+          +-- protected Void PrepareWriter()
+          +-- public Boolean Flush(Int32 millisecondsTimeout)
+
+  +-- class TraceAppender
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private Boolean m_immediateFlush
+      |   +-- private PatternLayout m_category
+      |
+      |-- Properties:
+      |   +-- Boolean ImmediateFlush {get; set}
+      |   +-- PatternLayout Category {get; set}
+      |   +-- Boolean RequiresLayout {get}
+      |
+      +-- Methods:
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- public Boolean Flush(Int32 millisecondsTimeout)
+
+  +-- class UdpAppender
+      : AppenderSkeleton
+      Implements: IAppender, IBulkAppender, IOptionHandler, IFlushable
+      |
+      |-- Fields:
+      |   +-- private IPAddress m_remoteAddress
+      |   +-- private Int32 m_remotePort
+      |   +-- private IPEndPoint m_remoteEndPoint
+      |   +-- private Int32 m_localPort
+      |   +-- private UdpClient m_client
+      |   +-- private Encoding m_encoding
+      |
+      |-- Properties:
+      |   +-- IPAddress RemoteAddress {get; set}
+      |   +-- Int32 RemotePort {get; set}
+      |   +-- Int32 LocalPort {get; set}
+      |   +-- Encoding Encoding {get; set}
+      |   +-- UdpClient Client {get; set}
+      |   +-- IPEndPoint RemoteEndPoint {get; set}
+      |   +-- Boolean RequiresLayout {get}
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- protected Void Append(LoggingEvent loggingEvent)
+          +-- protected Void OnClose()
+          +-- protected Void InitializeClientConnection()
+
+  +-- class UniversalDateTime
+      Implements: IDateTime
+      |
+      |-- Properties:
+      |   +-- DateTime Now {get}
+
+
+Namespace: log4net.Config
+----------------------------------------
+  +-- class AliasDomainAttribute
+      : AliasRepositoryAttribute
+      Implements: _Attribute
+
+  +-- class AliasRepositoryAttribute
+      : Attribute
+      Implements: _Attribute
+      |
+      |-- Fields:
+      |   +-- private String m_name
+      |
+      |-- Properties:
+      |   +-- String Name {get; set}
+
+  +-- class BasicConfigurator
+      |
+      |-- Fields:
+      |   +-- private static Type declaringType
+      |
+      +-- Methods:
+          +-- public static ICollection Configure()
+          +-- public static ICollection Configure(IAppender[] appenders)
+          +-- public static ICollection Configure(IAppender appender)
+          +-- public static ICollection Configure(ILoggerRepository repository)
+          +-- public static ICollection Configure(ILoggerRepository repository, IAppender appender)
+          +-- public static ICollection Configure(ILoggerRepository repository, IAppender[] appenders)
+          +-- private static Void InternalConfigure(ILoggerRepository repository, IAppender[] appenders)
+
+  +-- class ConfiguratorAttribute
+      : Attribute
+      Implements: _Attribute, IComparable
+      |
+      |-- Fields:
+      |   +-- private Int32 m_priority
+      |
+      +-- Methods:
+          +-- public Void Configure(Assembly sourceAssembly, ILoggerRepository targetRepository)
+          +-- public Int32 CompareTo(Object obj)
+
+  +-- class ConfigureAndWatchHandler
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private FileInfo m_configFile
+      |   +-- private ILoggerRepository m_repository
+      |   +-- private Timer m_timer
+      |   +-- private FileSystemWatcher m_watcher
+      |   +-- private static Int32 TimeoutMillis
+      |
+      +-- Methods:
+          +-- private Void ConfigureAndWatchHandler_OnChanged(Object source, FileSystemEventArgs e)
+          +-- private Void ConfigureAndWatchHandler_OnRenamed(Object source, RenamedEventArgs e)
+          +-- private Void OnWatchedFileChange(Object state)
+          +-- public Void Dispose()
+
+  +-- class DomainAttribute
+      : RepositoryAttribute
+      Implements: _Attribute
+
+  +-- class DOMConfigurator
+      |
+      +-- Methods:
+          +-- public static Void Configure()
+          +-- public static Void Configure(ILoggerRepository repository)
+          +-- public static Void Configure(XmlElement element)
+          +-- public static Void Configure(ILoggerRepository repository, XmlElement element)
+          +-- public static Void Configure(FileInfo configFile)
+          +-- public static Void Configure(Stream configStream)
+          +-- public static Void Configure(ILoggerRepository repository, FileInfo configFile)
+          +-- public static Void Configure(ILoggerRepository repository, Stream configStream)
+          +-- public static Void ConfigureAndWatch(FileInfo configFile)
+          +-- public static Void ConfigureAndWatch(ILoggerRepository repository, FileInfo configFile)
+
+  +-- class DOMConfiguratorAttribute
+      : XmlConfiguratorAttribute
+      Implements: _Attribute, IComparable
+
+  +-- class Log4NetConfigurationSectionHandler
+      Implements: IConfigurationSectionHandler
+      |
+      +-- Methods:
+          +-- public Object Create(Object parent, Object configContext, XmlNode section)
+
+  +-- class PluginAttribute
+      : Attribute
+      Implements: _Attribute, IPluginFactory
+      |
+      |-- Fields:
+      |   +-- private String m_typeName
+      |   +-- private Type m_type
+      |
+      |-- Properties:
+      |   +-- Type Type {get; set}
+      |   +-- String TypeName {get; set}
+      |
+      +-- Methods:
+          +-- public IPlugin CreatePlugin()
+          +-- public String ToString()
+
+  +-- class RepositoryAttribute
+      : Attribute
+      Implements: _Attribute
+      |
+      |-- Fields:
+      |   +-- private String m_name
+      |   +-- private Type m_repositoryType
+      |
+      |-- Properties:
+      |   +-- String Name {get; set}
+      |   +-- Type RepositoryType {get; set}
+
+  +-- class SecurityContextProviderAttribute
+      : ConfiguratorAttribute
+      Implements: _Attribute, IComparable
+      |
+      |-- Fields:
+      |   +-- private Type m_providerType
+      |   +-- private static Type declaringType
+      |
+      |-- Properties:
+      |   +-- Type ProviderType {get; set}
+      |
+      +-- Methods:
+          +-- public Void Configure(Assembly sourceAssembly, ILoggerRepository targetRepository)
+
+  +-- class XmlConfigurator
+      |
+      |-- Fields:
+      |   +-- private static Hashtable m_repositoryName2ConfigAndWatchHandler
+      |   +-- private static Type declaringType
+      |
+      +-- Methods:
+          +-- public static ICollection Configure(ILoggerRepository repository)
+          +-- private static Void InternalConfigure(ILoggerRepository repository)
+          +-- public static ICollection Configure()
+          +-- public static ICollection Configure(XmlElement element)
+          +-- public static ICollection Configure(FileInfo configFile)
+          +-- public static ICollection Configure(Uri configUri)
+          +-- public static ICollection Configure(Stream configStream)
+          +-- public static ICollection Configure(ILoggerRepository repository, XmlElement element)
+          +-- public static ICollection Configure(ILoggerRepository repository, FileInfo configFile)
+          +-- private static Void InternalConfigure(ILoggerRepository repository, FileInfo configFile)
+          +-- public static ICollection Configure(ILoggerRepository repository, Uri configUri)
+          +-- private static Void InternalConfigure(ILoggerRepository repository, Uri configUri)
+          +-- public static ICollection Configure(ILoggerRepository repository, Stream configStream)
+          +-- private static Void InternalConfigure(ILoggerRepository repository, Stream configStream)
+          +-- public static ICollection ConfigureAndWatch(FileInfo configFile)
+          +-- public static ICollection ConfigureAndWatch(ILoggerRepository repository, FileInfo configFile)
+          +-- private static Void InternalConfigureAndWatch(ILoggerRepository repository, FileInfo configFile)
+          +-- private static Void InternalConfigureFromXml(ILoggerRepository repository, XmlElement element)
+
+  +-- class XmlConfiguratorAttribute
+      : ConfiguratorAttribute
+      Implements: _Attribute, IComparable
+      |
+      |-- Fields:
+      |   +-- private String m_configFile
+      |   +-- private String m_configFileExtension
+      |   +-- private Boolean m_configureAndWatch
+      |   +-- private static Type declaringType
+      |
+      |-- Properties:
+      |   +-- String ConfigFile {get; set}
+      |   +-- String ConfigFileExtension {get; set}
+      |   +-- Boolean Watch {get; set}
+      |
+      +-- Methods:
+          +-- public Void Configure(Assembly sourceAssembly, ILoggerRepository targetRepository)
+          +-- private Void ConfigureFromFile(Assembly sourceAssembly, ILoggerRepository targetRepository)
+          +-- private Void ConfigureFromFile(ILoggerRepository targetRepository, FileInfo configFile)
+          +-- private Void ConfigureFromUri(Assembly sourceAssembly, ILoggerRepository targetRepository)
+
+
+Namespace: log4net.Core
+----------------------------------------
+  +-- class CompactRepositorySelector
+      Implements: IRepositorySelector
+      |
+      |-- Fields:
+      |   +-- private Hashtable m_name2repositoryMap
+      |   +-- private Type m_defaultRepositoryType
+      |   +-- private LoggerRepositoryCreationEventHandler m_loggerRepositoryCreatedEvent
+      |   +-- private static Type declaringType
+      |   +-- private static String DefaultRepositoryName
+      |
+      +-- Methods:
+          +-- public ILoggerRepository GetRepository(Assembly assembly)
+          +-- public ILoggerRepository GetRepository(String repositoryName)
+          +-- public ILoggerRepository CreateRepository(Assembly assembly, Type repositoryType)
+          +-- public ILoggerRepository CreateRepository(String repositoryName, Type repositoryType)
+          +-- public Boolean ExistsRepository(String repositoryName)
+          +-- public ILoggerRepository[] GetAllRepositories()
+          +-- protected Void OnLoggerRepositoryCreatedEvent(ILoggerRepository repository)
+
+  +-- class DefaultRepositorySelector
+      Implements: IRepositorySelector
+      |
+      |-- Fields:
+      |   +-- private Hashtable m_name2repositoryMap
+      |   +-- private Hashtable m_assembly2repositoryMap
+      |   +-- private Hashtable m_alias2repositoryMap
+      |   +-- private Type m_defaultRepositoryType
+      |   +-- private LoggerRepositoryCreationEventHandler m_loggerRepositoryCreatedEvent
+      |   +-- private static Type declaringType
+      |   +-- private static String DefaultRepositoryName
+      |
+      +-- Methods:
+          +-- public ILoggerRepository GetRepository(Assembly repositoryAssembly)
+          +-- public ILoggerRepository GetRepository(String repositoryName)
+          +-- public ILoggerRepository CreateRepository(Assembly repositoryAssembly, Type repositoryType)
+          +-- public ILoggerRepository CreateRepository(Assembly repositoryAssembly, Type repositoryType, String repositoryName, Boolean readAssemblyAttributes)
+          +-- public ILoggerRepository CreateRepository(String repositoryName, Type repositoryType)
+          +-- public Boolean ExistsRepository(String repositoryName)
+          +-- public ILoggerRepository[] GetAllRepositories()
+          +-- public Void AliasRepository(String repositoryAlias, ILoggerRepository repositoryTarget)
+          +-- protected Void OnLoggerRepositoryCreatedEvent(ILoggerRepository repository)
+          +-- private Void GetInfoForAssembly(Assembly assembly, String& repositoryName, Type& repositoryType)
+          +-- private Void ConfigureRepository(Assembly assembly, ILoggerRepository repository)
+          +-- private Void LoadPlugins(Assembly assembly, ILoggerRepository repository)
+          +-- private Void LoadAliases(Assembly assembly, ILoggerRepository repository)
+
+  +-- class Enumerator
+      Implements: IEnumerator, ILevelCollectionEnumerator
+      |
+      |-- Fields:
+      |   +-- private LevelCollection m_collection
+      |   +-- private Int32 m_index
+      |   +-- private Int32 m_version
+      |
+      |-- Properties:
+      |   +-- Level Current {get}
+      |   +-- Object System.Collections.IEnumerator.Current {get}
+      |
+      +-- Methods:
+          +-- public Boolean MoveNext()
+          +-- public Void Reset()
+
+  +-- enum ErrorCode
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static ErrorCode GenericFailure
+      |   +-- public static ErrorCode WriteFailure
+      |   +-- public static ErrorCode FlushFailure
+      |   +-- public static ErrorCode CloseFailure
+      |   +-- public static ErrorCode FileOpenFailure
+      |   +-- public static ErrorCode MissingLayout
+      |   +-- public static ErrorCode AddressParseFailure
+
+  +-- class ExceptionEvaluator
+      Implements: ITriggeringEventEvaluator
+      |
+      |-- Fields:
+      |   +-- private Type m_type
+      |   +-- private Boolean m_triggerOnSubclass
+      |
+      |-- Properties:
+      |   +-- Type ExceptionType {get; set}
+      |   +-- Boolean TriggerOnSubclass {get; set}
+      |
+      +-- Methods:
+          +-- public Boolean IsTriggeringEvent(LoggingEvent loggingEvent)
+
+  +-- enum FixFlags
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static FixFlags Mdc
+      |   +-- public static FixFlags Ndc
+      |   +-- public static FixFlags Message
+      |   +-- public static FixFlags ThreadName
+      |   +-- public static FixFlags LocationInfo
+      |   +-- public static FixFlags UserName
+      |   +-- public static FixFlags Domain
+      |   +-- public static FixFlags Identity
+      |   +-- public static FixFlags Exception
+      |   +-- public static FixFlags Properties
+      |   +-- public static FixFlags None
+      |   +-- public static FixFlags All
+      |   +-- public static FixFlags Partial
+
+  +-- interface IAppenderAttachable
+      |
+      |-- Properties:
+      |   +-- AppenderCollection Appenders {get}
+      |
+      +-- Methods:
+          +-- public Void AddAppender(IAppender appender)
+          +-- public IAppender GetAppender(String name)
+          +-- public Void RemoveAllAppenders()
+          +-- public IAppender RemoveAppender(IAppender appender)
+          +-- public IAppender RemoveAppender(String name)
+
+  +-- interface IErrorHandler
+      |
+      +-- Methods:
+          +-- public Void Error(String message, Exception e, ErrorCode errorCode)
+          +-- public Void Error(String message, Exception e)
+          +-- public Void Error(String message)
+
+  +-- interface IFixingRequired
+      |
+      +-- Methods:
+          +-- public Object GetFixedObject()
+
+  +-- interface ILevelCollectionEnumerator
+      |
+      |-- Properties:
+      |   +-- Level Current {get}
+      |
+      +-- Methods:
+          +-- public Boolean MoveNext()
+          +-- public Void Reset()
+
+  +-- interface ILogger
+      |
+      |-- Properties:
+      |   +-- String Name {get}
+      |   +-- ILoggerRepository Repository {get}
+      |
+      +-- Methods:
+          +-- public Void Log(Type callerStackBoundaryDeclaringType, Level level, Object message, Exception exception)
+          +-- public Void Log(LoggingEvent logEvent)
+          +-- public Boolean IsEnabledFor(Level level)
+
+  +-- interface ILoggerWrapper
+      |
+      |-- Properties:
+      |   +-- ILogger Logger {get}
+
+  +-- interface IOptionHandler
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+
+  +-- interface IRepositorySelector
+      |
+      +-- Methods:
+          +-- public ILoggerRepository GetRepository(Assembly assembly)
+          +-- public ILoggerRepository GetRepository(String repositoryName)
+          +-- public ILoggerRepository CreateRepository(Assembly assembly, Type repositoryType)
+          +-- public ILoggerRepository CreateRepository(String repositoryName, Type repositoryType)
+          +-- public Boolean ExistsRepository(String repositoryName)
+          +-- public ILoggerRepository[] GetAllRepositories()
+
+  +-- interface ITriggeringEventEvaluator
+      |
+      +-- Methods:
+          +-- public Boolean IsTriggeringEvent(LoggingEvent loggingEvent)
+
+  +-- class Level
+      Implements: IComparable
+      |
+      |-- Fields:
+      |   +-- private Int32 m_levelValue
+      |   +-- private String m_levelName
+      |   +-- private String m_levelDisplayName
+      |   +-- public static Level Off
+      |   +-- public static Level Log4Net_Debug
+      |   +-- public static Level Emergency
+      |   +-- public static Level Fatal
+      |   +-- public static Level Alert
+      |   +-- public static Level Critical
+      |   +-- public static Level Severe
+      |   +-- public static Level Error
+      |   +-- public static Level Warn
+      |   +-- public static Level Notice
+      |   +-- public static Level Info
+      |   +-- public static Level Debug
+      |   +-- public static Level Fine
+      |   +-- public static Level Trace
+      |   +-- public static Level Finer
+      |   +-- public static Level Verbose
+      |   +-- public static Level Finest
+      |   +-- public static Level All
+      |
+      |-- Properties:
+      |   +-- String Name {get}
+      |   +-- Int32 Value {get}
+      |   +-- String DisplayName {get}
+      |
+      +-- Methods:
+          +-- public String ToString()
+          +-- public Boolean Equals(Object o)
+          +-- public Int32 GetHashCode()
+          +-- public Int32 CompareTo(Object r)
+          +-- public static Int32 Compare(Level l, Level r)
+
+  +-- class LevelCollection
+      Implements: ICollection, IEnumerable, IList, ICloneable
+      |
+      |-- Fields:
+      |   +-- private Level[] m_array
+      |   +-- private Int32 m_count
+      |   +-- private Int32 m_version
+      |   +-- private static Int32 DEFAULT_CAPACITY
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- Boolean IsSynchronized {get}
+      |   +-- Object SyncRoot {get}
+      |   +-- Level Item {get; set}
+      |   +-- Boolean IsFixedSize {get}
+      |   +-- Boolean IsReadOnly {get}
+      |   +-- Int32 Capacity {get; set}
+      |   +-- Object System.Collections.IList.Item {get; set}
+      |
+      +-- Methods:
+          +-- public static LevelCollection ReadOnly(LevelCollection list)
+          +-- public Void CopyTo(Level[] array)
+          +-- public Void CopyTo(Level[] array, Int32 start)
+          +-- public Int32 Add(Level item)
+          +-- public Void Clear()
+          +-- public Object Clone()
+          +-- public Boolean Contains(Level item)
+          +-- public Int32 IndexOf(Level item)
+          +-- public Void Insert(Int32 index, Level item)
+          +-- public Void Remove(Level item)
+          +-- public Void RemoveAt(Int32 index)
+          +-- public ILevelCollectionEnumerator GetEnumerator()
+          +-- public Int32 AddRange(LevelCollection x)
+          +-- public Int32 AddRange(Level[] x)
+          +-- public Int32 AddRange(ICollection col)
+          +-- public Void TrimToSize()
+          +-- private Void ValidateIndex(Int32 i)
+          +-- private Void ValidateIndex(Int32 i, Boolean allowEqualEnd)
+          +-- private Void EnsureCapacity(Int32 min)
+          +-- private Void System.Collections.ICollection.CopyTo(Array array, Int32 start)
+          +-- private Int32 System.Collections.IList.Add(Object x)
+          +-- private Boolean System.Collections.IList.Contains(Object x)
+          +-- private Int32 System.Collections.IList.IndexOf(Object x)
+          +-- private Void System.Collections.IList.Insert(Int32 pos, Object x)
+          +-- private Void System.Collections.IList.Remove(Object x)
+          +-- private Void System.Collections.IList.RemoveAt(Int32 pos)
+          +-- private IEnumerator System.Collections.IEnumerable.GetEnumerator()
+
+  +-- class LevelEvaluator
+      Implements: ITriggeringEventEvaluator
+      |
+      |-- Fields:
+      |   +-- private Level m_threshold
+      |
+      |-- Properties:
+      |   +-- Level Threshold {get; set}
+      |
+      +-- Methods:
+          +-- public Boolean IsTriggeringEvent(LoggingEvent loggingEvent)
+
+  +-- class LevelMap
+      |
+      |-- Fields:
+      |   +-- private Hashtable m_mapName2Level
+      |
+      |-- Properties:
+      |   +-- Level Item {get}
+      |   +-- LevelCollection AllLevels {get}
+      |
+      +-- Methods:
+          +-- public Void Clear()
+          +-- public Void Add(String name, Int32 value)
+          +-- public Void Add(String name, Int32 value, String displayName)
+          +-- public Void Add(Level level)
+          +-- public Level LookupWithDefault(Level defaultLevel)
+
+  +-- class LocationInfo
+      |
+      |-- Fields:
+      |   +-- private String m_className
+      |   +-- private String m_fileName
+      |   +-- private String m_lineNumber
+      |   +-- private String m_methodName
+      |   +-- private String m_fullInfo
+      |   +-- private StackFrameItem[] m_stackFrames
+      |   +-- private static Type declaringType
+      |   +-- private static String NA
+      |
+      |-- Properties:
+      |   +-- String ClassName {get}
+      |   +-- String FileName {get}
+      |   +-- String LineNumber {get}
+      |   +-- String MethodName {get}
+      |   +-- String FullInfo {get}
+      |   +-- StackFrameItem[] StackFrames {get}
+
+  +-- class LogException
+      : ApplicationException
+      Implements: ISerializable, _Exception
+
+  +-- class LoggerManager
+      |
+      |-- Fields:
+      |   +-- private static Type declaringType
+      |   +-- private static IRepositorySelector s_repositorySelector
+      |
+      |-- Properties:
+      |   +-- IRepositorySelector RepositorySelector {get; set}
+      |
+      +-- Methods:
+          +-- private static Void RegisterAppDomainEvents()
+          +-- public static ILoggerRepository GetLoggerRepository(String repository)
+          +-- public static ILoggerRepository GetLoggerRepository(Assembly repositoryAssembly)
+          +-- public static ILoggerRepository GetRepository(String repository)
+          +-- public static ILoggerRepository GetRepository(Assembly repositoryAssembly)
+          +-- public static ILogger Exists(String repository, String name)
+          +-- public static ILogger Exists(Assembly repositoryAssembly, String name)
+          +-- public static ILogger[] GetCurrentLoggers(String repository)
+          +-- public static ILogger[] GetCurrentLoggers(Assembly repositoryAssembly)
+          +-- public static ILogger GetLogger(String repository, String name)
+          +-- public static ILogger GetLogger(Assembly repositoryAssembly, String name)
+          +-- public static ILogger GetLogger(String repository, Type type)
+          +-- public static ILogger GetLogger(Assembly repositoryAssembly, Type type)
+          +-- public static Void Shutdown()
+          +-- public static Void ShutdownRepository(String repository)
+          +-- public static Void ShutdownRepository(Assembly repositoryAssembly)
+          +-- public static Void ResetConfiguration(String repository)
+          +-- public static Void ResetConfiguration(Assembly repositoryAssembly)
+          +-- public static ILoggerRepository CreateDomain(String repository)
+          +-- public static ILoggerRepository CreateRepository(String repository)
+          +-- public static ILoggerRepository CreateDomain(String repository, Type repositoryType)
+          +-- public static ILoggerRepository CreateRepository(String repository, Type repositoryType)
+          +-- public static ILoggerRepository CreateDomain(Assembly repositoryAssembly, Type repositoryType)
+          +-- public static ILoggerRepository CreateRepository(Assembly repositoryAssembly, Type repositoryType)
+          +-- public static ILoggerRepository[] GetAllRepositories()
+          +-- private static String GetVersionInfo()
+          +-- private static Void OnDomainUnload(Object sender, EventArgs e)
+          +-- private static Void OnProcessExit(Object sender, EventArgs e)
+
+  +-- class LoggerRepositoryCreationEventArgs
+      : EventArgs
+      |
+      |-- Fields:
+      |   +-- private ILoggerRepository m_repository
+      |
+      |-- Properties:
+      |   +-- ILoggerRepository LoggerRepository {get}
+
+  +-- class LoggerRepositoryCreationEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Object sender, LoggerRepositoryCreationEventArgs e)
+          +-- public IAsyncResult BeginInvoke(Object sender, LoggerRepositoryCreationEventArgs e, AsyncCallback callback, Object object)
+          +-- public Void EndInvoke(IAsyncResult result)
+
+  +-- class LoggerWrapperImpl
+      Implements: ILoggerWrapper
+      |
+      |-- Fields:
+      |   +-- private ILogger m_logger
+      |
+      |-- Properties:
+      |   +-- ILogger Logger {get}
+
+  +-- class LoggingEvent
+      Implements: ISerializable
+      |
+      |-- Fields:
+      |   +-- private LoggingEventData m_data
+      |   +-- private CompositeProperties m_compositeProperties
+      |   +-- private PropertiesDictionary m_eventProperties
+      |   +-- private Type m_callerStackBoundaryDeclaringType
+      |   +-- private Object m_message
+      |   +-- private Exception m_thrownException
+      |   +-- private ILoggerRepository m_repository
+      |   +-- private FixFlags m_fixFlags
+      |   +-- private Boolean m_cacheUpdatable
+      |   +-- private static Type declaringType
+      |   +-- public static String HostNameProperty
+      |   +-- public static String IdentityProperty
+      |   +-- public static String UserNameProperty
+      |
+      |-- Properties:
+      |   +-- DateTime StartTime {get}
+      |   +-- DateTime StartTimeUtc {get}
+      |   +-- Level Level {get}
+      |   +-- DateTime TimeStamp {get}
+      |   +-- DateTime TimeStampUtc {get}
+      |   +-- String LoggerName {get}
+      |   +-- LocationInfo LocationInformation {get}
+      |   +-- Object MessageObject {get}
+      |   +-- Exception ExceptionObject {get}
+      |   +-- ILoggerRepository Repository {get}
+      |   +-- String RenderedMessage {get}
+      |   +-- String ThreadName {get}
+      |   +-- String UserName {get}
+      |   +-- String Identity {get}
+      |   +-- String Domain {get}
+      |   +-- PropertiesDictionary Properties {get}
+      |   +-- FixFlags Fix {get; set}
+      |
+      +-- Methods:
+          +-- internal Void EnsureRepository(ILoggerRepository repository)
+          +-- public Void WriteRenderedMessage(TextWriter writer)
+          +-- private static String TryGetCurrentUserName()
+          +-- public Void GetObjectData(SerializationInfo info, StreamingContext context)
+          +-- public LoggingEventData GetLoggingEventData()
+          +-- public LoggingEventData GetLoggingEventData(FixFlags fixFlags)
+          +-- public String GetExceptionStrRep()
+          +-- public String GetExceptionString()
+          +-- public Void FixVolatileData()
+          +-- public Void FixVolatileData(Boolean fastButLoose)
+          +-- protected Void FixVolatileData(FixFlags flags)
+          +-- private Void CreateCompositeProperties()
+          +-- private Void CacheProperties()
+          +-- public Object LookupProperty(String key)
+          +-- public PropertiesDictionary GetProperties()
+
+  +-- struct LoggingEventData
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- public String LoggerName
+      |   +-- public Level Level
+      |   +-- public String Message
+      |   +-- public String ThreadName
+      |   +-- public DateTime TimeStamp
+      |   +-- private DateTime _timeStampUtc
+      |   +-- public LocationInfo LocationInfo
+      |   +-- public String UserName
+      |   +-- public String Identity
+      |   +-- public String ExceptionString
+      |   +-- public String Domain
+      |   +-- public PropertiesDictionary Properties
+      |
+      |-- Properties:
+      |   +-- DateTime TimeStampUtc {get; set}
+
+  +-- class LogImpl
+      : LoggerWrapperImpl
+      Implements: ILoggerWrapper, ILog
+      |
+      |-- Fields:
+      |   +-- private Level m_levelDebug
+      |   +-- private Level m_levelInfo
+      |   +-- private Level m_levelWarn
+      |   +-- private Level m_levelError
+      |   +-- private Level m_levelFatal
+      |   +-- private static Type ThisDeclaringType
+      |
+      |-- Properties:
+      |   +-- Boolean IsDebugEnabled {get}
+      |   +-- Boolean IsInfoEnabled {get}
+      |   +-- Boolean IsWarnEnabled {get}
+      |   +-- Boolean IsErrorEnabled {get}
+      |   +-- Boolean IsFatalEnabled {get}
+      |
+      +-- Methods:
+          +-- protected Void ReloadLevels(ILoggerRepository repository)
+          +-- public Void Debug(Object message)
+          +-- public Void Debug(Object message, Exception exception)
+          +-- public Void DebugFormat(String format, Object[] args)
+          +-- public Void DebugFormat(String format, Object arg0)
+          +-- public Void DebugFormat(String format, Object arg0, Object arg1)
+          +-- public Void DebugFormat(String format, Object arg0, Object arg1, Object arg2)
+          +-- public Void DebugFormat(IFormatProvider provider, String format, Object[] args)
+          +-- public Void Info(Object message)
+          +-- public Void Info(Object message, Exception exception)
+          +-- public Void InfoFormat(String format, Object[] args)
+          +-- public Void InfoFormat(String format, Object arg0)
+          +-- public Void InfoFormat(String format, Object arg0, Object arg1)
+          +-- public Void InfoFormat(String format, Object arg0, Object arg1, Object arg2)
+          +-- public Void InfoFormat(IFormatProvider provider, String format, Object[] args)
+          +-- public Void Warn(Object message)
+          +-- public Void Warn(Object message, Exception exception)
+          +-- public Void WarnFormat(String format, Object[] args)
+          +-- public Void WarnFormat(String format, Object arg0)
+          +-- public Void WarnFormat(String format, Object arg0, Object arg1)
+          +-- public Void WarnFormat(String format, Object arg0, Object arg1, Object arg2)
+          +-- public Void WarnFormat(IFormatProvider provider, String format, Object[] args)
+          +-- public Void Error(Object message)
+          +-- public Void Error(Object message, Exception exception)
+          +-- public Void ErrorFormat(String format, Object[] args)
+          +-- public Void ErrorFormat(String format, Object arg0)
+          +-- public Void ErrorFormat(String format, Object arg0, Object arg1)
+          +-- public Void ErrorFormat(String format, Object arg0, Object arg1, Object arg2)
+          +-- public Void ErrorFormat(IFormatProvider provider, String format, Object[] args)
+          +-- public Void Fatal(Object message)
+          +-- public Void Fatal(Object message, Exception exception)
+          +-- public Void FatalFormat(String format, Object[] args)
+          +-- public Void FatalFormat(String format, Object arg0)
+          +-- public Void FatalFormat(String format, Object arg0, Object arg1)
+          +-- public Void FatalFormat(String format, Object arg0, Object arg1, Object arg2)
+          +-- public Void FatalFormat(IFormatProvider provider, String format, Object[] args)
+          +-- private Void LoggerRepositoryConfigurationChanged(Object sender, EventArgs e)
+
+  +-- class MethodItem
+      |
+      |-- Fields:
+      |   +-- private String m_name
+      |   +-- private String[] m_parameters
+      |   +-- private static Type declaringType
+      |   +-- private static String NA
+      |
+      |-- Properties:
+      |   +-- String Name {get}
+      |   +-- String[] Parameters {get}
+      |
+      +-- Methods:
+          +-- private static String[] GetMethodParameterNames(MethodBase methodBase)
+
+  +-- class ReadOnlyLevelCollection
+      : LevelCollection
+      Implements: ICollection, IEnumerable, IList, ICloneable
+      |
+      |-- Fields:
+      |   +-- private LevelCollection m_collection
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- Boolean IsSynchronized {get}
+      |   +-- Object SyncRoot {get}
+      |   +-- Level Item {get; set}
+      |   +-- Boolean IsFixedSize {get}
+      |   +-- Boolean IsReadOnly {get}
+      |   +-- Int32 Capacity {get; set}
+      |
+      +-- Methods:
+          +-- public Void CopyTo(Level[] array)
+          +-- public Void CopyTo(Level[] array, Int32 start)
+          +-- public Int32 Add(Level x)
+          +-- public Void Clear()
+          +-- public Boolean Contains(Level x)
+          +-- public Int32 IndexOf(Level x)
+          +-- public Void Insert(Int32 pos, Level x)
+          +-- public Void Remove(Level x)
+          +-- public Void RemoveAt(Int32 pos)
+          +-- public ILevelCollectionEnumerator GetEnumerator()
+          +-- public Int32 AddRange(LevelCollection x)
+          +-- public Int32 AddRange(Level[] x)
+
+  +-- class SecurityContext
+      |
+      +-- Methods:
+          +-- public IDisposable Impersonate(Object state)
+
+  +-- class SecurityContextProvider
+      |
+      |-- Fields:
+      |   +-- private static SecurityContextProvider s_defaultProvider
+      |
+      |-- Properties:
+      |   +-- SecurityContextProvider DefaultProvider {get; set}
+      |
+      +-- Methods:
+          +-- public SecurityContext CreateSecurityContext(Object consumer)
+
+  +-- class StackFrameItem
+      |
+      |-- Fields:
+      |   +-- private String m_lineNumber
+      |   +-- private String m_fileName
+      |   +-- private String m_className
+      |   +-- private String m_fullInfo
+      |   +-- private MethodItem m_method
+      |   +-- private static Type declaringType
+      |   +-- private static String NA
+      |
+      |-- Properties:
+      |   +-- String ClassName {get}
+      |   +-- String FileName {get}
+      |   +-- String LineNumber {get}
+      |   +-- MethodItem Method {get}
+      |   +-- String FullInfo {get}
+
+  +-- enum Tag
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static Tag Default
+
+  +-- class TimeEvaluator
+      Implements: ITriggeringEventEvaluator
+      |
+      |-- Fields:
+      |   +-- private Int32 m_interval
+      |   +-- private DateTime m_lastTimeUtc
+      |   +-- private static Int32 DEFAULT_INTERVAL
+      |
+      |-- Properties:
+      |   +-- Int32 Interval {get; set}
+      |
+      +-- Methods:
+          +-- public Boolean IsTriggeringEvent(LoggingEvent loggingEvent)
+
+  +-- class WrapperCreationHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public ILoggerWrapper Invoke(ILogger logger)
+          +-- public IAsyncResult BeginInvoke(ILogger logger, AsyncCallback callback, Object object)
+          +-- public ILoggerWrapper EndInvoke(IAsyncResult result)
+
+  +-- class WrapperMap
+      |
+      |-- Fields:
+      |   +-- private Hashtable m_repositories
+      |   +-- private WrapperCreationHandler m_createWrapperHandler
+      |   +-- private LoggerRepositoryShutdownEventHandler m_shutdownHandler
+      |
+      |-- Properties:
+      |   +-- Hashtable Repositories {get}
+      |
+      +-- Methods:
+          +-- public ILoggerWrapper GetWrapper(ILogger logger)
+          +-- protected ILoggerWrapper CreateNewWrapperObject(ILogger logger)
+          +-- protected Void RepositoryShutdown(ILoggerRepository repository)
+          +-- private Void ILoggerRepository_Shutdown(Object sender, EventArgs e)
+
+
+Namespace: log4net.DateFormatter
+----------------------------------------
+  +-- class AbsoluteTimeDateFormatter
+      Implements: IDateFormatter
+      |
+      |-- Fields:
+      |   +-- private static Int64 s_lastTimeToTheSecond
+      |   +-- private static StringBuilder s_lastTimeBuf
+      |   +-- private static Hashtable s_lastTimeStrings
+      |   +-- public static String AbsoluteTimeDateFormat
+      |   +-- public static String DateAndTimeDateFormat
+      |   +-- public static String Iso8601TimeDateFormat
+      |
+      +-- Methods:
+          +-- protected Void FormatDateWithoutMillis(DateTime dateToFormat, StringBuilder buffer)
+          +-- public Void FormatDate(DateTime dateToFormat, TextWriter writer)
+
+  +-- class DateTimeDateFormatter
+      : AbsoluteTimeDateFormatter
+      Implements: IDateFormatter
+      |
+      |-- Fields:
+      |   +-- private DateTimeFormatInfo m_dateTimeFormatInfo
+      |
+      +-- Methods:
+          +-- protected Void FormatDateWithoutMillis(DateTime dateToFormat, StringBuilder buffer)
+
+  +-- interface IDateFormatter
+      |
+      +-- Methods:
+          +-- public Void FormatDate(DateTime dateToFormat, TextWriter writer)
+
+  +-- class Iso8601DateFormatter
+      : AbsoluteTimeDateFormatter
+      Implements: IDateFormatter
+      |
+      +-- Methods:
+          +-- protected Void FormatDateWithoutMillis(DateTime dateToFormat, StringBuilder buffer)
+
+  +-- class SimpleDateFormatter
+      Implements: IDateFormatter
+      |
+      |-- Fields:
+      |   +-- private String m_formatString
+      |
+      +-- Methods:
+          +-- public Void FormatDate(DateTime dateToFormat, TextWriter writer)
+
+
+Namespace: log4net.Filter
+----------------------------------------
+  +-- class DenyAllFilter
+      : FilterSkeleton
+      Implements: IFilter, IOptionHandler
+      |
+      +-- Methods:
+          +-- public FilterDecision Decide(LoggingEvent loggingEvent)
+
+  +-- enum FilterDecision
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static FilterDecision Deny
+      |   +-- public static FilterDecision Neutral
+      |   +-- public static FilterDecision Accept
+
+  +-- class FilterSkeleton
+      Implements: IFilter, IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private IFilter m_next
+      |
+      |-- Properties:
+      |   +-- IFilter Next {get; set}
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- public FilterDecision Decide(LoggingEvent loggingEvent)
+
+  +-- interface IFilter
+      Implements: IOptionHandler
+      |
+      |-- Properties:
+      |   +-- IFilter Next {get; set}
+      |
+      +-- Methods:
+          +-- public FilterDecision Decide(LoggingEvent loggingEvent)
+
+  +-- class LevelMatchFilter
+      : FilterSkeleton
+      Implements: IFilter, IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private Boolean m_acceptOnMatch
+      |   +-- private Level m_levelToMatch
+      |
+      |-- Properties:
+      |   +-- Boolean AcceptOnMatch {get; set}
+      |   +-- Level LevelToMatch {get; set}
+      |
+      +-- Methods:
+          +-- public FilterDecision Decide(LoggingEvent loggingEvent)
+
+  +-- class LevelRangeFilter
+      : FilterSkeleton
+      Implements: IFilter, IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private Boolean m_acceptOnMatch
+      |   +-- private Level m_levelMin
+      |   +-- private Level m_levelMax
+      |
+      |-- Properties:
+      |   +-- Boolean AcceptOnMatch {get; set}
+      |   +-- Level LevelMin {get; set}
+      |   +-- Level LevelMax {get; set}
+      |
+      +-- Methods:
+          +-- public FilterDecision Decide(LoggingEvent loggingEvent)
+
+  +-- class LoggerMatchFilter
+      : FilterSkeleton
+      Implements: IFilter, IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private Boolean m_acceptOnMatch
+      |   +-- private String m_loggerToMatch
+      |
+      |-- Properties:
+      |   +-- Boolean AcceptOnMatch {get; set}
+      |   +-- String LoggerToMatch {get; set}
+      |
+      +-- Methods:
+          +-- public FilterDecision Decide(LoggingEvent loggingEvent)
+
+  +-- class MdcFilter
+      : PropertyFilter
+      Implements: IFilter, IOptionHandler
+
+  +-- class NdcFilter
+      : PropertyFilter
+      Implements: IFilter, IOptionHandler
+
+  +-- class PropertyFilter
+      : StringMatchFilter
+      Implements: IFilter, IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private String m_key
+      |
+      |-- Properties:
+      |   +-- String Key {get; set}
+      |
+      +-- Methods:
+          +-- public FilterDecision Decide(LoggingEvent loggingEvent)
+
+  +-- class StringMatchFilter
+      : FilterSkeleton
+      Implements: IFilter, IOptionHandler
+      |
+      |-- Fields:
+      |   +-- protected Boolean m_acceptOnMatch
+      |   +-- protected String m_stringToMatch
+      |   +-- protected String m_stringRegexToMatch
+      |   +-- protected Regex m_regexToMatch
+      |
+      |-- Properties:
+      |   +-- Boolean AcceptOnMatch {get; set}
+      |   +-- String StringToMatch {get; set}
+      |   +-- String RegexToMatch {get; set}
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- public FilterDecision Decide(LoggingEvent loggingEvent)
+
+
+Namespace: log4net.Layout
+----------------------------------------
+  +-- class DynamicPatternLayout
+      : PatternLayout
+      Implements: ILayout, IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private PatternString m_headerPatternString
+      |   +-- private PatternString m_footerPatternString
+      |
+      |-- Properties:
+      |   +-- String Header {get; set}
+      |   +-- String Footer {get; set}
+
+  +-- class ExceptionLayout
+      : LayoutSkeleton
+      Implements: ILayout, IOptionHandler
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- public Void Format(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- interface ILayout
+      |
+      |-- Properties:
+      |   +-- String ContentType {get}
+      |   +-- String Header {get}
+      |   +-- String Footer {get}
+      |   +-- Boolean IgnoresException {get}
+      |
+      +-- Methods:
+          +-- public Void Format(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- interface IRawLayout
+      |
+      +-- Methods:
+          +-- public Object Format(LoggingEvent loggingEvent)
+
+  +-- class Layout2RawLayoutAdapter
+      Implements: IRawLayout
+      |
+      |-- Fields:
+      |   +-- private ILayout m_layout
+      |
+      +-- Methods:
+          +-- public Object Format(LoggingEvent loggingEvent)
+
+  +-- class LayoutSkeleton
+      Implements: ILayout, IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private String m_header
+      |   +-- private String m_footer
+      |   +-- private Boolean m_ignoresException
+      |
+      |-- Properties:
+      |   +-- String ContentType {get}
+      |   +-- String Header {get; set}
+      |   +-- String Footer {get; set}
+      |   +-- Boolean IgnoresException {get; set}
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- public Void Format(TextWriter writer, LoggingEvent loggingEvent)
+          +-- public String Format(LoggingEvent loggingEvent)
+
+  +-- class PatternLayout
+      : LayoutSkeleton
+      Implements: ILayout, IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private String m_pattern
+      |   +-- private PatternConverter m_head
+      |   +-- private Hashtable m_instanceRulesRegistry
+      |   +-- private static Hashtable s_globalRulesRegistry
+      |   +-- public static String DefaultConversionPattern
+      |   +-- public static String DetailConversionPattern
+      |
+      |-- Properties:
+      |   +-- String ConversionPattern {get; set}
+      |
+      +-- Methods:
+          +-- protected PatternParser CreatePatternParser(String pattern)
+          +-- public Void ActivateOptions()
+          +-- public Void Format(TextWriter writer, LoggingEvent loggingEvent)
+          +-- public Void AddConverter(ConverterInfo converterInfo)
+          +-- public Void AddConverter(String name, Type type)
+
+  +-- class RawLayoutConverter
+      Implements: IConvertFrom
+      |
+      +-- Methods:
+          +-- public Boolean CanConvertFrom(Type sourceType)
+          +-- public Object ConvertFrom(Object source)
+
+  +-- class RawPropertyLayout
+      Implements: IRawLayout
+      |
+      |-- Fields:
+      |   +-- private String m_key
+      |
+      |-- Properties:
+      |   +-- String Key {get; set}
+      |
+      +-- Methods:
+          +-- public Object Format(LoggingEvent loggingEvent)
+
+  +-- class RawTimeStampLayout
+      Implements: IRawLayout
+      |
+      +-- Methods:
+          +-- public Object Format(LoggingEvent loggingEvent)
+
+  +-- class RawUtcTimeStampLayout
+      Implements: IRawLayout
+      |
+      +-- Methods:
+          +-- public Object Format(LoggingEvent loggingEvent)
+
+  +-- class SimpleLayout
+      : LayoutSkeleton
+      Implements: ILayout, IOptionHandler
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- public Void Format(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- class XmlLayout
+      : XmlLayoutBase
+      Implements: ILayout, IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private String m_prefix
+      |   +-- private String m_elmEvent
+      |   +-- private String m_elmMessage
+      |   +-- private String m_elmData
+      |   +-- private String m_elmProperties
+      |   +-- private String m_elmException
+      |   +-- private String m_elmLocation
+      |   +-- private Boolean m_base64Message
+      |   +-- private Boolean m_base64Properties
+      |   +-- private static String PREFIX
+      |   +-- private static String ELM_EVENT
+      |   +-- private static String ELM_MESSAGE
+      |   +-- private static String ELM_PROPERTIES
+      |   +-- private static String ELM_GLOBAL_PROPERTIES
+      |   +-- private static String ELM_DATA
+      |   +-- private static String ELM_EXCEPTION
+      |   +-- private static String ELM_LOCATION
+      |   +-- private static String ATTR_LOGGER
+      |   +-- private static String ATTR_TIMESTAMP
+      |   +-- private static String ATTR_LEVEL
+      |   +-- private static String ATTR_THREAD
+      |   +-- private static String ATTR_DOMAIN
+      |   +-- private static String ATTR_IDENTITY
+      |   +-- private static String ATTR_USERNAME
+      |   +-- private static String ATTR_CLASS
+      |   +-- private static String ATTR_METHOD
+      |   +-- private static String ATTR_FILE
+      |   +-- private static String ATTR_LINE
+      |   +-- private static String ATTR_NAME
+      |   +-- private static String ATTR_VALUE
+      |
+      |-- Properties:
+      |   +-- String Prefix {get; set}
+      |   +-- Boolean Base64EncodeMessage {get; set}
+      |   +-- Boolean Base64EncodeProperties {get; set}
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- protected Void FormatXml(XmlWriter writer, LoggingEvent loggingEvent)
+
+  +-- class XmlLayoutBase
+      : LayoutSkeleton
+      Implements: ILayout, IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private Boolean m_locationInfo
+      |   +-- private String m_invalidCharReplacement
+      |
+      |-- Properties:
+      |   +-- Boolean LocationInfo {get; set}
+      |   +-- String InvalidCharReplacement {get; set}
+      |   +-- String ContentType {get}
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- public Void Format(TextWriter writer, LoggingEvent loggingEvent)
+          +-- protected Void FormatXml(XmlWriter writer, LoggingEvent loggingEvent)
+
+  +-- class XmlLayoutSchemaLog4j
+      : XmlLayoutBase
+      Implements: ILayout, IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private static DateTime s_date1970
+      |
+      |-- Properties:
+      |   +-- String Version {get; set}
+      |
+      +-- Methods:
+          +-- protected Void FormatXml(XmlWriter writer, LoggingEvent loggingEvent)
+
+
+Namespace: log4net.Layout.Pattern
+----------------------------------------
+  +-- class AppDomainPatternConverter
+      : PatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- class AspNetCachePatternConverter
+      : AspNetPatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent, HttpContext httpContext)
+
+  +-- class AspNetContextPatternConverter
+      : AspNetPatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent, HttpContext httpContext)
+
+  +-- class AspNetPatternLayoutConverter
+      : PatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent, HttpContext httpContext)
+
+  +-- class AspNetRequestPatternConverter
+      : AspNetPatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent, HttpContext httpContext)
+
+  +-- class AspNetSessionPatternConverter
+      : AspNetPatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent, HttpContext httpContext)
+
+  +-- class DatePatternConverter
+      : PatternLayoutConverter
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- protected IDateFormatter m_dateFormatter
+      |   +-- private static Type declaringType
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- class ExceptionPatternConverter
+      : PatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- class FileLocationPatternConverter
+      : PatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- class FullLocationPatternConverter
+      : PatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- class IdentityPatternConverter
+      : PatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- class LevelPatternConverter
+      : PatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- class LineLocationPatternConverter
+      : PatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- class LoggerPatternConverter
+      : NamedPatternConverter
+      Implements: IOptionHandler
+      |
+      +-- Methods:
+          +-- protected String GetFullyQualifiedName(LoggingEvent loggingEvent)
+
+  +-- class MessagePatternConverter
+      : PatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- class MethodLocationPatternConverter
+      : PatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- class NamedPatternConverter
+      : PatternLayoutConverter
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private Int32 m_precision
+      |   +-- private static Type declaringType
+      |   +-- private static String DOT
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- protected String GetFullyQualifiedName(LoggingEvent loggingEvent)
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- class NdcPatternConverter
+      : PatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- class PatternLayoutConverter
+      : PatternConverter
+      |
+      |-- Fields:
+      |   +-- private Boolean m_ignoresException
+      |
+      |-- Properties:
+      |   +-- Boolean IgnoresException {get; set}
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+          +-- protected Void Convert(TextWriter writer, Object state)
+
+  +-- class PropertyPatternConverter
+      : PatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- class RelativeTimePatternConverter
+      : PatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+          +-- private static Int64 TimeDifferenceInMillis(DateTime start, DateTime end)
+
+  +-- class StackTraceDetailPatternConverter
+      : StackTracePatternConverter
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private static Type declaringType
+      |
+      +-- Methods:
+          +-- internal String GetMethodInformation(MethodItem method)
+
+  +-- class StackTracePatternConverter
+      : PatternLayoutConverter
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private Int32 m_stackFrameLevel
+      |   +-- private static Type declaringType
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+          +-- internal String GetMethodInformation(MethodItem method)
+
+  +-- class ThreadPatternConverter
+      : PatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- class TypeNamePatternConverter
+      : NamedPatternConverter
+      Implements: IOptionHandler
+      |
+      +-- Methods:
+          +-- protected String GetFullyQualifiedName(LoggingEvent loggingEvent)
+
+  +-- class UserNamePatternConverter
+      : PatternLayoutConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+
+  +-- class UtcDatePatternConverter
+      : DatePatternConverter
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private static Type declaringType
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, LoggingEvent loggingEvent)
+
+
+Namespace: log4net.ObjectRenderer
+----------------------------------------
+  +-- class DefaultRenderer
+      Implements: IObjectRenderer
+      |
+      +-- Methods:
+          +-- public Void RenderObject(RendererMap rendererMap, Object obj, TextWriter writer)
+          +-- private Void RenderArray(RendererMap rendererMap, Array array, TextWriter writer)
+          +-- private Void RenderEnumerator(RendererMap rendererMap, IEnumerator enumerator, TextWriter writer)
+          +-- private Void RenderDictionaryEntry(RendererMap rendererMap, DictionaryEntry entry, TextWriter writer)
+
+  +-- interface IObjectRenderer
+      |
+      +-- Methods:
+          +-- public Void RenderObject(RendererMap rendererMap, Object obj, TextWriter writer)
+
+  +-- class RendererMap
+      |
+      |-- Fields:
+      |   +-- private Hashtable m_map
+      |   +-- private Hashtable m_cache
+      |   +-- private static Type declaringType
+      |   +-- private static IObjectRenderer s_defaultRenderer
+      |
+      |-- Properties:
+      |   +-- IObjectRenderer DefaultRenderer {get}
+      |
+      +-- Methods:
+          +-- public String FindAndRender(Object obj)
+          +-- public Void FindAndRender(Object obj, TextWriter writer)
+          +-- public IObjectRenderer Get(Object obj)
+          +-- public IObjectRenderer Get(Type type)
+          +-- private IObjectRenderer SearchTypeAndInterfaces(Type type)
+          +-- public Void Clear()
+          +-- public Void Put(Type typeToRender, IObjectRenderer renderer)
+
+
+Namespace: log4net.Plugin
+----------------------------------------
+  +-- class Enumerator
+      Implements: IEnumerator, IPluginCollectionEnumerator
+      |
+      |-- Fields:
+      |   +-- private PluginCollection m_collection
+      |   +-- private Int32 m_index
+      |   +-- private Int32 m_version
+      |
+      |-- Properties:
+      |   +-- IPlugin Current {get}
+      |   +-- Object System.Collections.IEnumerator.Current {get}
+      |
+      +-- Methods:
+          +-- public Boolean MoveNext()
+          +-- public Void Reset()
+
+  +-- interface IPlugin
+      |
+      |-- Properties:
+      |   +-- String Name {get}
+      |
+      +-- Methods:
+          +-- public Void Attach(ILoggerRepository repository)
+          +-- public Void Shutdown()
+
+  +-- interface IPluginCollectionEnumerator
+      |
+      |-- Properties:
+      |   +-- IPlugin Current {get}
+      |
+      +-- Methods:
+          +-- public Boolean MoveNext()
+          +-- public Void Reset()
+
+  +-- interface IPluginFactory
+      |
+      +-- Methods:
+          +-- public IPlugin CreatePlugin()
+
+  +-- class PluginCollection
+      Implements: ICollection, IEnumerable, IList, ICloneable
+      |
+      |-- Fields:
+      |   +-- private IPlugin[] m_array
+      |   +-- private Int32 m_count
+      |   +-- private Int32 m_version
+      |   +-- private static Int32 DEFAULT_CAPACITY
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- Boolean IsSynchronized {get}
+      |   +-- Object SyncRoot {get}
+      |   +-- IPlugin Item {get; set}
+      |   +-- Boolean IsFixedSize {get}
+      |   +-- Boolean IsReadOnly {get}
+      |   +-- Int32 Capacity {get; set}
+      |   +-- Object System.Collections.IList.Item {get; set}
+      |
+      +-- Methods:
+          +-- public static PluginCollection ReadOnly(PluginCollection list)
+          +-- public Void CopyTo(IPlugin[] array)
+          +-- public Void CopyTo(IPlugin[] array, Int32 start)
+          +-- public Int32 Add(IPlugin item)
+          +-- public Void Clear()
+          +-- public Object Clone()
+          +-- public Boolean Contains(IPlugin item)
+          +-- public Int32 IndexOf(IPlugin item)
+          +-- public Void Insert(Int32 index, IPlugin item)
+          +-- public Void Remove(IPlugin item)
+          +-- public Void RemoveAt(Int32 index)
+          +-- public IPluginCollectionEnumerator GetEnumerator()
+          +-- public Int32 AddRange(PluginCollection x)
+          +-- public Int32 AddRange(IPlugin[] x)
+          +-- public Int32 AddRange(ICollection col)
+          +-- public Void TrimToSize()
+          +-- private Void ValidateIndex(Int32 i)
+          +-- private Void ValidateIndex(Int32 i, Boolean allowEqualEnd)
+          +-- private Void EnsureCapacity(Int32 min)
+          +-- private Void System.Collections.ICollection.CopyTo(Array array, Int32 start)
+          +-- private Int32 System.Collections.IList.Add(Object x)
+          +-- private Boolean System.Collections.IList.Contains(Object x)
+          +-- private Int32 System.Collections.IList.IndexOf(Object x)
+          +-- private Void System.Collections.IList.Insert(Int32 pos, Object x)
+          +-- private Void System.Collections.IList.Remove(Object x)
+          +-- private Void System.Collections.IList.RemoveAt(Int32 pos)
+          +-- private IEnumerator System.Collections.IEnumerable.GetEnumerator()
+
+  +-- class PluginMap
+      |
+      |-- Fields:
+      |   +-- private Hashtable m_mapName2Plugin
+      |   +-- private ILoggerRepository m_repository
+      |
+      |-- Properties:
+      |   +-- IPlugin Item {get}
+      |   +-- PluginCollection AllPlugins {get}
+      |
+      +-- Methods:
+          +-- public Void Add(IPlugin plugin)
+          +-- public Void Remove(IPlugin plugin)
+
+  +-- class PluginSkeleton
+      Implements: IPlugin
+      |
+      |-- Fields:
+      |   +-- private String m_name
+      |   +-- private ILoggerRepository m_repository
+      |
+      |-- Properties:
+      |   +-- String Name {get; set}
+      |   +-- ILoggerRepository LoggerRepository {get; set}
+      |
+      +-- Methods:
+          +-- public Void Attach(ILoggerRepository repository)
+          +-- public Void Shutdown()
+
+  +-- class ReadOnlyPluginCollection
+      : PluginCollection
+      Implements: ICollection, IEnumerable, IList, ICloneable
+      |
+      |-- Fields:
+      |   +-- private PluginCollection m_collection
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- Boolean IsSynchronized {get}
+      |   +-- Object SyncRoot {get}
+      |   +-- IPlugin Item {get; set}
+      |   +-- Boolean IsFixedSize {get}
+      |   +-- Boolean IsReadOnly {get}
+      |   +-- Int32 Capacity {get; set}
+      |
+      +-- Methods:
+          +-- public Void CopyTo(IPlugin[] array)
+          +-- public Void CopyTo(IPlugin[] array, Int32 start)
+          +-- public Int32 Add(IPlugin x)
+          +-- public Void Clear()
+          +-- public Boolean Contains(IPlugin x)
+          +-- public Int32 IndexOf(IPlugin x)
+          +-- public Void Insert(Int32 pos, IPlugin x)
+          +-- public Void Remove(IPlugin x)
+          +-- public Void RemoveAt(Int32 pos)
+          +-- public IPluginCollectionEnumerator GetEnumerator()
+          +-- public Int32 AddRange(PluginCollection x)
+          +-- public Int32 AddRange(IPlugin[] x)
+
+  +-- class RemoteLoggingServerPlugin
+      : PluginSkeleton
+      Implements: IPlugin
+      |
+      |-- Fields:
+      |   +-- private RemoteLoggingSinkImpl m_sink
+      |   +-- private String m_sinkUri
+      |   +-- private static Type declaringType
+      |
+      |-- Properties:
+      |   +-- String SinkUri {get; set}
+      |
+      +-- Methods:
+          +-- public Void Attach(ILoggerRepository repository)
+          +-- public Void Shutdown()
+
+  +-- class RemoteLoggingSinkImpl
+      : MarshalByRefObject
+      Implements: IRemoteLoggingSink
+      |
+      |-- Fields:
+      |   +-- private ILoggerRepository m_repository
+      |
+      +-- Methods:
+          +-- public Void LogEvents(LoggingEvent[] events)
+          +-- public Object InitializeLifetimeService()
+
+  +-- enum Tag
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static Tag Default
+
+
+Namespace: log4net.Repository
+----------------------------------------
+  +-- class ConfigurationChangedEventArgs
+      : EventArgs
+      |
+      |-- Fields:
+      |   +-- private ICollection configurationMessages
+      |
+      |-- Properties:
+      |   +-- ICollection ConfigurationMessages {get}
+
+  +-- interface IBasicRepositoryConfigurator
+      |
+      +-- Methods:
+          +-- public Void Configure(IAppender appender)
+          +-- public Void Configure(IAppender[] appenders)
+
+  +-- interface ILoggerRepository
+      |
+      |-- Properties:
+      |   +-- String Name {get; set}
+      |   +-- RendererMap RendererMap {get}
+      |   +-- PluginMap PluginMap {get}
+      |   +-- LevelMap LevelMap {get}
+      |   +-- Level Threshold {get; set}
+      |   +-- Boolean Configured {get; set}
+      |   +-- ICollection ConfigurationMessages {get; set}
+      |   +-- PropertiesDictionary Properties {get}
+      |
+      +-- Methods:
+          +-- public ILogger Exists(String name)
+          +-- public ILogger[] GetCurrentLoggers()
+          +-- public ILogger GetLogger(String name)
+          +-- public Void Shutdown()
+          +-- public Void ResetConfiguration()
+          +-- public Void Log(LoggingEvent logEvent)
+          +-- public IAppender[] GetAppenders()
+
+  +-- interface IXmlRepositoryConfigurator
+      |
+      +-- Methods:
+          +-- public Void Configure(XmlElement element)
+
+  +-- class LoggerRepositoryConfigurationChangedEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Object sender, EventArgs e)
+          +-- public IAsyncResult BeginInvoke(Object sender, EventArgs e, AsyncCallback callback, Object object)
+          +-- public Void EndInvoke(IAsyncResult result)
+
+  +-- class LoggerRepositoryConfigurationResetEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Object sender, EventArgs e)
+          +-- public IAsyncResult BeginInvoke(Object sender, EventArgs e, AsyncCallback callback, Object object)
+          +-- public Void EndInvoke(IAsyncResult result)
+
+  +-- class LoggerRepositoryShutdownEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Object sender, EventArgs e)
+          +-- public IAsyncResult BeginInvoke(Object sender, EventArgs e, AsyncCallback callback, Object object)
+          +-- public Void EndInvoke(IAsyncResult result)
+
+  +-- class LoggerRepositorySkeleton
+      Implements: ILoggerRepository, IFlushable
+      |
+      |-- Fields:
+      |   +-- private String m_name
+      |   +-- private RendererMap m_rendererMap
+      |   +-- private PluginMap m_pluginMap
+      |   +-- private LevelMap m_levelMap
+      |   +-- private Level m_threshold
+      |   +-- private Boolean m_configured
+      |   +-- private ICollection m_configurationMessages
+      |   +-- private LoggerRepositoryShutdownEventHandler m_shutdownEvent
+      |   +-- private LoggerRepositoryConfigurationResetEventHandler m_configurationResetEvent
+      |   +-- private LoggerRepositoryConfigurationChangedEventHandler m_configurationChangedEvent
+      |   +-- private PropertiesDictionary m_properties
+      |   +-- private static Type declaringType
+      |
+      |-- Properties:
+      |   +-- String Name {get; set}
+      |   +-- Level Threshold {get; set}
+      |   +-- RendererMap RendererMap {get}
+      |   +-- PluginMap PluginMap {get}
+      |   +-- LevelMap LevelMap {get}
+      |   +-- Boolean Configured {get; set}
+      |   +-- ICollection ConfigurationMessages {get; set}
+      |   +-- PropertiesDictionary Properties {get}
+      |
+      +-- Methods:
+          +-- public ILogger Exists(String name)
+          +-- public ILogger[] GetCurrentLoggers()
+          +-- public ILogger GetLogger(String name)
+          +-- public Void Shutdown()
+          +-- public Void ResetConfiguration()
+          +-- public Void Log(LoggingEvent logEvent)
+          +-- public IAppender[] GetAppenders()
+          +-- private Void AddBuiltinLevels()
+          +-- public Void AddRenderer(Type typeToRender, IObjectRenderer rendererInstance)
+          +-- protected Void OnShutdown(EventArgs e)
+          +-- protected Void OnConfigurationReset(EventArgs e)
+          +-- protected Void OnConfigurationChanged(EventArgs e)
+          +-- public Void RaiseConfigurationChanged(EventArgs e)
+          +-- private static Int32 GetWaitTime(DateTime startTimeUtc, Int32 millisecondsTimeout)
+          +-- public Boolean Flush(Int32 millisecondsTimeout)
+
+
+Namespace: log4net.Repository.Hierarchy
+----------------------------------------
+  +-- enum ConfigUpdateMode
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static ConfigUpdateMode Merge
+      |   +-- public static ConfigUpdateMode Overwrite
+
+  +-- class DefaultLoggerFactory
+      Implements: ILoggerFactory
+      |
+      +-- Methods:
+          +-- public Logger CreateLogger(ILoggerRepository repository, String name)
+
+  +-- class Hierarchy
+      : LoggerRepositorySkeleton
+      Implements: ILoggerRepository, IFlushable, IBasicRepositoryConfigurator, IXmlRepositoryConfigurator
+      |
+      |-- Fields:
+      |   +-- private ILoggerFactory m_defaultFactory
+      |   +-- private Hashtable m_ht
+      |   +-- private Logger m_root
+      |   +-- private Boolean m_emittedNoAppenderWarning
+      |   +-- private LoggerCreationEventHandler m_loggerCreatedEvent
+      |   +-- private static Type declaringType
+      |
+      |-- Properties:
+      |   +-- Boolean EmittedNoAppenderWarning {get; set}
+      |   +-- Logger Root {get}
+      |   +-- ILoggerFactory LoggerFactory {get; set}
+      |
+      +-- Methods:
+          +-- public ILogger Exists(String name)
+          +-- public ILogger[] GetCurrentLoggers()
+          +-- public ILogger GetLogger(String name)
+          +-- public Void Shutdown()
+          +-- public Void ResetConfiguration()
+          +-- public Void Log(LoggingEvent logEvent)
+          +-- public IAppender[] GetAppenders()
+          +-- private static Void CollectAppender(ArrayList appenderList, IAppender appender)
+          +-- private static Void CollectAppenders(ArrayList appenderList, IAppenderAttachable container)
+          +-- private Void log4net.Repository.IBasicRepositoryConfigurator.Configure(IAppender appender)
+          +-- private Void log4net.Repository.IBasicRepositoryConfigurator.Configure(IAppender[] appenders)
+          +-- protected Void BasicRepositoryConfigure(IAppender[] appenders)
+          +-- private Void log4net.Repository.IXmlRepositoryConfigurator.Configure(XmlElement element)
+          +-- protected Void XmlRepositoryConfigure(XmlElement element)
+          +-- public Boolean IsDisabled(Level level)
+          +-- public Void Clear()
+          +-- public Logger GetLogger(String name, ILoggerFactory factory)
+          +-- protected Void OnLoggerCreationEvent(Logger logger)
+          +-- private Void UpdateParents(Logger log)
+          +-- private static Void UpdateChildren(ProvisionNode pn, Logger log)
+          +-- internal Void AddLevel(LevelEntry levelEntry)
+          +-- internal Void AddProperty(PropertyEntry propertyEntry)
+
+  +-- interface ILoggerFactory
+      |
+      +-- Methods:
+          +-- public Logger CreateLogger(ILoggerRepository repository, String name)
+
+  +-- class LevelEntry
+      |
+      |-- Fields:
+      |   +-- private Int32 m_levelValue
+      |   +-- private String m_levelName
+      |   +-- private String m_levelDisplayName
+      |
+      |-- Properties:
+      |   +-- Int32 Value {get; set}
+      |   +-- String Name {get; set}
+      |   +-- String DisplayName {get; set}
+      |
+      +-- Methods:
+          +-- public String ToString()
+
+  +-- class Logger
+      Implements: IAppenderAttachable, ILogger
+      |
+      |-- Fields:
+      |   +-- private String m_name
+      |   +-- private Level m_level
+      |   +-- private Logger m_parent
+      |   +-- private Hierarchy m_hierarchy
+      |   +-- private AppenderAttachedImpl m_appenderAttachedImpl
+      |   +-- private Boolean m_additive
+      |   +-- private ReaderWriterLock m_appenderLock
+      |   +-- private static Type declaringType
+      |
+      |-- Properties:
+      |   +-- Logger Parent {get; set}
+      |   +-- Boolean Additivity {get; set}
+      |   +-- Level EffectiveLevel {get}
+      |   +-- Hierarchy Hierarchy {get; set}
+      |   +-- Level Level {get; set}
+      |   +-- AppenderCollection Appenders {get}
+      |   +-- String Name {get}
+      |   +-- ILoggerRepository Repository {get}
+      |
+      +-- Methods:
+          +-- public Void AddAppender(IAppender newAppender)
+          +-- public IAppender GetAppender(String name)
+          +-- public Void RemoveAllAppenders()
+          +-- public IAppender RemoveAppender(IAppender appender)
+          +-- public IAppender RemoveAppender(String name)
+          +-- public Void Log(Type callerStackBoundaryDeclaringType, Level level, Object message, Exception exception)
+          +-- public Void Log(LoggingEvent logEvent)
+          +-- public Boolean IsEnabledFor(Level level)
+          +-- protected Void CallAppenders(LoggingEvent loggingEvent)
+          +-- public Void CloseNestedAppenders()
+          +-- public Void Log(Level level, Object message, Exception exception)
+          +-- protected Void ForcedLog(Type callerStackBoundaryDeclaringType, Level level, Object message, Exception exception)
+          +-- protected Void ForcedLog(LoggingEvent logEvent)
+
+  +-- class LoggerCreationEventArgs
+      : EventArgs
+      |
+      |-- Fields:
+      |   +-- private Logger m_log
+      |
+      |-- Properties:
+      |   +-- Logger Logger {get}
+
+  +-- class LoggerCreationEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Object sender, LoggerCreationEventArgs e)
+          +-- public IAsyncResult BeginInvoke(Object sender, LoggerCreationEventArgs e, AsyncCallback callback, Object object)
+          +-- public Void EndInvoke(IAsyncResult result)
+
+  +-- class LoggerImpl
+      : Logger
+      Implements: IAppenderAttachable, ILogger
+
+  +-- class LoggerKey
+      |
+      |-- Fields:
+      |   +-- private String m_name
+      |   +-- private Int32 m_hashCache
+      |
+      +-- Methods:
+          +-- public Int32 GetHashCode()
+          +-- public Boolean Equals(Object obj)
+
+  +-- class ProvisionNode
+      : ArrayList
+      Implements: IList, ICollection, IEnumerable, ICloneable
+
+  +-- class RootLogger
+      : Logger
+      Implements: IAppenderAttachable, ILogger
+      |
+      |-- Fields:
+      |   +-- private static Type declaringType
+      |
+      |-- Properties:
+      |   +-- Level EffectiveLevel {get}
+      |   +-- Level Level {get; set}
+
+  +-- class XmlHierarchyConfigurator
+      |
+      |-- Fields:
+      |   +-- private Hashtable m_appenderBag
+      |   +-- private Hierarchy m_hierarchy
+      |   +-- private static Type declaringType
+      |   +-- private static String CONFIGURATION_TAG
+      |   +-- private static String RENDERER_TAG
+      |   +-- private static String APPENDER_TAG
+      |   +-- private static String APPENDER_REF_TAG
+      |   +-- private static String PARAM_TAG
+      |   +-- private static String CATEGORY_TAG
+      |   +-- private static String PRIORITY_TAG
+      |   +-- private static String LOGGER_TAG
+      |   +-- private static String NAME_ATTR
+      |   +-- private static String TYPE_ATTR
+      |   +-- private static String VALUE_ATTR
+      |   +-- private static String ROOT_TAG
+      |   +-- private static String LEVEL_TAG
+      |   +-- private static String REF_ATTR
+      |   +-- private static String ADDITIVITY_ATTR
+      |   +-- private static String THRESHOLD_ATTR
+      |   +-- private static String CONFIG_DEBUG_ATTR
+      |   +-- private static String INTERNAL_DEBUG_ATTR
+      |   +-- private static String EMIT_INTERNAL_DEBUG_ATTR
+      |   +-- private static String CONFIG_UPDATE_MODE_ATTR
+      |   +-- private static String RENDERING_TYPE_ATTR
+      |   +-- private static String RENDERED_TYPE_ATTR
+      |   +-- private static String INHERITED
+      |
+      |-- Properties:
+      |   +-- Boolean HasCaseInsensitiveEnvironment {get}
+      |
+      +-- Methods:
+          +-- public Void Configure(XmlElement element)
+          +-- protected IAppender FindAppenderByReference(XmlElement appenderRef)
+          +-- protected IAppender ParseAppender(XmlElement appenderElement)
+          +-- protected Void ParseLogger(XmlElement loggerElement)
+          +-- protected Void ParseRoot(XmlElement rootElement)
+          +-- protected Void ParseChildrenOfLoggerElement(XmlElement catElement, Logger log, Boolean isRoot)
+          +-- protected Void ParseRenderer(XmlElement element)
+          +-- protected Void ParseLevel(XmlElement element, Logger log, Boolean isRoot)
+          +-- protected Void SetParameter(XmlElement element, Object target)
+          +-- private Boolean HasAttributesOrElements(XmlElement element)
+          +-- private static Boolean IsTypeConstructible(Type type)
+          +-- private MethodInfo FindMethodInfo(Type targetType, String name)
+          +-- protected Object ConvertStringTo(Type type, String value)
+          +-- protected Object CreateObjectFromXml(XmlElement element, Type defaultTargetType, Type typeConstraint)
+          +-- private IDictionary CreateCaseInsensitiveWrapper(IDictionary dict)
+
+
+Namespace: log4net.Util
+----------------------------------------
+  +-- class AppenderAttachedImpl
+      Implements: IAppenderAttachable
+      |
+      |-- Fields:
+      |   +-- private AppenderCollection m_appenderList
+      |   +-- private IAppender[] m_appenderArray
+      |   +-- private static Type declaringType
+      |
+      |-- Properties:
+      |   +-- AppenderCollection Appenders {get}
+      |
+      +-- Methods:
+          +-- public Int32 AppendLoopOnAppenders(LoggingEvent loggingEvent)
+          +-- public Int32 AppendLoopOnAppenders(LoggingEvent[] loggingEvents)
+          +-- private static Void CallAppend(IAppender appender, LoggingEvent[] loggingEvents)
+          +-- public Void AddAppender(IAppender newAppender)
+          +-- public IAppender GetAppender(String name)
+          +-- public Void RemoveAllAppenders()
+          +-- public IAppender RemoveAppender(IAppender appender)
+          +-- public IAppender RemoveAppender(String name)
+
+  +-- struct AutoPopStackFrame
+      : ValueType
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private Stack m_frameStack
+      |   +-- private Int32 m_frameDepth
+      |
+      +-- Methods:
+          +-- public Void Dispose()
+
+  +-- struct AutoPopStackFrame
+      : ValueType
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private Int32 m_frameDepth
+      |   +-- private LogicalThreadContextStack m_logicalThreadContextStack
+      |
+      +-- Methods:
+          +-- public Void Dispose()
+
+  +-- class CompositeProperties
+      |
+      |-- Fields:
+      |   +-- private PropertiesDictionary m_flattened
+      |   +-- private ArrayList m_nestedProperties
+      |
+      |-- Properties:
+      |   +-- Object Item {get}
+      |
+      +-- Methods:
+          +-- public Void Add(ReadOnlyPropertiesDictionary properties)
+          +-- public PropertiesDictionary Flatten()
+
+  +-- class ContextPropertiesBase
+      |
+      |-- Properties:
+      |   +-- Object Item {get; set}
+
+  +-- class ConverterInfo
+      |
+      |-- Fields:
+      |   +-- private String m_name
+      |   +-- private Type m_type
+      |   +-- private PropertiesDictionary properties
+      |
+      |-- Properties:
+      |   +-- String Name {get; set}
+      |   +-- Type Type {get; set}
+      |   +-- PropertiesDictionary Properties {get}
+      |
+      +-- Methods:
+          +-- public Void AddProperty(PropertyEntry entry)
+
+  +-- class CountingQuietTextWriter
+      : QuietTextWriter
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private Int64 m_countBytes
+      |
+      |-- Properties:
+      |   +-- Int64 Count {get; set}
+      |
+      +-- Methods:
+          +-- public Void Write(Char value)
+          +-- public Void Write(Char[] buffer, Int32 index, Int32 count)
+          +-- public Void Write(String str)
+
+  +-- class CyclicBuffer
+      |
+      |-- Fields:
+      |   +-- private LoggingEvent[] m_events
+      |   +-- private Int32 m_first
+      |   +-- private Int32 m_last
+      |   +-- private Int32 m_numElems
+      |   +-- private Int32 m_maxSize
+      |
+      |-- Properties:
+      |   +-- LoggingEvent Item {get}
+      |   +-- Int32 MaxSize {get}
+      |   +-- Int32 Length {get}
+      |
+      +-- Methods:
+          +-- public LoggingEvent Append(LoggingEvent loggingEvent)
+          +-- public LoggingEvent PopOldest()
+          +-- public LoggingEvent[] PopAll()
+          +-- public Void Clear()
+
+  +-- class DisposableImpersonationContext
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private WindowsImpersonationContext m_impersonationContext
+      |
+      +-- Methods:
+          +-- public Void Dispose()
+
+  +-- class EmptyCollection
+      Implements: ICollection, IEnumerable
+      |
+      |-- Fields:
+      |   +-- private static EmptyCollection s_instance
+      |
+      |-- Properties:
+      |   +-- EmptyCollection Instance {get}
+      |   +-- Boolean IsSynchronized {get}
+      |   +-- Int32 Count {get}
+      |   +-- Object SyncRoot {get}
+      |
+      +-- Methods:
+          +-- public Void CopyTo(Array array, Int32 index)
+          +-- public IEnumerator GetEnumerator()
+
+  +-- class EmptyDictionary
+      Implements: IDictionary, ICollection, IEnumerable
+      |
+      |-- Fields:
+      |   +-- private static EmptyDictionary s_instance
+      |
+      |-- Properties:
+      |   +-- EmptyDictionary Instance {get}
+      |   +-- Boolean IsSynchronized {get}
+      |   +-- Int32 Count {get}
+      |   +-- Object SyncRoot {get}
+      |   +-- Boolean IsFixedSize {get}
+      |   +-- Boolean IsReadOnly {get}
+      |   +-- ICollection Keys {get}
+      |   +-- ICollection Values {get}
+      |   +-- Object Item {get; set}
+      |
+      +-- Methods:
+          +-- public Void CopyTo(Array array, Int32 index)
+          +-- private IEnumerator System.Collections.IEnumerable.GetEnumerator()
+          +-- public Void Add(Object key, Object value)
+          +-- public Void Clear()
+          +-- public Boolean Contains(Object key)
+          +-- public IDictionaryEnumerator GetEnumerator()
+          +-- public Void Remove(Object key)
+
+  +-- class FormattingInfo
+      |
+      |-- Fields:
+      |   +-- private Int32 m_min
+      |   +-- private Int32 m_max
+      |   +-- private Boolean m_leftAlign
+      |
+      |-- Properties:
+      |   +-- Int32 Min {get; set}
+      |   +-- Int32 Max {get; set}
+      |   +-- Boolean LeftAlign {get; set}
+
+  +-- class GlobalContextProperties
+      : ContextPropertiesBase
+      |
+      |-- Fields:
+      |   +-- private ReadOnlyPropertiesDictionary m_readOnlyProperties
+      |   +-- private Object m_syncRoot
+      |
+      |-- Properties:
+      |   +-- Object Item {get; set}
+      |
+      +-- Methods:
+          +-- public Void Remove(String key)
+          +-- public Void Clear()
+          +-- internal ReadOnlyPropertiesDictionary GetReadOnlyProperties()
+
+  +-- class ILogExtensions
+      |
+      |-- Fields:
+      |   +-- private static Type declaringType
+      |
+      +-- Methods:
+          +-- public static Void DebugExt(ILog logger, Func`1 callback)
+          +-- public static Void DebugExt(ILog logger, Func`1 callback, Exception exception)
+          +-- public static Void DebugExt(ILog logger, Object message)
+          +-- public static Void DebugExt(ILog logger, Object message, Exception exception)
+          +-- public static Void DebugFormatExt(ILog logger, String format, Object arg0)
+          +-- public static Void DebugFormatExt(ILog logger, String format, Object[] args)
+          +-- public static Void DebugFormatExt(ILog logger, IFormatProvider provider, String format, Object[] args)
+          +-- public static Void DebugFormatExt(ILog logger, String format, Object arg0, Object arg1)
+          +-- public static Void DebugFormatExt(ILog logger, String format, Object arg0, Object arg1, Object arg2)
+          +-- public static Void InfoExt(ILog logger, Func`1 callback)
+          +-- public static Void InfoExt(ILog logger, Func`1 callback, Exception exception)
+          +-- public static Void InfoExt(ILog logger, Object message)
+          +-- public static Void InfoExt(ILog logger, Object message, Exception exception)
+          +-- public static Void InfoFormatExt(ILog logger, String format, Object arg0)
+          +-- public static Void InfoFormatExt(ILog logger, String format, Object[] args)
+          +-- public static Void InfoFormatExt(ILog logger, IFormatProvider provider, String format, Object[] args)
+          +-- public static Void InfoFormatExt(ILog logger, String format, Object arg0, Object arg1)
+          +-- public static Void InfoFormatExt(ILog logger, String format, Object arg0, Object arg1, Object arg2)
+          +-- public static Void WarnExt(ILog logger, Func`1 callback)
+          +-- public static Void WarnExt(ILog logger, Func`1 callback, Exception exception)
+          +-- public static Void WarnExt(ILog logger, Object message)
+          +-- public static Void WarnExt(ILog logger, Object message, Exception exception)
+          +-- public static Void WarnFormatExt(ILog logger, String format, Object arg0)
+          +-- public static Void WarnFormatExt(ILog logger, String format, Object[] args)
+          +-- public static Void WarnFormatExt(ILog logger, IFormatProvider provider, String format, Object[] args)
+          +-- public static Void WarnFormatExt(ILog logger, String format, Object arg0, Object arg1)
+          +-- public static Void WarnFormatExt(ILog logger, String format, Object arg0, Object arg1, Object arg2)
+          +-- public static Void ErrorExt(ILog logger, Func`1 callback)
+          +-- public static Void ErrorExt(ILog logger, Func`1 callback, Exception exception)
+          +-- public static Void ErrorExt(ILog logger, Object message)
+          +-- public static Void ErrorExt(ILog logger, Object message, Exception exception)
+          +-- public static Void ErrorFormatExt(ILog logger, String format, Object arg0)
+          +-- public static Void ErrorFormatExt(ILog logger, String format, Object[] args)
+          +-- public static Void ErrorFormatExt(ILog logger, IFormatProvider provider, String format, Object[] args)
+          +-- public static Void ErrorFormatExt(ILog logger, String format, Object arg0, Object arg1)
+          +-- public static Void ErrorFormatExt(ILog logger, String format, Object arg0, Object arg1, Object arg2)
+          +-- public static Void FatalExt(ILog logger, Func`1 callback)
+          +-- public static Void FatalExt(ILog logger, Func`1 callback, Exception exception)
+          +-- public static Void FatalExt(ILog logger, Object message)
+          +-- public static Void FatalExt(ILog logger, Object message, Exception exception)
+          +-- public static Void FatalFormatExt(ILog logger, String format, Object arg0)
+          +-- public static Void FatalFormatExt(ILog logger, String format, Object[] args)
+          +-- public static Void FatalFormatExt(ILog logger, IFormatProvider provider, String format, Object[] args)
+          +-- public static Void FatalFormatExt(ILog logger, String format, Object arg0, Object arg1)
+          +-- public static Void FatalFormatExt(ILog logger, String format, Object arg0, Object arg1, Object arg2)
+
+  +-- enum ImpersonationMode
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static ImpersonationMode User
+      |   +-- public static ImpersonationMode Process
+
+  +-- class LevelMapping
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private Hashtable m_entriesMap
+      |   +-- private LevelMappingEntry[] m_entries
+      |
+      +-- Methods:
+          +-- public Void Add(LevelMappingEntry entry)
+          +-- public LevelMappingEntry Lookup(Level level)
+          +-- public Void ActivateOptions()
+
+  +-- class LevelMappingEntry
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private Level m_level
+      |
+      |-- Properties:
+      |   +-- Level Level {get; set}
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+
+  +-- class LogicalThreadContextProperties
+      : ContextPropertiesBase
+      |
+      |-- Fields:
+      |   +-- private Boolean m_disabled
+      |   +-- private static Type declaringType
+      |   +-- private static String c_SlotName
+      |
+      |-- Properties:
+      |   +-- Object Item {get; set}
+      |
+      +-- Methods:
+          +-- public Void Remove(String key)
+          +-- public Void Clear()
+          +-- internal PropertiesDictionary GetProperties(Boolean create)
+          +-- private static PropertiesDictionary GetLogicalProperties()
+          +-- private static Void SetLogicalProperties(PropertiesDictionary properties)
+
+  +-- class LogicalThreadContextStack
+      Implements: IFixingRequired
+      |
+      |-- Fields:
+      |   +-- private Stack m_stack
+      |   +-- private String m_propertyKey
+      |   +-- private TwoArgAction`2 m_registerNew
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- Stack InternalStack {get; set}
+      |
+      +-- Methods:
+          +-- public Void Clear()
+          +-- public String Pop()
+          +-- public IDisposable Push(String message)
+          +-- internal String GetFullMessage()
+          +-- public String ToString()
+          +-- private Object log4net.Core.IFixingRequired.GetFixedObject()
+
+  +-- class LogicalThreadContextStacks
+      |
+      |-- Fields:
+      |   +-- private LogicalThreadContextProperties m_properties
+      |   +-- private static Type declaringType
+      |
+      |-- Properties:
+      |   +-- LogicalThreadContextStack Item {get}
+      |
+      +-- Methods:
+          +-- private Void registerNew(String stackName, LogicalThreadContextStack stack)
+
+  +-- class LogLog
+      |
+      |-- Fields:
+      |   +-- private Type source
+      |   +-- private DateTime timeStampUtc
+      |   +-- private String prefix
+      |   +-- private String message
+      |   +-- private Exception exception
+      |   +-- private static LogReceivedEventHandler LogReceived
+      |   +-- private static Boolean s_debugEnabled
+      |   +-- private static Boolean s_quietMode
+      |   +-- private static Boolean s_emitInternalMessages
+      |   +-- private static String PREFIX
+      |   +-- private static String ERR_PREFIX
+      |   +-- private static String WARN_PREFIX
+      |
+      |-- Properties:
+      |   +-- Type Source {get}
+      |   +-- DateTime TimeStamp {get}
+      |   +-- DateTime TimeStampUtc {get}
+      |   +-- String Prefix {get}
+      |   +-- String Message {get}
+      |   +-- Exception Exception {get}
+      |   +-- Boolean InternalDebugging {get; set}
+      |   +-- Boolean QuietMode {get; set}
+      |   +-- Boolean EmitInternalMessages {get; set}
+      |   +-- Boolean IsDebugEnabled {get}
+      |   +-- Boolean IsWarnEnabled {get}
+      |   +-- Boolean IsErrorEnabled {get}
+      |
+      +-- Methods:
+          +-- public String ToString()
+          +-- public static Void OnLogReceived(Type source, String prefix, String message, Exception exception)
+          +-- public static Void Debug(Type source, String message)
+          +-- public static Void Debug(Type source, String message, Exception exception)
+          +-- public static Void Warn(Type source, String message)
+          +-- public static Void Warn(Type source, String message, Exception exception)
+          +-- public static Void Error(Type source, String message)
+          +-- public static Void Error(Type source, String message, Exception exception)
+          +-- private static Void EmitOutLine(String message)
+          +-- private static Void EmitErrorLine(String message)
+
+  +-- class LogReceivedAdapter
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private IList items
+      |   +-- private LogReceivedEventHandler handler
+      |
+      |-- Properties:
+      |   +-- IList Items {get}
+      |
+      +-- Methods:
+          +-- private Void LogLog_LogReceived(Object source, LogReceivedEventArgs e)
+          +-- public Void Dispose()
+
+  +-- class LogReceivedEventArgs
+      : EventArgs
+      |
+      |-- Fields:
+      |   +-- private LogLog loglog
+      |
+      |-- Properties:
+      |   +-- LogLog LogLog {get}
+
+  +-- class LogReceivedEventHandler
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Object source, LogReceivedEventArgs e)
+          +-- public IAsyncResult BeginInvoke(Object source, LogReceivedEventArgs e, AsyncCallback callback, Object object)
+          +-- public Void EndInvoke(IAsyncResult result)
+
+  +-- class NativeError
+      |
+      |-- Fields:
+      |   +-- private Int32 m_number
+      |   +-- private String m_message
+      |
+      |-- Properties:
+      |   +-- Int32 Number {get}
+      |   +-- String Message {get}
+      |
+      +-- Methods:
+          +-- public static NativeError GetLastError()
+          +-- public static NativeError GetError(Int32 number)
+          +-- public static String GetErrorMessage(Int32 messageId)
+          +-- public String ToString()
+          +-- private static Int32 FormatMessage(Int32 dwFlags, IntPtr& lpSource, Int32 dwMessageId, Int32 dwLanguageId, String& lpBuffer, Int32 nSize, IntPtr Arguments)
+
+  +-- class NullDictionaryEnumerator
+      Implements: IDictionaryEnumerator, IEnumerator
+      |
+      |-- Fields:
+      |   +-- private static NullDictionaryEnumerator s_instance
+      |
+      |-- Properties:
+      |   +-- NullDictionaryEnumerator Instance {get}
+      |   +-- Object Current {get}
+      |   +-- Object Key {get}
+      |   +-- Object Value {get}
+      |   +-- DictionaryEntry Entry {get}
+      |
+      +-- Methods:
+          +-- public Boolean MoveNext()
+          +-- public Void Reset()
+
+  +-- class NullEnumerator
+      Implements: IEnumerator
+      |
+      |-- Fields:
+      |   +-- private static NullEnumerator s_instance
+      |
+      |-- Properties:
+      |   +-- NullEnumerator Instance {get}
+      |   +-- Object Current {get}
+      |
+      +-- Methods:
+          +-- public Boolean MoveNext()
+          +-- public Void Reset()
+
+  +-- class NullSecurityContext
+      : SecurityContext
+      |
+      |-- Fields:
+      |   +-- public static NullSecurityContext Instance
+      |
+      +-- Methods:
+          +-- public IDisposable Impersonate(Object state)
+
+  +-- class OnlyOnceErrorHandler
+      Implements: IErrorHandler
+      |
+      |-- Fields:
+      |   +-- private DateTime m_enabledDateUtc
+      |   +-- private Boolean m_firstTime
+      |   +-- private String m_message
+      |   +-- private Exception m_exception
+      |   +-- private ErrorCode m_errorCode
+      |   +-- private String m_prefix
+      |   +-- private static Type declaringType
+      |
+      |-- Properties:
+      |   +-- Boolean IsEnabled {get}
+      |   +-- DateTime EnabledDate {get}
+      |   +-- DateTime EnabledDateUtc {get}
+      |   +-- String ErrorMessage {get}
+      |   +-- Exception Exception {get}
+      |   +-- ErrorCode ErrorCode {get}
+      |
+      +-- Methods:
+          +-- public Void Reset()
+          +-- public Void Error(String message, Exception e, ErrorCode errorCode)
+          +-- public Void FirstError(String message, Exception e, ErrorCode errorCode)
+          +-- public Void Error(String message, Exception e)
+          +-- public Void Error(String message)
+
+  +-- class OptionConverter
+      |
+      |-- Fields:
+      |   +-- private static Type declaringType
+      |   +-- private static String DELIM_START
+      |   +-- private static Char DELIM_STOP
+      |   +-- private static Int32 DELIM_START_LEN
+      |   +-- private static Int32 DELIM_STOP_LEN
+      |
+      +-- Methods:
+          +-- public static Boolean ToBoolean(String argValue, Boolean defaultValue)
+          +-- public static Int64 ToFileSize(String argValue, Int64 defaultValue)
+          +-- public static Object ConvertStringTo(Type target, String txt)
+          +-- public static Boolean CanConvertTypeTo(Type sourceType, Type targetType)
+          +-- public static Object ConvertTypeTo(Object sourceInstance, Type targetType)
+          +-- public static Object InstantiateByClassName(String className, Type superClass, Object defaultValue)
+          +-- public static String SubstituteVariables(String value, IDictionary props)
+          +-- private static Object ParseEnum(Type enumType, String value, Boolean ignoreCase)
+
+  +-- class PatternConverter
+      |
+      |-- Fields:
+      |   +-- private PatternConverter m_next
+      |   +-- private Int32 m_min
+      |   +-- private Int32 m_max
+      |   +-- private Boolean m_leftAlign
+      |   +-- private String m_option
+      |   +-- private ReusableStringWriter m_formatWriter
+      |   +-- private PropertiesDictionary properties
+      |   +-- private static String[] SPACES
+      |   +-- private static Int32 c_renderBufferSize
+      |   +-- private static Int32 c_renderBufferMaxCapacity
+      |
+      |-- Properties:
+      |   +-- PatternConverter Next {get}
+      |   +-- FormattingInfo FormattingInfo {get; set}
+      |   +-- String Option {get; set}
+      |   +-- PropertiesDictionary Properties {get; set}
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, Object state)
+          +-- public PatternConverter SetNext(PatternConverter patternConverter)
+          +-- public Void Format(TextWriter writer, Object state)
+          +-- protected static Void SpacePad(TextWriter writer, Int32 length)
+          +-- protected static Void WriteDictionary(TextWriter writer, ILoggerRepository repository, IDictionary value)
+          +-- protected static Void WriteDictionary(TextWriter writer, ILoggerRepository repository, IDictionaryEnumerator value)
+          +-- protected static Void WriteObject(TextWriter writer, ILoggerRepository repository, Object value)
+
+  +-- class PatternParser
+      |
+      |-- Fields:
+      |   +-- private PatternConverter m_head
+      |   +-- private PatternConverter m_tail
+      |   +-- private String m_pattern
+      |   +-- private Hashtable m_patternConverters
+      |   +-- private static Type declaringType
+      |   +-- private static Char ESCAPE_CHAR
+      |
+      |-- Properties:
+      |   +-- Hashtable PatternConverters {get}
+      |
+      +-- Methods:
+          +-- public PatternConverter Parse()
+          +-- private String[] BuildCache()
+          +-- private Void ParseInternal(String pattern, String[] matches)
+          +-- private Void ProcessLiteral(String text)
+          +-- private Void ProcessConverter(String converterName, String option, FormattingInfo formattingInfo)
+          +-- private Void AddConverter(PatternConverter pc)
+
+  +-- class PatternString
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private String m_pattern
+      |   +-- private PatternConverter m_head
+      |   +-- private Hashtable m_instanceRulesRegistry
+      |   +-- private static Hashtable s_globalRulesRegistry
+      |
+      |-- Properties:
+      |   +-- String ConversionPattern {get; set}
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- private PatternParser CreatePatternParser(String pattern)
+          +-- public Void Format(TextWriter writer)
+          +-- public String Format()
+          +-- public Void AddConverter(ConverterInfo converterInfo)
+          +-- public Void AddConverter(String name, Type type)
+
+  +-- class PropertiesDictionary
+      : ReadOnlyPropertiesDictionary
+      Implements: ISerializable, IDictionary, ICollection, IEnumerable
+      |
+      |-- Properties:
+      |   +-- Object Item {get; set}
+      |   +-- Boolean System.Collections.IDictionary.IsReadOnly {get}
+      |   +-- Object System.Collections.IDictionary.Item {get; set}
+      |   +-- ICollection System.Collections.IDictionary.Values {get}
+      |   +-- ICollection System.Collections.IDictionary.Keys {get}
+      |   +-- Boolean System.Collections.IDictionary.IsFixedSize {get}
+      |   +-- Boolean System.Collections.ICollection.IsSynchronized {get}
+      |   +-- Object System.Collections.ICollection.SyncRoot {get}
+      |
+      +-- Methods:
+          +-- public Void Remove(String key)
+          +-- private IDictionaryEnumerator System.Collections.IDictionary.GetEnumerator()
+          +-- private Void System.Collections.IDictionary.Remove(Object key)
+          +-- private Boolean System.Collections.IDictionary.Contains(Object key)
+          +-- public Void Clear()
+          +-- private Void System.Collections.IDictionary.Add(Object key, Object value)
+          +-- private Void System.Collections.ICollection.CopyTo(Array array, Int32 index)
+          +-- private IEnumerator System.Collections.IEnumerable.GetEnumerator()
+
+  +-- class PropertyEntry
+      |
+      |-- Fields:
+      |   +-- private String m_key
+      |   +-- private Object m_value
+      |
+      |-- Properties:
+      |   +-- String Key {get; set}
+      |   +-- Object Value {get; set}
+      |
+      +-- Methods:
+          +-- public String ToString()
+
+  +-- class ProtectCloseTextWriter
+      : TextWriterAdapter
+      Implements: IDisposable
+      |
+      +-- Methods:
+          +-- public Void Attach(TextWriter writer)
+          +-- public Void Close()
+
+  +-- class QuietTextWriter
+      : TextWriterAdapter
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private IErrorHandler m_errorHandler
+      |   +-- private Boolean m_closed
+      |
+      |-- Properties:
+      |   +-- IErrorHandler ErrorHandler {get; set}
+      |   +-- Boolean Closed {get}
+      |
+      +-- Methods:
+          +-- public Void Write(Char value)
+          +-- public Void Write(Char[] buffer, Int32 index, Int32 count)
+          +-- public Void Write(String value)
+          +-- public Void Close()
+
+  +-- class ReaderWriterLock
+      |
+      |-- Fields:
+      |   +-- private ReaderWriterLockSlim m_lock
+      |
+      +-- Methods:
+          +-- public Void AcquireReaderLock()
+          +-- public Void ReleaseReaderLock()
+          +-- public Void AcquireWriterLock()
+          +-- public Void ReleaseWriterLock()
+
+  +-- class ReadOnlyPropertiesDictionary
+      Implements: ISerializable, IDictionary, ICollection, IEnumerable
+      |
+      |-- Fields:
+      |   +-- private Hashtable m_hashtable
+      |
+      |-- Properties:
+      |   +-- Object Item {get; set}
+      |   +-- Hashtable InnerHashtable {get}
+      |   +-- Boolean System.Collections.IDictionary.IsReadOnly {get}
+      |   +-- Object System.Collections.IDictionary.Item {get; set}
+      |   +-- ICollection System.Collections.IDictionary.Values {get}
+      |   +-- ICollection System.Collections.IDictionary.Keys {get}
+      |   +-- Boolean System.Collections.IDictionary.IsFixedSize {get}
+      |   +-- Boolean System.Collections.ICollection.IsSynchronized {get}
+      |   +-- Int32 Count {get}
+      |   +-- Object System.Collections.ICollection.SyncRoot {get}
+      |
+      +-- Methods:
+          +-- public String[] GetKeys()
+          +-- public Boolean Contains(String key)
+          +-- public Void GetObjectData(SerializationInfo info, StreamingContext context)
+          +-- private IDictionaryEnumerator System.Collections.IDictionary.GetEnumerator()
+          +-- private Void System.Collections.IDictionary.Remove(Object key)
+          +-- private Boolean System.Collections.IDictionary.Contains(Object key)
+          +-- public Void Clear()
+          +-- private Void System.Collections.IDictionary.Add(Object key, Object value)
+          +-- private Void System.Collections.ICollection.CopyTo(Array array, Int32 index)
+          +-- private IEnumerator System.Collections.IEnumerable.GetEnumerator()
+
+  +-- class ReusableStringWriter
+      : StringWriter
+      Implements: IDisposable
+      |
+      +-- Methods:
+          +-- protected Void Dispose(Boolean disposing)
+          +-- public Void Reset(Int32 maxCapacity, Int32 defaultSize)
+
+  +-- class StackFrame
+      |
+      |-- Fields:
+      |   +-- private String m_message
+      |   +-- private StackFrame m_parent
+      |   +-- private String m_fullMessage
+      |
+      |-- Properties:
+      |   +-- String Message {get}
+      |   +-- String FullMessage {get}
+
+  +-- class StackFrame
+      |
+      |-- Fields:
+      |   +-- private String m_message
+      |   +-- private StackFrame m_parent
+      |   +-- private String m_fullMessage
+      |
+      |-- Properties:
+      |   +-- String Message {get}
+      |   +-- String FullMessage {get}
+
+  +-- class StringLengthComparer
+      Implements: IComparer
+      |
+      |-- Fields:
+      |   +-- public static StringLengthComparer Instance
+      |
+      +-- Methods:
+          +-- public Int32 Compare(Object x, Object y)
+
+  +-- class SystemInfo
+      |
+      |-- Fields:
+      |   +-- public static Type[] EmptyTypes
+      |   +-- private static Type declaringType
+      |   +-- private static String s_hostName
+      |   +-- private static String s_appFriendlyName
+      |   +-- private static String s_nullText
+      |   +-- private static String s_notAvailableText
+      |   +-- private static DateTime s_processStartTimeUtc
+      |   +-- private static String DEFAULT_NULL_TEXT
+      |   +-- private static String DEFAULT_NOT_AVAILABLE_TEXT
+      |
+      |-- Properties:
+      |   +-- String NewLine {get}
+      |   +-- String ApplicationBaseDirectory {get}
+      |   +-- String ConfigurationFileLocation {get}
+      |   +-- String EntryAssemblyLocation {get}
+      |   +-- Int32 CurrentThreadId {get}
+      |   +-- String HostName {get}
+      |   +-- String ApplicationFriendlyName {get}
+      |   +-- DateTime ProcessStartTime {get}
+      |   +-- DateTime ProcessStartTimeUtc {get}
+      |   +-- String NullText {get; set}
+      |   +-- String NotAvailableText {get; set}
+      |
+      +-- Methods:
+          +-- public static String AssemblyLocationInfo(Assembly myAssembly)
+          +-- public static String AssemblyQualifiedName(Type type)
+          +-- public static String AssemblyShortName(Assembly myAssembly)
+          +-- public static String AssemblyFileName(Assembly myAssembly)
+          +-- public static Type GetTypeFromString(Type relativeType, String typeName, Boolean throwOnError, Boolean ignoreCase)
+          +-- public static Type GetTypeFromString(String typeName, Boolean throwOnError, Boolean ignoreCase)
+          +-- public static Type GetTypeFromString(Assembly relativeAssembly, String typeName, Boolean throwOnError, Boolean ignoreCase)
+          +-- public static Guid NewGuid()
+          +-- public static ArgumentOutOfRangeException CreateArgumentOutOfRangeException(String parameterName, Object actualValue, String message)
+          +-- public static Boolean TryParse(String s, Int32& val)
+          +-- public static Boolean TryParse(String s, Int64& val)
+          +-- public static Boolean TryParse(String s, Int16& val)
+          +-- public static String GetAppSetting(String key)
+          +-- public static String ConvertToFullPath(String path)
+          +-- public static Hashtable CreateCaseInsensitiveHashtable()
+          +-- public static Boolean EqualsIgnoringCase(String a, String b)
+
+  +-- class SystemStringFormat
+      |
+      |-- Fields:
+      |   +-- private IFormatProvider m_provider
+      |   +-- private String m_format
+      |   +-- private Object[] m_args
+      |   +-- private static Type declaringType
+      |
+      +-- Methods:
+          +-- public String ToString()
+          +-- private static String StringFormat(IFormatProvider provider, String format, Object[] args)
+          +-- private static String StringFormatError(Exception formatException, String format, Object[] args)
+          +-- private static Void RenderArray(Array array, StringBuilder buffer)
+          +-- private static Void RenderObject(Object obj, StringBuilder buffer)
+
+  +-- class TextWriterAdapter
+      : TextWriter
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private TextWriter m_writer
+      |
+      |-- Properties:
+      |   +-- TextWriter Writer {get; set}
+      |   +-- Encoding Encoding {get}
+      |   +-- IFormatProvider FormatProvider {get}
+      |   +-- String NewLine {get; set}
+      |
+      +-- Methods:
+          +-- public Void Close()
+          +-- protected Void Dispose(Boolean disposing)
+          +-- public Void Flush()
+          +-- public Void Write(Char value)
+          +-- public Void Write(Char[] buffer, Int32 index, Int32 count)
+          +-- public Void Write(String value)
+
+  +-- class ThreadContextProperties
+      : ContextPropertiesBase
+      |
+      |-- Fields:
+      |   +-- private static PropertiesDictionary _dictionary
+      |
+      |-- Properties:
+      |   +-- Object Item {get; set}
+      |
+      +-- Methods:
+          +-- public Void Remove(String key)
+          +-- public String[] GetKeys()
+          +-- public Void Clear()
+          +-- internal PropertiesDictionary GetProperties(Boolean create)
+
+  +-- class ThreadContextStack
+      Implements: IFixingRequired
+      |
+      |-- Fields:
+      |   +-- private Stack m_stack
+      |
+      |-- Properties:
+      |   +-- Int32 Count {get}
+      |   +-- Stack InternalStack {get; set}
+      |
+      +-- Methods:
+          +-- public Void Clear()
+          +-- public String Pop()
+          +-- public IDisposable Push(String message)
+          +-- internal String GetFullMessage()
+          +-- public String ToString()
+          +-- private Object log4net.Core.IFixingRequired.GetFixedObject()
+
+  +-- class ThreadContextStacks
+      |
+      |-- Fields:
+      |   +-- private ContextPropertiesBase m_properties
+      |   +-- private static Type declaringType
+      |
+      |-- Properties:
+      |   +-- ThreadContextStack Item {get}
+
+  +-- class Transform
+      |
+      |-- Fields:
+      |   +-- private static Regex INVALIDCHARS
+      |   +-- private static String CDATA_END
+      |   +-- private static String CDATA_UNESCAPABLE_TOKEN
+      |
+      +-- Methods:
+          +-- public static Void WriteEscapedXmlString(XmlWriter writer, String textData, String invalidCharReplacement)
+          +-- public static String MaskXmlInvalidCharacters(String textData, String mask)
+          +-- private static Int32 CountSubstrings(String text, String substring)
+
+  +-- class TwoArgAction`2
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(T1 t1, T2 t2)
+          +-- public IAsyncResult BeginInvoke(T1 t1, T2 t2, AsyncCallback callback, Object object)
+          +-- public Void EndInvoke(IAsyncResult result)
+
+  +-- class WindowsSecurityContext
+      : SecurityContext
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private ImpersonationMode m_impersonationMode
+      |   +-- private String m_userName
+      |   +-- private String m_domainName
+      |   +-- private String m_password
+      |   +-- private WindowsIdentity m_identity
+      |
+      |-- Properties:
+      |   +-- ImpersonationMode Credentials {get; set}
+      |   +-- String UserName {get; set}
+      |   +-- String DomainName {get; set}
+      |   +-- String Password {set}
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- public IDisposable Impersonate(Object state)
+          +-- private static WindowsIdentity LogonUser(String userName, String domainName, String password)
+          +-- private static Boolean LogonUser(String lpszUsername, String lpszDomain, String lpszPassword, Int32 dwLogonType, Int32 dwLogonProvider, IntPtr& phToken)
+          +-- private static Boolean CloseHandle(IntPtr handle)
+          +-- private static Boolean DuplicateToken(IntPtr ExistingTokenHandle, Int32 SECURITY_IMPERSONATION_LEVEL, IntPtr& DuplicateTokenHandle)
+
+
+Namespace: log4net.Util.PatternStringConverters
+----------------------------------------
+  +-- class AppDomainPatternConverter
+      : PatternConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, Object state)
+
+  +-- class AppSettingPatternConverter
+      : PatternConverter
+      |
+      |-- Fields:
+      |   +-- private static Hashtable _appSettingsHashTable
+      |
+      |-- Properties:
+      |   +-- IDictionary AppSettingsDictionary {get}
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, Object state)
+
+  +-- class DatePatternConverter
+      : PatternConverter
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- protected IDateFormatter m_dateFormatter
+      |   +-- private static Type declaringType
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- protected Void Convert(TextWriter writer, Object state)
+
+  +-- class EnvironmentFolderPathPatternConverter
+      : PatternConverter
+      |
+      |-- Fields:
+      |   +-- private static Type declaringType
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, Object state)
+
+  +-- class EnvironmentPatternConverter
+      : PatternConverter
+      |
+      |-- Fields:
+      |   +-- private static Type declaringType
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, Object state)
+
+  +-- class IdentityPatternConverter
+      : PatternConverter
+      |
+      |-- Fields:
+      |   +-- private static Type declaringType
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, Object state)
+
+  +-- class LiteralPatternConverter
+      : PatternConverter
+      |
+      +-- Methods:
+          +-- public PatternConverter SetNext(PatternConverter pc)
+          +-- public Void Format(TextWriter writer, Object state)
+          +-- protected Void Convert(TextWriter writer, Object state)
+
+  +-- class NewLinePatternConverter
+      : LiteralPatternConverter
+      Implements: IOptionHandler
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+
+  +-- class ProcessIdPatternConverter
+      : PatternConverter
+      |
+      |-- Fields:
+      |   +-- private static Type declaringType
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, Object state)
+
+  +-- class PropertyPatternConverter
+      : PatternConverter
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, Object state)
+
+  +-- class RandomStringPatternConverter
+      : PatternConverter
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private Int32 m_length
+      |   +-- private static Random s_random
+      |   +-- private static Type declaringType
+      |
+      +-- Methods:
+          +-- public Void ActivateOptions()
+          +-- protected Void Convert(TextWriter writer, Object state)
+
+  +-- class UserNamePatternConverter
+      : PatternConverter
+      |
+      |-- Fields:
+      |   +-- private static Type declaringType
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, Object state)
+
+  +-- class UtcDatePatternConverter
+      : DatePatternConverter
+      Implements: IOptionHandler
+      |
+      |-- Fields:
+      |   +-- private static Type declaringType
+      |
+      +-- Methods:
+          +-- protected Void Convert(TextWriter writer, Object state)
+
+
+Namespace: log4net.Util.TypeConverters
+----------------------------------------
+  +-- class BooleanConverter
+      Implements: IConvertFrom
+      |
+      +-- Methods:
+          +-- public Boolean CanConvertFrom(Type sourceType)
+          +-- public Object ConvertFrom(Object source)
+
+  +-- class ConversionNotSupportedException
+      : ApplicationException
+      Implements: ISerializable, _Exception
+      |
+      +-- Methods:
+          +-- public static ConversionNotSupportedException Create(Type destinationType, Object sourceValue)
+          +-- public static ConversionNotSupportedException Create(Type destinationType, Object sourceValue, Exception innerException)
+
+  +-- class ConverterRegistry
+      |
+      |-- Fields:
+      |   +-- private static Type declaringType
+      |   +-- private static Hashtable s_type2converter
+      |
+      +-- Methods:
+          +-- public static Void AddConverter(Type destinationType, Object converter)
+          +-- public static Void AddConverter(Type destinationType, Type converterType)
+          +-- public static IConvertTo GetConvertTo(Type sourceType, Type destinationType)
+          +-- public static IConvertFrom GetConvertFrom(Type destinationType)
+          +-- private static Object GetConverterFromAttribute(Type destinationType)
+          +-- private static Object CreateConverterInstance(Type converterType)
+
+  +-- class EncodingConverter
+      Implements: IConvertFrom
+      |
+      +-- Methods:
+          +-- public Boolean CanConvertFrom(Type sourceType)
+          +-- public Object ConvertFrom(Object source)
+
+  +-- interface IConvertFrom
+      |
+      +-- Methods:
+          +-- public Boolean CanConvertFrom(Type sourceType)
+          +-- public Object ConvertFrom(Object source)
+
+  +-- interface IConvertTo
+      |
+      +-- Methods:
+          +-- public Boolean CanConvertTo(Type targetType)
+          +-- public Object ConvertTo(Object source, Type targetType)
+
+  +-- class IPAddressConverter
+      Implements: IConvertFrom
+      |
+      |-- Fields:
+      |   +-- private static Char[] validIpAddressChars
+      |
+      +-- Methods:
+          +-- public Boolean CanConvertFrom(Type sourceType)
+          +-- public Object ConvertFrom(Object source)
+
+  +-- class PatternLayoutConverter
+      Implements: IConvertFrom
+      |
+      +-- Methods:
+          +-- public Boolean CanConvertFrom(Type sourceType)
+          +-- public Object ConvertFrom(Object source)
+
+  +-- class PatternStringConverter
+      Implements: IConvertTo, IConvertFrom
+      |
+      +-- Methods:
+          +-- public Boolean CanConvertTo(Type targetType)
+          +-- public Object ConvertTo(Object source, Type targetType)
+          +-- public Boolean CanConvertFrom(Type sourceType)
+          +-- public Object ConvertFrom(Object source)
+
+  +-- class TypeConverter
+      Implements: IConvertFrom
+      |
+      +-- Methods:
+          +-- public Boolean CanConvertFrom(Type sourceType)
+          +-- public Object ConvertFrom(Object source)
+
+  +-- class TypeConverterAttribute
+      : Attribute
+      Implements: _Attribute
+      |
+      |-- Fields:
+      |   +-- private String m_typeName
+      |
+      |-- Properties:
+      |   +-- String ConverterTypeName {get; set}
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso8859-1"><meta name="product" content="PLNT3D"><meta name="book" content="Developer"><meta name="created" content="2022-12-24"><meta name="topicid" content="GUID-D29A9DF4-26E3-4559-8AC0-65CB0FE5123B"><meta name="indexterm" content="ObjectARX"><meta name="contextid" content="PLANTSDK"><meta name="topic-type" content="concept"><title>Introduction</title><link type="text/css" rel="stylesheet" href="style/adsk.cpm.css"><script type="text/javascript" src="scripts/adsk.strings.js"></script><script type="text/javascript" src="scripts/adsk.common.js"></script><script type="text/javascript" src="scripts/adsk.dynamichelp.js"></script></head><body><div class="head"><div class="head-block"><div class="nav-group"><!--browse buttons--><div class="browse"><nobr><!--No Additional browse buttons are defined--><div class="headNavLinkPrev"><div id="prevTitle" style="display:none">Plant SDK Developer Help</div><a href="topichead.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('prevTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-prev-xp.gif" border="0"></a></div><div class="headNavLinkUp"><div id="parentTitle" style="display:none">Plant SDK Developer Help</div><a href="topichead.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('parentTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-up-xp.gif" border="0"></a></div><div class="headNavLinkNext"><div id="nextTitle" style="display:none">Getting Started</div><a href="GUID-DC721928-E8CC-4DB6-AC3C-69EA22B3B7C8.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('nextTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-next-xp.gif" border="0"></a></div></nobr></div><!--end browse buttons--></div><div class="button-info"><span id="infoline">&nbsp;</span></div><div class="ancestry"><a href="topichead.htm">AutoCAD Plant 3D 2024 SDK: Developer`s Help</a>&nbsp;&gt;&nbsp;<a href="topichead.htm">Plant SDK Developer Help</a>&nbsp;&gt;&nbsp;</div><div class="head-text"><a name="WS1A9193826455F5FF19B622D10EA1BF4D91-772D"></a><h1>Introduction</h1></div></div></div><div class="head-margin">&nbsp;</div><div style="line-height: 0pt">&nbsp;</div><div class="head-margin">&nbsp;</div><div class="body_content"><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5814"></a><!--CPM-ContextId = 'plantsdk'--><a name="GUID-49B03E86-0404-43E6-A4E2-CE19E822C645"></a>The AutoCAD Plant 3D Application Programming Interface (API) extends the AutoCAD API to provide software developers with a means to query and control Plant Projects, P&amp;ID drawings, and the 3D model. 
+</p><div class="section"><a name="SECTION_E000BB413E964B96A7D714B9BEF6C150"></a> <h2><a name="TOC_ENTRY__d44e72"></a><a name="GUID-7DED383B-59D1-4EE3-8BA4-9F7AA3739E5C"></a>Support and Requirements</h2> <p><a name="WS1A9193826455F5FFF0124D0128744E2E7D-1C8"></a>The Plant 3D Software Developer Kit (SDK) supports interfaces for objects created with and stored in drawing (DWG) files using AutoCAD Plant 3D and legacy installations of AutoCAD P&amp;ID. 
+  </p> <p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5811"></a>The Plant 3D SDK is supported primarily through .NET managed assemblies. Unmanaged support is provided though for drawing object (<span class="code">AcDb</span>) classes, but unmanaged access is limited otherwise. To access the managed libraries from unmanaged code, you can use common language runtime compilation. For more information, see the 
+	 <em class="mild">C++ interop</em> sample. 
+  </p> <div><a name="WS73099CC142F48755-63C0748611A1FA08F71-67FB"></a><div class="note-note"><span class="label label-target-language">NOTE:</span>To successfully utilize the APIs documented in this guide, developers should be familiar with ObjectARX or the .NET managed wrappers for ObjectARX. </div></div> </div><div class="section"><a name="SECTION_AF19BB5FFAE4458D90A5E28D99A1DF64"></a> <h2><a name="TOC_ENTRY__d44e97"></a><a name="GUID-775D947D-CBB6-4C26-9E58-5CC2063F6C36"></a>What's New</h2> <p>The following outlines the changes made to the Plant 3D SDK. 
+  </p><a name="GUID-7A3BF8D0-CAC7-4D1F-A675-49D255DBF0F5"></a><dl><dt><span class="term">New in the SDK for 
+  <span class="charspan-msgph">2024</span></span></dt><dd><div class="definition"> <a name="UL_D72768EDF5844EA798249FAADB64E4D2"></a><p class="list-intro">Native API highlights</p><ul><li>Changes to members used to create and update parts
+	 </li></ul> <a name="UL_1744958F0D6048E99AF3F003D68146A0"></a><p class="list-intro">Managed API highlights</p><ul><li>New class and members related to exporting data to a MS Excel workbook
+	 </li><li>Updates to existing classes related to external references
+	 </li></ul></div></dd><dt><span class="term">New in the SDK for 2023</span></dt><dd><div class="definition"> <a name="UL_BA8A048877AC4D76BC4879EF190D524C"></a><p class="list-intro">Native API highlights</p><ul><li>New functions used to validate the characters in a string 
+	 </li><li>Function that can be used to determine if a layout is currently being switched 
+	 </li></ul> <a name="UL_C10583D9108B44EE981F1B06B33042A7"></a><p class="list-intro">Managed API highlights</p><ul><li>New class and members related to base table callbacks for repositories 
+	 </li><li>New members related to synchronizing changes to a project 
+	 </li></ul></div></dd><dt><span class="term">New in the SDK for 2022 </span></dt><dd><div class="definition"> <a name="UL_8FEF613E317F42B198BFE2E20943C9A2"></a><p class="list-intro">Native API highlights</p><ul><li>New function for copying styles 
+	 </li><li>New coordinate system functions related to ortho annotation 
+	 </li></ul> <a name="UL_F06179CC818048859EA20A5AF8C4E135"></a><p class="list-intro">Managed API highlights</p><ul><li>New compare and merge functionality added to project related classes 
+	 </li><li>Several classes updated to support the checking of equality 
+	 </li></ul></div></dd><dt><span class="term">New in the SDK for 2021</span></dt><dd><div class="definition"> <a name="UL_786405476568408AABC75E4FAB90432C"></a><p class="list-intro">Native API highlights</p><ul><li>3D parts now participate in the AutoCAD AUDIT command 
+	 </li></ul> <a name="UL_0D650DEDB9284260BC33788A826A5A6E"></a><p class="list-intro">Managed API highlights</p><ul><li>Improvements made to Ortho projects to support the copying and checking of symbols 
+	 </li></ul></div></dd><dt><span class="term">New in the SDK for 2020 </span></dt><dd><div class="definition"> <a name="UL_FACA1A09311341F48D936B9C66C6125E"></a><p class="list-intro">Native API highlights</p><ul><li>Changes were made to some members that return the class name of an object 
+	 </li></ul> <a name="UL_4ECCE17DE3304751833114E1C666D79B"></a><p class="list-intro">Managed API highlights</p><ul><li>Minor changes related to Painter styles 
+	 </li><li>Support was added for high resolution monitors 
+	 </li></ul></div></dd><dt><span class="term">New in the SDK for 2019</span></dt><dd><div class="definition"> <a name="UL_8D6CCB2B657B4C23A563152793219FD6"></a><p class="list-intro">Native API highlights</p><ul><li>Get the class name of an Instrument now 
+	 </li><li>Minor changes to the ability to set color of an Asset and a Line Segment 
+	 </li></ul> <a name="UL_ABE817A632C241CD862EAF22C621FA7D"></a><p class="list-intro">Managed API highlights</p><ul><li>Improvements made to opening and creating databases 
+	 </li><li>Events added related to the download progress of a project 
+	 </li><li>Get children files by name now 
+	 </li><li>Functions added to rename files 
+	 </li></ul></div></dd><dt><span class="term">New in the SDK for 2018</span></dt><dd><div class="definition"> <a name="UL_80D6F46463364D1BB8ABE60FB3209528"></a><p class="list-intro">Native API highlights</p><ul><li>Minor improvements to the Specification Manager 
+	 </li></ul> <a name="UL_0D32E8015B534FC0A5F2620B624EB685"></a><p class="list-intro">Managed API highlights</p><ul><li>DocumentServer now supports both, Vault and Collaboration (Cloud-based projects) 
+	 </li></ul></div></dd><dt><span class="term">New in the SDK for 2017 </span></dt><dd><div class="definition"> <p>Starting with this release, 32-bit support is no longer available. 
+  </p> <a name="UL_8408616FE5DB411D9FF7D92719557CB8"></a><p class="list-intro">Native API highlights</p><ul><li>Connection Manager updated to support pipe to bend without weld 
+	 </li><li>Ability to override the graphics for an asset and pipe segment 
+	 </li></ul> <a name="UL_FAF54BB361E3450189430AA9FB7CB14A"></a><p class="list-intro">Managed API highlights</p><ul><li>Primary focus for API changes moving forward, minimal changes to the Native API 
+	 </li></ul></div></dd><dt><span class="term">New in the SDK for 2016</span></dt><dd><div class="definition"> <p><a name="GUID-F173FBB2-ACCE-4A1E-BB5B-E4E2EB79E0AA"></a>New high-level APIs to create, connect, and modify equipment, piping, and pipe supports in the 3D Model. 
+  </p> <a name="UL_C6489F7E761444DCBAB15E316DA74837"></a><ul><li>PnIDGUIUtilMgd.dll 
+	 </li><li>PnP3dACPUtils.dll 
+	 </li><li>PnP3dPipeUI.dll 
+	 </li><li>PnP3dMain.dll 
+	 </li><li>PnP3dPipeUI.dll 
+	 </li></ul> <p><a name="GUID-361AEB2B-DBF6-4C07-ABD4-F4B73FE8CA9B"></a>The best way to learn how to use the new classes is to compile and load the new samples: 
+	 <span class="char_link"><a href="GUID-E20AF580-495E-4A3D-8174-5A7306CA2522.htm">Equipment</a></span>, 
+	 <span class="char_link"><a href="GUID-5CC931A7-A16D-459D-BEA6-C138331E7B57.htm">PipeRouting</a></span>, 
+	 <span class="char_link"><a href="GUID-8A9BC626-413F-4324-8EFE-6FE50E7EBA07.htm">PipeSupports</a></span>. 
+  </p></div></dd><dt><span class="term">New in the SDK for 2015 </span></dt><dd><div class="definition"> <p><a name="GUID-0593B7AB-0775-44DE-AD39-5AB065D2AA03"></a>A new high-level P&amp;ID API makes it much easier to create and connect P&amp;ID objects. 
+  </p> <p><a name="GUID-C5535971-5F5D-4A6E-BF4D-46571D7A6C8F"></a> Classes added to Autodesk.ProcessPower.PnIDObjects include: 
+  <a name="UL_482BBC7E37A246199C259ED00723051F"></a><ul><li>AssetAdder 
+	 </li><li>AssetUtil 
+	 </li><li>LineSegmentAdder 
+	 </li><li>PnIDStyleUtils 
+	 </li></ul> </p> <p><a name="GUID-33F9F7B9-B3D7-4CBC-A947-821A7EEE7A6A"></a>The best way to learn how to use the new classes is to compile and load the new sample: 
+	 <span class="char_link"><a href="GUID-A03B3AF1-A28A-486D-A1D7-E445F6DEAB51.htm">Create and Connect a P&amp;ID SLINE</a></span>. 
+  </p></div></dd><dt><span class="term">New in the SDK for 2014 </span></dt><dd><div class="definition"> <p><a name="GUID-224825D2-94C3-4542-B7E3-1E963295465E"></a>Support for improved off-page connections, synchronization, and Vault projects. Updated handling of 
+	 <span class="char_link"><a href="GUID-E0456D3E-F77C-4815-B50D-5B9793A56E16.htm">line groups</a></span>. 
+  </p> <p><a name="GUID-DD8FE1FE-1F7A-4984-9FF4-AA7693E4CEE3"></a>The CreatePipeline sample has been improved. Support for imperial to metric connections. 
+  </p></div></dd><dt><span class="term">New in the SDK for 2013 </span></dt><dd><div class="definition"> <p><a name="GUID-CE08B8A0-9DF2-4DD6-B921-ADA35436B981"></a>You can now create and connect piping in the 3D model. Get started with the 
+	 <em class="mild">CreatePipeline</em> sample that is included with the Plant SDK. For more information, see 
+	 <span class="char_link"><a href="GUID-CB89D656-9F59-44F9-910F-FC5E2094497E.htm">Create and Connect Piping</a></span>. 
+  </p> <p><a name="GUID-14F31338-6DC2-458C-B0DD-675A67A5425E"></a>In this help guide, the Data Manager chapter has been updated. Code snippets now illustrate working with data objects and relationships for the Plant 3D model. 
+  </p></div></dd></dl> </div><div class="footer-block"><a href="javascript:doComments('');"><span class="comments-link">Please send us your comment about this page</span></a></div><br></div></body></html>

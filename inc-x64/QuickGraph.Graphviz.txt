@@ -1,0 +1,710 @@
+﻿Assembly: QuickGraph.Graphviz, Version=3.7.5.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3
+File: C:\Users\deve_\OneDrive\Documents 1\Visual Studio 2022\ObjectARX_for_Plant3D_2024\inc-x64\QuickGraph.Graphviz.dll
+================================================================================
+
+Namespace: QuickGraph.Graphviz
+----------------------------------------
+  +-- class CondensatedGraphRenderer`3
+      : GraphRendererBase`2
+      |
+      +-- Methods:
+          +-- protected Void Initialize()
+          +-- private Void Graphviz_FormatVertex(Object sender, FormatVertexEventArgs`1 e)
+          +-- private Void Graphviz_FormatEdge(Object sender, FormatEdgeEventArgs`2 e)
+
+  +-- class EdgeMergeCondensatedGraphRenderer`2
+      : GraphRendererBase`2
+      |
+      +-- Methods:
+          +-- protected Void Initialize()
+          +-- private Void Graphviz_FormatEdge(Object sender, FormatEdgeEventArgs`2 e)
+          +-- private Void Graphviz_FormatVertex(Object sender, FormatVertexEventArgs`1 e)
+
+  +-- class FileDotEngine
+      Implements: IDotEngine
+      |
+      +-- Methods:
+          +-- public String Run(GraphvizImageType imageType, String dot, String outputFileName)
+
+  +-- class FormatClusterEventArgs`2
+      : EventArgs
+      |
+      |-- Fields:
+      |   +-- private IVertexAndEdgeListGraph`2 cluster
+      |   +-- private GraphvizGraph graphFormat
+      |
+      |-- Properties:
+      |   +-- IVertexAndEdgeListGraph`2 Cluster {get}
+      |   +-- GraphvizGraph GraphFormat {get}
+
+  +-- class FormatClusterEventHandler`2
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Object sender, FormatClusterEventArgs`2 e)
+          +-- public IAsyncResult BeginInvoke(Object sender, FormatClusterEventArgs`2 e, AsyncCallback callback, Object object)
+          +-- public Void EndInvoke(IAsyncResult result)
+
+  +-- class FormatEdgeAction`2
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Object sender, FormatEdgeEventArgs`2 e)
+          +-- public IAsyncResult BeginInvoke(Object sender, FormatEdgeEventArgs`2 e, AsyncCallback callback, Object object)
+          +-- public Void EndInvoke(IAsyncResult result)
+
+  +-- class FormatEdgeEventArgs`2
+      : EdgeEventArgs`2
+      |
+      |-- Fields:
+      |   +-- private GraphvizEdge edgeFormatter
+      |
+      |-- Properties:
+      |   +-- GraphvizEdge EdgeFormatter {get}
+
+  +-- class FormatVertexEventArgs`1
+      : VertexEventArgs`1
+      |
+      |-- Fields:
+      |   +-- private GraphvizVertex vertexFormatter
+      |
+      |-- Properties:
+      |   +-- GraphvizVertex VertexFormatter {get}
+
+  +-- class FormatVertexEventHandler`1
+      : MulticastDelegate
+      Implements: ICloneable, ISerializable
+      |
+      +-- Methods:
+          +-- public Void Invoke(Object sender, FormatVertexEventArgs`1 e)
+          +-- public IAsyncResult BeginInvoke(Object sender, FormatVertexEventArgs`1 e, AsyncCallback callback, Object object)
+          +-- public Void EndInvoke(IAsyncResult result)
+
+  +-- class GraphRendererBase`2
+      |
+      |-- Fields:
+      |   +-- private GraphvizAlgorithm`2 graphviz
+      |
+      |-- Properties:
+      |   +-- GraphvizAlgorithm`2 Graphviz {get}
+      |   +-- IEdgeListGraph`2 VisitedGraph {get}
+      |
+      +-- Methods:
+          +-- protected Void Initialize()
+          +-- public String Generate(IDotEngine dot, String fileName)
+
+  +-- class GraphvizAlgorithm`2
+      |
+      |-- Fields:
+      |   +-- private IEdgeListGraph`2 visitedGraph
+      |   +-- private StringWriter output
+      |   +-- private GraphvizImageType imageType
+      |   +-- private Dictionary`2 vertexIds
+      |   +-- private Int32 clusterCount
+      |   +-- private GraphvizGraph graphFormat
+      |   +-- private GraphvizVertex commonVertexFormat
+      |   +-- private GraphvizEdge commonEdgeFormat
+      |   +-- private FormatClusterEventHandler`2 FormatCluster
+      |   +-- private FormatVertexEventHandler`1 FormatVertex
+      |   +-- private FormatEdgeAction`2 FormatEdge
+      |   +-- private static Regex writeLineReplace
+      |
+      |-- Properties:
+      |   +-- GraphvizGraph GraphFormat {get}
+      |   +-- GraphvizVertex CommonVertexFormat {get}
+      |   +-- GraphvizEdge CommonEdgeFormat {get}
+      |   +-- IEdgeListGraph`2 VisitedGraph {get; set}
+      |   +-- StringWriter Output {get}
+      |   +-- GraphvizImageType ImageType {get; set}
+      |   +-- Int32 ClusterCount {get; set}
+      |
+      +-- Methods:
+          +-- public String Escape(String value)
+          +-- private Void OnFormatCluster(IVertexAndEdgeListGraph`2 cluster)
+          +-- private Void OnFormatVertex(TVertex v)
+          +-- private Void OnFormatEdge(TEdge e)
+          +-- public String Generate()
+          +-- public String Generate(IDotEngine dot, String outputFileName)
+          +-- internal Void WriteClusters(IDictionary`2 colors, IDictionary`2 edgeColors, IClusteredGraph parent)
+          +-- private Void WriteVertices(IDictionary`2 colors, IEnumerable`1 vertices)
+          +-- private Void WriteEdges(IDictionary`2 edgeColors, IEnumerable`1 edges)
+
+  +-- class GraphvizExtensions
+      |
+      +-- Methods:
+          +-- public static String ToGraphviz(IEdgeListGraph`2 graph)
+          +-- public static String ToGraphviz(IEdgeListGraph`2 graph, Action`1 initialization)
+          +-- public static String ToSvg(IEdgeListGraph`2 graph)
+          +-- public static String ToSvg(IEdgeListGraph`2 graph, Action`1 initialization)
+          +-- public static String ToSvg(String dot)
+
+  +-- interface IDotEngine
+      |
+      +-- Methods:
+          +-- public String Run(GraphvizImageType imageType, String dot, String outputFileName)
+
+  +-- class IDotEngineContract
+      Implements: IDotEngine
+      |
+      +-- Methods:
+          +-- private String QuickGraph.Graphviz.IDotEngine.Run(GraphvizImageType imageType, String dot, String outputFileName)
+
+  +-- class SvgHtmlWrapper
+      |
+      |-- Fields:
+      |   +-- private static Regex sizeRegex
+      |
+      +-- Methods:
+          +-- public static String WrapSvg(String svgFileName)
+          +-- public static Size ParseSize(String svg)
+          +-- public static String DumpHtml(Size size, String svgFileName)
+
+
+Namespace: QuickGraph.Graphviz.Dot
+----------------------------------------
+  +-- class GraphvizArrow
+      |
+      |-- Fields:
+      |   +-- private GraphvizArrowClipping clipping
+      |   +-- private GraphvizArrowFilling filling
+      |   +-- private GraphvizArrowShape shape
+      |
+      |-- Properties:
+      |   +-- GraphvizArrowClipping Clipping {get; set}
+      |   +-- GraphvizArrowFilling Filling {get; set}
+      |   +-- GraphvizArrowShape Shape {get; set}
+      |
+      +-- Methods:
+          +-- public String ToDot()
+          +-- public String ToString()
+
+  +-- enum GraphvizArrowClipping
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static GraphvizArrowClipping None
+      |   +-- public static GraphvizArrowClipping Left
+      |   +-- public static GraphvizArrowClipping Right
+
+  +-- enum GraphvizArrowFilling
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static GraphvizArrowFilling Close
+      |   +-- public static GraphvizArrowFilling Open
+
+  +-- enum GraphvizArrowShape
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static GraphvizArrowShape Box
+      |   +-- public static GraphvizArrowShape Crow
+      |   +-- public static GraphvizArrowShape Diamond
+      |   +-- public static GraphvizArrowShape Dot
+      |   +-- public static GraphvizArrowShape Inv
+      |   +-- public static GraphvizArrowShape None
+      |   +-- public static GraphvizArrowShape Normal
+      |   +-- public static GraphvizArrowShape Tee
+      |   +-- public static GraphvizArrowShape Vee
+
+  +-- enum GraphvizClusterMode
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static GraphvizClusterMode Local
+      |   +-- public static GraphvizClusterMode Global
+      |   +-- public static GraphvizClusterMode None
+
+  +-- class GraphvizEdge
+      |
+      |-- Fields:
+      |   +-- private String comment
+      |   +-- private GraphvizEdgeDirection dir
+      |   +-- private Font font
+      |   +-- private Color fontColor
+      |   +-- private GraphvizEdgeExtremity head
+      |   +-- private GraphvizArrow headArrow
+      |   +-- private Boolean isConstrained
+      |   +-- private Boolean isDecorated
+      |   +-- private GraphvizEdgeLabel label
+      |   +-- private GraphvizLayer layer
+      |   +-- private Int32 minLength
+      |   +-- private Color strokeColor
+      |   +-- private GraphvizEdgeStyle style
+      |   +-- private GraphvizEdgeExtremity tail
+      |   +-- private GraphvizArrow tailArrow
+      |   +-- private String tooltip
+      |   +-- private String url
+      |   +-- private Double weight
+      |   +-- private Int32 length
+      |   +-- private String <HeadPort>k__BackingField
+      |   +-- private String <TailPort>k__BackingField
+      |
+      |-- Properties:
+      |   +-- String Comment {get; set}
+      |   +-- GraphvizEdgeDirection Dir {get; set}
+      |   +-- Font Font {get; set}
+      |   +-- Color FontColor {get; set}
+      |   +-- GraphvizEdgeExtremity Head {get; set}
+      |   +-- GraphvizArrow HeadArrow {get; set}
+      |   +-- Boolean IsConstrained {get; set}
+      |   +-- Boolean IsDecorated {get; set}
+      |   +-- GraphvizEdgeLabel Label {get; set}
+      |   +-- GraphvizLayer Layer {get; set}
+      |   +-- Int32 MinLength {get; set}
+      |   +-- Color StrokeColor {get; set}
+      |   +-- GraphvizEdgeStyle Style {get; set}
+      |   +-- GraphvizEdgeExtremity Tail {get; set}
+      |   +-- GraphvizArrow TailArrow {get; set}
+      |   +-- String ToolTip {get; set}
+      |   +-- String Url {get; set}
+      |   +-- Double Weight {get; set}
+      |   +-- String HeadPort {get; set}
+      |   +-- String TailPort {get; set}
+      |   +-- Int32 Length {get; set}
+      |
+      +-- Methods:
+          +-- internal String GenerateDot(Hashtable pairs)
+          +-- public String ToDot()
+          +-- public String ToString()
+
+  +-- enum GraphvizEdgeDirection
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static GraphvizEdgeDirection None
+      |   +-- public static GraphvizEdgeDirection Forward
+      |   +-- public static GraphvizEdgeDirection Back
+      |   +-- public static GraphvizEdgeDirection Both
+
+  +-- class GraphvizEdgeExtremity
+      |
+      |-- Fields:
+      |   +-- private Boolean isClipped
+      |   +-- private Boolean isHead
+      |   +-- private String label
+      |   +-- private String logical
+      |   +-- private String same
+      |   +-- private String tooltip
+      |   +-- private String url
+      |
+      |-- Properties:
+      |   +-- Boolean IsClipped {get; set}
+      |   +-- Boolean IsHead {get}
+      |   +-- String Label {get; set}
+      |   +-- String Logical {get; set}
+      |   +-- String Same {get; set}
+      |   +-- String ToolTip {get; set}
+      |   +-- String Url {get; set}
+      |
+      +-- Methods:
+          +-- public Void AddParameters(IDictionary dic)
+
+  +-- class GraphvizEdgeLabel
+      |
+      |-- Fields:
+      |   +-- private Double angle
+      |   +-- private Double distance
+      |   +-- private Boolean float
+      |   +-- private Font font
+      |   +-- private Color fontColor
+      |   +-- private String value
+      |
+      |-- Properties:
+      |   +-- Double Angle {get; set}
+      |   +-- Double Distance {get; set}
+      |   +-- Boolean Float {get; set}
+      |   +-- Font Font {get; set}
+      |   +-- Color FontColor {get; set}
+      |   +-- String Value {get; set}
+      |
+      +-- Methods:
+          +-- public Void AddParameters(IDictionary dic)
+
+  +-- enum GraphvizEdgeStyle
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static GraphvizEdgeStyle Unspecified
+      |   +-- public static GraphvizEdgeStyle Invis
+      |   +-- public static GraphvizEdgeStyle Dashed
+      |   +-- public static GraphvizEdgeStyle Dotted
+      |   +-- public static GraphvizEdgeStyle Bold
+      |   +-- public static GraphvizEdgeStyle Solid
+
+  +-- class GraphvizGraph
+      |
+      |-- Fields:
+      |   +-- private String name
+      |   +-- private Color backgroundColor
+      |   +-- private GraphvizClusterMode clusterRank
+      |   +-- private String comment
+      |   +-- private Font font
+      |   +-- private Color fontColor
+      |   +-- private Boolean isCentered
+      |   +-- private Boolean isCompounded
+      |   +-- private Boolean isConcentrated
+      |   +-- private Boolean isLandscape
+      |   +-- private Boolean isNormalized
+      |   +-- private Boolean isReMinCross
+      |   +-- private String label
+      |   +-- private GraphvizLabelJustification labelJustification
+      |   +-- private GraphvizLabelLocation labelLocation
+      |   +-- private GraphvizLayerCollection layers
+      |   +-- private Double mcLimit
+      |   +-- private Double nodeSeparation
+      |   +-- private Int32 nsLimit
+      |   +-- private Int32 nsLimit1
+      |   +-- private GraphvizOutputMode outputOrder
+      |   +-- private GraphvizPageDirection pageDirection
+      |   +-- private SizeF pageSize
+      |   +-- private Double quantum
+      |   +-- private GraphvizRankDirection rankDirection
+      |   +-- private Double rankSeparation
+      |   +-- private GraphvizRatioMode ratio
+      |   +-- private Double resolution
+      |   +-- private Int32 rotate
+      |   +-- private Int32 samplePoints
+      |   +-- private Int32 searchSize
+      |   +-- private SizeF size
+      |   +-- private String styleSheet
+      |   +-- private String url
+      |
+      |-- Properties:
+      |   +-- String Name {get; set}
+      |   +-- Color BackgroundColor {get; set}
+      |   +-- GraphvizClusterMode ClusterRank {get; set}
+      |   +-- String Comment {get; set}
+      |   +-- Font Font {get; set}
+      |   +-- Color FontColor {get; set}
+      |   +-- Boolean IsCentered {get; set}
+      |   +-- Boolean IsCompounded {get; set}
+      |   +-- Boolean IsConcentrated {get; set}
+      |   +-- Boolean IsLandscape {get; set}
+      |   +-- Boolean IsNormalized {get; set}
+      |   +-- Boolean IsReMinCross {get; set}
+      |   +-- String Label {get; set}
+      |   +-- GraphvizLabelJustification LabelJustification {get; set}
+      |   +-- GraphvizLabelLocation LabelLocation {get; set}
+      |   +-- GraphvizLayerCollection Layers {get}
+      |   +-- Double McLimit {get; set}
+      |   +-- Double NodeSeparation {get; set}
+      |   +-- Int32 NsLimit {get; set}
+      |   +-- Int32 NsLimit1 {get; set}
+      |   +-- GraphvizOutputMode OutputOrder {get; set}
+      |   +-- GraphvizPageDirection PageDirection {get; set}
+      |   +-- SizeF PageSize {get; set}
+      |   +-- Double Quantum {get; set}
+      |   +-- GraphvizRankDirection RankDirection {get; set}
+      |   +-- Double RankSeparation {get; set}
+      |   +-- GraphvizRatioMode Ratio {get; set}
+      |   +-- Double Resolution {get; set}
+      |   +-- Int32 Rotate {get; set}
+      |   +-- Int32 SamplePoints {get; set}
+      |   +-- Int32 SearchSize {get; set}
+      |   +-- SizeF Size {get; set}
+      |   +-- String StyleSheet {get; set}
+      |   +-- String Url {get; set}
+      |
+      +-- Methods:
+          +-- internal String GenerateDot(Hashtable pairs)
+          +-- public String ToDot()
+          +-- public String ToString()
+
+  +-- enum GraphvizImageType
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static GraphvizImageType Cmap
+      |   +-- public static GraphvizImageType Fig
+      |   +-- public static GraphvizImageType Gd
+      |   +-- public static GraphvizImageType Gd2
+      |   +-- public static GraphvizImageType Gif
+      |   +-- public static GraphvizImageType Hpgl
+      |   +-- public static GraphvizImageType Imap
+      |   +-- public static GraphvizImageType Jpeg
+      |   +-- public static GraphvizImageType Mif
+      |   +-- public static GraphvizImageType Mp
+      |   +-- public static GraphvizImageType Pcl
+      |   +-- public static GraphvizImageType Pic
+      |   +-- public static GraphvizImageType PlainText
+      |   +-- public static GraphvizImageType Png
+      |   +-- public static GraphvizImageType Ps
+      |   +-- public static GraphvizImageType Ps2
+      |   +-- public static GraphvizImageType Svg
+      |   +-- public static GraphvizImageType Svgz
+      |   +-- public static GraphvizImageType Vrml
+      |   +-- public static GraphvizImageType Vtx
+      |   +-- public static GraphvizImageType Wbmp
+
+  +-- enum GraphvizLabelJustification
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static GraphvizLabelJustification L
+      |   +-- public static GraphvizLabelJustification R
+      |   +-- public static GraphvizLabelJustification C
+
+  +-- enum GraphvizLabelLocation
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static GraphvizLabelLocation T
+      |   +-- public static GraphvizLabelLocation B
+
+  +-- class GraphvizLayer
+      |
+      |-- Fields:
+      |   +-- private String name
+      |
+      |-- Properties:
+      |   +-- String Name {get; set}
+
+  +-- class GraphvizLayerCollection
+      : Collection`1
+      Implements: IList`1, ICollection`1, IEnumerable`1, IEnumerable, IList, ICollection, IReadOnlyList`1, IReadOnlyCollection`1
+      |
+      |-- Fields:
+      |   +-- private String m_Separators
+      |
+      |-- Properties:
+      |   +-- String Separators {get; set}
+      |
+      +-- Methods:
+          +-- public String ToDot()
+
+  +-- enum GraphvizOutputMode
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static GraphvizOutputMode BreadthFirst
+      |   +-- public static GraphvizOutputMode NodesFirst
+      |   +-- public static GraphvizOutputMode EdgesFirst
+
+  +-- enum GraphvizPageDirection
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static GraphvizPageDirection BL
+      |   +-- public static GraphvizPageDirection BR
+      |   +-- public static GraphvizPageDirection TL
+      |   +-- public static GraphvizPageDirection TR
+      |   +-- public static GraphvizPageDirection RB
+      |   +-- public static GraphvizPageDirection RT
+      |   +-- public static GraphvizPageDirection LB
+      |   +-- public static GraphvizPageDirection LT
+
+  +-- enum GraphvizRankDirection
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static GraphvizRankDirection LR
+      |   +-- public static GraphvizRankDirection TB
+
+  +-- enum GraphvizRatioMode
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static GraphvizRatioMode Fill
+      |   +-- public static GraphvizRatioMode Compress
+      |   +-- public static GraphvizRatioMode Auto
+
+  +-- class GraphvizRecord
+      |
+      |-- Fields:
+      |   +-- private GraphvizRecordCellCollection cells
+      |
+      |-- Properties:
+      |   +-- GraphvizRecordCellCollection Cells {get}
+      |
+      +-- Methods:
+          +-- public String ToDot()
+          +-- public String ToString()
+
+  +-- class GraphvizRecordCell
+      |
+      |-- Fields:
+      |   +-- private GraphvizRecordCellCollection cells
+      |   +-- private GraphvizRecordEscaper escaper
+      |   +-- private String port
+      |   +-- private String text
+      |
+      |-- Properties:
+      |   +-- GraphvizRecordCellCollection Cells {get}
+      |   +-- GraphvizRecordEscaper Escaper {get}
+      |   +-- Boolean HasPort {get}
+      |   +-- Boolean HasText {get}
+      |   +-- String Port {get; set}
+      |   +-- String Text {get; set}
+      |
+      +-- Methods:
+          +-- public String ToDot()
+          +-- public String ToString()
+
+  +-- class GraphvizRecordCellCollection
+      : Collection`1
+      Implements: IList`1, ICollection`1, IEnumerable`1, IEnumerable, IList, ICollection, IReadOnlyList`1, IReadOnlyCollection`1
+
+  +-- class GraphvizRecordEscaper
+      |
+      |-- Fields:
+      |   +-- private Regex escapeRegExp
+      |
+      +-- Methods:
+          +-- public String Escape(String text)
+          +-- public String MatchEvaluator(Match m)
+
+  +-- class GraphvizVertex
+      |
+      |-- Fields:
+      |   +-- private String bottomLabel
+      |   +-- private String comment
+      |   +-- private Double distorsion
+      |   +-- private Color fillColor
+      |   +-- private Boolean fixedSize
+      |   +-- private Font font
+      |   +-- private Color fontColor
+      |   +-- private String group
+      |   +-- private String label
+      |   +-- private GraphvizLayer layer
+      |   +-- private Double orientation
+      |   +-- private Int32 peripheries
+      |   +-- private GraphvizRecord record
+      |   +-- private Boolean regular
+      |   +-- private GraphvizVertexShape shape
+      |   +-- private Int32 sides
+      |   +-- private SizeF size
+      |   +-- private Double skew
+      |   +-- private Color strokeColor
+      |   +-- private GraphvizVertexStyle style
+      |   +-- private String toolTip
+      |   +-- private String topLabel
+      |   +-- private String url
+      |   +-- private Double z
+      |   +-- private Nullable`1 position
+      |
+      |-- Properties:
+      |   +-- Nullable`1 Position {get; set}
+      |   +-- String BottomLabel {get; set}
+      |   +-- String Comment {get; set}
+      |   +-- Double Distorsion {get; set}
+      |   +-- Color FillColor {get; set}
+      |   +-- Boolean FixedSize {get; set}
+      |   +-- Font Font {get; set}
+      |   +-- Color FontColor {get; set}
+      |   +-- String Group {get; set}
+      |   +-- String Label {get; set}
+      |   +-- GraphvizLayer Layer {get; set}
+      |   +-- Double Orientation {get; set}
+      |   +-- Int32 Peripheries {get; set}
+      |   +-- GraphvizRecord Record {get; set}
+      |   +-- Boolean Regular {get; set}
+      |   +-- GraphvizVertexShape Shape {get; set}
+      |   +-- Int32 Sides {get; set}
+      |   +-- SizeF Size {get; set}
+      |   +-- Double Skew {get; set}
+      |   +-- Color StrokeColor {get; set}
+      |   +-- GraphvizVertexStyle Style {get; set}
+      |   +-- String ToolTip {get; set}
+      |   +-- String TopLabel {get; set}
+      |   +-- String Url {get; set}
+      |   +-- Double Z {get; set}
+      |
+      +-- Methods:
+          +-- internal String GenerateDot(Dictionary`2 pairs)
+          +-- public String ToDot()
+          +-- public String ToString()
+
+  +-- enum GraphvizVertexShape
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static GraphvizVertexShape Unspecified
+      |   +-- public static GraphvizVertexShape Box
+      |   +-- public static GraphvizVertexShape Polygon
+      |   +-- public static GraphvizVertexShape Ellipse
+      |   +-- public static GraphvizVertexShape Circle
+      |   +-- public static GraphvizVertexShape Point
+      |   +-- public static GraphvizVertexShape Egg
+      |   +-- public static GraphvizVertexShape Triangle
+      |   +-- public static GraphvizVertexShape Plaintext
+      |   +-- public static GraphvizVertexShape Diamond
+      |   +-- public static GraphvizVertexShape Trapezium
+      |   +-- public static GraphvizVertexShape Parallelogram
+      |   +-- public static GraphvizVertexShape House
+      |   +-- public static GraphvizVertexShape Pentagon
+      |   +-- public static GraphvizVertexShape Hexagon
+      |   +-- public static GraphvizVertexShape Septagon
+      |   +-- public static GraphvizVertexShape Octagon
+      |   +-- public static GraphvizVertexShape DoubleCircle
+      |   +-- public static GraphvizVertexShape DoubleOctagon
+      |   +-- public static GraphvizVertexShape TripleOctagon
+      |   +-- public static GraphvizVertexShape InvTriangle
+      |   +-- public static GraphvizVertexShape InvTrapezium
+      |   +-- public static GraphvizVertexShape InvHouse
+      |   +-- public static GraphvizVertexShape MDiamond
+      |   +-- public static GraphvizVertexShape MSquare
+      |   +-- public static GraphvizVertexShape MCircle
+      |   +-- public static GraphvizVertexShape Rect
+      |   +-- public static GraphvizVertexShape Rectangle
+      |   +-- public static GraphvizVertexShape Record
+
+  +-- enum GraphvizVertexStyle
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+      |   +-- public static GraphvizVertexStyle Unspecified
+      |   +-- public static GraphvizVertexStyle Filled
+      |   +-- public static GraphvizVertexStyle Diagonals
+      |   +-- public static GraphvizVertexStyle Rounded
+      |   +-- public static GraphvizVertexStyle Invis
+      |   +-- public static GraphvizVertexStyle Dashed
+      |   +-- public static GraphvizVertexStyle Dotted
+      |   +-- public static GraphvizVertexStyle Bold
+      |   +-- public static GraphvizVertexStyle Solid
+
+
+Namespace: System
+----------------------------------------
+  +-- class AssemblyVersionInformation
+      |
+      |-- Fields:
+      |   +-- internal static String AssemblyTitle
+      |   +-- internal static String AssemblyProduct
+      |   +-- internal static String AssemblyDescription
+      |   +-- internal static String AssemblyVersion
+      |   +-- internal static String AssemblyFileVersion
+
+

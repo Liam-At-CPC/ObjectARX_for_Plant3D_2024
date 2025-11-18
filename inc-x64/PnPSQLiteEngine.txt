@@ -1,0 +1,259 @@
+﻿Assembly: PnPSQLiteEngine, Version=15.0.6100.2, Culture=neutral, PublicKeyToken=null
+File: C:\Users\deve_\OneDrive\Documents 1\Visual Studio 2022\ObjectARX_for_Plant3D_2024\inc-x64\PnPSQLiteEngine.dll
+================================================================================
+
+Namespace: <Global>
+----------------------------------------
+  +-- struct __s_GUID
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int32 <alignment member>
+
+  +-- enum __scrt_native_startup_state
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+
+  +-- struct _EXCEPTION_POINTERS
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct _GUID
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int32 <alignment member>
+
+  +-- struct gcroot<System::String ^>
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct ICLRRuntimeHost
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct ICorRuntimeHost
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- struct IUnknown
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+
+Namespace: <CppImplementationDetails>
+----------------------------------------
+  +-- struct $ArrayType$$$BY00Q6MPEBXXZ
+      : ValueType
+
+  +-- struct $ArrayType$$$BY0A@P6AHXZ
+      : ValueType
+
+  +-- struct $ArrayType$$$BY0A@P6AXXZ
+      : ValueType
+
+
+Namespace: <CrtImplementationDetails>
+----------------------------------------
+  +-- struct LanguageSupport
+      : ValueType
+      |
+      |-- Fields:
+      |   +-- private Int64 <alignment member>
+
+  +-- class ModuleLoadException
+      : Exception
+      Implements: ISerializable, _Exception
+      |
+      |-- Fields:
+      |   +-- public static String Nested
+
+  +-- class ModuleLoadExceptionHandlerException
+      : ModuleLoadException
+      Implements: ISerializable, _Exception
+      |
+      |-- Fields:
+      |   +-- private Exception <backing_store>NestedException
+      |   +-- private static String formatString
+      |
+      |-- Properties:
+      |   +-- Exception NestedException {get; set}
+      |
+      +-- Methods:
+          +-- public String ToString()
+          +-- public Void GetObjectData(SerializationInfo info, StreamingContext context)
+
+  +-- class ModuleUninitializer
+      : Stack
+      Implements: ICollection, IEnumerable, ICloneable
+      |
+      |-- Fields:
+      |   +-- private static Object lock
+      |   +-- internal static ModuleUninitializer _ModuleUninitializer
+      |
+      +-- Methods:
+          +-- internal Void AddHandler(EventHandler handler)
+          +-- private Void SingletonDomainUnload(Object source, EventArgs arguments)
+
+  +-- enum Progress
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+
+  +-- struct ThisModule
+      : ValueType
+
+  +-- enum TriBool
+      : Enum
+      Implements: IComparable, IFormattable, IConvertible
+      |
+      |-- Fields:
+      |   +-- public Int32 value__
+
+
+Namespace: Autodesk.ProcessPower.DataObjects.DbEngine
+----------------------------------------
+  +-- class FileExistChecker
+      |
+      |-- Fields:
+      |   +-- private String m_file
+      |   +-- private Boolean m_bExists
+      |   +-- private Int32 m_timeout
+      |   +-- private Thread m_thread
+      |
+      +-- Methods:
+          +-- public Boolean FileExists()
+          +-- private Void CheckFile()
+
+  +-- class PnPSQLiteCounter
+      : PnPCounter
+      Implements: IDisposable
+      |
+      |-- Properties:
+      |   +-- Int64 CurrentValue {get}
+      |   +-- Int64 NextValue {get}
+      |
+      +-- Methods:
+          +-- private Void ~PnPSQLiteCounter()
+          +-- public Void Prepare()
+          +-- public Void Seed(Int32 value)
+          +-- protected Void GetNextSequence()
+          +-- protected Void GetCurrentSequence()
+          +-- internal static Void Create(PnPSQLiteEngine dbengine, String tabname, String colname)
+          +-- protected Void Dispose(Boolean A_0)
+
+  +-- class PnPSQLiteEngine
+      : PnPDbEngine
+      Implements: IDisposable
+      |
+      |-- Fields:
+      |   +-- private PnPSQLFormatter m_sqlformatter
+      |   +-- private DbTransaction m_excltransaction
+      |   +-- private Boolean m_sqliteCorrupt
+      |
+      |-- Properties:
+      |   +-- Boolean UpdateSelect {get}
+      |   +-- PnPSQLFormatter FilterFormatter {get}
+      |   +-- Boolean IsServerDbms {get}
+      |   +-- Boolean IsLocalDatabase {get}
+      |
+      +-- Methods:
+          +-- private Void ~PnPSQLiteEngine()
+          +-- public Boolean CreateDatabase(Dictionary`2 dbparams)
+          +-- public Void DropDatabase()
+          +-- public String DatabaseFileName(Dictionary`2 params)
+          +-- private Void Connect(String connstring, PnPConnectionMode mode)
+          +-- public Void Connect(Dictionary`2 dbparams, PnPConnectionMode mode)
+          +-- public Void Connect(Dictionary`2 dbparams)
+          +-- public Void Disconnect()
+          +-- public Void StartTransaction(IsolationLevel isolationLevel)
+          +-- public Void StartTransaction()
+          +-- public Void CommitTransaction()
+          +-- public Void RollbackTransaction()
+          +-- public PnPDbSelectCommand CreateSelectCommand(String tabname, String condition, StringCollection sellist, Boolean bDistinct, List`1 orderBy)
+          +-- public IDataReader GetReader(String tabname, String pkname, LinkedList`1 rowids, PnPSelectFilter filter, StringCollection sellist, Boolean bDistinct, List`1 orderBy)
+          +-- public Boolean TableHasRows(String tabname)
+          +-- public IDataReader GetViewReader(String tabname, String pkname, LinkedList`1 rowids, PnPSelectFilter filter, StringCollection sellist, Boolean bDistinct, List`1 orderBy)
+          +-- public Void DeleteRows(String tabname, String pkname, LinkedList`1 rowids)
+          +-- public Void CreateTable(DataTable tab)
+          +-- public Void CreateTable(DataTable tab, DataTable basetable)
+          +-- public Void DropTable(String tabname)
+          +-- public Void CreateIndex(String inxname, String tabname, StringCollection cols)
+          +-- public Void DropIndex(String tabname, String idxname)
+          +-- internal Void CompactDatabase(String dbname, LinkedList`1 counters)
+          +-- public Void CompactDatabase(LinkedList`1 counters)
+          +-- public Void BackupDatabase()
+          +-- public Boolean TableExists(String tabname)
+          +-- public Boolean IndexExists(String idxname, String tabname)
+          +-- public DbCommand CreateCommand(String commandText)
+          +-- public Void CreateViewDefinition(DataTable tab, DataTable basetab)
+          +-- public Void DropViewDefinition(DataTable tab, DataTable basetable)
+          +-- public String ToIdentifier(String colname)
+          +-- public String MakeViewName(String tabName)
+          +-- public String MakeParameterName(String colname)
+          +-- public String TypeToSQLString(DataColumn col)
+          +-- public DbParameter MakeParameter(String name, Type type, Int32 len)
+          +-- public Void AlterTable(String tabname, String colname)
+          +-- public Void AlterTable(String tabname, DataColumn col)
+          +-- public Boolean ColumnExists(String tabname, String colname)
+          +-- public Void HandleException(Exception ex)
+          +-- public Void CheckEngine()
+          +-- public Boolean PingServer()
+          +-- public String MakeQualifiedTableName(String tabname)
+          +-- private DbType TypeToDbType(DataColumn col)
+          +-- public DbType TypeToDbType(Type type)
+          +-- protected DbDataAdapter CreatePnPGenericAdapter(DataTable tab)
+          +-- protected PnPCounter CreatePnPCounter(String tabname, String colname)
+          +-- internal DataTable GetTableColumns(String tabname)
+          +-- internal String MakePhysicalTableName(String publicName)
+          +-- internal String MakePhysicalIndexName(String publicName, String tabname)
+          +-- internal Dictionary`2 CreateTableInternal(DataTable tab, Boolean bRefConstr)
+          +-- internal Void CreateViewDefinitionInternal(DataTable tab, DataTable basetab, Dictionary`2 physicalColumns)
+          +-- internal Void AlterTableSQL(String tabname, String sql)
+          +-- internal Void RowUpdated(Object sender, RowUpdatedEventArgs e)
+          +-- internal Void RowUpdating(Object sender, RowUpdatingEventArgs e)
+          +-- internal String MakeCreateIndexText(String tabname, String idxname, Boolean bUnique)
+          +-- private Void CreateCounter(String tabname, String colname)
+          +-- private String PkArrayToString(DataColumn[] pk)
+          +-- private Void AppendPkCondition(StringBuilder sqlstr, String pkname, LinkedList`1 rowids)
+          +-- protected Void Dispose(Boolean A_0)
+
+  +-- class PnPSQLiteFormatter
+      : PnPSQLFormatter
+      |
+      |-- Fields:
+      |   +-- protected PnPSQLiteEngine m_dbengine
+      |   +-- protected Boolean m_bInsertParameterValues
+      |
+      +-- Methods:
+          +-- public String ToSQLString(ValueType ident)
+          +-- public String ToSQLString(PnPQryNode node)
+          +-- public static String StrToSQLString(String val)
+          +-- public static String BoolToSQLString(Boolean val)
+          +-- public static String GuidToSQLString(ValueType val)
+
+  +-- class PnPSQLiteSelectCommand
+      : PnPDbSelectCommand
+      Implements: IDisposable
+      |
+      +-- Methods:
+          +-- private Void ~PnPSQLiteSelectCommand()
+          +-- public Void Prepare()
+          +-- protected Void Dispose(Boolean A_0)
+
+

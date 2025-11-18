@@ -1,0 +1,25 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso8859-1"><meta name="product" content="PLNT3D"><meta name="book" content="Developer"><meta name="created" content="2022-12-24"><meta name="topicid" content="GUID-5C49E10B-8776-4471-953C-C82DA777F660"><meta name="indexterm" content="AcPpTagUtils"><meta name="indexterm" content="code sample: C#"><meta name="indexterm" content="code sample: FormatStringUtils"><meta name="topic-type" content="concept"><title>FormatStringUtils</title><link type="text/css" rel="stylesheet" href="style/adsk.cpm.css"><script type="text/javascript" src="scripts/adsk.strings.js"></script><script type="text/javascript" src="scripts/adsk.common.js"></script><script type="text/javascript" src="scripts/adsk.dynamichelp.js"></script></head><body><div class="head"><div class="head-block"><div class="nav-group"><!--browse buttons--><div class="browse"><nobr><!--No Additional browse buttons are defined--><div class="headNavLinkPrev"><div id="prevTitle" style="display:none">AcPpTagFormat</div><a href="GUID-48048AEF-F827-40D7-BF5B-31FB309455E7.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('prevTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-prev-xp.gif" border="0"></a></div><div class="headNavLinkUp"><div id="parentTitle" style="display:none">Tagging</div><a href="GUID-8FB5562C-A262-4948-A5E9-34205B29E056.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('parentTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-up-xp.gif" border="0"></a></div><div class="headNavLinkNext"><div id="nextTitle" style="display:none">Format Strings</div><a href="GUID-08089DFF-12E7-43F4-8BD4-24C4AF3D7A89.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('nextTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-next-xp.gif" border="0"></a></div></nobr></div><!--end browse buttons--></div><div class="button-info"><span id="infoline">&nbsp;</span></div><div class="ancestry"><a href="topichead.htm">AutoCAD Plant 3D 2024 SDK: Developer`s Help</a>&nbsp;&gt;&nbsp;<a href="topichead.htm">Plant SDK Developer Help</a>&nbsp;&gt;&nbsp;<a href="GUID-640F100A-5350-4B42-A5CC-D110506968C3.htm">Drawing Entities and Objects</a>&nbsp;&gt;&nbsp;<a href="GUID-8FB5562C-A262-4948-A5E9-34205B29E056.htm">Tagging</a>&nbsp;&gt;&nbsp;</div><div class="head-text"><a name="WS1A9193826455F5FFF27B6E112726E15C9-6FDF"></a><h1>FormatStringUtils</h1></div></div></div><div class="head-margin">&nbsp;</div><div style="line-height: 0pt">&nbsp;</div><div class="head-margin">&nbsp;</div><div class="body_content"><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57AC"></a>A utility class (<span class="code">FormatStringUtils</span>, 
+  <span class="code">AcPpFormatStringUtils</span>) allows developers to evaluate tag format strings directly into a string variable. An arbitrary format string can be evaluated as though it was applied to a P&amp;ID entity. </p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57AB"></a> <span class="code">isValid</span> can be used to determine if an 
+  <span class="code">sFormatString</span> is valid to verify format. 
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57AA"></a> <span class="code">Evaluate</span> is called with an 
+  <span class="code">sFormatString</span>, and a 
+  <span class="code">TargetId</span> Object id. The 
+  <span class="code">TargetId</span> may be used to provide P&amp;ID context information. If a format string already exists on the 
+  <span class="code">TargetID</span> entity, it is ignored. 
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57A9"></a>The following code illustrates Tag Evaluation. </p><div class="codeBlock"><pre>//C#
+Database db = Application.DocumentManager.MdiActiveDocument.Database;
+DataLinksManager dlm = DataLinksManager.GetManager(db);
+Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
+ObjectId entId = ed.GetEntity("Pick an SLINE TargetObject: ").ObjectId;
+&nbsp;&nbsp;&nbsp;
+//Evaluate
+String sEval = Autodesk.ProcessPower.PnPCommonDbx.FormatStringUtils.Evaluate(
+&nbsp;&nbsp;&nbsp;"#(TargetObject.LineNumber^@NNN)&nbsp;-&nbsp;#(Project.General.Project_Name)",
+&nbsp;&nbsp;&nbsp;entId
+);
+ed.WriteMessage(sEval);</pre></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57A8"></a>In the above example, the next 
+  <span class="code">LineNumber</span> is returned and incremented, just as it would be if it was applied to an 
+  <span class="code">sline</span> with an Autonumber tag. 
+</p><div class="footer-block"><a href="javascript:doComments('');"><span class="comments-link">Please send us your comment about this page</span></a></div><br></div></body></html>

@@ -1,0 +1,1 @@
+U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\x64\Release\ProjectList.vcxproj.AssemblyReference.cache

@@ -1,0 +1,55 @@
+Build started 1/30/2023 7:08:09 PM.
+Logging verbosity is set to: Normal.Project "U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\ProjectList.vcxproj" on node 1 (build target(s)).
+InitializeBuildStatus:
+  Creating "x64\Release\ProjectList.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+ClCompile:
+  C:\MSVS17\VC\Tools\MSVC\14.32.31326\bin\HostX64\x64\CL.exe /c /I..\..\..\inc /I"..\..\..\inc-x64" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\\" /AI"C:\Program Files (x86)\Windows Kits\10\References" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\\" /AI..\..\..\inc /AI"..\..\..\inc-x64" /clr /nologo /W3 /WX- /diagnostics:column /O2 /D PROJECTLIST_MODULE /D _WIN64 /D _WINDOWS /D NDEBUG /D _ACRXAPP /D _CRT_STDIO_ISO_WIDE_SPECIFIERS=1 /D _WINDLL /D _UNICODE /D UNICODE /GF /Gm- /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Yc"stdafx.h" /Fp"x64\Release\ProjectList.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc143.pdb" /external:W3 /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\mscorlib.dll" /FC /errorReport:queue /clr:nostdlib StdAfx.cpp
+  StdAfx.cpp
+  C:\MSVS17\VC\Tools\MSVC\14.32.31326\bin\HostX64\x64\CL.exe /c /I..\..\..\inc /I"..\..\..\inc-x64" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\\" /AI"C:\Program Files (x86)\Windows Kits\10\References" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\\" /AI..\..\..\inc /AI"..\..\..\inc-x64" /clr /nologo /W3 /WX- /diagnostics:column /O2 /D PROJECTLIST_MODULE /D _WIN64 /D _WINDOWS /D NDEBUG /D _ACRXAPP /D _CRT_STDIO_ISO_WIDE_SPECIFIERS=1 /D _WINDLL /D _UNICODE /D UNICODE /GF /Gm- /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"x64\Release\\" /Fd"x64\Release\vc143.pdb" /external:W3 /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\mscorlib.dll" /FC /errorReport:queue /clr:nostdlib acrxEntryPoint.cpp DocData.cpp ProjectListClr.cpp
+  acrxEntryPoint.cpp
+  DocData.cpp
+  ProjectListClr.cpp
+  Generating Code...
+  C:\MSVS17\VC\Tools\MSVC\14.32.31326\bin\HostX64\x64\CL.exe /c /I..\..\..\inc /I"..\..\..\inc-x64" /AI..\..\..\inc /AI"..\..\..\inc-x64" /nologo /W3 /WX- /diagnostics:column /O2 /D PROJECTLIST_MODULE /D _WIN64 /D _WINDOWS /D NDEBUG /D _ACRXAPP /D _CRT_STDIO_ISO_WIDE_SPECIFIERS=1 /D _WINDLL /D _UNICODE /D UNICODE /GF /Gm- /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"x64\Release\\" /Fd"x64\Release\vc143.pdb" /external:W3 /TP /FC /errorReport:queue ProjectList.cpp
+  ProjectList.cpp
+  C:\MSVS17\VC\Tools\MSVC\14.32.31326\bin\HostX64\x64\CL.exe /c /I..\..\..\inc /I"..\..\..\inc-x64" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\\" /AI"C:\Program Files (x86)\Windows Kits\10\References" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\\" /AI..\..\..\inc /AI"..\..\..\inc-x64" /clr /nologo /W3 /WX- /diagnostics:column /O2 /D PROJECTLIST_MODULE /D _WIN64 /D _WINDOWS /D NDEBUG /D _ACRXAPP /D _CRT_STDIO_ISO_WIDE_SPECIFIERS=1 /D _WINDLL /D _UNICODE /D UNICODE /GF /Gm- /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"x64\Release\\" /Fd"x64\Release\vc143.pdb" /external:W3 /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\mscorlib.dll" /FC /errorReport:queue /clr:nostdlib "x64\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cpp"
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+ManagedIncrementalBuildPostProcessDependencyGraph:
+  To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+  Could not load file or assembly 'Autodesk.ProcessPower.SyncExtension, Version=15.0.6100.2, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+ResourceCompile:
+  C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /Ix64\Release\ /nologo /fo"x64\Release\ProjectList.res" ProjectList.rc 
+C:\MSVS17\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1371,5): warning MSB8012: TargetPath(U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\x64\Release\ProjectList.dll) does not match the Linker's OutputFile property value (U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\x64\Release\ProjectList.arx). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile). [U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\ProjectList.vcxproj]
+C:\MSVS17\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1372,5): warning MSB8012: TargetExt(.dll) does not match the Linker's OutputFile property value (.arx). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile). [U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\ProjectList.vcxproj]
+Link:
+  C:\MSVS17\VC\Tools\MSVC\14.32.31326\bin\HostX64\x64\link.exe /ERRORREPORT:QUEUE /OUT:"U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\x64\Release\ProjectList.arx" /INCREMENTAL /ILK:"x64\Release\ProjectList.ilk" /NOLOGO /LIBPATH:"..\..\..\lib-x64" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /IMPLIB:"U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\x64\Release\ProjectList.lib" /MACHINE:X64 /DLL x64\Release\ProjectList.res
+  x64\Release\acrxEntryPoint.obj
+  x64\Release\DocData.obj
+  x64\Release\ProjectList.obj
+  x64\Release\ProjectListClr.obj
+  x64\Release\StdAfx.obj
+  "x64\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.obj"
+  acrxEntryPoint.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+     Creating library U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\x64\Release\ProjectList.lib and object U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\x64\Release\ProjectList.exp
+  ProjectList.vcxproj -> U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\x64\Release\ProjectList.dll
+FinalizeBuildStatus:
+  Deleting file "x64\Release\ProjectList.tlog\unsuccessfulbuild".
+  Touching "x64\Release\ProjectList.tlog\ProjectList.lastbuildstate".
+Done Building Project "U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\ProjectList.vcxproj" (build target(s)).
+
+Build succeeded.
+
+"U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\ProjectList.vcxproj" (build target) (1) ->
+(DoLinkOutputFilesMatch target) -> 
+  C:\MSVS17\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1371,5): warning MSB8012: TargetPath(U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\x64\Release\ProjectList.dll) does not match the Linker's OutputFile property value (U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\x64\Release\ProjectList.arx). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile). [U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\ProjectList.vcxproj]
+
+
+"U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\ProjectList.vcxproj" (build target) (1) ->
+  C:\MSVS17\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1372,5): warning MSB8012: TargetExt(.dll) does not match the Linker's OutputFile property value (.arx). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile). [U:\develop\RunRoot\Release64\PlantSDK\samples\Common\ProjectListFolder\ProjectList.vcxproj]
+
+    2 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:11.19

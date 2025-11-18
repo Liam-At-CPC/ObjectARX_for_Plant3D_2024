@@ -1,0 +1,139 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso8859-1"><meta name="product" content="PLNT3D"><meta name="book" content="Developer"><meta name="created" content="2022-12-24"><meta name="topicid" content="GUID-320EDA04-36A3-491D-AA17-831832CDF4E2"><meta name="indexterm" content="project data cache: table of roles and relationships"><meta name="indexterm" content="LineflowArrow relationships: code sample of"><meta name="indexterm" content="code sample: C++"><meta name="indexterm" content="code sample: relationship"><meta name="indexterm" content="AssetOwnership relationships: code sample of"><meta name="indexterm" content="code sample: C#"><meta name="indexterm" content="code sample: relate"><meta name="topic-type" content="concept"><title>Role and Relationship Types</title><link type="text/css" rel="stylesheet" href="style/adsk.cpm.css"><script type="text/javascript" src="scripts/adsk.strings.js"></script><script type="text/javascript" src="scripts/adsk.common.js"></script><script type="text/javascript" src="scripts/adsk.dynamichelp.js"></script></head><body><div class="head"><div class="head-block"><div class="nav-group"><!--browse buttons--><div class="browse"><nobr><!--No Additional browse buttons are defined--><div class="headNavLinkPrev"><div id="prevTitle" style="display:none">Data Cache Relationships</div><a href="GUID-5949FE0E-8594-41EF-95A5-235EA9E5F30B.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('prevTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-prev-xp.gif" border="0"></a></div><div class="headNavLinkUp"><div id="parentTitle" style="display:none">Data Cache Relationships</div><a href="GUID-5949FE0E-8594-41EF-95A5-235EA9E5F30B.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('parentTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-up-xp.gif" border="0"></a></div><div class="headNavLinkNext"><div id="nextTitle" style="display:none">Relationship Query (Sample)</div><a href="GUID-FCD5F42C-54BA-4B8F-85F8-3A5347FCE752.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('nextTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-next-xp.gif" border="0"></a></div></nobr></div><!--end browse buttons--></div><div class="button-info"><span id="infoline">&nbsp;</span></div><div class="ancestry"><a href="topichead.htm">AutoCAD Plant 3D 2024 SDK: Developer`s Help</a>&nbsp;&gt;&nbsp;<a href="topichead.htm">Plant SDK Developer Help</a>&nbsp;&gt;&nbsp;<a href="GUID-48F184C7-A298-49F0-B75E-5F32034A6C05.htm">Data Manager</a>&nbsp;&gt;&nbsp;<a href="GUID-17218469-1D92-41CF-AA92-A76214386E45.htm">Datalinks Manager</a>&nbsp;&gt;&nbsp;<a href="GUID-5949FE0E-8594-41EF-95A5-235EA9E5F30B.htm">Data Cache Relationships</a>&nbsp;&gt;&nbsp;</div><div class="head-text"><a name="WS1A9193826455F5FF84BDDE110D5FBBDED-7D4A"></a><h1>Role and Relationship Types</h1></div></div></div><div class="head-margin">&nbsp;</div><div style="line-height: 0pt">&nbsp;</div><div class="head-margin">&nbsp;</div><div class="body_content"><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-575D"></a>Relationships and Roles are string parameters. For example "PartPort" is a relationship of roles "Part" and "Port"). The roles are relationship-specific, so you must match up the roles with appropriate relationships. The following code lists all relationjships and roles in a project. 
+</p><div class="codeBlock"><pre>public void ListRelationships()
+{
+    Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
+    Project prj = PnPProjectUtils.GetProjectPartForCurrentDocument();
+    DataLinksManager dlm = prj.DataLinksManager;
+    PnPDatabase db = dlm.GetPnPDatabase();
+
+    PnPRelationshipTypes relTypes=db.RelationshipTypes;
+    foreach (PnPRelationshipType relType in relTypes)
+    {
+        ed.WriteMessage("\nPnPRelationshipType: " + relType.Name+"\n");
+
+        //Roles
+        PnPRoleTypes roles = relType.RoleTypes;
+
+        //Properties
+        PnPRelationshipProperties relprops = relType.Properties;
+        PnPRelationship[] rels = relType.Select();
+
+        //Relationships
+        foreach (PnPRelationship rel in rels)
+        {
+            //Roles
+            foreach (PnPRoleType role in roles)
+            {
+                int id = rel[role];
+                PnPRow relrow = db.GetRow(id);
+                ed.WriteMessage("  " + role.Name + "=" + relrow.ClassName);
+            }
+            //Relationships Properties
+            PnPRelationshipPropertyValues relpropvals = rel.PropertyValues;
+            foreach (PnPRelationshipProperty relprop in relprops)
+            {
+                ed.WriteMessage("  " + relprop.Name + "=" + relpropvals[relprop].ToString());
+            }
+            ed.WriteMessage("\n");
+        }
+    }
+}</pre></div><a name="SECTION_5444C9CE070946C6A54AFAB9334EBAF6"></a><div class="collapsible"><span onClick="showHide('collapsible_d44e2947'); swapImage(document.getElementById('d44e2947'), 'images/ac.down.gif', 'images/ac.right.gif')"><img id="d44e2947" class="collapsible" src="images/ac.right.gif"><a name="GUID-2A9E89D9-4337-402D-9DF4-F8D20FF6F3EC"></a><span class="collapsible-section-title">Sample output from ListRelationships() above for a Piping project part.</span></span><div class="collapsible-section hidden" id="collapsible_d44e2947"><div class="codeBlock"><pre>PnPRelationshipType: ReferenceRelationship
+PnPRelationshipType: AssetOwnership
+  Owner=Vessel  Owned=Nozzle
+  Owner=Vessel  Owned=Nozzle
+PnPRelationshipType: P3dDrawingLineGroupRelationship
+  Drawing=PnPDrawings  LineGroup=P3dLineGroup
+  Drawing=PnPDrawings  LineGroup=P3dLineGroup
+PnPRelationshipType: P3dLineGroupPartRelationship
+  LineGroup=P3dLineGroup  Part=Pipe
+  LineGroup=P3dLineGroup  Part=Gasket
+  LineGroup=P3dLineGroup  Part=BoltSet
+  LineGroup=P3dLineGroup  Part=P3dConnector
+  LineGroup=P3dLineGroup  Part=Flange
+  LineGroup=P3dLineGroup  Part=Buttweld
+  LineGroup=P3dLineGroup  Part=P3dConnector
+PnPRelationshipType: P3dPartConnection
+  Part1=Vessel  Part2=P3dConnector  Port1=S10002  Port2=S1
+  Part1=P3dConnector  Part2=Flange  Port1=S2  Port2=S1
+  Part1=Flange  Part2=P3dConnector  Port1=S2  Port2=S1
+  Part1=P3dConnector  Part2=Pipe  Port1=S2  Port2=S1
+PnPRelationshipType: PartPort
+  Part=Vessel  Port=Port  Name=S10002
+  Part=Nozzle  Port=Port  Name=N2
+  Part=Nozzle  Port=Port  Name=N2
+  Part=Pipe  Port=Port  Name=S2
+  Part=Gasket  Port=Port  Name=S2
+  Part=Flange  Port=Port  Name=S2</pre></div></div></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-575A"></a>Each relationship has two roles that are interchangeable, depending on the information you are interested in finding. For example, 
+  <span class="code">LineStartAsset</span> is the relationship between a line and the start asset of the line. 
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5759"></a>You can use &#8220;Line&#8221; as role 1, and pass in a line&#8217;s ID, and use &#8220;Asset&#8221; as role 2. The result is the ID of the asset. The reverse is also true; you can specify &#8220;Asset&#8221; as role 1, and pass in the asset&#8217;s ID, and use &#8220;Line&#8221; as role 2. The line&#8217;s ID is provided. 
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5758"></a>Following is a table of common relationships and roles </p><a name="WS1A9193826455F5FF1635ED2110A6B8051A-7E27"></a><div class="table-ruled"><table cellpadding="0" cellspacing="0" class="ruled"><colgroup><col width="50.66171348966798%"><col width="18.99233805433016%"><col width="30.345948456001853%"></colgroup><tr class="ruled-heading"><th class="table-heading">P&amp;ID Relationship 
+		  </th><th class="table-heading">Role 
+		  </th><th class="table-heading">Role 
+		  </th></tr><tr class="ruled-odd-row"><td class="table-body">LineInlineAsset 
+		  </td><td class="table-body">Line 
+		  </td><td class="table-body">Asset 
+		  </td></tr><tr class="ruled-even-row"><td class="table-body">LineStartAsset 
+		  </td><td class="table-body">Line 
+		  </td><td class="table-body">Asset 
+		  </td></tr><tr class="ruled-odd-row"><td class="table-body">LineEndAsset 
+		  </td><td class="table-body">Line 
+		  </td><td class="table-body">Asset 
+		  </td></tr><tr class="ruled-even-row"><td class="table-body">LineFlowArrow 
+		  </td><td class="table-body">Line 
+		  </td><td class="table-body">Arrow 
+		  </td></tr><tr class="ruled-odd-row"><td class="table-body">AnnotationRelationship 
+		  </td><td class="table-body">Annotated 
+		  </td><td class="table-body">Annotation 
+		  </td></tr><tr class="ruled-even-row"><td class="table-body">AssetOwnership 
+		  </td><td class="table-body">Owner 
+		  </td><td class="table-body">Owned 
+		  </td></tr><tr class="ruled-odd-row"><td class="table-body">SegmentBreak 
+		  </td><td class="table-body">Line 
+		  </td><td class="table-body">Break 
+		  </td></tr><tr class="ruled-even-row"><td class="table-body">LineOffPageConnector 
+		  </td><td class="table-body">Line 
+		  </td><td class="table-body">OffPageConnector 
+		  </td></tr><tr class="ruled-odd-row"><td class="table-body">LineNozzle 
+		  </td><td class="table-body">Line 
+		  </td><td class="table-body">Nozzle 
+		  </td></tr><tr class="ruled-even-row"><td class="table-body">PipeLineGroupRelationship 
+		  </td><td class="table-body">PipeLineGroup 
+		  </td><td class="table-body">PipeLine 
+		  </td></tr><tr class="ruled-odd-row"><td class="table-body">SignalLineGroupRelationShip 
+		  </td><td class="table-body">SignalLineGroup 
+		  </td><td class="table-body">SignalLine 
+		  </td></tr><tr class="ruled-even-row"><td class="table-body">ConnectorsRelationship 
+		  </td><td class="table-body">Connector1 
+		  </td><td class="table-body">Connector2 
+		  </td></tr><tr class="ruled-odd-row"><td class="table-body">AssetNonEngineeringRelationship 
+		  </td><td class="table-body">Asset 
+		  </td><td class="table-body">NonEngineering 
+		  </td></tr></table></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5757"></a>The following code comments the creation of a LineFlowArrow relationship: </p><div class="codeBlock"><pre>//C++
+// pLm is the pointer to AcPpDataLinksManager class
+pLm-&gt;Relate(ePpRTLineFlowArrow, ePpRoleArrow, flowArrowId, ePpRoleLine, lineId);
+&nbsp;&nbsp;&nbsp;
+// ePpRTLineFlowArrow is the relationship being used.
+// ePpRoleArrow is the arrow role being used as role 1.
+// flowArrowId is the object id of the flow arrow entity.
+// ePpRoleLine is the line role being used as role 2.
+// lineId is the object id of the SLINE entity.</pre></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5756"></a>Similarly, an 
+  <span class="code">AssetOwnership</span> relationship is created by the following: </p><div class="codeBlock"><pre>//C++
+pLm-&gt;Relate(ePpRTAssetOwnership, ePpRoleOwner, ownerId, ePpRoleOwned, ownedId);
+&nbsp;&nbsp;&nbsp;
+// ePpRTAssetOwnership is the relationship being used.
+// ePpRoleOwner is the owner role being used as role 1.
+// ownerId is the object id of the entity acting as the owner.
+// ePpRoleOwned is the owned role being used as role 2.
+// ownedId is the object id of the entity that is owned (e.g. child)</pre></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-5755"></a>The following code sample shows how to 
+  <span class="code">relate</span> two selected items into an 
+  <span class="code">AssetOwnership</span> relationship : </p><div class="codeBlock"><pre>//C#
+Database db = Application.DocumentManager.MdiActiveDocument.Database;
+DataLinksManager dlm = DataLinksManager.GetManager(db);
+Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
+ObjectId entId1 = ed.GetEntity("Pick owner: ").ObjectId;
+ObjectId entId2 = ed.GetEntity("Pick owned: ").ObjectId;
+&nbsp;&nbsp;&nbsp;
+//Set relationship
+dlm.Relate("AssetOwnership", "Owner", entId1, "Owned", entId2);</pre></div><div class="footer-block"><a href="javascript:doComments('');"><span class="comments-link">Please send us your comment about this page</span></a></div><br></div></body></html>

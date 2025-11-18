@@ -1,0 +1,24 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso8859-1"><meta name="product" content="PLNT3D"><meta name="book" content="Developer"><meta name="created" content="2022-12-24"><meta name="topicid" content="GUID-12895BEC-4F59-46E2-8C2B-D878A45192BD"><meta name="indexterm" content="code sample: object dictionary"><meta name="indexterm" content="code sample: style list"><meta name="topic-type" content="concept"><title>Accessing Objects</title><link type="text/css" rel="stylesheet" href="style/adsk.cpm.css"><script type="text/javascript" src="scripts/adsk.strings.js"></script><script type="text/javascript" src="scripts/adsk.common.js"></script><script type="text/javascript" src="scripts/adsk.dynamichelp.js"></script></head><body><div class="head"><div class="head-block"><div class="nav-group"><!--browse buttons--><div class="browse"><nobr><!--No Additional browse buttons are defined--><div class="headNavLinkPrev"><div id="prevTitle" style="display:none">Accessing Entities</div><a href="GUID-61456C4B-08F9-4425-9B6C-D7BEEC849420.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('prevTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-prev-xp.gif" border="0"></a></div><div class="headNavLinkUp"><div id="parentTitle" style="display:none">Drawing Entities and Objects</div><a href="GUID-640F100A-5350-4B42-A5CC-D110506968C3.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('parentTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-up-xp.gif" border="0"></a></div><div class="headNavLinkNext"><div id="nextTitle" style="display:none">Plant Project</div><a href="GUID-E6722C81-249B-489C-91B9-84B0B5D7D41B.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('nextTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-next-xp.gif" border="0"></a></div></nobr></div><!--end browse buttons--></div><div class="button-info"><span id="infoline">&nbsp;</span></div><div class="ancestry"><a href="topichead.htm">AutoCAD Plant 3D 2024 SDK: Developer`s Help</a>&nbsp;&gt;&nbsp;<a href="topichead.htm">Plant SDK Developer Help</a>&nbsp;&gt;&nbsp;<a href="GUID-640F100A-5350-4B42-A5CC-D110506968C3.htm">Drawing Entities and Objects</a>&nbsp;&gt;&nbsp;</div><div class="head-text"><a name="WS1A9193826455F5FF1DBC2985116285E2CB453E1"></a><h1>Accessing Objects</h1></div></div></div><div class="head-margin">&nbsp;</div><div style="line-height: 0pt">&nbsp;</div><div class="head-margin">&nbsp;</div><div class="body_content"><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-578F"></a> The drawing dictionary 
+  <em class="strong">Autodesk_PNP 
+  </em>holds nonentity information such as LineGroups and Tag formats. The code below collects Style names into a 
+  <span class="code">StringCollection</span> from the P&amp;ID dictionary. 
+</p><div class="codeBlock"><pre>//C#
+public static void PnPGetStyles(out StringCollection styles)
+{
+&nbsp;&nbsp;&nbsp;Database db = AcadApp.DocumentManager.MdiActiveDocument.Database;
+&nbsp;&nbsp;&nbsp;styles = new StringCollection();
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;using (Transaction tr = db.TransactionManager.StartTransaction())
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DBDictionary dictRoot = (DBDictionary)tr.GetObject(db.NamedObjectsDictionaryId, OpenMode.ForRead);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DBDictionary dictPNP = (DBDictionary)tr.GetObject(dictRoot.GetAt("Autodesk_PNP"), OpenMode.ForRead);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Style Dictionary
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DBDictionary dictStyles = (DBDictionary)tr.GetObject(dictPNP.GetAt("PNP_STYLES"), OpenMode.ForRead);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DbDictionaryEnumerator dictStylesEnum = dictStyles.GetEnumerator();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (dictStylesEnum.MoveNext())
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;styles.Add(dictStylesEnum.Key);
+&nbsp;&nbsp;&nbsp;}
+}</pre></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-578E"></a>   </p><div class="footer-block"><a href="javascript:doComments('');"><span class="comments-link">Please send us your comment about this page</span></a></div><br></div></body></html>

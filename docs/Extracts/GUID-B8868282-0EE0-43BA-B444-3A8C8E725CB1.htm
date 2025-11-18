@@ -1,0 +1,22 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso8859-1"><meta name="product" content="PLNT3D"><meta name="book" content="Developer"><meta name="created" content="2022-12-24"><meta name="topicid" content="GUID-B8868282-0EE0-43BA-B444-3A8C8E725CB1"><meta name="indexterm" content="AcPpRowId"><meta name="indexterm" content="PpRowId"><meta name="indexterm" content="AcPpRowIdArray"><meta name="topic-type" content="concept"><title>PpRowId</title><link type="text/css" rel="stylesheet" href="style/adsk.cpm.css"><script type="text/javascript" src="scripts/adsk.strings.js"></script><script type="text/javascript" src="scripts/adsk.common.js"></script><script type="text/javascript" src="scripts/adsk.dynamichelp.js"></script></head><body><div class="head"><div class="head-block"><div class="nav-group"><!--browse buttons--><div class="browse"><nobr><!--No Additional browse buttons are defined--><div class="headNavLinkPrev"><div id="prevTitle" style="display:none">PpObjectId</div><a href="GUID-44A7D9DD-E18B-45A9-ADF5-0C8F63ADD1DC.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('prevTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-prev-xp.gif" border="0"></a></div><div class="headNavLinkUp"><div id="parentTitle" style="display:none">Identifiers</div><a href="GUID-46569365-F4F9-44A3-95CF-69AC7631B537.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('parentTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-up-xp.gif" border="0"></a></div><div class="headNavLinkNext"><div id="nextTitle" style="display:none">Schematic Lines</div><a href="GUID-1391385D-2463-499C-9A3B-13A6B97505F1.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('nextTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-next-xp.gif" border="0"></a></div></nobr></div><!--end browse buttons--></div><div class="button-info"><span id="infoline">&nbsp;</span></div><div class="ancestry"><a href="topichead.htm">AutoCAD Plant 3D 2024 SDK: Developer`s Help</a>&nbsp;&gt;&nbsp;<a href="topichead.htm">Plant SDK Developer Help</a>&nbsp;&gt;&nbsp;<a href="GUID-640F100A-5350-4B42-A5CC-D110506968C3.htm">Drawing Entities and Objects</a>&nbsp;&gt;&nbsp;<a href="GUID-46569365-F4F9-44A3-95CF-69AC7631B537.htm">Identifiers</a>&nbsp;&gt;&nbsp;</div><div class="head-text"><a name="WS1A9193826455F5FF84BDDE110D5FBBDED-7D33"></a><h1>PpRowId</h1></div></div></div><div class="head-margin">&nbsp;</div><div style="line-height: 0pt">&nbsp;</div><div class="head-margin">&nbsp;</div><div class="body_content"><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57E2"></a> <span class="code">AcPpRowId</span> is an identifier for a P&amp;ID object&#8217;s record in the PnP Database. </p><div><a name="WS73099CC142F48755-63C0748611A1FA08F71-67EE"></a><div class="note-note"><span class="label label-target-language">NOTE:</span>AcPpRowId is not a class, it is scalar, type 
+  <span class="code">long</span>. The .NET managed assembly does not define 
+  <em class="mild">PpRowId</em>, and simply uses 
+  <span class="code">long</span>. When exchanged as a collection, the 
+  <span class="code">PnPRowIdArray</span> type is used.
+</div></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57E1"></a>Use 
+  <span class="code">FindAcPpRowId</span> of the 
+  <span class="code">DataLinksManager</span> to retrieve the data row ID from an 
+  <span class="code">AcPpObjectId</span>. Provided with the 
+  <span class="code">AcPpObjectId</span> of a P&amp;ID entity, the following code acquires the 
+  <span class="code">AcPpRowId:</span> </p><div class="codeBlock"><pre>//C++
+AcPpObjectId pnpId;
+AcPpDataLinksManager* dlm;
+//Initialize pnpId and dlm
+&nbsp;&nbsp;&nbsp;
+AcPpRowId rid;
+dlm-&gt;FindAcPpRowId(pnpId, rid);</pre></div><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57E0"></a> <span class="code">AcPpRowIdArray</span> is used by 
+  <span class="code">AcPpDataLinkManager</span> functions that accept, or provide multiple row IDs. For example, 
+  <span class="code">SelectAcPpRowIds</span> can provide an array of row IDs for all items in the drawing.
+</p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-57DF"></a>   </p><div class="footer-block"><a href="javascript:doComments('');"><span class="comments-link">Please send us your comment about this page</span></a></div><br></div></body></html>

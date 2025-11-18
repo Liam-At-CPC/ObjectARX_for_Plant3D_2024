@@ -1,0 +1,39 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso8859-1"><meta name="product" content="PLNT3D"><meta name="book" content="Developer"><meta name="created" content="2022-12-24"><meta name="topicid" content="GUID-E20AF580-495E-4A3D-8174-5A7306CA2522"><meta name="topic-type" content="concept"><title>Sample: Create Equipment</title><link type="text/css" rel="stylesheet" href="style/adsk.cpm.css"><script type="text/javascript" src="scripts/adsk.strings.js"></script><script type="text/javascript" src="scripts/adsk.common.js"></script><script type="text/javascript" src="scripts/adsk.dynamichelp.js"></script></head><body><div class="head"><div class="head-block"><div class="nav-group"><!--browse buttons--><div class="browse"><nobr><!--No Additional browse buttons are defined--><div class="headNavLinkPrev"><div id="prevTitle" style="display:none">Create and Connect a P&amp;ID SLINE</div><a href="GUID-A03B3AF1-A28A-486D-A1D7-E445F6DEAB51.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('prevTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-prev-xp.gif" border="0"></a></div><div class="headNavLinkUp"><div id="parentTitle" style="display:none">Samples</div><a href="GUID-205FC0ED-65B8-459D-A62A-93ADBDCEB221.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('parentTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-up-xp.gif" border="0"></a></div><div class="headNavLinkNext"><div id="nextTitle" style="display:none">Sample: Route and Connect Piping</div><a href="GUID-5CC931A7-A16D-459D-BEA6-C138331E7B57.htm" class="headNavLink" onmouseover="showInfo(document.getElementById('nextTitle').innerHTML);" onmouseout="hideInfo();"><img src="images/nav-next-xp.gif" border="0"></a></div></nobr></div><!--end browse buttons--></div><div class="button-info"><span id="infoline">&nbsp;</span></div><div class="ancestry"><a href="topichead.htm">AutoCAD Plant 3D 2024 SDK: Developer`s Help</a>&nbsp;&gt;&nbsp;<a href="topichead.htm">Plant SDK Developer Help</a>&nbsp;&gt;&nbsp;<a href="GUID-205FC0ED-65B8-459D-A62A-93ADBDCEB221.htm">Samples</a>&nbsp;&gt;&nbsp;</div><div class="head-text"><a name="GUID-AF61B42C-676A-4C7D-ACE3-030E3B32B554"></a><h1>Sample: Create Equipment</h1></div></div></div><div class="head-margin">&nbsp;</div><div style="line-height: 0pt">&nbsp;</div><div class="head-margin">&nbsp;</div><div class="body_content"><p class="blurb">  </p><p><a name="GUID-E5E7CBB7-5F4B-4D93-A5ED-621DF6D4BB7E"></a>  </p><p><a name="WS73099CC142F48755-1C09418211F25B18DC4-572C"></a>The sample illustrates how to use high-level APIs to create equipment. 
+	 </p><p><a name="GUID-3510A51D-35D6-4E21-8E78-CAB4CF539907"></a>The high-level APIs are implemented by the managed classes 
+		<em class="strong">CategoryInfo</em>, 
+		<em class="strong">EquipmentHelper</em>, 
+		<em class="strong">EquipmentPrimitives</em>, 
+		<em class="strong">EquipmentType</em>, 
+		<em class="strong">NozzleInfo</em>, and 
+		<em class="strong">NozzleType</em> in Autodesk.ProcessPower.PnP3dEquipment. 
+	 </p><p><a name="GUID-FCC6DEAA-A259-4F66-84D1-94950A6B68E1"></a> <div class="codeBlock"><pre>NETLOAD Equipment
+EquipmentLoadPackage 1.VerticalVessel
+EquipmentCreate 0,0,0 0</pre></div>After compiling the sample you can run 
+		<em class="strong">EquipmentLoadPackage</em> at the Command: prompt 
+	 </p><a name="FIG_0272C51DC38D4943B4FFD50D6CC94FB0"></a><div class="figure-anchor"><img src="GUID-86C5C27C-EC95-4E4F-BE80-8F1956722C77-low.png"></div><p><a name="GUID-983B60A0-64AE-4C90-818A-E507C3BF7D0C"></a>In the sample, the EquipmentLoadPackage command runs the following code: 
+	 </p><div class="codeBlock"><pre>using (EquipmentHelper eqHelper = new EquipmentHelper())
+...
+
+//get a list of equpiment types (for example: VerticalVessel, Reboiler)
+foreach (EquipmentType eqt in eqHelper.EquipmentPackages)
+{
+   cnt += 1;
+   kwds.Add(cnt.ToString() + "." + eqt.DisplayName.Replace(" ", ""));
+}
+
+//specify the equipment type on the command line
+PromptResult res = ed.GetKeywords("\nSelect equipment type", kwds.ToArray());
+if (res.Status == PromptStatus.OK)
+{
+   int j = kwds.IndexOf(res.StringResult);
+   EquipmentType eqt = eqHelper.EquipmentPackages[j];
+
+   // Scale and init for the project, and make current
+   s_CurrentEquipmentType = eqHelper.MakeEquipmentForProject(eqt);
+   s_CurrentDwgName = null;
+   s_CurrentEquipmentId = ObjectId.Null;
+}</pre></div><p><a name="GUID-74431F69-863A-4A2F-A232-3CEBE38B774D"></a>See 
+		<em class="mild">readme.txt</em> in the project sample for details. 
+	 </p><div class="footer-block"><a href="javascript:doComments('');"><span class="comments-link">Please send us your comment about this page</span></a></div><br></div></body></html>
